@@ -28,7 +28,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
   private final Collection<TemplateRootMappingRule> rootRules;
   public Mapping_main(@NotNull TemplateModel model) {
     super(new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "2815143099423831197"), "main", model, false, new MO());
-    rules = TemplateUtil.<TemplateReductionRule>asCollection(new ReductionRule0(), new ReductionRule1(), new ReductionRule2(), new ReductionRule3());
+    rules = TemplateUtil.<TemplateReductionRule>asCollection(new ReductionRule0(), new ReductionRule1(), new ReductionRule2(), new ReductionRule3(), new ReductionRule4(), new ReductionRule5(), new ReductionRule6());
     rootRules = TemplateUtil.<TemplateRootMappingRule>asCollection(new RootMappingRule0());
   }
   @Override
@@ -83,6 +83,39 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
       return tlist1;
     }
   }
+  /*package*/ final class ReductionRule4 extends ReductionRuleBase {
+    public ReductionRule4() {
+      super(new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753829705"), CONCEPTS.ImageTemplateConfig$sf, false);
+    }
+    @Override
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
+      final TemplateExecutionEnvironment environment = context.getEnvironment();
+      Collection<SNode> tlist1 = environment.callSite(new Template_reduce_ImageTemplateConfig(), new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753829706")).apply(context);
+      return tlist1;
+    }
+  }
+  /*package*/ final class ReductionRule5 extends ReductionRuleBase {
+    public ReductionRule5() {
+      super(new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753830762"), CONCEPTS.ImageTemplateNamedSizeConfig$EL, false);
+    }
+    @Override
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
+      final TemplateExecutionEnvironment environment = context.getEnvironment();
+      Collection<SNode> tlist1 = environment.callSite(new Template_reduce_ImageTemplateNamedSizeConfig(), new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753830763")).apply(context);
+      return tlist1;
+    }
+  }
+  /*package*/ final class ReductionRule6 extends ReductionRuleBase {
+    public ReductionRule6() {
+      super(new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753831180"), CONCEPTS.ImageTemplateWidthConfig$CP, false);
+    }
+    @Override
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
+      final TemplateExecutionEnvironment environment = context.getEnvironment();
+      Collection<SNode> tlist1 = environment.callSite(new Template_reduce_ImageTemplateWidthConfig(), new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753831181")).apply(context);
+      return tlist1;
+    }
+  }
   /*package*/ final class RootMappingRule0 extends MapRootRuleBase implements TemplateRootMappingRule {
     public RootMappingRule0() {
       super(new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "2815143099423957574"), CONCEPTS.PlayerConfig$YC, false, false);
@@ -106,6 +139,9 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     /*package*/ static final SConcept GenericConfig$74 = MetaAdapterFactory.getConcept(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cba8aL, "ARD.Player.Model.structure.GenericConfig");
     /*package*/ static final SConcept PluginConfig$46 = MetaAdapterFactory.getConcept(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cbab4L, "ARD.Player.Model.structure.PluginConfig");
     /*package*/ static final SConcept WebConfig$KE = MetaAdapterFactory.getConcept(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cbad1L, "ARD.Player.Model.structure.WebConfig");
+    /*package*/ static final SConcept ImageTemplateConfig$sf = MetaAdapterFactory.getConcept(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x6909f7b4a82e594L, "ARD.Player.Model.structure.ImageTemplateConfig");
+    /*package*/ static final SConcept ImageTemplateNamedSizeConfig$EL = MetaAdapterFactory.getConcept(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x6909f7b4a82e59dL, "ARD.Player.Model.structure.ImageTemplateNamedSizeConfig");
+    /*package*/ static final SConcept ImageTemplateWidthConfig$CP = MetaAdapterFactory.getConcept(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x6909f7b4a82e599L, "ARD.Player.Model.structure.ImageTemplateWidthConfig");
     /*package*/ static final SConcept PlayerConfig$YC = MetaAdapterFactory.getConcept(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cc22cL, "ARD.Player.Model.structure.PlayerConfig");
   }
 }

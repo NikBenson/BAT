@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="952hvedof3jr9rcyzgw1ezldqf9jdwp">
-  <files names="EditorAspectDescriptorImpl.java:EmbeddedConfig_Editor.java:EmbeddedConfig_EditorBuilder_a.java:GenericConfig_Editor.java:GenericConfig_EditorBuilder_a.java:PlayerConfig_Editor.java:PlayerConfig_EditorBuilder_a.java:PluginConfig_Editor.java:PluginConfig_EditorBuilder_a.java:WebConfig_Editor.java:WebConfig_EditorBuilder_a.java" />
+<product version="3" modelHash="6fu28bspngrovaontg1jv6lwpgyjqx6">
+  <files names="EditorAspectDescriptorImpl.java:EmbeddedConfig_Editor.java:EmbeddedConfig_EditorBuilder_a.java:GenericConfig_Editor.java:GenericConfig_EditorBuilder_a.java:ImageTemplateConfig_Editor.java:ImageTemplateConfig_EditorBuilder_a.java:ImageTemplateNamedSizeConfig_Editor.java:ImageTemplateNamedSizeConfig_EditorBuilder_a.java:ImageTemplateWidthConfig_Editor.java:ImageTemplateWidthConfig_EditorBuilder_a.java:PlayerConfig_Editor.java:PlayerConfig_EditorBuilder_a.java:PluginConfig_Editor.java:PluginConfig_EditorBuilder_a.java:WebConfig_Editor.java:WebConfig_EditorBuilder_a.java" />
 </product>
 

@@ -60,6 +60,15 @@ public class TemplateModelImpl extends TemplateModelBase {
     if (template.equals(new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "2815143099423940374"))) {
       return new Template_reduce_WebConfig();
     }
+    if (template.equals(new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753829703"))) {
+      return new Template_reduce_ImageTemplateConfig();
+    }
+    if (template.equals(new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753830760"))) {
+      return new Template_reduce_ImageTemplateNamedSizeConfig();
+    }
+    if (template.equals(new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753831178"))) {
+      return new Template_reduce_ImageTemplateWidthConfig();
+    }
     if (template.equals(new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "7064017023678163757"))) {
       return new Template_map_PlayerConfig();
     }

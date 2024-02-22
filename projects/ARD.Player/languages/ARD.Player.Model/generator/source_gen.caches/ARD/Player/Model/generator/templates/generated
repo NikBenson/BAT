@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="-e9guuul1mqwsf0stvw5dsyfo4unzt34">
-  <files names="Mapping_main.java:QueriesGenerated.java:TemplateModelImpl.java:Template_map_PlayerConfig.java:Template_reduce_EmbeddedConfig.java:Template_reduce_GenericConfig.java:Template_reduce_PluginConfig.java:Template_reduce_WebConfig.java" />
+<product version="3" modelHash="6l4dbb3ummdbri9c8fb9a8r1psnj9fy">
+  <files names="Mapping_main.java:QueriesGenerated.java:TemplateModelImpl.java:Template_map_PlayerConfig.java:Template_reduce_EmbeddedConfig.java:Template_reduce_GenericConfig.java:Template_reduce_ImageTemplateConfig.java:Template_reduce_ImageTemplateNamedSizeConfig.java:Template_reduce_ImageTemplateWidthConfig.java:Template_reduce_PluginConfig.java:Template_reduce_WebConfig.java" />
 </product>
 

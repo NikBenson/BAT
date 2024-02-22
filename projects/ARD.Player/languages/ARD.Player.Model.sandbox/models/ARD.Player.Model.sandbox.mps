@@ -7,6 +7,19 @@
   <imports />
   <registry>
     <language id="c08689bf-220f-44e0-b117-6fee592c62cc" name="ARD.Player.Model">
+      <concept id="473053312753788313" name="ARD.Player.Model.structure.ImageTemplateWidthConfig" flags="ng" index="1c4BFy">
+        <child id="473053312753788321" name="max" index="1c4BFq" />
+        <child id="473053312753788324" name="stepSize" index="1c4BFv" />
+        <child id="473053312753788319" name="min" index="1c4BF$" />
+      </concept>
+      <concept id="473053312753788317" name="ARD.Player.Model.structure.ImageTemplateNamedSizeConfig" flags="ng" index="1c4BFA">
+        <child id="473053312753788331" name="value" index="1c4BFg" />
+        <child id="473053312753788329" name="minWidth" index="1c4BFi" />
+      </concept>
+      <concept id="473053312753788308" name="ARD.Player.Model.structure.ImageTemplateConfig" flags="ng" index="1c4BFJ">
+        <child id="473053312753788314" name="size" index="1c4BFx" />
+        <child id="473053312753788311" name="width" index="1c4BFG" />
+      </concept>
       <concept id="2815143099423834668" name="ARD.Player.Model.structure.PlayerConfig" flags="ng" index="3Q7qun">
         <property id="366377818498895389" name="path" index="1882MM" />
         <child id="366377818498895398" name="web" index="1882M9" />
@@ -18,6 +31,7 @@
         <child id="366377818498895438" name="config" index="1882Nx" />
       </concept>
       <concept id="2815143099423832714" name="ARD.Player.Model.structure.GenericConfig" flags="ng" index="3Q7tWL">
+        <child id="473053312753788297" name="imageTemplateConfig" index="1c4BFM" />
         <child id="2815143099423088975" name="isMuted" index="3Q40jO" />
         <child id="2815143099423088966" name="isTimeRemainingDisplay" index="3Q40jX" />
       </concept>
@@ -38,6 +52,10 @@
         <property id="366377818497914335" name="value" index="18cNtK" />
       </concept>
       <concept id="366377818497914305" name="json.model.structure.JSONBoolean" flags="ng" index="18cNtI" />
+      <concept id="366377818497914320" name="json.model.structure.JSONDouble" flags="ng" index="18cNtZ">
+        <property id="366377818497914349" name="decimal" index="18cNt2" />
+        <property id="366377818497914347" name="integer" index="18cNt4" />
+      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ngI" index="TrEIO">
@@ -62,6 +80,31 @@
     <node concept="3Q7tWL" id="qgBRHavL0v" role="1882Mf">
       <node concept="18cNtI" id="qgBRHavL0C" role="3Q40jX" />
       <node concept="18cNtI" id="qgBRHawCdi" role="3Q40jO" />
+      <node concept="1c4BFJ" id="qgBRHaxZyG" role="1c4BFM">
+        <node concept="1c4BFA" id="qgBRHaxZzj" role="1c4BFx">
+          <node concept="18cNtZ" id="qgBRHaxZzk" role="1c4BFi">
+            <property role="18cNt2" value="0" />
+            <property role="18cNt4" value="50" />
+          </node>
+          <node concept="18cNtD" id="qgBRHaxZzC" role="1c4BFg">
+            <property role="18cNtK" value="XL" />
+          </node>
+        </node>
+        <node concept="1c4BFy" id="qgBRHaxZyH" role="1c4BFG">
+          <node concept="18cNtZ" id="qgBRHaxZyI" role="1c4BF$">
+            <property role="18cNt4" value="20" />
+            <property role="18cNt2" value="0" />
+          </node>
+          <node concept="18cNtZ" id="qgBRHaxZyJ" role="1c4BFq">
+            <property role="18cNt4" value="100" />
+            <property role="18cNt2" value="0" />
+          </node>
+          <node concept="18cNtZ" id="qgBRHaxZyK" role="1c4BFv">
+            <property role="18cNt4" value="10" />
+            <property role="18cNt2" value="0" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="3Q7tXE" id="qgBRHawCdc" role="1882M9">
       <node concept="18cNtD" id="qgBRHawCde" role="3Q7tXJ">

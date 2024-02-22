@@ -27,7 +27,14 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Objects;
 import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
+import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
+import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SEmptyContainmentSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
+import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
 
@@ -60,27 +67,30 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.addEditorCell(createRefCell_0());
     editorCell.addEditorCell(createConstant_2());
     editorCell.addEditorCell(createConstant_3());
-    editorCell.addEditorCell(createRefCell_1());
+    editorCell.addEditorCell(createRefNode_0());
     editorCell.addEditorCell(createConstant_4());
     editorCell.addEditorCell(createConstant_5());
-    editorCell.addEditorCell(createRefCell_2());
+    editorCell.addEditorCell(createRefCell_1());
     editorCell.addEditorCell(createConstant_6());
     editorCell.addEditorCell(createConstant_7());
-    editorCell.addEditorCell(createRefCell_3());
+    editorCell.addEditorCell(createRefCell_2());
     editorCell.addEditorCell(createConstant_8());
     editorCell.addEditorCell(createConstant_9());
-    editorCell.addEditorCell(createRefCell_4());
+    editorCell.addEditorCell(createRefCell_3());
     editorCell.addEditorCell(createConstant_10());
     editorCell.addEditorCell(createConstant_11());
-    editorCell.addEditorCell(createRefCell_5());
+    editorCell.addEditorCell(createRefCell_4());
     editorCell.addEditorCell(createConstant_12());
     editorCell.addEditorCell(createConstant_13());
-    editorCell.addEditorCell(createRefCell_6());
+    editorCell.addEditorCell(createRefCell_5());
     editorCell.addEditorCell(createConstant_14());
     editorCell.addEditorCell(createConstant_15());
-    editorCell.addEditorCell(createRefCell_7());
+    editorCell.addEditorCell(createRefCell_6());
     editorCell.addEditorCell(createConstant_16());
     editorCell.addEditorCell(createConstant_17());
+    editorCell.addEditorCell(createRefCell_7());
+    editorCell.addEditorCell(createConstant_18());
+    editorCell.addEditorCell(createConstant_19());
     editorCell.addEditorCell(createRefCell_8());
     return editorCell;
   }
@@ -102,7 +112,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
       @Override
       protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
         EditorCell cell = new Inline_Builder0(getEditorContext(), myNode, effectiveNode).createCell();
-        installDeleteActions_nullable_aggregation(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };
@@ -168,7 +178,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
   }
   private EditorCell createConstant_2() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "is forced autoplay");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "forced volume percent");
     editorCell.setCellId("Constant_cyndbf_d0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -176,6 +186,76 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "=");
     editorCell.setCellId("Constant_cyndbf_e0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createRefNode_0() {
+    SingleRoleCellProvider provider = new forcedVolumePercentagSingleRoleHandler_cyndbf_f0(myNode, LINKS.forcedVolumePercentag$qeD6, getEditorContext());
+    return provider.createCell();
+  }
+  private static class forcedVolumePercentagSingleRoleHandler_cyndbf_f0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
+    public forcedVolumePercentagSingleRoleHandler_cyndbf_f0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(containmentLink, context);
+      myNode = ownerNode;
+    }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.forcedVolumePercentag$qeD6, child));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.forcedVolumePercentag$qeD6, child));
+      installCellInfo(child, editorCell, false);
+      return editorCell;
+    }
+
+
+
+    private void installCellInfo(SNode child, EditorCell editorCell, boolean isEmpty) {
+      if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
+        editorCell.setSubstituteInfo((isEmpty ? new SEmptyContainmentSubstituteInfo(editorCell) : new SChildSubstituteInfo(editorCell)));
+      }
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(LINKS.forcedVolumePercentag$qeD6);
+      }
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      editorCell.getStyle().putAll(style);
+    }
+    @Override
+    protected EditorCell createEmptyCell() {
+      getCellFactory().pushCellContext();
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.forcedVolumePercentag$qeD6));
+      try {
+        EditorCell editorCell = super.createEmptyCell();
+        editorCell.setCellId("empty_forcedVolumePercentag");
+        installCellInfo(null, editorCell, true);
+        setCellContext(editorCell);
+        return editorCell;
+      } finally {
+        getCellFactory().popCellContext();
+      }
+    }
+    protected String getNoTargetText() {
+      return "<no forcedVolumePercentag>";
+    }
+  }
+  private EditorCell createConstant_4() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "is forced autoplay");
+    editorCell.setCellId("Constant_cyndbf_g0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_5() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "=");
+    editorCell.setCellId("Constant_cyndbf_h0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -250,15 +330,15 @@ import org.jetbrains.mps.openapi.language.SConcept;
       }
     }
   }
-  private EditorCell createConstant_4() {
+  private EditorCell createConstant_6() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "enable post message");
-    editorCell.setCellId("Constant_cyndbf_g0");
+    editorCell.setCellId("Constant_cyndbf_j0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_5() {
+  private EditorCell createConstant_7() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "=");
-    editorCell.setCellId("Constant_cyndbf_h0");
+    editorCell.setCellId("Constant_cyndbf_k0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -333,15 +413,15 @@ import org.jetbrains.mps.openapi.language.SConcept;
       }
     }
   }
-  private EditorCell createConstant_6() {
+  private EditorCell createConstant_8() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "enable maturity login");
-    editorCell.setCellId("Constant_cyndbf_j0");
+    editorCell.setCellId("Constant_cyndbf_m0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_7() {
+  private EditorCell createConstant_9() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "=");
-    editorCell.setCellId("Constant_cyndbf_k0");
+    editorCell.setCellId("Constant_cyndbf_n0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -416,15 +496,15 @@ import org.jetbrains.mps.openapi.language.SConcept;
       }
     }
   }
-  private EditorCell createConstant_8() {
+  private EditorCell createConstant_10() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "disable poster image");
-    editorCell.setCellId("Constant_cyndbf_m0");
+    editorCell.setCellId("Constant_cyndbf_p0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_9() {
+  private EditorCell createConstant_11() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "=");
-    editorCell.setCellId("Constant_cyndbf_n0");
+    editorCell.setCellId("Constant_cyndbf_q0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -499,15 +579,15 @@ import org.jetbrains.mps.openapi.language.SConcept;
       }
     }
   }
-  private EditorCell createConstant_10() {
+  private EditorCell createConstant_12() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "enable back button");
-    editorCell.setCellId("Constant_cyndbf_p0");
+    editorCell.setCellId("Constant_cyndbf_s0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_11() {
+  private EditorCell createConstant_13() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "=");
-    editorCell.setCellId("Constant_cyndbf_q0");
+    editorCell.setCellId("Constant_cyndbf_t0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -582,15 +662,15 @@ import org.jetbrains.mps.openapi.language.SConcept;
       }
     }
   }
-  private EditorCell createConstant_12() {
+  private EditorCell createConstant_14() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "disable back button title");
-    editorCell.setCellId("Constant_cyndbf_s0");
+    editorCell.setCellId("Constant_cyndbf_v0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_13() {
+  private EditorCell createConstant_15() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "=");
-    editorCell.setCellId("Constant_cyndbf_t0");
+    editorCell.setCellId("Constant_cyndbf_w0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -665,15 +745,15 @@ import org.jetbrains.mps.openapi.language.SConcept;
       }
     }
   }
-  private EditorCell createConstant_14() {
+  private EditorCell createConstant_16() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "is audio sticky");
-    editorCell.setCellId("Constant_cyndbf_v0");
+    editorCell.setCellId("Constant_cyndbf_y0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_15() {
+  private EditorCell createConstant_17() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "=");
-    editorCell.setCellId("Constant_cyndbf_w0");
+    editorCell.setCellId("Constant_cyndbf_z0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -748,15 +828,15 @@ import org.jetbrains.mps.openapi.language.SConcept;
       }
     }
   }
-  private EditorCell createConstant_16() {
+  private EditorCell createConstant_18() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "is forced video webview");
-    editorCell.setCellId("Constant_cyndbf_y0");
+    editorCell.setCellId("Constant_cyndbf_bb0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_17() {
+  private EditorCell createConstant_19() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "=");
-    editorCell.setCellId("Constant_cyndbf_z0");
+    editorCell.setCellId("Constant_cyndbf_cb0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -831,6 +911,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink baseUrl$fjSN = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cbad1L, 0x271165bbd10cbad4L, "baseUrl");
+    /*package*/ static final SContainmentLink forcedVolumePercentag$qeD6 = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cbad1L, 0x6909f7b4a82e5b0L, "forcedVolumePercentag");
     /*package*/ static final SContainmentLink isForcedAutoplay$fpia = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cbad1L, 0x271165bbd10cbad6L, "isForcedAutoplay");
     /*package*/ static final SContainmentLink enablePostMessage$fpZd = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cbad1L, 0x271165bbd10cbad9L, "enablePostMessage");
     /*package*/ static final SContainmentLink enableMaturityLogin$fqVh = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cbad1L, 0x271165bbd10cbaddL, "enableMaturityLogin");

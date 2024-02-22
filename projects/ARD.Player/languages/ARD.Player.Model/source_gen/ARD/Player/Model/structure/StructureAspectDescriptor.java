@@ -18,6 +18,9 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptEmbeddedConfig = createDescriptorForEmbeddedConfig();
   /*package*/ final ConceptDescriptor myConceptGenericConfig = createDescriptorForGenericConfig();
+  /*package*/ final ConceptDescriptor myConceptImageTemplateConfig = createDescriptorForImageTemplateConfig();
+  /*package*/ final ConceptDescriptor myConceptImageTemplateNamedSizeConfig = createDescriptorForImageTemplateNamedSizeConfig();
+  /*package*/ final ConceptDescriptor myConceptImageTemplateWidthConfig = createDescriptorForImageTemplateWidthConfig();
   /*package*/ final ConceptDescriptor myConceptPlayerConfig = createDescriptorForPlayerConfig();
   /*package*/ final ConceptDescriptor myConceptPluginConfig = createDescriptorForPluginConfig();
   /*package*/ final ConceptDescriptor myConceptWebConfig = createDescriptorForWebConfig();
@@ -37,7 +40,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptEmbeddedConfig, myConceptGenericConfig, myConceptPlayerConfig, myConceptPluginConfig, myConceptWebConfig);
+    return Arrays.asList(myConceptEmbeddedConfig, myConceptGenericConfig, myConceptImageTemplateConfig, myConceptImageTemplateNamedSizeConfig, myConceptImageTemplateWidthConfig, myConceptPlayerConfig, myConceptPluginConfig, myConceptWebConfig);
   }
 
   @Override
@@ -48,6 +51,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptEmbeddedConfig;
       case LanguageConceptSwitch.GenericConfig:
         return myConceptGenericConfig;
+      case LanguageConceptSwitch.ImageTemplateConfig:
+        return myConceptImageTemplateConfig;
+      case LanguageConceptSwitch.ImageTemplateNamedSizeConfig:
+        return myConceptImageTemplateNamedSizeConfig;
+      case LanguageConceptSwitch.ImageTemplateWidthConfig:
+        return myConceptImageTemplateWidthConfig;
       case LanguageConceptSwitch.PlayerConfig:
         return myConceptPlayerConfig;
       case LanguageConceptSwitch.PluginConfig:
@@ -86,7 +95,40 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("isShowSubtitleAtStart", 0x271165bbd1016148L).target(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695c1L).optional(true).ordered(true).multiple(false).origin("2815143099423088968").done();
     b.aggregate("isAutoplay", 0x271165bbd101614bL).target(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695c1L).optional(true).ordered(true).multiple(false).origin("2815143099423088971").done();
     b.aggregate("isMuted", 0x271165bbd101614fL).target(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695c1L).optional(true).ordered(true).multiple(false).origin("2815143099423088975").done();
+    b.aggregate("vodStartSeconds", 0x6909f7b4a82e567L).target(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695d0L).optional(true).ordered(true).multiple(false).origin("473053312753788263").done();
+    b.aggregate("vodEndSeconds", 0x6909f7b4a82e56eL).target(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695d0L).optional(true).ordered(true).multiple(false).origin("473053312753788270").done();
+    b.aggregate("vodInitialPlayheadSeconds", 0x6909f7b4a82e576L).target(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695d0L).optional(true).ordered(true).multiple(false).origin("473053312753788278").done();
     b.aggregate("isDvrEnabled", 0x271165bbd1016154L).target(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695c1L).optional(true).ordered(true).multiple(false).origin("2815143099423088980").done();
+    b.aggregate("volumePercent", 0x6909f7b4a82e57fL).target(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695d0L).optional(true).ordered(true).multiple(false).origin("473053312753788287").done();
+    b.aggregate("imageTemplateConfig", 0x6909f7b4a82e589L).target(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x6909f7b4a82e594L).optional(true).ordered(true).multiple(false).origin("473053312753788297").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForImageTemplateConfig() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("ARD.Player.Model", "ImageTemplateConfig", 0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x6909f7b4a82e594L);
+    b.class_(false, false, false);
+    b.origin("r:a7e45938-653d-49a7-880e-1689553798fb(ARD.Player.Model.structure)/473053312753788308");
+    b.version(3);
+    b.aggregate("width", 0x6909f7b4a82e597L).target(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x6909f7b4a82e599L).optional(false).ordered(true).multiple(false).origin("473053312753788311").done();
+    b.aggregate("size", 0x6909f7b4a82e59aL).target(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x6909f7b4a82e59dL).optional(false).ordered(true).multiple(true).origin("473053312753788314").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForImageTemplateNamedSizeConfig() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("ARD.Player.Model", "ImageTemplateNamedSizeConfig", 0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x6909f7b4a82e59dL);
+    b.class_(false, false, false);
+    b.origin("r:a7e45938-653d-49a7-880e-1689553798fb(ARD.Player.Model.structure)/473053312753788317");
+    b.version(3);
+    b.aggregate("minWidth", 0x6909f7b4a82e5a9L).target(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695d0L).optional(false).ordered(true).multiple(false).origin("473053312753788329").done();
+    b.aggregate("value", 0x6909f7b4a82e5abL).target(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695c6L).optional(false).ordered(true).multiple(false).origin("473053312753788331").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForImageTemplateWidthConfig() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("ARD.Player.Model", "ImageTemplateWidthConfig", 0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x6909f7b4a82e599L);
+    b.class_(false, false, false);
+    b.origin("r:a7e45938-653d-49a7-880e-1689553798fb(ARD.Player.Model.structure)/473053312753788313");
+    b.version(3);
+    b.aggregate("min", 0x6909f7b4a82e59fL).target(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695d0L).optional(false).ordered(true).multiple(false).origin("473053312753788319").done();
+    b.aggregate("max", 0x6909f7b4a82e5a1L).target(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695d0L).optional(false).ordered(true).multiple(false).origin("473053312753788321").done();
+    b.aggregate("stepSize", 0x6909f7b4a82e5a4L).target(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695d0L).optional(false).ordered(true).multiple(false).origin("473053312753788324").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForPlayerConfig() {
@@ -118,7 +160,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:a7e45938-653d-49a7-880e-1689553798fb(ARD.Player.Model.structure)/2815143099423832785");
     b.version(3);
-    b.aggregate("baseUrl", 0x271165bbd10cbad4L).target(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695c6L).optional(true).ordered(true).multiple(false).origin("2815143099423832788").done();
+    b.aggregate("baseUrl", 0x271165bbd10cbad4L).target(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695c6L).optional(false).ordered(true).multiple(false).origin("2815143099423832788").done();
+    b.aggregate("forcedVolumePercentag", 0x6909f7b4a82e5b0L).target(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695d0L).optional(true).ordered(true).multiple(false).origin("473053312753788336").done();
     b.aggregate("isForcedAutoplay", 0x271165bbd10cbad6L).target(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695c1L).optional(true).ordered(true).multiple(false).origin("2815143099423832790").done();
     b.aggregate("enablePostMessage", 0x271165bbd10cbad9L).target(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695c1L).optional(true).ordered(true).multiple(false).origin("2815143099423832793").done();
     b.aggregate("enableMaturityLogin", 0x271165bbd10cbaddL).target(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695c1L).optional(true).ordered(true).multiple(false).origin("2815143099423832797").done();

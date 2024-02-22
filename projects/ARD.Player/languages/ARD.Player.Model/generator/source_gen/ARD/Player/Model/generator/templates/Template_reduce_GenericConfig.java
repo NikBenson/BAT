@@ -118,18 +118,108 @@ public class Template_reduce_GenericConfig extends TemplateDeclarationBase {
         if (QueriesGenerated.ifMacro_Condition_2_4(new IfMacroContext(context1, ifMacroRef4))) {
           final SNode tnode15 = environment.createOutputNode(myConcepts[1]);
           {
-            tnode15.setProperty(myProperties[0], "isDvrEnabled");
+            tnode15.setProperty(myProperties[0], "vodStartSeconds");
             TemplateContext context6 = context1.subContext();
             {
               Collection<SNode> tlist16 = null;
               final SNode copySrcInput16 = QueriesGenerated.sourceNodeQuery_2_4(new SourceSubstituteMacroNodeContext(context6, copySrcMacro4));
-              tlist16 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput16), copySrcMacro4, "tpl/r:06cdd5b9-ab92-4965-9423-c07eea1d6828/2815143099423914037", context6);
+              tlist16 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput16), copySrcMacro4, "tpl/r:06cdd5b9-ab92-4965-9423-c07eea1d6828/473053312753802315", context6);
               environment.aggregate(tnode15, myAggregationLinks[0], tlist16);
             }
           }
           tlist14 = TemplateUtil.singletonList(tnode15);
         }
         environment.aggregate(tnode1, myAggregationLinks[1], tlist14);
+      }
+      {
+        Collection<SNode> tlist17 = Collections.emptyList();
+        if (QueriesGenerated.ifMacro_Condition_2_5(new IfMacroContext(context1, ifMacroRef5))) {
+          final SNode tnode18 = environment.createOutputNode(myConcepts[1]);
+          {
+            tnode18.setProperty(myProperties[0], "vodEndSeconds");
+            TemplateContext context7 = context1.subContext();
+            {
+              Collection<SNode> tlist19 = null;
+              final SNode copySrcInput19 = QueriesGenerated.sourceNodeQuery_2_5(new SourceSubstituteMacroNodeContext(context7, copySrcMacro5));
+              tlist19 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput19), copySrcMacro5, "tpl/r:06cdd5b9-ab92-4965-9423-c07eea1d6828/473053312753802318", context7);
+              environment.aggregate(tnode18, myAggregationLinks[0], tlist19);
+            }
+          }
+          tlist17 = TemplateUtil.singletonList(tnode18);
+        }
+        environment.aggregate(tnode1, myAggregationLinks[1], tlist17);
+      }
+      {
+        Collection<SNode> tlist20 = Collections.emptyList();
+        if (QueriesGenerated.ifMacro_Condition_2_6(new IfMacroContext(context1, ifMacroRef6))) {
+          final SNode tnode21 = environment.createOutputNode(myConcepts[1]);
+          {
+            tnode21.setProperty(myProperties[0], "vodInitialPlayheadSeconds");
+            TemplateContext context8 = context1.subContext();
+            {
+              Collection<SNode> tlist22 = null;
+              final SNode copySrcInput22 = QueriesGenerated.sourceNodeQuery_2_6(new SourceSubstituteMacroNodeContext(context8, copySrcMacro6));
+              tlist22 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput22), copySrcMacro6, "tpl/r:06cdd5b9-ab92-4965-9423-c07eea1d6828/473053312753802322", context8);
+              environment.aggregate(tnode21, myAggregationLinks[0], tlist22);
+            }
+          }
+          tlist20 = TemplateUtil.singletonList(tnode21);
+        }
+        environment.aggregate(tnode1, myAggregationLinks[1], tlist20);
+      }
+      {
+        Collection<SNode> tlist23 = Collections.emptyList();
+        if (QueriesGenerated.ifMacro_Condition_2_7(new IfMacroContext(context1, ifMacroRef7))) {
+          final SNode tnode24 = environment.createOutputNode(myConcepts[1]);
+          {
+            tnode24.setProperty(myProperties[0], "isDvrEnabled");
+            TemplateContext context9 = context1.subContext();
+            {
+              Collection<SNode> tlist25 = null;
+              final SNode copySrcInput25 = QueriesGenerated.sourceNodeQuery_2_7(new SourceSubstituteMacroNodeContext(context9, copySrcMacro7));
+              tlist25 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput25), copySrcMacro7, "tpl/r:06cdd5b9-ab92-4965-9423-c07eea1d6828/2815143099423914037", context9);
+              environment.aggregate(tnode24, myAggregationLinks[0], tlist25);
+            }
+          }
+          tlist23 = TemplateUtil.singletonList(tnode24);
+        }
+        environment.aggregate(tnode1, myAggregationLinks[1], tlist23);
+      }
+      {
+        Collection<SNode> tlist26 = Collections.emptyList();
+        if (QueriesGenerated.ifMacro_Condition_2_8(new IfMacroContext(context1, ifMacroRef8))) {
+          final SNode tnode27 = environment.createOutputNode(myConcepts[1]);
+          {
+            tnode27.setProperty(myProperties[0], "volumePercent");
+            TemplateContext context10 = context1.subContext();
+            {
+              Collection<SNode> tlist28 = null;
+              final SNode copySrcInput28 = QueriesGenerated.sourceNodeQuery_2_8(new SourceSubstituteMacroNodeContext(context10, copySrcMacro8));
+              tlist28 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput28), copySrcMacro8, "tpl/r:06cdd5b9-ab92-4965-9423-c07eea1d6828/473053312753802325", context10);
+              environment.aggregate(tnode27, myAggregationLinks[0], tlist28);
+            }
+          }
+          tlist26 = TemplateUtil.singletonList(tnode27);
+        }
+        environment.aggregate(tnode1, myAggregationLinks[1], tlist26);
+      }
+      {
+        Collection<SNode> tlist29 = Collections.emptyList();
+        if (QueriesGenerated.ifMacro_Condition_2_9(new IfMacroContext(context1, ifMacroRef9))) {
+          final SNode tnode30 = environment.createOutputNode(myConcepts[1]);
+          {
+            tnode30.setProperty(myProperties[0], "imagetemplateConfig");
+            TemplateContext context11 = context1.subContext();
+            {
+              Collection<SNode> tlist31 = null;
+              final SNode copySrcInput31 = QueriesGenerated.sourceNodeQuery_2_9(new SourceSubstituteMacroNodeContext(context11, copySrcMacro9));
+              tlist31 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput31), copySrcMacro9, "tpl/r:06cdd5b9-ab92-4965-9423-c07eea1d6828/473053312753802328", context11);
+              environment.aggregate(tnode30, myAggregationLinks[0], tlist31);
+            }
+          }
+          tlist29 = TemplateUtil.singletonList(tnode30);
+        }
+        environment.aggregate(tnode1, myAggregationLinks[1], tlist29);
       }
     }
     FragmentResult rv = nodeFragment(2, tnode1);
@@ -174,6 +264,16 @@ public class Template_reduce_GenericConfig extends TemplateDeclarationBase {
   private static final SNodePointer ifMacroRef2 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753053610");
   private static final SNodePointer copySrcMacro3 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "2815143099423913967");
   private static final SNodePointer ifMacroRef3 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753064168");
-  private static final SNodePointer copySrcMacro4 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "2815143099423914041");
-  private static final SNodePointer ifMacroRef4 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753073521");
+  private static final SNodePointer copySrcMacro4 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753802332");
+  private static final SNodePointer ifMacroRef4 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753803198");
+  private static final SNodePointer copySrcMacro5 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753802632");
+  private static final SNodePointer ifMacroRef5 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753809977");
+  private static final SNodePointer copySrcMacro6 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753802703");
+  private static final SNodePointer ifMacroRef6 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753816830");
+  private static final SNodePointer copySrcMacro7 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "2815143099423914041");
+  private static final SNodePointer ifMacroRef7 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753073521");
+  private static final SNodePointer copySrcMacro8 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753803004");
+  private static final SNodePointer ifMacroRef8 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753819340");
+  private static final SNodePointer copySrcMacro9 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753803075");
+  private static final SNodePointer ifMacroRef9 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753823763");
 }

@@ -11,6 +11,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_EmbeddedConfig;
   private ConceptPresentation props_GenericConfig;
+  private ConceptPresentation props_ImageTemplateConfig;
+  private ConceptPresentation props_ImageTemplateNamedSizeConfig;
+  private ConceptPresentation props_ImageTemplateWidthConfig;
   private ConceptPresentation props_PlayerConfig;
   private ConceptPresentation props_PluginConfig;
   private ConceptPresentation props_WebConfig;
@@ -34,6 +37,27 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_GenericConfig = cpb.create();
         }
         return props_GenericConfig;
+      case LanguageConceptSwitch.ImageTemplateConfig:
+        if (props_ImageTemplateConfig == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ImageTemplateConfig");
+          props_ImageTemplateConfig = cpb.create();
+        }
+        return props_ImageTemplateConfig;
+      case LanguageConceptSwitch.ImageTemplateNamedSizeConfig:
+        if (props_ImageTemplateNamedSizeConfig == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ImageTemplateNamedSizeConfig");
+          props_ImageTemplateNamedSizeConfig = cpb.create();
+        }
+        return props_ImageTemplateNamedSizeConfig;
+      case LanguageConceptSwitch.ImageTemplateWidthConfig:
+        if (props_ImageTemplateWidthConfig == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ImageTemplateWidthConfig");
+          props_ImageTemplateWidthConfig = cpb.create();
+        }
+        return props_ImageTemplateWidthConfig;
       case LanguageConceptSwitch.PlayerConfig:
         if (props_PlayerConfig == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
