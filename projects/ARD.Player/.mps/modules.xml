@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MPSProject">
+    <projectModules>
+      <modulePath path="$PROJECT_DIR$/devkits/ARD.Player/ARD.Player.devkit" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/ARD.Player.Model.sandbox/ARD.Player.Model.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/ARD.Player.Model/ARD.Player.Model.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/../json/devkits/json/json.devkit" folder="" />
+      <modulePath path="$PROJECT_DIR$/../json/languages/json.file.sandbox/json.file.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/../json/languages/json.file/json.file.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/../json/languages/json.model/json.model.mpl" folder="" />
+    </projectModules>
+  </component>
+</project>
