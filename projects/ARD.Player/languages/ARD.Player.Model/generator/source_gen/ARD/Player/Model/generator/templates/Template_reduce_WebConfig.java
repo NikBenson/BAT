@@ -13,10 +13,10 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Collection;
-import java.util.Collections;
-import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import java.util.Collections;
+import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.runtime.ApplySink;
 import jetbrains.mps.generator.runtime.MetaObjectContainer;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -42,166 +42,180 @@ public class Template_reduce_WebConfig extends TemplateDeclarationBase {
     {
       TemplateContext context1 = context.subContext();
       {
-        Collection<SNode> tlist2 = Collections.emptyList();
-        if (QueriesGenerated.ifMacro_Condition_4_0(new IfMacroContext(context1, ifMacroRef))) {
-          final SNode tnode3 = environment.createOutputNode(myConcepts[1]);
+        final SNode tnode2 = environment.createOutputNode(myConcepts[1]);
+        {
+          tnode2.setProperty(myProperties[0], "baseUrl");
+          TemplateContext context2 = context1.subContext();
           {
-            tnode3.setProperty(myProperties[0], "baseUrl");
-            TemplateContext context2 = context1.subContext();
-            {
-              Collection<SNode> tlist4 = null;
-              final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_4_0(new SourceSubstituteMacroNodeContext(context2, copySrcMacro));
-              tlist4 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput4), copySrcMacro, "tpl/r:06cdd5b9-ab92-4965-9423-c07eea1d6828/2815143099423942455", context2);
-              environment.aggregate(tnode3, myAggregationLinks[0], tlist4);
-            }
+            Collection<SNode> tlist3 = null;
+            final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_4_0(new SourceSubstituteMacroNodeContext(context2, copySrcMacro));
+            tlist3 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput3), copySrcMacro, "tpl/r:06cdd5b9-ab92-4965-9423-c07eea1d6828/2815143099423942455", context2);
+            environment.aggregate(tnode2, myAggregationLinks[0], tlist3);
           }
-          tlist2 = TemplateUtil.singletonList(tnode3);
         }
-        environment.aggregate(tnode1, myAggregationLinks[1], tlist2);
+        environment.aggregate(tnode1, myAggregationLinks[1], tnode2);
       }
       {
-        Collection<SNode> tlist5 = Collections.emptyList();
-        if (QueriesGenerated.ifMacro_Condition_4_1(new IfMacroContext(context1, ifMacroRef1))) {
-          final SNode tnode6 = environment.createOutputNode(myConcepts[1]);
+        Collection<SNode> tlist4 = Collections.emptyList();
+        if (QueriesGenerated.ifMacro_Condition_4_0(new IfMacroContext(context1, ifMacroRef))) {
+          final SNode tnode5 = environment.createOutputNode(myConcepts[1]);
           {
-            tnode6.setProperty(myProperties[0], "isForcedAutoplay");
+            tnode5.setProperty(myProperties[0], "isForcedAutoplay");
             TemplateContext context3 = context1.subContext();
             {
-              Collection<SNode> tlist7 = null;
-              final SNode copySrcInput7 = QueriesGenerated.sourceNodeQuery_4_1(new SourceSubstituteMacroNodeContext(context3, copySrcMacro1));
-              tlist7 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput7), copySrcMacro1, "tpl/r:06cdd5b9-ab92-4965-9423-c07eea1d6828/2815143099423942452", context3);
-              environment.aggregate(tnode6, myAggregationLinks[0], tlist7);
+              Collection<SNode> tlist6 = null;
+              final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_4_1(new SourceSubstituteMacroNodeContext(context3, copySrcMacro1));
+              tlist6 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput6), copySrcMacro1, "tpl/r:06cdd5b9-ab92-4965-9423-c07eea1d6828/2815143099423942452", context3);
+              environment.aggregate(tnode5, myAggregationLinks[0], tlist6);
             }
           }
-          tlist5 = TemplateUtil.singletonList(tnode6);
+          tlist4 = TemplateUtil.singletonList(tnode5);
         }
-        environment.aggregate(tnode1, myAggregationLinks[1], tlist5);
+        environment.aggregate(tnode1, myAggregationLinks[1], tlist4);
       }
       {
-        Collection<SNode> tlist8 = Collections.emptyList();
-        if (QueriesGenerated.ifMacro_Condition_4_2(new IfMacroContext(context1, ifMacroRef2))) {
-          final SNode tnode9 = environment.createOutputNode(myConcepts[1]);
+        Collection<SNode> tlist7 = Collections.emptyList();
+        if (QueriesGenerated.ifMacro_Condition_4_1(new IfMacroContext(context1, ifMacroRef1))) {
+          final SNode tnode8 = environment.createOutputNode(myConcepts[1]);
           {
-            tnode9.setProperty(myProperties[0], "enablePostMessage");
+            tnode8.setProperty(myProperties[0], "forcedVolumePercentage");
             TemplateContext context4 = context1.subContext();
             {
-              Collection<SNode> tlist10 = null;
-              final SNode copySrcInput10 = QueriesGenerated.sourceNodeQuery_4_2(new SourceSubstituteMacroNodeContext(context4, copySrcMacro2));
-              tlist10 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput10), copySrcMacro2, "tpl/r:06cdd5b9-ab92-4965-9423-c07eea1d6828/2815143099423942449", context4);
-              environment.aggregate(tnode9, myAggregationLinks[0], tlist10);
+              Collection<SNode> tlist9 = null;
+              final SNode copySrcInput9 = QueriesGenerated.sourceNodeQuery_4_2(new SourceSubstituteMacroNodeContext(context4, copySrcMacro2));
+              tlist9 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput9), copySrcMacro2, "tpl/r:06cdd5b9-ab92-4965-9423-c07eea1d6828/473053312753791293", context4);
+              environment.aggregate(tnode8, myAggregationLinks[0], tlist9);
             }
           }
-          tlist8 = TemplateUtil.singletonList(tnode9);
+          tlist7 = TemplateUtil.singletonList(tnode8);
         }
-        environment.aggregate(tnode1, myAggregationLinks[1], tlist8);
+        environment.aggregate(tnode1, myAggregationLinks[1], tlist7);
       }
       {
-        Collection<SNode> tlist11 = Collections.emptyList();
-        if (QueriesGenerated.ifMacro_Condition_4_3(new IfMacroContext(context1, ifMacroRef3))) {
-          final SNode tnode12 = environment.createOutputNode(myConcepts[1]);
+        Collection<SNode> tlist10 = Collections.emptyList();
+        if (QueriesGenerated.ifMacro_Condition_4_2(new IfMacroContext(context1, ifMacroRef2))) {
+          final SNode tnode11 = environment.createOutputNode(myConcepts[1]);
           {
-            tnode12.setProperty(myProperties[0], "enableMaturityLogin");
+            tnode11.setProperty(myProperties[0], "enablePostMessage");
             TemplateContext context5 = context1.subContext();
             {
-              Collection<SNode> tlist13 = null;
-              final SNode copySrcInput13 = QueriesGenerated.sourceNodeQuery_4_3(new SourceSubstituteMacroNodeContext(context5, copySrcMacro3));
-              tlist13 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput13), copySrcMacro3, "tpl/r:06cdd5b9-ab92-4965-9423-c07eea1d6828/2815143099423942446", context5);
-              environment.aggregate(tnode12, myAggregationLinks[0], tlist13);
+              Collection<SNode> tlist12 = null;
+              final SNode copySrcInput12 = QueriesGenerated.sourceNodeQuery_4_3(new SourceSubstituteMacroNodeContext(context5, copySrcMacro3));
+              tlist12 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput12), copySrcMacro3, "tpl/r:06cdd5b9-ab92-4965-9423-c07eea1d6828/2815143099423942449", context5);
+              environment.aggregate(tnode11, myAggregationLinks[0], tlist12);
             }
           }
-          tlist11 = TemplateUtil.singletonList(tnode12);
+          tlist10 = TemplateUtil.singletonList(tnode11);
         }
-        environment.aggregate(tnode1, myAggregationLinks[1], tlist11);
+        environment.aggregate(tnode1, myAggregationLinks[1], tlist10);
       }
       {
-        Collection<SNode> tlist14 = Collections.emptyList();
-        if (QueriesGenerated.ifMacro_Condition_4_4(new IfMacroContext(context1, ifMacroRef4))) {
-          final SNode tnode15 = environment.createOutputNode(myConcepts[1]);
+        Collection<SNode> tlist13 = Collections.emptyList();
+        if (QueriesGenerated.ifMacro_Condition_4_3(new IfMacroContext(context1, ifMacroRef3))) {
+          final SNode tnode14 = environment.createOutputNode(myConcepts[1]);
           {
-            tnode15.setProperty(myProperties[0], "disablePosterImage");
+            tnode14.setProperty(myProperties[0], "enableMaturityLogin");
             TemplateContext context6 = context1.subContext();
             {
-              Collection<SNode> tlist16 = null;
-              final SNode copySrcInput16 = QueriesGenerated.sourceNodeQuery_4_4(new SourceSubstituteMacroNodeContext(context6, copySrcMacro4));
-              tlist16 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput16), copySrcMacro4, "tpl/r:06cdd5b9-ab92-4965-9423-c07eea1d6828/2815143099423942443", context6);
-              environment.aggregate(tnode15, myAggregationLinks[0], tlist16);
+              Collection<SNode> tlist15 = null;
+              final SNode copySrcInput15 = QueriesGenerated.sourceNodeQuery_4_4(new SourceSubstituteMacroNodeContext(context6, copySrcMacro4));
+              tlist15 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput15), copySrcMacro4, "tpl/r:06cdd5b9-ab92-4965-9423-c07eea1d6828/2815143099423942446", context6);
+              environment.aggregate(tnode14, myAggregationLinks[0], tlist15);
             }
           }
-          tlist14 = TemplateUtil.singletonList(tnode15);
+          tlist13 = TemplateUtil.singletonList(tnode14);
         }
-        environment.aggregate(tnode1, myAggregationLinks[1], tlist14);
+        environment.aggregate(tnode1, myAggregationLinks[1], tlist13);
       }
       {
-        Collection<SNode> tlist17 = Collections.emptyList();
-        if (QueriesGenerated.ifMacro_Condition_4_5(new IfMacroContext(context1, ifMacroRef5))) {
-          final SNode tnode18 = environment.createOutputNode(myConcepts[1]);
+        Collection<SNode> tlist16 = Collections.emptyList();
+        if (QueriesGenerated.ifMacro_Condition_4_4(new IfMacroContext(context1, ifMacroRef4))) {
+          final SNode tnode17 = environment.createOutputNode(myConcepts[1]);
           {
-            tnode18.setProperty(myProperties[0], "enableBackButton");
+            tnode17.setProperty(myProperties[0], "disablePosterImage");
             TemplateContext context7 = context1.subContext();
             {
-              Collection<SNode> tlist19 = null;
-              final SNode copySrcInput19 = QueriesGenerated.sourceNodeQuery_4_5(new SourceSubstituteMacroNodeContext(context7, copySrcMacro5));
-              tlist19 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput19), copySrcMacro5, "tpl/r:06cdd5b9-ab92-4965-9423-c07eea1d6828/2815143099423942440", context7);
-              environment.aggregate(tnode18, myAggregationLinks[0], tlist19);
+              Collection<SNode> tlist18 = null;
+              final SNode copySrcInput18 = QueriesGenerated.sourceNodeQuery_4_5(new SourceSubstituteMacroNodeContext(context7, copySrcMacro5));
+              tlist18 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput18), copySrcMacro5, "tpl/r:06cdd5b9-ab92-4965-9423-c07eea1d6828/2815143099423942443", context7);
+              environment.aggregate(tnode17, myAggregationLinks[0], tlist18);
             }
           }
-          tlist17 = TemplateUtil.singletonList(tnode18);
+          tlist16 = TemplateUtil.singletonList(tnode17);
         }
-        environment.aggregate(tnode1, myAggregationLinks[1], tlist17);
+        environment.aggregate(tnode1, myAggregationLinks[1], tlist16);
       }
       {
-        Collection<SNode> tlist20 = Collections.emptyList();
-        if (QueriesGenerated.ifMacro_Condition_4_6(new IfMacroContext(context1, ifMacroRef6))) {
-          final SNode tnode21 = environment.createOutputNode(myConcepts[1]);
+        Collection<SNode> tlist19 = Collections.emptyList();
+        if (QueriesGenerated.ifMacro_Condition_4_5(new IfMacroContext(context1, ifMacroRef5))) {
+          final SNode tnode20 = environment.createOutputNode(myConcepts[1]);
           {
-            tnode21.setProperty(myProperties[0], "disablebackButtonTitle");
+            tnode20.setProperty(myProperties[0], "enableBackButton");
             TemplateContext context8 = context1.subContext();
             {
-              Collection<SNode> tlist22 = null;
-              final SNode copySrcInput22 = QueriesGenerated.sourceNodeQuery_4_6(new SourceSubstituteMacroNodeContext(context8, copySrcMacro6));
-              tlist22 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput22), copySrcMacro6, "tpl/r:06cdd5b9-ab92-4965-9423-c07eea1d6828/2815143099423942437", context8);
-              environment.aggregate(tnode21, myAggregationLinks[0], tlist22);
+              Collection<SNode> tlist21 = null;
+              final SNode copySrcInput21 = QueriesGenerated.sourceNodeQuery_4_6(new SourceSubstituteMacroNodeContext(context8, copySrcMacro6));
+              tlist21 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput21), copySrcMacro6, "tpl/r:06cdd5b9-ab92-4965-9423-c07eea1d6828/2815143099423942440", context8);
+              environment.aggregate(tnode20, myAggregationLinks[0], tlist21);
             }
           }
-          tlist20 = TemplateUtil.singletonList(tnode21);
+          tlist19 = TemplateUtil.singletonList(tnode20);
         }
-        environment.aggregate(tnode1, myAggregationLinks[1], tlist20);
+        environment.aggregate(tnode1, myAggregationLinks[1], tlist19);
       }
       {
-        Collection<SNode> tlist23 = Collections.emptyList();
-        if (QueriesGenerated.ifMacro_Condition_4_7(new IfMacroContext(context1, ifMacroRef7))) {
-          final SNode tnode24 = environment.createOutputNode(myConcepts[1]);
+        Collection<SNode> tlist22 = Collections.emptyList();
+        if (QueriesGenerated.ifMacro_Condition_4_6(new IfMacroContext(context1, ifMacroRef6))) {
+          final SNode tnode23 = environment.createOutputNode(myConcepts[1]);
           {
-            tnode24.setProperty(myProperties[0], "isAudioSticky");
+            tnode23.setProperty(myProperties[0], "disablebackButtonTitle");
             TemplateContext context9 = context1.subContext();
             {
-              Collection<SNode> tlist25 = null;
-              final SNode copySrcInput25 = QueriesGenerated.sourceNodeQuery_4_7(new SourceSubstituteMacroNodeContext(context9, copySrcMacro7));
-              tlist25 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput25), copySrcMacro7, "tpl/r:06cdd5b9-ab92-4965-9423-c07eea1d6828/2815143099423942434", context9);
-              environment.aggregate(tnode24, myAggregationLinks[0], tlist25);
+              Collection<SNode> tlist24 = null;
+              final SNode copySrcInput24 = QueriesGenerated.sourceNodeQuery_4_7(new SourceSubstituteMacroNodeContext(context9, copySrcMacro7));
+              tlist24 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput24), copySrcMacro7, "tpl/r:06cdd5b9-ab92-4965-9423-c07eea1d6828/2815143099423942437", context9);
+              environment.aggregate(tnode23, myAggregationLinks[0], tlist24);
             }
           }
-          tlist23 = TemplateUtil.singletonList(tnode24);
+          tlist22 = TemplateUtil.singletonList(tnode23);
         }
-        environment.aggregate(tnode1, myAggregationLinks[1], tlist23);
+        environment.aggregate(tnode1, myAggregationLinks[1], tlist22);
       }
       {
-        Collection<SNode> tlist26 = Collections.emptyList();
-        if (QueriesGenerated.ifMacro_Condition_4_8(new IfMacroContext(context1, ifMacroRef8))) {
-          final SNode tnode27 = environment.createOutputNode(myConcepts[1]);
+        Collection<SNode> tlist25 = Collections.emptyList();
+        if (QueriesGenerated.ifMacro_Condition_4_7(new IfMacroContext(context1, ifMacroRef7))) {
+          final SNode tnode26 = environment.createOutputNode(myConcepts[1]);
           {
-            tnode27.setProperty(myProperties[0], "isForcedVideoView");
+            tnode26.setProperty(myProperties[0], "isAudioSticky");
             TemplateContext context10 = context1.subContext();
             {
-              Collection<SNode> tlist28 = null;
-              final SNode copySrcInput28 = QueriesGenerated.sourceNodeQuery_4_8(new SourceSubstituteMacroNodeContext(context10, copySrcMacro8));
-              tlist28 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput28), copySrcMacro8, "tpl/r:06cdd5b9-ab92-4965-9423-c07eea1d6828/2815143099423942431", context10);
-              environment.aggregate(tnode27, myAggregationLinks[0], tlist28);
+              Collection<SNode> tlist27 = null;
+              final SNode copySrcInput27 = QueriesGenerated.sourceNodeQuery_4_8(new SourceSubstituteMacroNodeContext(context10, copySrcMacro8));
+              tlist27 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput27), copySrcMacro8, "tpl/r:06cdd5b9-ab92-4965-9423-c07eea1d6828/2815143099423942434", context10);
+              environment.aggregate(tnode26, myAggregationLinks[0], tlist27);
             }
           }
-          tlist26 = TemplateUtil.singletonList(tnode27);
+          tlist25 = TemplateUtil.singletonList(tnode26);
         }
-        environment.aggregate(tnode1, myAggregationLinks[1], tlist26);
+        environment.aggregate(tnode1, myAggregationLinks[1], tlist25);
+      }
+      {
+        Collection<SNode> tlist28 = Collections.emptyList();
+        if (QueriesGenerated.ifMacro_Condition_4_8(new IfMacroContext(context1, ifMacroRef8))) {
+          final SNode tnode29 = environment.createOutputNode(myConcepts[1]);
+          {
+            tnode29.setProperty(myProperties[0], "isForcedVideoView");
+            TemplateContext context11 = context1.subContext();
+            {
+              Collection<SNode> tlist30 = null;
+              final SNode copySrcInput30 = QueriesGenerated.sourceNodeQuery_4_9(new SourceSubstituteMacroNodeContext(context11, copySrcMacro9));
+              tlist30 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput30), copySrcMacro9, "tpl/r:06cdd5b9-ab92-4965-9423-c07eea1d6828/2815143099423942431", context11);
+              environment.aggregate(tnode29, myAggregationLinks[0], tlist30);
+            }
+          }
+          tlist28 = TemplateUtil.singletonList(tnode29);
+        }
+        environment.aggregate(tnode1, myAggregationLinks[1], tlist28);
       }
     }
     FragmentResult rv = nodeFragment(2, tnode1);
@@ -239,21 +253,22 @@ public class Template_reduce_WebConfig extends TemplateDeclarationBase {
     }
   }
   private static final SNodePointer copySrcMacro = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "2815143099423942459");
-  private static final SNodePointer ifMacroRef = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753575908");
   private static final SNodePointer copySrcMacro1 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "2815143099423942759");
-  private static final SNodePointer ifMacroRef1 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753584626");
-  private static final SNodePointer copySrcMacro2 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "2815143099423942838");
+  private static final SNodePointer ifMacroRef = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753584626");
+  private static final SNodePointer copySrcMacro2 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753791297");
+  private static final SNodePointer ifMacroRef1 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753791649");
+  private static final SNodePointer copySrcMacro3 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "2815143099423942838");
   private static final SNodePointer ifMacroRef2 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753591316");
-  private static final SNodePointer copySrcMacro3 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "2815143099423942909");
+  private static final SNodePointer copySrcMacro4 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "2815143099423942909");
   private static final SNodePointer ifMacroRef3 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753593857");
-  private static final SNodePointer copySrcMacro4 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "2815143099423942980");
+  private static final SNodePointer copySrcMacro5 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "2815143099423942980");
   private static final SNodePointer ifMacroRef4 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753597647");
-  private static final SNodePointer copySrcMacro5 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "2815143099423943051");
+  private static final SNodePointer copySrcMacro6 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "2815143099423943051");
   private static final SNodePointer ifMacroRef5 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753601443");
-  private static final SNodePointer copySrcMacro6 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "2815143099423943122");
+  private static final SNodePointer copySrcMacro7 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "2815143099423943122");
   private static final SNodePointer ifMacroRef6 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753604133");
-  private static final SNodePointer copySrcMacro7 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "2815143099423943193");
+  private static final SNodePointer copySrcMacro8 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "2815143099423943193");
   private static final SNodePointer ifMacroRef7 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753606007");
-  private static final SNodePointer copySrcMacro8 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "2815143099423943264");
+  private static final SNodePointer copySrcMacro9 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "2815143099423943264");
   private static final SNodePointer ifMacroRef8 = new SNodePointer("r:06cdd5b9-ab92-4965-9423-c07eea1d6828(ARD.Player.Model.generator.templates@generator)", "473053312753607238");
 }

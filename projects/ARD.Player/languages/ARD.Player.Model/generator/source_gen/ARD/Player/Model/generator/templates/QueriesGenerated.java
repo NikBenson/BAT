@@ -45,13 +45,28 @@ public class QueriesGenerated {
     return SNodeOperations.hasRole(SLinkOperations.getTarget(_context.getNode(), LINKS.isMuted$2UwO), LINKS.isMuted$2UwO);
   }
   public static boolean ifMacro_Condition_2_4(final IfMacroContext _context) {
+    return SNodeOperations.hasRole(SLinkOperations.getTarget(_context.getNode(), LINKS.vodStartSeconds$n0CT), LINKS.vodStartSeconds$n0CT);
+  }
+  public static boolean ifMacro_Condition_2_5(final IfMacroContext _context) {
+    return SNodeOperations.hasRole(SLinkOperations.getTarget(_context.getNode(), LINKS.vodEndSeconds$n7dl), LINKS.vodEndSeconds$n7dl);
+  }
+  public static boolean ifMacro_Condition_2_6(final IfMacroContext _context) {
+    return SNodeOperations.hasRole(SLinkOperations.getTarget(_context.getNode(), LINKS.vodInitialPlayheadSeconds$n95t), LINKS.vodInitialPlayheadSeconds$n95t);
+  }
+  public static boolean ifMacro_Condition_2_7(final IfMacroContext _context) {
     return SNodeOperations.hasRole(SLinkOperations.getTarget(_context.getNode(), LINKS.isDvrEnabled$30Be), LINKS.isDvrEnabled$30Be);
   }
+  public static boolean ifMacro_Condition_2_8(final IfMacroContext _context) {
+    return SNodeOperations.hasRole(SLinkOperations.getTarget(_context.getNode(), LINKS.volumePercent$ng7V), LINKS.volumePercent$ng7V);
+  }
+  public static boolean ifMacro_Condition_2_9(final IfMacroContext _context) {
+    return SNodeOperations.hasRole(SLinkOperations.getTarget(_context.getNode(), LINKS.imageTemplateConfig$nnpq), LINKS.imageTemplateConfig$nnpq);
+  }
   public static boolean ifMacro_Condition_4_0(final IfMacroContext _context) {
-    return SNodeOperations.hasRole(SLinkOperations.getTarget(_context.getNode(), LINKS.baseUrl$fjSN), LINKS.baseUrl$fjSN);
+    return SNodeOperations.hasRole(SLinkOperations.getTarget(_context.getNode(), LINKS.isForcedAutoplay$fpia), LINKS.isForcedAutoplay$fpia);
   }
   public static boolean ifMacro_Condition_4_1(final IfMacroContext _context) {
-    return SNodeOperations.hasRole(SLinkOperations.getTarget(_context.getNode(), LINKS.isForcedAutoplay$fpia), LINKS.isForcedAutoplay$fpia);
+    return SNodeOperations.hasRole(SLinkOperations.getTarget(_context.getNode(), LINKS.forcedVolumePercentag$qeD6), LINKS.forcedVolumePercentag$qeD6);
   }
   public static boolean ifMacro_Condition_4_2(final IfMacroContext _context) {
     return SNodeOperations.hasRole(SLinkOperations.getTarget(_context.getNode(), LINKS.enablePostMessage$fpZd), LINKS.enablePostMessage$fpZd);
@@ -105,7 +120,22 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), LINKS.isMuted$2UwO);
   }
   public static SNode sourceNodeQuery_2_4(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), LINKS.vodStartSeconds$n0CT);
+  }
+  public static SNode sourceNodeQuery_2_5(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), LINKS.vodEndSeconds$n7dl);
+  }
+  public static SNode sourceNodeQuery_2_6(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), LINKS.vodInitialPlayheadSeconds$n95t);
+  }
+  public static SNode sourceNodeQuery_2_7(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), LINKS.isDvrEnabled$30Be);
+  }
+  public static SNode sourceNodeQuery_2_8(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), LINKS.volumePercent$ng7V);
+  }
+  public static SNode sourceNodeQuery_2_9(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), LINKS.imageTemplateConfig$nnpq);
   }
   public static SNode sourceNodeQuery_3_0(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), LINKS.config$pf3X);
@@ -117,24 +147,27 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), LINKS.isForcedAutoplay$fpia);
   }
   public static SNode sourceNodeQuery_4_2(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), LINKS.enablePostMessage$fpZd);
+    return SLinkOperations.getTarget(_context.getNode(), LINKS.forcedVolumePercentag$qeD6);
   }
   public static SNode sourceNodeQuery_4_3(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), LINKS.enableMaturityLogin$fqVh);
+    return SLinkOperations.getTarget(_context.getNode(), LINKS.enablePostMessage$fpZd);
   }
   public static SNode sourceNodeQuery_4_4(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), LINKS.disablePosterImage$hTKQ);
+    return SLinkOperations.getTarget(_context.getNode(), LINKS.enableMaturityLogin$fqVh);
   }
   public static SNode sourceNodeQuery_4_5(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), LINKS.enableBackButton$hVaW);
+    return SLinkOperations.getTarget(_context.getNode(), LINKS.disablePosterImage$hTKQ);
   }
   public static SNode sourceNodeQuery_4_6(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), LINKS.disableBackButtonTitle$i1Jo);
+    return SLinkOperations.getTarget(_context.getNode(), LINKS.enableBackButton$hVaW);
   }
   public static SNode sourceNodeQuery_4_7(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), LINKS.isAudioSticky$i8yP);
+    return SLinkOperations.getTarget(_context.getNode(), LINKS.disableBackButtonTitle$i1Jo);
   }
   public static SNode sourceNodeQuery_4_8(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), LINKS.isAudioSticky$i8yP);
+  }
+  public static SNode sourceNodeQuery_4_9(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), LINKS.isForcedVideoView$if_j);
   }
   public static SNode sourceNodeQuery_5_0(final SourceSubstituteMacroNodeContext _context) {
@@ -149,8 +182,29 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_5_3(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), LINKS.iOS$vOG0);
   }
+  public static SNode sourceNodeQuery_6_0(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), LINKS.width$ReAC);
+  }
+  public static SNode sourceNodeQuery_7_0(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), LINKS.minWidth$RnYL);
+  }
+  public static SNode sourceNodeQuery_7_1(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), LINKS.value$Rto8);
+  }
+  public static SNode sourceNodeQuery_8_0(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), LINKS.min$RgFm);
+  }
+  public static SNode sourceNodeQuery_8_1(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), LINKS.max$Rm4H);
+  }
+  public static SNode sourceNodeQuery_8_2(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), LINKS.stepSize$RmLK);
+  }
   public static Iterable<SNode> sourceNodesQuery_5_0(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), LINKS.plugin$vUMq);
+  }
+  public static Iterable<SNode> sourceNodesQuery_6_0(final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getChildren(_context.getNode(), LINKS.size$RfjF);
   }
 
   private static final class PROPS {
@@ -167,9 +221,14 @@ public class QueriesGenerated {
     /*package*/ static final SContainmentLink isShowSubtitleAtStart$2NWo = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cba8aL, 0x271165bbd1016148L, "isShowSubtitleAtStart");
     /*package*/ static final SContainmentLink isAutoplay$2T$K = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cba8aL, 0x271165bbd101614bL, "isAutoplay");
     /*package*/ static final SContainmentLink isMuted$2UwO = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cba8aL, 0x271165bbd101614fL, "isMuted");
+    /*package*/ static final SContainmentLink vodStartSeconds$n0CT = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cba8aL, 0x6909f7b4a82e567L, "vodStartSeconds");
+    /*package*/ static final SContainmentLink vodEndSeconds$n7dl = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cba8aL, 0x6909f7b4a82e56eL, "vodEndSeconds");
+    /*package*/ static final SContainmentLink vodInitialPlayheadSeconds$n95t = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cba8aL, 0x6909f7b4a82e576L, "vodInitialPlayheadSeconds");
     /*package*/ static final SContainmentLink isDvrEnabled$30Be = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cba8aL, 0x271165bbd1016154L, "isDvrEnabled");
-    /*package*/ static final SContainmentLink baseUrl$fjSN = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cbad1L, 0x271165bbd10cbad4L, "baseUrl");
+    /*package*/ static final SContainmentLink volumePercent$ng7V = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cba8aL, 0x6909f7b4a82e57fL, "volumePercent");
+    /*package*/ static final SContainmentLink imageTemplateConfig$nnpq = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cba8aL, 0x6909f7b4a82e589L, "imageTemplateConfig");
     /*package*/ static final SContainmentLink isForcedAutoplay$fpia = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cbad1L, 0x271165bbd10cbad6L, "isForcedAutoplay");
+    /*package*/ static final SContainmentLink forcedVolumePercentag$qeD6 = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cbad1L, 0x6909f7b4a82e5b0L, "forcedVolumePercentag");
     /*package*/ static final SContainmentLink enablePostMessage$fpZd = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cbad1L, 0x271165bbd10cbad9L, "enablePostMessage");
     /*package*/ static final SContainmentLink enableMaturityLogin$fqVh = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cbad1L, 0x271165bbd10cbaddL, "enableMaturityLogin");
     /*package*/ static final SContainmentLink disablePosterImage$hTKQ = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cbad1L, 0x271165bbd10cbae2L, "disablePosterImage");
@@ -182,6 +241,14 @@ public class QueriesGenerated {
     /*package*/ static final SContainmentLink android$vNwV = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cc22cL, 0x515a2af4d358e29L, "android");
     /*package*/ static final SContainmentLink iOS$vOG0 = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cc22cL, 0x515a2af4d358e2eL, "iOS");
     /*package*/ static final SContainmentLink config$pf3X = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cbab4L, 0x515a2af4d358e4eL, "config");
+    /*package*/ static final SContainmentLink baseUrl$fjSN = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cbad1L, 0x271165bbd10cbad4L, "baseUrl");
+    /*package*/ static final SContainmentLink width$ReAC = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x6909f7b4a82e594L, 0x6909f7b4a82e597L, "width");
+    /*package*/ static final SContainmentLink minWidth$RnYL = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x6909f7b4a82e59dL, 0x6909f7b4a82e5a9L, "minWidth");
+    /*package*/ static final SContainmentLink value$Rto8 = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x6909f7b4a82e59dL, 0x6909f7b4a82e5abL, "value");
+    /*package*/ static final SContainmentLink min$RgFm = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x6909f7b4a82e599L, 0x6909f7b4a82e59fL, "min");
+    /*package*/ static final SContainmentLink max$Rm4H = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x6909f7b4a82e599L, 0x6909f7b4a82e5a1L, "max");
+    /*package*/ static final SContainmentLink stepSize$RmLK = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x6909f7b4a82e599L, 0x6909f7b4a82e5a4L, "stepSize");
     /*package*/ static final SContainmentLink plugin$vUMq = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cc22cL, 0x515a2af4d358e33L, "plugin");
+    /*package*/ static final SContainmentLink size$RfjF = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x6909f7b4a82e594L, 0x6909f7b4a82e59aL, "size");
   }
 }

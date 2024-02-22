@@ -96,11 +96,41 @@
       <property role="20kJfa" value="isMuted" />
       <ref role="20lvS9" to="9wcb:klCEXd9Dn1" resolve="JSONBoolean" />
     </node>
+    <node concept="1TJgyj" id="qgBRHawIlB" role="1TKVEi">
+      <property role="IQ2ns" value="473053312753788263" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="vodStartSeconds" />
+      <ref role="20lvS9" to="9wcb:klCEXd9Dng" resolve="JSONDouble" />
+    </node>
+    <node concept="1TJgyj" id="qgBRHawIlI" role="1TKVEi">
+      <property role="IQ2ns" value="473053312753788270" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="vodEndSeconds" />
+      <ref role="20lvS9" to="9wcb:klCEXd9Dng" resolve="JSONDouble" />
+    </node>
+    <node concept="1TJgyj" id="qgBRHawIlQ" role="1TKVEi">
+      <property role="IQ2ns" value="473053312753788278" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="vodInitialPlayheadSeconds" />
+      <ref role="20lvS9" to="9wcb:klCEXd9Dng" resolve="JSONDouble" />
+    </node>
     <node concept="1TJgyj" id="2shprJh0m5k" role="1TKVEi">
       <property role="IQ2ns" value="2815143099423088980" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="isDvrEnabled" />
       <ref role="20lvS9" to="9wcb:klCEXd9Dn1" resolve="JSONBoolean" />
+    </node>
+    <node concept="1TJgyj" id="qgBRHawIlZ" role="1TKVEi">
+      <property role="IQ2ns" value="473053312753788287" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="volumePercent" />
+      <ref role="20lvS9" to="9wcb:klCEXd9Dng" resolve="JSONDouble" />
+    </node>
+    <node concept="1TJgyj" id="qgBRHawIm9" role="1TKVEi">
+      <property role="IQ2ns" value="473053312753788297" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="imageTemplateConfig" />
+      <ref role="20lvS9" node="qgBRHawImk" resolve="ImageTemplateConfig" />
     </node>
   </node>
   <node concept="1TIwiD" id="2shprJh3bEO">
@@ -154,7 +184,14 @@
       <property role="IQ2ns" value="2815143099423832788" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="baseUrl" />
+      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="9wcb:klCEXd9Dn6" resolve="JSONString" />
+    </node>
+    <node concept="1TJgyj" id="qgBRHawImK" role="1TKVEi">
+      <property role="IQ2ns" value="473053312753788336" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="forcedVolumePercentag" />
+      <ref role="20lvS9" to="9wcb:klCEXd9Dng" resolve="JSONDouble" />
     </node>
     <node concept="1TJgyj" id="2shprJh3bFm" role="1TKVEi">
       <property role="IQ2ns" value="2815143099423832790" />
@@ -248,6 +285,70 @@
     </node>
     <node concept="PrWs8" id="2shprJh3c8H" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="qgBRHawImk">
+    <property role="TrG5h" value="ImageTemplateConfig" />
+    <property role="EcuMT" value="473053312753788308" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="qgBRHawImn" role="1TKVEi">
+      <property role="IQ2ns" value="473053312753788311" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="width" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="qgBRHawImp" resolve="ImageTemplateWidthConfig" />
+    </node>
+    <node concept="1TJgyj" id="qgBRHawImq" role="1TKVEi">
+      <property role="IQ2ns" value="473053312753788314" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="size" />
+      <property role="20lbJX" value="fLJekj6/_1__n" />
+      <ref role="20lvS9" node="qgBRHawImt" resolve="ImageTemplateNamedSizeConfig" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="qgBRHawImp">
+    <property role="TrG5h" value="ImageTemplateWidthConfig" />
+    <property role="EcuMT" value="473053312753788313" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="qgBRHawImv" role="1TKVEi">
+      <property role="IQ2ns" value="473053312753788319" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="min" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="9wcb:klCEXd9Dng" resolve="JSONDouble" />
+    </node>
+    <node concept="1TJgyj" id="qgBRHawImx" role="1TKVEi">
+      <property role="IQ2ns" value="473053312753788321" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="max" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="9wcb:klCEXd9Dng" resolve="JSONDouble" />
+    </node>
+    <node concept="1TJgyj" id="qgBRHawIm$" role="1TKVEi">
+      <property role="IQ2ns" value="473053312753788324" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="stepSize" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="9wcb:klCEXd9Dng" resolve="JSONDouble" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="qgBRHawImt">
+    <property role="TrG5h" value="ImageTemplateNamedSizeConfig" />
+    <property role="EcuMT" value="473053312753788317" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="qgBRHawImD" role="1TKVEi">
+      <property role="IQ2ns" value="473053312753788329" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="minWidth" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="9wcb:klCEXd9Dng" resolve="JSONDouble" />
+    </node>
+    <node concept="1TJgyj" id="qgBRHawImF" role="1TKVEi">
+      <property role="IQ2ns" value="473053312753788331" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="value" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="9wcb:klCEXd9Dn6" resolve="JSONString" />
     </node>
   </node>
 </model>

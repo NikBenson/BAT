@@ -1,1 +1,1 @@
-{"generic": {"isTimeRemainingDisplay": false, "isMuted": false}, "web": {"baseUrl": "safg", "enableMaturityLogin": false}, "pluginData": {"test@all": {"sadgf": "asfa"}}}
+{"generic": {"isTimeRemainingDisplay": false, "isMuted": false, "imagetemplateConfig": {"width": {"min": 20.0, "max": 100.0, "stepSize": 10.0}, "size": [{"minWidth": 50.0, "value": "XL"}]}}, "web": {"baseUrl": "safg", "enableMaturityLogin": false}, "pluginData": {"test@all": {"sadgf": "asfa"}}}

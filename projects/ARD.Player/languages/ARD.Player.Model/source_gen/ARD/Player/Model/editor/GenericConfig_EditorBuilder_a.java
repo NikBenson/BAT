@@ -27,7 +27,14 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Objects;
 import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
+import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
+import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SEmptyContainmentSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
+import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
 
@@ -69,7 +76,26 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.addEditorCell(createRefCell_3());
     editorCell.addEditorCell(createConstant_8());
     editorCell.addEditorCell(createConstant_9());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_10());
+    editorCell.addEditorCell(createConstant_11());
+    editorCell.addEditorCell(createConstant_12());
+    editorCell.addEditorCell(createRefNode_1());
+    editorCell.addEditorCell(createConstant_13());
+    editorCell.addEditorCell(createConstant_14());
+    editorCell.addEditorCell(createConstant_15());
+    editorCell.addEditorCell(createRefNode_2());
+    editorCell.addEditorCell(createConstant_16());
+    editorCell.addEditorCell(createConstant_17());
+    editorCell.addEditorCell(createConstant_18());
     editorCell.addEditorCell(createRefCell_4());
+    editorCell.addEditorCell(createConstant_19());
+    editorCell.addEditorCell(createConstant_20());
+    editorCell.addEditorCell(createRefNode_3());
+    editorCell.addEditorCell(createConstant_21());
+    editorCell.addEditorCell(createConstant_22());
+    editorCell.addEditorCell(createConstant_23());
+    editorCell.addEditorCell(createRefNode_4());
     return editorCell;
   }
   private EditorCell createConstant_0() {
@@ -405,7 +431,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
   }
   private EditorCell createConstant_8() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "is DVR enabled");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "VOD start");
     editorCell.setCellId("Constant_40g389_m0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -413,6 +439,234 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createConstant_9() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "=");
     editorCell.setCellId("Constant_40g389_n0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createRefNode_0() {
+    SingleRoleCellProvider provider = new vodStartSecondsSingleRoleHandler_40g389_o0(myNode, LINKS.vodStartSeconds$n0CT, getEditorContext());
+    return provider.createCell();
+  }
+  private static class vodStartSecondsSingleRoleHandler_40g389_o0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
+    public vodStartSecondsSingleRoleHandler_40g389_o0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(containmentLink, context);
+      myNode = ownerNode;
+    }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.vodStartSeconds$n0CT, child));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.vodStartSeconds$n0CT, child));
+      installCellInfo(child, editorCell, false);
+      return editorCell;
+    }
+
+
+
+    private void installCellInfo(SNode child, EditorCell editorCell, boolean isEmpty) {
+      if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
+        editorCell.setSubstituteInfo((isEmpty ? new SEmptyContainmentSubstituteInfo(editorCell) : new SChildSubstituteInfo(editorCell)));
+      }
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(LINKS.vodStartSeconds$n0CT);
+      }
+    }
+    @Override
+    protected EditorCell createEmptyCell() {
+      getCellFactory().pushCellContext();
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.vodStartSeconds$n0CT));
+      try {
+        EditorCell editorCell = super.createEmptyCell();
+        editorCell.setCellId("empty_vodStartSeconds");
+        installCellInfo(null, editorCell, true);
+        setCellContext(editorCell);
+        return editorCell;
+      } finally {
+        getCellFactory().popCellContext();
+      }
+    }
+    protected String getNoTargetText() {
+      return "<no vodStartSeconds>";
+    }
+  }
+  private EditorCell createConstant_10() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Seconds");
+    editorCell.setCellId("Constant_40g389_p0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_11() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "VOD end");
+    editorCell.setCellId("Constant_40g389_q0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_12() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "=");
+    editorCell.setCellId("Constant_40g389_r0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createRefNode_1() {
+    SingleRoleCellProvider provider = new vodEndSecondsSingleRoleHandler_40g389_s0(myNode, LINKS.vodEndSeconds$n7dl, getEditorContext());
+    return provider.createCell();
+  }
+  private static class vodEndSecondsSingleRoleHandler_40g389_s0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
+    public vodEndSecondsSingleRoleHandler_40g389_s0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(containmentLink, context);
+      myNode = ownerNode;
+    }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.vodEndSeconds$n7dl, child));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.vodEndSeconds$n7dl, child));
+      installCellInfo(child, editorCell, false);
+      return editorCell;
+    }
+
+
+
+    private void installCellInfo(SNode child, EditorCell editorCell, boolean isEmpty) {
+      if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
+        editorCell.setSubstituteInfo((isEmpty ? new SEmptyContainmentSubstituteInfo(editorCell) : new SChildSubstituteInfo(editorCell)));
+      }
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(LINKS.vodEndSeconds$n7dl);
+      }
+    }
+    @Override
+    protected EditorCell createEmptyCell() {
+      getCellFactory().pushCellContext();
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.vodEndSeconds$n7dl));
+      try {
+        EditorCell editorCell = super.createEmptyCell();
+        editorCell.setCellId("empty_vodEndSeconds");
+        installCellInfo(null, editorCell, true);
+        setCellContext(editorCell);
+        return editorCell;
+      } finally {
+        getCellFactory().popCellContext();
+      }
+    }
+    protected String getNoTargetText() {
+      return "<no vodEndSeconds>";
+    }
+  }
+  private EditorCell createConstant_13() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Seconds");
+    editorCell.setCellId("Constant_40g389_t0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_14() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "VOD initial playhead");
+    editorCell.setCellId("Constant_40g389_u0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_15() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "=");
+    editorCell.setCellId("Constant_40g389_v0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createRefNode_2() {
+    SingleRoleCellProvider provider = new vodInitialPlayheadSecondsSingleRoleHandler_40g389_w0(myNode, LINKS.vodInitialPlayheadSeconds$n95t, getEditorContext());
+    return provider.createCell();
+  }
+  private static class vodInitialPlayheadSecondsSingleRoleHandler_40g389_w0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
+    public vodInitialPlayheadSecondsSingleRoleHandler_40g389_w0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(containmentLink, context);
+      myNode = ownerNode;
+    }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.vodInitialPlayheadSeconds$n95t, child));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.vodInitialPlayheadSeconds$n95t, child));
+      installCellInfo(child, editorCell, false);
+      return editorCell;
+    }
+
+
+
+    private void installCellInfo(SNode child, EditorCell editorCell, boolean isEmpty) {
+      if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
+        editorCell.setSubstituteInfo((isEmpty ? new SEmptyContainmentSubstituteInfo(editorCell) : new SChildSubstituteInfo(editorCell)));
+      }
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(LINKS.vodInitialPlayheadSeconds$n95t);
+      }
+    }
+    @Override
+    protected EditorCell createEmptyCell() {
+      getCellFactory().pushCellContext();
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.vodInitialPlayheadSeconds$n95t));
+      try {
+        EditorCell editorCell = super.createEmptyCell();
+        editorCell.setCellId("empty_vodInitialPlayheadSeconds");
+        installCellInfo(null, editorCell, true);
+        setCellContext(editorCell);
+        return editorCell;
+      } finally {
+        getCellFactory().popCellContext();
+      }
+    }
+    protected String getNoTargetText() {
+      return "<no vodInitialPlayheadSeconds>";
+    }
+  }
+  private EditorCell createConstant_16() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Seconds");
+    editorCell.setCellId("Constant_40g389_x0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_17() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "is DVR enabled");
+    editorCell.setCellId("Constant_40g389_y0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_18() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "=");
+    editorCell.setCellId("Constant_40g389_z0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -433,6 +687,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
       editorCell.setReferenceCell(true);
       editorCell.setSRole(LINKS.isDvrEnabled$30Be);
     }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     if (attributeConcept != null) {
@@ -484,13 +741,167 @@ import org.jetbrains.mps.openapi.language.SConcept;
       }
     }
   }
+  private EditorCell createConstant_19() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "volume");
+    editorCell.setCellId("Constant_40g389_bb0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_20() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "=");
+    editorCell.setCellId("Constant_40g389_cb0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createRefNode_3() {
+    SingleRoleCellProvider provider = new volumePercentSingleRoleHandler_40g389_db0(myNode, LINKS.volumePercent$ng7V, getEditorContext());
+    return provider.createCell();
+  }
+  private static class volumePercentSingleRoleHandler_40g389_db0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
+    public volumePercentSingleRoleHandler_40g389_db0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(containmentLink, context);
+      myNode = ownerNode;
+    }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.volumePercent$ng7V, child));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.volumePercent$ng7V, child));
+      installCellInfo(child, editorCell, false);
+      return editorCell;
+    }
+
+
+
+    private void installCellInfo(SNode child, EditorCell editorCell, boolean isEmpty) {
+      if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
+        editorCell.setSubstituteInfo((isEmpty ? new SEmptyContainmentSubstituteInfo(editorCell) : new SChildSubstituteInfo(editorCell)));
+      }
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(LINKS.volumePercent$ng7V);
+      }
+    }
+    @Override
+    protected EditorCell createEmptyCell() {
+      getCellFactory().pushCellContext();
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.volumePercent$ng7V));
+      try {
+        EditorCell editorCell = super.createEmptyCell();
+        editorCell.setCellId("empty_volumePercent");
+        installCellInfo(null, editorCell, true);
+        setCellContext(editorCell);
+        return editorCell;
+      } finally {
+        getCellFactory().popCellContext();
+      }
+    }
+    protected String getNoTargetText() {
+      return "<no volumePercent>";
+    }
+  }
+  private EditorCell createConstant_21() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "%");
+    editorCell.setCellId("Constant_40g389_eb0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_22() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "image template");
+    editorCell.setCellId("Constant_40g389_fb0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_23() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ":");
+    editorCell.setCellId("Constant_40g389_gb0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createRefNode_4() {
+    SingleRoleCellProvider provider = new imageTemplateConfigSingleRoleHandler_40g389_hb0(myNode, LINKS.imageTemplateConfig$nnpq, getEditorContext());
+    return provider.createCell();
+  }
+  private static class imageTemplateConfigSingleRoleHandler_40g389_hb0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
+    public imageTemplateConfigSingleRoleHandler_40g389_hb0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(containmentLink, context);
+      myNode = ownerNode;
+    }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.imageTemplateConfig$nnpq, child));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.imageTemplateConfig$nnpq, child));
+      installCellInfo(child, editorCell, false);
+      return editorCell;
+    }
+
+
+
+    private void installCellInfo(SNode child, EditorCell editorCell, boolean isEmpty) {
+      if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
+        editorCell.setSubstituteInfo((isEmpty ? new SEmptyContainmentSubstituteInfo(editorCell) : new SChildSubstituteInfo(editorCell)));
+      }
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(LINKS.imageTemplateConfig$nnpq);
+      }
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+      editorCell.getStyle().putAll(style);
+    }
+    @Override
+    protected EditorCell createEmptyCell() {
+      getCellFactory().pushCellContext();
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.imageTemplateConfig$nnpq));
+      try {
+        EditorCell editorCell = super.createEmptyCell();
+        editorCell.setCellId("empty_imageTemplateConfig");
+        installCellInfo(null, editorCell, true);
+        setCellContext(editorCell);
+        return editorCell;
+      } finally {
+        getCellFactory().popCellContext();
+      }
+    }
+    protected String getNoTargetText() {
+      return "<no imageTemplateConfig>";
+    }
+  }
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink isTimeRemainingDisplay$2Num = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cba8aL, 0x271165bbd1016146L, "isTimeRemainingDisplay");
     /*package*/ static final SContainmentLink isShowSubtitleAtStart$2NWo = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cba8aL, 0x271165bbd1016148L, "isShowSubtitleAtStart");
     /*package*/ static final SContainmentLink isAutoplay$2T$K = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cba8aL, 0x271165bbd101614bL, "isAutoplay");
     /*package*/ static final SContainmentLink isMuted$2UwO = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cba8aL, 0x271165bbd101614fL, "isMuted");
+    /*package*/ static final SContainmentLink vodStartSeconds$n0CT = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cba8aL, 0x6909f7b4a82e567L, "vodStartSeconds");
+    /*package*/ static final SContainmentLink vodEndSeconds$n7dl = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cba8aL, 0x6909f7b4a82e56eL, "vodEndSeconds");
+    /*package*/ static final SContainmentLink vodInitialPlayheadSeconds$n95t = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cba8aL, 0x6909f7b4a82e576L, "vodInitialPlayheadSeconds");
     /*package*/ static final SContainmentLink isDvrEnabled$30Be = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cba8aL, 0x271165bbd1016154L, "isDvrEnabled");
+    /*package*/ static final SContainmentLink volumePercent$ng7V = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cba8aL, 0x6909f7b4a82e57fL, "volumePercent");
+    /*package*/ static final SContainmentLink imageTemplateConfig$nnpq = MetaAdapterFactory.getContainmentLink(0xc08689bf220f44e0L, 0xb1176fee592c62ccL, 0x271165bbd10cba8aL, 0x6909f7b4a82e589L, "imageTemplateConfig");
   }
 
   private static final class CONCEPTS {
