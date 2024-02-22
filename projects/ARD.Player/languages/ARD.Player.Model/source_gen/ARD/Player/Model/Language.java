@@ -11,6 +11,7 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import ARD.Player.Model.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
+import ARD.Player.Model.structure.ConceptPresentationAspectImpl;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.language.LanguageExtensions;
 
@@ -45,10 +46,10 @@ public class Language extends LanguageRuntime {
       return aspectClass.cast(new EditorAspectDescriptorImpl());
     }
     if (aspectClass == StructureAspectDescriptor.class) {
-      return aspectClass.cast(new ());
+      return aspectClass.cast(new ARD.Player.Model.structure.StructureAspectDescriptor());
     }
     if (aspectClass == ConceptPresentationAspect.class) {
-      return aspectClass.cast(new ());
+      return aspectClass.cast(new ConceptPresentationAspectImpl());
     }
     return null;
   }
