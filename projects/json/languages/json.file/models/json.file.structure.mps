@@ -45,7 +45,7 @@
     <property role="EcuMT" value="2815143099423799428" />
     <property role="TrG5h" value="JSONFile" />
     <property role="19KtqR" value="true" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="klCEXddp14" role="1TKVEi">
       <property role="IQ2ns" value="366377818498895940" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />

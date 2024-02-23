@@ -54,7 +54,7 @@
   <node concept="1TIwiD" id="2shprJh3bCY">
     <property role="EcuMT" value="2815143099423832638" />
     <property role="TrG5h" value="EmbeddedConfig" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2shprJh0n3Q" role="1TKVEi">
       <property role="IQ2ns" value="2815143099423092982" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -71,7 +71,7 @@
   <node concept="1TIwiD" id="2shprJh3bEa">
     <property role="EcuMT" value="2815143099423832714" />
     <property role="TrG5h" value="GenericConfig" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2shprJh0m56" role="1TKVEi">
       <property role="IQ2ns" value="2815143099423088966" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -136,7 +136,7 @@
   <node concept="1TIwiD" id="2shprJh3bEO">
     <property role="EcuMT" value="2815143099423832756" />
     <property role="TrG5h" value="PluginConfig" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="klCEXddoTe" role="1TKVEi">
       <property role="IQ2ns" value="366377818498895438" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -179,7 +179,7 @@
   <node concept="1TIwiD" id="2shprJh3bFh">
     <property role="EcuMT" value="2815143099423832785" />
     <property role="TrG5h" value="WebConfig" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2shprJh3bFk" role="1TKVEi">
       <property role="IQ2ns" value="2815143099423832788" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -246,7 +246,7 @@
     <property role="EcuMT" value="2815143099423834668" />
     <property role="TrG5h" value="PlayerConfig" />
     <property role="19KtqR" value="true" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="klCEXddoSw" role="1TKVEi">
       <property role="IQ2ns" value="366377818498895392" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />

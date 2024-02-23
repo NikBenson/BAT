@@ -93,7 +93,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:bf7c0a34-e3e0-4afc-afb7-afcc8dd390ff(json.model.structure)/366377818497914300");
     b.version(3);
     b.aggregate("value", 0x515a2af4d2695e3L).target(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695daL).optional(true).ordered(true).multiple(true).origin("366377818497914339").done();
-    b.alias("[]");
+    b.alias("array");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForJSONBoolean() {
@@ -104,6 +104,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:bf7c0a34-e3e0-4afc-afb7-afcc8dd390ff(json.model.structure)/366377818497914305");
     b.version(3);
     b.property("value", 0x515a2af4d2695e5L).type(PrimitiveTypeId.BOOLEAN).origin("366377818497914341").done();
+    b.alias("boolean");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForJSONDouble() {
@@ -115,6 +116,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(3);
     b.property("integer", 0x515a2af4d2695ebL).type(PrimitiveTypeId.INTEGER).origin("366377818497914347").done();
     b.property("decimal", 0x515a2af4d2695edL).type(PrimitiveTypeId.INTEGER).origin("366377818497914349").done();
+    b.alias("double");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForJSONInteger() {
@@ -125,6 +127,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:bf7c0a34-e3e0-4afc-afb7-afcc8dd390ff(json.model.structure)/366377818497914315");
     b.version(3);
     b.property("value", 0x515a2af4d2695e1L).type(PrimitiveTypeId.INTEGER).origin("366377818497914337").done();
+    b.alias("integer");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForJSONNullValue() {
@@ -144,6 +147,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695daL);
     b.origin("r:bf7c0a34-e3e0-4afc-afb7-afcc8dd390ff(json.model.structure)/366377818497914325");
     b.version(3);
+    b.alias("number");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForJSONObject() {
@@ -155,7 +159,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:bf7c0a34-e3e0-4afc-afb7-afcc8dd390ff(json.model.structure)/366377818497914295");
     b.version(3);
     b.aggregate("value", 0x515a2af4d2695fdL).target(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695f0L).optional(true).ordered(true).multiple(true).origin("366377818497914365").done();
-    b.alias("{}");
+    b.alias("object");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForJSONObjectEntry() {
@@ -165,7 +169,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(3);
     b.property("key", 0x515a2af4d2695f7L).type(PrimitiveTypeId.STRING).origin("366377818497914359").done();
     b.aggregate("value", 0x515a2af4d2695fbL).target(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695daL).optional(false).ordered(true).multiple(false).origin("366377818497914363").done();
-    b.alias(":");
+    b.alias("entry");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForJSONString() {
@@ -176,7 +180,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:bf7c0a34-e3e0-4afc-afb7-afcc8dd390ff(json.model.structure)/366377818497914310");
     b.version(3);
     b.property("value", 0x515a2af4d2695dfL).type(PrimitiveTypeId.STRING).origin("366377818497914335").done();
-    b.alias("\"\"");
+    b.alias("string");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForJSONValue() {
@@ -184,6 +188,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, true, false);
     b.origin("r:bf7c0a34-e3e0-4afc-afb7-afcc8dd390ff(json.model.structure)/366377818497914330");
     b.version(3);
+    b.alias("value");
     return b.create();
   }
 }

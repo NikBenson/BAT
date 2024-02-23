@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="-3y5q5xoqjh7cjakkc83yj1xjjd5fhjt">
-  <files names="EditorAspectDescriptorImpl.java:JSONArray_Editor.java:JSONArray_EditorBuilder_a.java:JSONBoolean_Editor.java:JSONBoolean_EditorBuilder_a.java:JSONDouble_Editor.java:JSONDouble_EditorBuilder_a.java:JSONInteger_Editor.java:JSONInteger_EditorBuilder_a.java:JSONNullValue_Editor.java:JSONNullValue_EditorBuilder_a.java:JSONObjectEntry_Editor.java:JSONObjectEntry_EditorBuilder_a.java:JSONObject_Editor.java:JSONObject_EditorBuilder_a.java:JSONString_Editor.java:JSONString_EditorBuilder_a.java" />
+<product version="3" modelHash="-55ftxwdpvjsqfa6vnxevkmld1n1azaw">
+  <files names="Double2Integer_ActionMap.java:EditorAspectDescriptorImpl.java:JSONArray_Editor.java:JSONArray_EditorBuilder_a.java:JSONBoolean_Editor.java:JSONBoolean_EditorBuilder_a.java:JSONDouble_Editor.java:JSONDouble_EditorBuilder_a.java:JSONInteger_Editor.java:JSONInteger_EditorBuilder_a.java:JSONInteger_TransformationMenu.java:JSONNullValue_Editor.java:JSONNullValue_EditorBuilder_a.java:JSONObjectEntry_Editor.java:JSONObjectEntry_EditorBuilder_a.java:JSONObjectEntry_TransformationMenu.java:JSONObject_Editor.java:JSONObject_EditorBuilder_a.java:JSONString_Editor.java:JSONString_EditorBuilder_a.java:JSONValue_TransformationMenu.java" />
 </product>
 

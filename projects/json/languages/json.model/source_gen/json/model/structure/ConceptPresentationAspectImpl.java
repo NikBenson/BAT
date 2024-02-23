@@ -35,28 +35,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.JSONArray:
         if (props_JSONArray == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("[]");
+          cpb.rawPresentation("array");
           props_JSONArray = cpb.create();
         }
         return props_JSONArray;
       case LanguageConceptSwitch.JSONBoolean:
         if (props_JSONBoolean == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("JSONBoolean");
+          cpb.rawPresentation("boolean");
           props_JSONBoolean = cpb.create();
         }
         return props_JSONBoolean;
       case LanguageConceptSwitch.JSONDouble:
         if (props_JSONDouble == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("JSONDouble");
+          cpb.rawPresentation("double");
           props_JSONDouble = cpb.create();
         }
         return props_JSONDouble;
       case LanguageConceptSwitch.JSONInteger:
         if (props_JSONInteger == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("JSONInteger");
+          cpb.rawPresentation("integer");
           props_JSONInteger = cpb.create();
         }
         return props_JSONInteger;
@@ -76,21 +76,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.JSONObject:
         if (props_JSONObject == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("{}");
+          cpb.rawPresentation("object");
           props_JSONObject = cpb.create();
         }
         return props_JSONObject;
       case LanguageConceptSwitch.JSONObjectEntry:
         if (props_JSONObjectEntry == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation(":");
+          cpb.rawPresentation("entry");
           props_JSONObjectEntry = cpb.create();
         }
         return props_JSONObjectEntry;
       case LanguageConceptSwitch.JSONString:
         if (props_JSONString == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("\"\"");
+          cpb.rawPresentation("string");
           props_JSONString = cpb.create();
         }
         return props_JSONString;

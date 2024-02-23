@@ -46,12 +46,13 @@
     <property role="EcuMT" value="366377818497914330" />
     <property role="TrG5h" value="JSONValue" />
     <property role="R5$K7" value="true" />
+    <property role="34LRSv" value="value" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="klCEXd9DmW">
     <property role="EcuMT" value="366377818497914300" />
     <property role="TrG5h" value="JSONArray" />
-    <property role="34LRSv" value="[]" />
+    <property role="34LRSv" value="array" />
     <ref role="1TJDcQ" node="klCEXd9Dnq" resolve="JSONValue" />
     <node concept="1TJgyj" id="klCEXd9Dnz" role="1TKVEi">
       <property role="IQ2ns" value="366377818497914339" />
@@ -67,6 +68,7 @@
   <node concept="1TIwiD" id="klCEXd9Dn1">
     <property role="EcuMT" value="366377818497914305" />
     <property role="TrG5h" value="JSONBoolean" />
+    <property role="34LRSv" value="boolean" />
     <ref role="1TJDcQ" node="klCEXd9Dnq" resolve="JSONValue" />
     <node concept="1TJgyi" id="klCEXd9Dn_" role="1TKVEl">
       <property role="IQ2nx" value="366377818497914341" />
@@ -77,6 +79,7 @@
   <node concept="1TIwiD" id="klCEXd9Dng">
     <property role="EcuMT" value="366377818497914320" />
     <property role="TrG5h" value="JSONDouble" />
+    <property role="34LRSv" value="double" />
     <ref role="1TJDcQ" node="klCEXd9Dnl" resolve="JSONNumber" />
     <node concept="1TJgyi" id="klCEXd9DnF" role="1TKVEl">
       <property role="IQ2nx" value="366377818497914347" />
@@ -92,6 +95,7 @@
   <node concept="1TIwiD" id="klCEXd9Dnb">
     <property role="EcuMT" value="366377818497914315" />
     <property role="TrG5h" value="JSONInteger" />
+    <property role="34LRSv" value="integer" />
     <ref role="1TJDcQ" node="klCEXd9Dnl" resolve="JSONNumber" />
     <node concept="1TJgyi" id="klCEXd9Dnx" role="1TKVEl">
       <property role="IQ2nx" value="366377818497914337" />
@@ -109,12 +113,13 @@
     <property role="EcuMT" value="366377818497914325" />
     <property role="TrG5h" value="JSONNumber" />
     <property role="R5$K7" value="true" />
+    <property role="34LRSv" value="number" />
     <ref role="1TJDcQ" node="klCEXd9Dnq" resolve="JSONValue" />
   </node>
   <node concept="1TIwiD" id="klCEXd9DmR">
     <property role="EcuMT" value="366377818497914295" />
     <property role="TrG5h" value="JSONObject" />
-    <property role="34LRSv" value="{}" />
+    <property role="34LRSv" value="object" />
     <ref role="1TJDcQ" node="klCEXd9Dnq" resolve="JSONValue" />
     <node concept="1TJgyj" id="klCEXd9DnX" role="1TKVEi">
       <property role="IQ2ns" value="366377818497914365" />
@@ -130,7 +135,7 @@
   <node concept="1TIwiD" id="klCEXd9DnK">
     <property role="EcuMT" value="366377818497914352" />
     <property role="TrG5h" value="JSONObjectEntry" />
-    <property role="34LRSv" value=":" />
+    <property role="34LRSv" value="entry" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="klCEXd9DnR" role="1TKVEl">
       <property role="IQ2nx" value="366377818497914359" />
@@ -148,7 +153,7 @@
   <node concept="1TIwiD" id="klCEXd9Dn6">
     <property role="EcuMT" value="366377818497914310" />
     <property role="TrG5h" value="JSONString" />
-    <property role="34LRSv" value="&quot;&quot;" />
+    <property role="34LRSv" value="string" />
     <ref role="1TJDcQ" node="klCEXd9Dnq" resolve="JSONValue" />
     <node concept="1TJgyi" id="klCEXd9Dnv" role="1TKVEl">
       <property role="IQ2nx" value="366377818497914335" />
