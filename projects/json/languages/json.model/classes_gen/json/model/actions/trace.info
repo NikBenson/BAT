@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <root>
+    <file name="ActionAspectDescriptorImpl.java">
+      <unit at="12,0,30,0" name="json.model.actions.ActionAspectDescriptorImpl" />
+    </file>
+  </root>
+  <root nodeRef="r:9292ad42-8103-426b-acf1-30fb91c0b11c(json.model.actions)/473053312756297240">
+    <file name="JSONValueFactory.java">
+      <node id="473053312759757448" at="17,7,18,42" concept="4" />
+      <node id="473053312759757596" at="19,78,20,126" concept="1" />
+      <node id="473053312759776064" at="27,7,28,42" concept="4" />
+      <node id="473053312759776185" at="29,77,30,126" concept="1" />
+      <node id="473053312756297240" at="37,0,38,0" concept="5" trace="JSONInteger$cn" />
+      <node id="473053312756297240" at="38,0,39,0" concept="5" trace="JSONDouble$oX" />
+      <node id="473053312756297240" at="42,0,43,0" concept="5" trace="integer$bqE8" />
+      <node id="473053312756297240" at="43,0,44,0" concept="5" trace="value$bjc3" />
+      <node id="473053312759757448" at="18,42,21,9" concept="2" />
+      <node id="473053312759776064" at="28,42,31,9" concept="2" />
+      <node id="473053312759757448" at="16,102,22,7" concept="0" />
+      <node id="473053312759776064" at="26,102,32,7" concept="0" />
+      <node id="473053312756297241" at="16,0,24,0" concept="3" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;ILorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <node id="473053312759775920" at="26,0,34,0" concept="3" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;ILorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <scope id="473053312759757450" at="19,78,20,126" />
+      <scope id="473053312759776066" at="29,77,30,126" />
+      <scope id="473053312759757448" at="17,7,21,9">
+        <var name="original" id="473053312759757448" />
+      </scope>
+      <scope id="473053312759776064" at="27,7,31,9">
+        <var name="original" id="473053312759776064" />
+      </scope>
+      <scope id="473053312756297241" at="16,102,22,7" />
+      <scope id="473053312759775920" at="26,102,32,7" />
+      <scope id="473053312756297241" at="16,0,24,0">
+        <var name="enclosingNode" id="473053312756297241" />
+        <var name="index" id="473053312756297241" />
+        <var name="model" id="473053312756297241" />
+        <var name="newNode" id="473053312756297241" />
+        <var name="sampleNode" id="473053312756297241" />
+      </scope>
+      <scope id="473053312759775920" at="26,0,34,0">
+        <var name="enclosingNode" id="473053312759775920" />
+        <var name="index" id="473053312759775920" />
+        <var name="model" id="473053312759775920" />
+        <var name="newNode" id="473053312759775920" />
+        <var name="sampleNode" id="473053312759775920" />
+      </scope>
+      <unit id="473053312756297240" at="36,0,40,0" name="json.model.actions.JSONValueFactory$CONCEPTS" />
+      <unit id="473053312756297240" at="41,0,45,0" name="json.model.actions.JSONValueFactory$PROPS" />
+      <unit id="473053312756297241" at="15,0,25,0" name="json.model.actions.JSONValueFactory$NodeFactory_473053312756297241" />
+      <unit id="473053312759775920" at="25,0,35,0" name="json.model.actions.JSONValueFactory$NodeFactory_473053312759775920" />
+      <unit id="473053312756297240" at="14,0,46,0" name="json.model.actions.JSONValueFactory" />
+    </file>
+  </root>
+</debug-info>
+
