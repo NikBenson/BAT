@@ -1,0 +1,4 @@
+abstract ColorTokens: PrimitiveTokens<Color>
+	red
+	green
+	blue

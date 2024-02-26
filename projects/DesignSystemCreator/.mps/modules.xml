@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MPSProject">
+    <projectModules>
+      <modulePath path="$PROJECT_DIR$/languages/DesignSystem.App.sandbox/DesignSystem.App.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/DesignSystem.App/DesignSystem.App.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/DesignSystem.System.sandbox/DesignSystem.System.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/DesignSystem.System/DesignSystem.System.mpl" folder="" />
+    </projectModules>
+  </component>
+</project>

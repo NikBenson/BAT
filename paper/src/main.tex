@@ -1,0 +1,162 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage[ngerman=ngerman-x-latest]{hyphsubst}
+\usepackage{csquotes}
+\usepackage{hyphenat}
+\usepackage{textcmds}
+\usepackage{xspace}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{authblk}
+\usepackage{svg}
+\usepackage{lipsum}
+\usepackage{subcaption}
+\usepackage{pdfpages}
+
+\usepackage{float}
+\usepackage[section]{placeins}
+\usepackage{wrapfig}
+\newfloat{floatingequation}{htbp}{loe}
+\floatname{floatingequation}{Gleichung}
+\newcommand{\floatingequationautorefname}{Gleichung}
+
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\usepackage{graphicx}
+\usepackage{chngpage}
+\usepackage{calc}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=blue,
+    urlcolor=blue,
+    pdftitle={Bachelorarbeit},
+    pdfauthor={Nik Benson},
+    pdfpagemode=FullScreen,
+}
+\urlstyle{same}
+
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95, 0.95, 0.96}
+\definecolor{app_repo_color}{rgb}{0.98, 0.89, 0.80}
+
+\PassOptionsToPackage{dvipsnames}{xcolor}
+\usepackage{listings}
+\lstdefinelanguage{Kotlin}{
+    sensitive=true,
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]",
+    morestring=[s]{"""*}{*"""},
+    keywords={!in, !is, abstract, actual, annotation, as, as?, break, by, catch, class, companion, const, constructor, continue, crossinline, data, delegate, do, dynamic, else, enum, expect, external, false, field, file, final, finally, for, fun, get, if, import, in, infix, init, inline, inner, interface, internal, is, lateinit, noinline, null, object, open, operator, out, override, package, param, private, property, protected, public, receiveris, reified, return, return@, sealed, set, setparam, super, suspend, tailrec, this, throw, true, try, typealias, typeof, val, var, vararg, when, where, while},
+    ndkeywords={@Deprecated, @JvmField, @JvmName, @JvmOverloads, @JvmStatic, @JvmSynthetic, Array, Byte, Double, Float, Int, Integer, Iterable, Long, Runnable, Short, String, Any, Unit, Nothing},
+    emph={filter, first, firstOrNull, forEach, lazy, map, mapNotNull, println},
+    commentstyle={\color{codegreen}\ttfamily},
+    stringstyle={\color{codepurple}\ttfamily},
+    keywordstyle={\color{magenta}\bfseries},
+    ndkeywordstyle={\color{orange}\bfseries},
+    emphstyle={\color{codepurple}},
+    identifierstyle=\color{black},
+}
+\lstdefinelanguage{Dart}{
+    sensitive=true,
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]',
+    morestring=[b]",
+    morestring=[s]{'''*}{*'''},
+    morestring=[s]{"""*}{*"""},
+    keywords={abstract, as, assert, async, await, base, break, case, catch, class, const, continue, covariant, default, deferred, do, dynamic, else, enum, export, extends, extension, external, factory, false, final, finally, for, Function, get, if, implements, import, in, interface, is, late, library, mixin, new, null, on, operator, part, required, rethrow, return, sealed, set, show, static, super, switch, sync, this, throw, true, try, typedef, var, void, when, while, with, yield},
+    ndkeywords={int, double, String, bool, List, Set, Map, Never, Null, Object, Enum, Future, Iterable},
+    emph={},
+    commentstyle={\color{codegreen}\ttfamily},
+    stringstyle={\color{codepurple}\ttfamily},
+    keywordstyle={\color{magenta}\bfseries},
+    ndkeywordstyle={\color{orange}\bfseries},
+    emphstyle={\color{codepurple}},
+    identifierstyle=\color{black},
+}
+\lstdefinelanguage{DesignSystem}{
+    sensitive=true,
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]",
+    keywords={abstract, by, switch, if},
+    ndkeywords={PrimitiveTokens, PrimitiveTokensSet, DesignSystem, subsystems, properties, tokens},
+    emph={Color, Brightness, ButtonState, FontWeight, String},
+    commentstyle={\color{codegreen}\ttfamily},
+    stringstyle={\color{codepurple}\ttfamily},
+    keywordstyle={\color{magenta}\bfseries},
+    ndkeywordstyle={\color{orange}\bfseries},
+    emphstyle={\color{codepurple}},
+    identifierstyle=\color{black},
+}
+
+\lstdefinestyle{default}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{orange},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+}
+
+\lstset{style=default}
+
+\renewcommand{\lstlistingname}{Code}
+\renewcommand{\lstlistlistingname}{Codeverzeichnis}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\title{Prototyp zur Verwendung von Domain Specific Languages (DSL) zur einfachen und präzisen Beschreibung von Constraints in Logik und UI}
+\author{Nik Benson}
+\affil{\href{mailto:nik.benson@studmail.w-hs.de}{nik.benson@studmail.w-hs.de}}
+
+
+\usepackage[backend=biber, style=iso-authoryear]{biblatex}
+\bibliography{main}
+
+\begin{document}
+    \pagenumbering{gobble}
+    \include{title}
+
+    \pagenumbering{Roman}
+    \setcounter{page}{2}
+    \tableofcontents
+    \addcontentsline{toc}{section}{Abbildungsverzeichnis}
+    \listoffigures
+    \addcontentsline{toc}{section}{Codeverzeichnis}
+    \lstlistoflistings
+    \newpage
+    \pagenumbering{arabic}
+
+    \input{design_system}
+
+    \newpage
+    \pagenumbering{roman}
+    \addcontentsline{toc}{section}{Literatur}
+    \printbibliography
+
+    \include{appendix}
+\end{document}

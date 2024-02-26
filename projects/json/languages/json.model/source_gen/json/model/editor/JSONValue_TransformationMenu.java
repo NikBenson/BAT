@@ -85,66 +85,6 @@ public class JSONValue_TransformationMenu extends TransformationMenuBase {
       }
       context.getEditorMenuTrace().pushTraceInfo();
       try {
-        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:db8b7f26-d7ed-43f4-9d7c-83d4b76cf2ff(json.model.editor)", "473053312762366692")));
-        item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
-      } finally {
-        context.getEditorMenuTrace().popTraceInfo();
-      }
-      return item;
-    }
-
-    private class Item extends ActionItemBase implements SubstituteCompletionActionItem {
-      private final TransformationMenuContext _context;
-      private EditorMenuTraceInfo myEditorMenuTraceInfo;
-      private Item(TransformationMenuContext context) {
-        _context = context;
-      }
-      private void setTraceInfo(EditorMenuTraceInfo info) {
-        myEditorMenuTraceInfo = info;
-      }
-      @Nullable
-      @Override
-      public String getLabelText(String pattern) {
-        return "\"\"";
-      }
-
-      @Override
-      public void execute(@NotNull String pattern) {
-        SNodeFactoryOperations.replaceWithNewChild(_context.getNode(), CONCEPTS.JSONString$9W);
-      }
-
-
-
-
-      @Override
-      public EditorMenuTraceInfo getTraceInfo() {
-        return myEditorMenuTraceInfo;
-      }
-
-      public void customize(String pattern, EditorMenuItemStyle style) {
-        EditorMenuItemModifyingCustomizationContext modifyingContext = new EditorMenuItemModifyingCustomizationContext(_context.getNode(), null, null, null);
-        SAbstractConcept outputConcept = null;
-        EditorMenuItemCompositeCustomizationContext compositeContext = new EditorMenuItemCompositeCustomizationContext(modifyingContext, new CompletionMenuItemCustomizationContext(new CompletionItemInformation(null, outputConcept, getLabelText(pattern), getShortDescriptionText(pattern))));
-        for (EditorMenuItemCustomizer customizer : CollectionSequence.fromCollection(_context.getCustomizers())) {
-          customizer.customize(style, compositeContext);
-        }
-      }
-    }
-
-  }
-  private class TMP_Action_droacf_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-    @Nullable
-    protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      Item item = new Item(context);
-      String description;
-      try {
-        description = "single item: " + item.getLabelText("");
-      } catch (Throwable t) {
-        Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
-        return null;
-      }
-      context.getEditorMenuTrace().pushTraceInfo();
-      try {
         context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:db8b7f26-d7ed-43f4-9d7c-83d4b76cf2ff(json.model.editor)", "473053312762493844")));
         item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
       } finally {
@@ -192,7 +132,7 @@ public class JSONValue_TransformationMenu extends TransformationMenuBase {
     }
 
   }
-  private class TMP_Action_droacf_c0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_droacf_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
       Item item = new Item(context);
@@ -252,7 +192,7 @@ public class JSONValue_TransformationMenu extends TransformationMenuBase {
     }
 
   }
-  private class TMP_Action_droacf_d0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_droacf_c0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
       Item item = new Item(context);
@@ -312,7 +252,7 @@ public class JSONValue_TransformationMenu extends TransformationMenuBase {
     }
 
   }
-  private class TMP_Action_droacf_e0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_droacf_d0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
       Item item = new Item(context);
@@ -384,7 +324,7 @@ public class JSONValue_TransformationMenu extends TransformationMenuBase {
     }
 
   }
-  private class TMP_Action_droacf_f0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_droacf_e0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
       Item item = new Item(context);
@@ -417,12 +357,7 @@ public class JSONValue_TransformationMenu extends TransformationMenuBase {
       @Nullable
       @Override
       public String getLabelText(String pattern) {
-        try {
-          Integer.parseInt(pattern);
-          return pattern;
-        } catch (NumberFormatException e) {
-          return "integer";
-        }
+        return JSONValue_TransformationMenu.this._additional_intPattern(pattern);
       }
 
       @Override
@@ -433,6 +368,76 @@ public class JSONValue_TransformationMenu extends TransformationMenuBase {
           SPropertyOperations.assign(newNode, PROPS.value$bjc3, Integer.parseInt(pattern));
         } catch (NumberFormatException e) {
         }
+      }
+
+
+
+
+      @Override
+      public EditorMenuTraceInfo getTraceInfo() {
+        return myEditorMenuTraceInfo;
+      }
+
+      public void customize(String pattern, EditorMenuItemStyle style) {
+        EditorMenuItemModifyingCustomizationContext modifyingContext = new EditorMenuItemModifyingCustomizationContext(_context.getNode(), null, null, null);
+        SAbstractConcept outputConcept = null;
+        EditorMenuItemCompositeCustomizationContext compositeContext = new EditorMenuItemCompositeCustomizationContext(modifyingContext, new CompletionMenuItemCustomizationContext(new CompletionItemInformation(null, outputConcept, getLabelText(pattern), getShortDescriptionText(pattern))));
+        for (EditorMenuItemCustomizer customizer : CollectionSequence.fromCollection(_context.getCustomizers())) {
+          customizer.customize(style, compositeContext);
+        }
+      }
+    }
+
+  }
+  private class TMP_Action_droacf_f0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    @Nullable
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
+      Item item = new Item(context);
+      String description;
+      try {
+        description = "single item: " + item.getLabelText("");
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+        return null;
+      }
+      context.getEditorMenuTrace().pushTraceInfo();
+      try {
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:db8b7f26-d7ed-43f4-9d7c-83d4b76cf2ff(json.model.editor)", "473053312764082052")));
+        item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+      return item;
+    }
+
+    private class Item extends ActionItemBase implements SubstituteCompletionActionItem {
+      private final TransformationMenuContext _context;
+      private EditorMenuTraceInfo myEditorMenuTraceInfo;
+      private Item(TransformationMenuContext context) {
+        _context = context;
+      }
+      private void setTraceInfo(EditorMenuTraceInfo info) {
+        myEditorMenuTraceInfo = info;
+      }
+      @Nullable
+      @Override
+      public String getLabelText(String pattern) {
+        return JSONValue_TransformationMenu.this._additional_doublePattern(pattern);
+      }
+
+      @Override
+      public void execute(@NotNull String pattern) {
+        SNode newNode = SNodeFactoryOperations.replaceWithNewChild(_context.getNode(), CONCEPTS.JSONDouble$oX);
+
+        String patternResult = JSONValue_TransformationMenu.this._additional_doublePattern(pattern);
+
+        if (patternResult == "double") {
+          return;
+        }
+
+        String[] parts = patternResult.split("\\.");
+        SPropertyOperations.assign(newNode, PROPS.integer$bqE8, Integer.parseInt(parts[0]));
+        SPropertyOperations.assign(newNode, PROPS.decimal$br8a, Integer.parseInt(parts[1]));
       }
 
 
@@ -467,7 +472,7 @@ public class JSONValue_TransformationMenu extends TransformationMenuBase {
       }
       context.getEditorMenuTrace().pushTraceInfo();
       try {
-        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:db8b7f26-d7ed-43f4-9d7c-83d4b76cf2ff(json.model.editor)", "473053312764082052")));
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:db8b7f26-d7ed-43f4-9d7c-83d4b76cf2ff(json.model.editor)", "473053312762366692")));
         item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
       } finally {
         context.getEditorMenuTrace().popTraceInfo();
@@ -487,33 +492,27 @@ public class JSONValue_TransformationMenu extends TransformationMenuBase {
       @Nullable
       @Override
       public String getLabelText(String pattern) {
-        try {
-          String[] parts = pattern.split(".");
-          if (parts.length != 2) {
-            throw new NumberFormatException();
+        if (pattern.startsWith("\"")) {
+          if (pattern.endsWith("\"")) {
+            return pattern;
+          } else {
+            return pattern + "\"";
           }
-          Integer.parseInt(parts[0]);
-          Integer.parseInt(parts[1]);
-
-
-          return pattern;
-        } catch (NumberFormatException e) {
-          return "double";
+        } else {
+          return "\"\"";
         }
       }
 
       @Override
       public void execute(@NotNull String pattern) {
-        SNode newNode = SNodeFactoryOperations.replaceWithNewChild(_context.getNode(), CONCEPTS.JSONDouble$oX);
+        SNode newNode = SNodeFactoryOperations.replaceWithNewChild(_context.getNode(), CONCEPTS.JSONString$9W);
 
-        try {
-          String[] parts = pattern.split(".");
-          if (parts.length != 2) {
-            throw new NumberFormatException();
+        if (pattern.startsWith("\"")) {
+          if (pattern.endsWith("\"")) {
+            SPropertyOperations.assign(newNode, PROPS.value$biFA, pattern.substring(1, pattern.length() - 1));
+          } else {
+            SPropertyOperations.assign(newNode, PROPS.value$biFA, pattern.substring(1));
           }
-          SPropertyOperations.assign(newNode, PROPS.integer$bqE8, Integer.parseInt(parts[0]));
-          SPropertyOperations.assign(newNode, PROPS.decimal$br8a, Integer.parseInt(parts[1]));
-        } catch (NumberFormatException e) {
         }
       }
 
@@ -536,15 +535,51 @@ public class JSONValue_TransformationMenu extends TransformationMenuBase {
     }
 
   }
+  private String _additional_intPattern(String pattern) {
+    try {
+      Integer.parseInt(pattern);
+      return pattern;
+    } catch (NumberFormatException e) {
+      return "integer";
+    }
+  }
+  private String _additional_doublePattern(String pattern) {
+    if ((pattern == null || pattern.length() == 0)) {
+      return "double";
+    }
+
+    int firstDotindex = pattern.indexOf(".");
+    int lastDotindex = pattern.lastIndexOf(".");
+
+    if (firstDotindex == -1) {
+      return JSONValue_TransformationMenu.this._additional_intPattern(pattern) + ".0";
+    }
+    if (firstDotindex != lastDotindex) {
+      return "double";
+    }
+    if (pattern.endsWith(".")) {
+      return JSONValue_TransformationMenu.this._additional_intPattern(pattern.substring(0, pattern.length() - 1));
+    }
+
+    String[] parts = pattern.split("\\.");
+
+    try {
+      Integer.parseInt(parts[0]);
+      Integer.parseInt(parts[1]);
+      return pattern;
+    } catch (NumberFormatException e) {
+      return "double";
+    }
+  }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept JSONString$9W = MetaAdapterFactory.getConcept(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695c6L, "json.model.structure.JSONString");
     /*package*/ static final SConcept JSONObject$N0 = MetaAdapterFactory.getConcept(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695b7L, "json.model.structure.JSONObject");
     /*package*/ static final SConcept JSONArray$UV = MetaAdapterFactory.getConcept(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695bcL, "json.model.structure.JSONArray");
     /*package*/ static final SConcept JSONNullValue$9a = MetaAdapterFactory.getConcept(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d31deadL, "json.model.structure.JSONNullValue");
     /*package*/ static final SConcept JSONBoolean$Xm = MetaAdapterFactory.getConcept(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695c1L, "json.model.structure.JSONBoolean");
     /*package*/ static final SConcept JSONInteger$cn = MetaAdapterFactory.getConcept(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695cbL, "json.model.structure.JSONInteger");
     /*package*/ static final SConcept JSONDouble$oX = MetaAdapterFactory.getConcept(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695d0L, "json.model.structure.JSONDouble");
+    /*package*/ static final SConcept JSONString$9W = MetaAdapterFactory.getConcept(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695c6L, "json.model.structure.JSONString");
   }
 
   private static final class PROPS {
@@ -552,5 +587,6 @@ public class JSONValue_TransformationMenu extends TransformationMenuBase {
     /*package*/ static final SProperty value$bjc3 = MetaAdapterFactory.getProperty(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695cbL, 0x515a2af4d2695e1L, "value");
     /*package*/ static final SProperty integer$bqE8 = MetaAdapterFactory.getProperty(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695d0L, 0x515a2af4d2695ebL, "integer");
     /*package*/ static final SProperty decimal$br8a = MetaAdapterFactory.getProperty(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695d0L, 0x515a2af4d2695edL, "decimal");
+    /*package*/ static final SProperty value$biFA = MetaAdapterFactory.getProperty(0xbbf76c73c6c840c0L, 0xab7b9998034e6ff8L, 0x515a2af4d2695c6L, 0x515a2af4d2695dfL, "value");
   }
 }
