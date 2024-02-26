@@ -1,0 +1,25 @@
+CounterTheme: Material by brightness: Brightness
+	tokens:
+		colors = AllColorTokens by brightness
+		fonts = FontTokens
+    properties:
+        colorSwatch:
+            primary: colors.red
+            secondary: colors.green
+            tertiary: colors.blue
+        textTheme:
+            bodyLarge: fonts.bold
+            bodyMedium: fonts.semi-bold
+            bodySmall: fonts.semi-bold
+        textButtonTheme:
+            foregroundColor: 0xFFFF00
+            backgroundColor: { state ->
+                if(brightness == Brightness.dark) {
+                    return colors.red
+                } else {
+                    return 0x00FFFF
+                }
+            }
+        outlineButtonTheme:
+            foregroundColor: 0xFF00FF
+            backgroundColor: colors.blue

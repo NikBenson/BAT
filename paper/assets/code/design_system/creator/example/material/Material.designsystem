@@ -1,0 +1,25 @@
+Material: DesignSystem
+	subsystems:
+        ColorSwatch: DesignSystem
+            properties:
+                primary: Color
+                secondary: Color
+                tertiary: Color
+        TextTheme: DesignSystem
+            subsystems:
+                TextStyle: DesignSystem
+                    fontFamily: String
+                    fontWeight: FontWeight
+            properties:
+                bodyLarge: TextStyle
+                bodyMedium: TextStyle
+                bodySmall: TextStyle
+        ButtonTheme: DesignSystem
+            properties:
+                foregroundColor: Color
+                backgroundColor: Color
+    properties:
+        colorSwatch: ColorSwatch
+        textTheme: TextTheme
+        textButtonTheme: ButtonTheme by state: ButtonState
+        outlineButtonTheme: ButtonTheme by state: ButtonState

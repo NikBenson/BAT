@@ -1,0 +1,7 @@
+FontTokens: PrimitiveTokens<Material.TextTheme.TextStyle>
+	bold:
+	    fontFamily: "RobotoMono"
+	    fontWeight: FontWeight.w900
+    semi-bold:
+	    fontFamily: "RobotoMono"
+	    fontWeight: FontWeight.w700
