@@ -4,30 +4,27 @@ package DesignSystem.System.structure;
 
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
-import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptorImpl;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptColorConcept = createDescriptorForColorConcept();
+  /*package*/ final ConceptDescriptor myConceptBaseDesignSystemParentConcept = createDescriptorForBaseDesignSystemParentConcept();
   /*package*/ final ConceptDescriptor myConceptDesignSystemConcept = createDescriptorForDesignSystemConcept();
+  /*package*/ final ConceptDescriptor myConceptDesignSystemParentConcept = createDescriptorForDesignSystemParentConcept();
   /*package*/ final ConceptDescriptor myConceptDesignSystemPropertiesListConcept = createDescriptorForDesignSystemPropertiesListConcept();
   /*package*/ final ConceptDescriptor myConceptDesignSystemPropertyConcept = createDescriptorForDesignSystemPropertyConcept();
   /*package*/ final ConceptDescriptor myConceptDesignSystemPropertyParameterConcept = createDescriptorForDesignSystemPropertyParameterConcept();
   /*package*/ final ConceptDescriptor myConceptDesignSystemPropertyParametersListConcept = createDescriptorForDesignSystemPropertyParametersListConcept();
   /*package*/ final ConceptDescriptor myConceptDesignSystemSubsystemListConcept = createDescriptorForDesignSystemSubsystemListConcept();
+  /*package*/ final ConceptDescriptor myConceptDirectReferenceDesignSystemParentConcept = createDescriptorForDirectReferenceDesignSystemParentConcept();
   /*package*/ final ConceptDescriptor myConceptIDesignSystemPropertyType = createDescriptorForIDesignSystemPropertyType();
   /*package*/ final ConceptDescriptor myConceptIDesignSystemValueType = createDescriptorForIDesignSystemValueType();
-  /*package*/ final ConceptDescriptor myConceptList = createDescriptorForList();
-  /*package*/ final ConceptDescriptor myConceptType = createDescriptorForType();
-  /*package*/ final ConstrainedStringDatatypeDescriptor myCSDatatypecolor = new ConstrainedStringDatatypeDescriptorImpl(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e150eL, "color", "r:291ddc1b-d6e7-4ca6-a0e2-a1fae46ab1b7(DesignSystem.System.structure)/473053312768152846", "0x[0-9A-F]{6,8}");
+  /*package*/ final ConceptDescriptor myConceptIndirectReferenceDesignSystemParentConcept = createDescriptorForIndirectReferenceDesignSystemParentConcept();
+  /*package*/ final ConceptDescriptor myConceptReferenceDesignSystemParentConcept = createDescriptorForReferenceDesignSystemParentConcept();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -42,17 +39,19 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptColorConcept, myConceptDesignSystemConcept, myConceptDesignSystemPropertiesListConcept, myConceptDesignSystemPropertyConcept, myConceptDesignSystemPropertyParameterConcept, myConceptDesignSystemPropertyParametersListConcept, myConceptDesignSystemSubsystemListConcept, myConceptIDesignSystemPropertyType, myConceptIDesignSystemValueType, myConceptList, myConceptType);
+    return Arrays.asList(myConceptBaseDesignSystemParentConcept, myConceptDesignSystemConcept, myConceptDesignSystemParentConcept, myConceptDesignSystemPropertiesListConcept, myConceptDesignSystemPropertyConcept, myConceptDesignSystemPropertyParameterConcept, myConceptDesignSystemPropertyParametersListConcept, myConceptDesignSystemSubsystemListConcept, myConceptDirectReferenceDesignSystemParentConcept, myConceptIDesignSystemPropertyType, myConceptIDesignSystemValueType, myConceptIndirectReferenceDesignSystemParentConcept, myConceptReferenceDesignSystemParentConcept);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myIndexSwitch.index(id)) {
-      case LanguageConceptSwitch.ColorConcept:
-        return myConceptColorConcept;
+      case LanguageConceptSwitch.BaseDesignSystemParentConcept:
+        return myConceptBaseDesignSystemParentConcept;
       case LanguageConceptSwitch.DesignSystemConcept:
         return myConceptDesignSystemConcept;
+      case LanguageConceptSwitch.DesignSystemParentConcept:
+        return myConceptDesignSystemParentConcept;
       case LanguageConceptSwitch.DesignSystemPropertiesListConcept:
         return myConceptDesignSystemPropertiesListConcept;
       case LanguageConceptSwitch.DesignSystemPropertyConcept:
@@ -63,35 +62,34 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptDesignSystemPropertyParametersListConcept;
       case LanguageConceptSwitch.DesignSystemSubsystemListConcept:
         return myConceptDesignSystemSubsystemListConcept;
+      case LanguageConceptSwitch.DirectReferenceDesignSystemParentConcept:
+        return myConceptDirectReferenceDesignSystemParentConcept;
       case LanguageConceptSwitch.IDesignSystemPropertyType:
         return myConceptIDesignSystemPropertyType;
       case LanguageConceptSwitch.IDesignSystemValueType:
         return myConceptIDesignSystemValueType;
-      case LanguageConceptSwitch.List:
-        return myConceptList;
-      case LanguageConceptSwitch.Type:
-        return myConceptType;
+      case LanguageConceptSwitch.IndirectReferenceDesignSystemParentConcept:
+        return myConceptIndirectReferenceDesignSystemParentConcept;
+      case LanguageConceptSwitch.ReferenceDesignSystemParentConcept:
+        return myConceptReferenceDesignSystemParentConcept;
       default:
         return null;
     }
   }
 
-  @Override
-  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
-    return Arrays.asList(myCSDatatypecolor);
-  }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
 
-  private static ConceptDescriptor createDescriptorForColorConcept() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.System", "ColorConcept", 0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e1510L);
+  private static ConceptDescriptor createDescriptorForBaseDesignSystemParentConcept() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.System", "BaseDesignSystemParentConcept", 0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b720507L);
     b.class_(false, false, false);
-    b.parent(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e152eL);
-    b.origin("r:291ddc1b-d6e7-4ca6-a0e2-a1fae46ab1b7(DesignSystem.System.structure)/473053312768152848");
+    // extends: DesignSystem.System.structure.DesignSystemParentConcept
+    b.super_(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b720450L);
+    b.origin("r:291ddc1b-d6e7-4ca6-a0e2-a1fae46ab1b7(DesignSystem.System.structure)/473053312769459463");
     b.version(3);
-    b.property("value", 0x6909f7b4b5e1513L).type(MetaIdFactory.dataTypeId(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e150eL)).origin("473053312768152851").done();
+    b.alias("DesignSystem");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDesignSystemConcept() {
@@ -101,10 +99,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e1509L);
     b.origin("r:291ddc1b-d6e7-4ca6-a0e2-a1fae46ab1b7(DesignSystem.System.structure)/473053312768152807");
     b.version(3);
-    b.associate("parent", 0x6909f7b4b5e14fbL).target(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e14e7L).optional(true).origin("473053312768152827").done();
     b.aggregate("subsystems", 0x6909f7b4b5e14f5L).target(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e14f1L).optional(true).ordered(true).multiple(false).origin("473053312768152821").done();
     b.aggregate("properties", 0x6909f7b4b5e14f7L).target(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e14f2L).optional(false).ordered(true).multiple(false).origin("473053312768152823").done();
+    b.aggregate("parent", 0x6909f7b4b689f0bL).target(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b720450L).optional(false).ordered(true).multiple(false).origin("473053312768843531").done();
     b.alias("DesignSystem");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForDesignSystemParentConcept() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.System", "DesignSystemParentConcept", 0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b720450L);
+    b.class_(false, true, false);
+    b.origin("r:291ddc1b-d6e7-4ca6-a0e2-a1fae46ab1b7(DesignSystem.System.structure)/473053312769459280");
+    b.version(3);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDesignSystemPropertiesListConcept() {
@@ -147,10 +152,21 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForDesignSystemSubsystemListConcept() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.System", "DesignSystemSubsystemListConcept", 0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e14f1L);
     b.class_(false, false, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L);
     b.origin("r:291ddc1b-d6e7-4ca6-a0e2-a1fae46ab1b7(DesignSystem.System.structure)/473053312768152817");
     b.version(3);
     b.aggregate("contents", 0x6909f7b4b5e1501L).target(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e14e7L).optional(true).ordered(true).multiple(true).origin("473053312768152833").done();
     b.alias("subsystems");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForDirectReferenceDesignSystemParentConcept() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.System", "DirectReferenceDesignSystemParentConcept", 0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b689f05L);
+    b.class_(false, false, false);
+    // extends: DesignSystem.System.structure.ReferenceDesignSystemParentConcept
+    b.super_(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b864160L);
+    b.origin("r:291ddc1b-d6e7-4ca6-a0e2-a1fae46ab1b7(DesignSystem.System.structure)/473053312768843525");
+    b.version(3);
+    b.associate("designSystemConcept", 0x6909f7b4b689f06L).target(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e14e7L).optional(false).origin("473053312768843526").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForIDesignSystemPropertyType() {
@@ -170,21 +186,24 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(3);
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForList() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.System", "List", 0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e1531L);
+  private static ConceptDescriptor createDescriptorForIndirectReferenceDesignSystemParentConcept() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.System", "IndirectReferenceDesignSystemParentConcept", 0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b81ef0aL);
     b.class_(false, false, false);
-    b.parent(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e152eL);
-    b.origin("r:291ddc1b-d6e7-4ca6-a0e2-a1fae46ab1b7(DesignSystem.System.structure)/473053312768152881");
+    // extends: DesignSystem.System.structure.ReferenceDesignSystemParentConcept
+    b.super_(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b864160L);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L);
+    b.origin("r:291ddc1b-d6e7-4ca6-a0e2-a1fae46ab1b7(DesignSystem.System.structure)/473053312770502410");
     b.version(3);
-    b.aggregate("contents", 0x6909f7b4b5e1534L).target(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e152eL).optional(true).ordered(true).multiple(true).origin("473053312768152884").done();
-    b.alias("list");
+    b.aggregate("parent", 0x6909f7b4b864161L).target(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b864160L).optional(false).ordered(true).multiple(false).origin("473053312770785633").done();
+    b.aggregate("child", 0x6909f7b4b821143L).target(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b689f05L).optional(false).ordered(true).multiple(false).origin("473053312770511171").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForType() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.System", "Type", 0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e2e2dL);
-    b.class_(false, false, true);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
-    b.origin("r:291ddc1b-d6e7-4ca6-a0e2-a1fae46ab1b7(DesignSystem.System.structure)/473053312768159277");
+  private static ConceptDescriptor createDescriptorForReferenceDesignSystemParentConcept() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.System", "ReferenceDesignSystemParentConcept", 0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b864160L);
+    b.class_(false, true, false);
+    // extends: DesignSystem.System.structure.DesignSystemParentConcept
+    b.super_(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b720450L);
+    b.origin("r:291ddc1b-d6e7-4ca6-a0e2-a1fae46ab1b7(DesignSystem.System.structure)/473053312770785632");
     b.version(3);
     return b.create();
   }
