@@ -9,31 +9,35 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
-  public static final int ColorConcept = 0;
+  public static final int BaseDesignSystemParentConcept = 0;
   public static final int DesignSystemConcept = 1;
-  public static final int DesignSystemPropertiesListConcept = 2;
-  public static final int DesignSystemPropertyConcept = 3;
-  public static final int DesignSystemPropertyParameterConcept = 4;
-  public static final int DesignSystemPropertyParametersListConcept = 5;
-  public static final int DesignSystemSubsystemListConcept = 6;
-  public static final int IDesignSystemPropertyType = 7;
-  public static final int IDesignSystemValueType = 8;
-  public static final int List = 9;
-  public static final int Type = 10;
+  public static final int DesignSystemParentConcept = 2;
+  public static final int DesignSystemPropertiesListConcept = 3;
+  public static final int DesignSystemPropertyConcept = 4;
+  public static final int DesignSystemPropertyParameterConcept = 5;
+  public static final int DesignSystemPropertyParametersListConcept = 6;
+  public static final int DesignSystemSubsystemListConcept = 7;
+  public static final int DirectReferenceDesignSystemParentConcept = 8;
+  public static final int IDesignSystemPropertyType = 9;
+  public static final int IDesignSystemValueType = 10;
+  public static final int IndirectReferenceDesignSystemParentConcept = 11;
+  public static final int ReferenceDesignSystemParentConcept = 12;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x43e160c7168c4805L, 0x904bc45c336610e7L);
-    builder.put(0x6909f7b4b5e1510L, ColorConcept);
+    builder.put(0x6909f7b4b720507L, BaseDesignSystemParentConcept);
     builder.put(0x6909f7b4b5e14e7L, DesignSystemConcept);
+    builder.put(0x6909f7b4b720450L, DesignSystemParentConcept);
     builder.put(0x6909f7b4b5e14f2L, DesignSystemPropertiesListConcept);
     builder.put(0x6909f7b4b5e1504L, DesignSystemPropertyConcept);
     builder.put(0x6909f7b4b5e1538L, DesignSystemPropertyParameterConcept);
     builder.put(0x6909f7b4b5e152aL, DesignSystemPropertyParametersListConcept);
     builder.put(0x6909f7b4b5e14f1L, DesignSystemSubsystemListConcept);
+    builder.put(0x6909f7b4b689f05L, DirectReferenceDesignSystemParentConcept);
     builder.put(0x6909f7b4b5e1509L, IDesignSystemPropertyType);
     builder.put(0x6909f7b4b5e152eL, IDesignSystemValueType);
-    builder.put(0x6909f7b4b5e1531L, List);
-    builder.put(0x6909f7b4b5e2e2dL, Type);
+    builder.put(0x6909f7b4b81ef0aL, IndirectReferenceDesignSystemParentConcept);
+    builder.put(0x6909f7b4b864160L, ReferenceDesignSystemParentConcept);
     myIndex = builder.seal();
   }
 

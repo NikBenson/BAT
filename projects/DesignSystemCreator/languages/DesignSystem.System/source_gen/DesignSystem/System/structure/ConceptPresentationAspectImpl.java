@@ -9,30 +9,32 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private ConceptPresentation props_ColorConcept;
+  private ConceptPresentation props_BaseDesignSystemParentConcept;
   private ConceptPresentation props_DesignSystemConcept;
+  private ConceptPresentation props_DesignSystemParentConcept;
   private ConceptPresentation props_DesignSystemPropertiesListConcept;
   private ConceptPresentation props_DesignSystemPropertyConcept;
   private ConceptPresentation props_DesignSystemPropertyParameterConcept;
   private ConceptPresentation props_DesignSystemPropertyParametersListConcept;
   private ConceptPresentation props_DesignSystemSubsystemListConcept;
+  private ConceptPresentation props_DirectReferenceDesignSystemParentConcept;
   private ConceptPresentation props_IDesignSystemPropertyType;
   private ConceptPresentation props_IDesignSystemValueType;
-  private ConceptPresentation props_List;
-  private ConceptPresentation props_Type;
+  private ConceptPresentation props_IndirectReferenceDesignSystemParentConcept;
+  private ConceptPresentation props_ReferenceDesignSystemParentConcept;
 
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case LanguageConceptSwitch.ColorConcept:
-        if (props_ColorConcept == null) {
+      case LanguageConceptSwitch.BaseDesignSystemParentConcept:
+        if (props_BaseDesignSystemParentConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByName();
-          props_ColorConcept = cpb.create();
+          cpb.rawPresentation("DesignSystem");
+          props_BaseDesignSystemParentConcept = cpb.create();
         }
-        return props_ColorConcept;
+        return props_BaseDesignSystemParentConcept;
       case LanguageConceptSwitch.DesignSystemConcept:
         if (props_DesignSystemConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -40,6 +42,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_DesignSystemConcept = cpb.create();
         }
         return props_DesignSystemConcept;
+      case LanguageConceptSwitch.DesignSystemParentConcept:
+        if (props_DesignSystemParentConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_DesignSystemParentConcept = cpb.create();
+        }
+        return props_DesignSystemParentConcept;
       case LanguageConceptSwitch.DesignSystemPropertiesListConcept:
         if (props_DesignSystemPropertiesListConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -75,6 +83,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_DesignSystemSubsystemListConcept = cpb.create();
         }
         return props_DesignSystemSubsystemListConcept;
+      case LanguageConceptSwitch.DirectReferenceDesignSystemParentConcept:
+        if (props_DirectReferenceDesignSystemParentConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b689f05L, 0x6909f7b4b689f06L, "designSystemConcept", "", "");
+          props_DirectReferenceDesignSystemParentConcept = cpb.create();
+        }
+        return props_DirectReferenceDesignSystemParentConcept;
       case LanguageConceptSwitch.IDesignSystemPropertyType:
         if (props_IDesignSystemPropertyType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -87,20 +102,19 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_IDesignSystemValueType = cpb.create();
         }
         return props_IDesignSystemValueType;
-      case LanguageConceptSwitch.List:
-        if (props_List == null) {
+      case LanguageConceptSwitch.IndirectReferenceDesignSystemParentConcept:
+        if (props_IndirectReferenceDesignSystemParentConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByName();
-          props_List = cpb.create();
+          cpb.rawPresentation("IndirectReferenceDesignSystemParentConcept");
+          props_IndirectReferenceDesignSystemParentConcept = cpb.create();
         }
-        return props_List;
-      case LanguageConceptSwitch.Type:
-        if (props_Type == null) {
+        return props_IndirectReferenceDesignSystemParentConcept;
+      case LanguageConceptSwitch.ReferenceDesignSystemParentConcept:
+        if (props_ReferenceDesignSystemParentConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByName();
-          props_Type = cpb.create();
+          props_ReferenceDesignSystemParentConcept = cpb.create();
         }
-        return props_Type;
+        return props_ReferenceDesignSystemParentConcept;
     }
     return null;
   }

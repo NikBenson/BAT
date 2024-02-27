@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="6r1g4e56i616tjc8isr7t4k6p8axpf0" />
+<product version="3" modelHash="-8sqrgzm6qvmwx1bo5v5m2nurzouunnf">
+  <files names="BaseDesignSystemParentConcept__BehaviorDescriptor.java:BehaviorAspectDescriptor.java:DesignSystemParentConcept__BehaviorDescriptor.java:DesignSystemSubsystemListConcept__BehaviorDescriptor.java:DirectReferenceDesignSystemParentConcept__BehaviorDescriptor.java:IndirectReferenceDesignSystemParentConcept__BehaviorDescriptor.java" />
+</product>
 
