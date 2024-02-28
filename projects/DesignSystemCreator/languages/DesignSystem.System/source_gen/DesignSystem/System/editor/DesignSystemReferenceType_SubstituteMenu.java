@@ -22,34 +22,34 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 
-public class DesignSystemPropertyParameterConcept_SubstituteMenu extends SubstituteMenuBase {
-  public DesignSystemPropertyParameterConcept_SubstituteMenu() {
-    super(false, new EditorMenuDescriptorBase("default substitute menu for DesignSystemPropertyParameterConcept. Generated from implicit smart reference attribute.", new SNodePointer("r:291ddc1b-d6e7-4ca6-a0e2-a1fae46ab1b7(DesignSystem.System.structure)", "473053312768152888")));
+public class DesignSystemReferenceType_SubstituteMenu extends SubstituteMenuBase {
+  public DesignSystemReferenceType_SubstituteMenu() {
+    super(false, new EditorMenuDescriptorBase("default substitute menu for DesignSystemReferenceType. Generated from implicit smart reference attribute.", new SNodePointer("r:291ddc1b-d6e7-4ca6-a0e2-a1fae46ab1b7(DesignSystem.System.structure)", "473053312771991558")));
   }
   @NotNull
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SMP_ReferenceScope_b7qd4r_a(), CONCEPTS.DesignSystemPropertyParameterConcept$L));
-    result.add(new SMP_Subconcepts_b7qd4r_b());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SMP_ReferenceScope_td2gog_a(), CONCEPTS.DesignSystemReferenceType$6W));
+    result.add(new SMP_Subconcepts_td2gog_b());
     return result;
   }
 
-  public class SMP_ReferenceScope_b7qd4r_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_td2gog_a extends ReferenceScopeSubstituteMenuPart {
 
-    public SMP_ReferenceScope_b7qd4r_a() {
-      super(CONCEPTS.DesignSystemPropertyParameterConcept$L, LINKS.ref$LGOo, new EditorMenuDescriptorBase("reference scope substitute menu part", null));
+    public SMP_ReferenceScope_td2gog_a() {
+      super(CONCEPTS.DesignSystemReferenceType$6W, LINKS.reference$DKYX, new EditorMenuDescriptorBase("reference scope substitute menu part", null));
     }
 
   }
-  public class SMP_Subconcepts_b7qd4r_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
-    public SMP_Subconcepts_b7qd4r_b() {
-      super(new EditorMenuDescriptorBase("include menus for all the direct subconcepts of " + "DesignSystemPropertyParameterConcept", null));
+  public class SMP_Subconcepts_td2gog_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+    public SMP_Subconcepts_td2gog_b() {
+      super(new EditorMenuDescriptorBase("include menus for all the direct subconcepts of " + "DesignSystemReferenceType", null));
     }
 
     @Override
     protected Collection<SAbstractConcept> getConcepts(final SubstituteMenuContext _context) {
-      return getDirectDescendants(_context, CONCEPTS.DesignSystemPropertyParameterConcept$L);
+      return getDirectDescendants(_context, CONCEPTS.DesignSystemReferenceType$6W);
     }
 
     @Override
@@ -59,10 +59,10 @@ public class DesignSystemPropertyParameterConcept_SubstituteMenu extends Substit
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept DesignSystemPropertyParameterConcept$L = MetaAdapterFactory.getConcept(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e1538L, "DesignSystem.System.structure.DesignSystemPropertyParameterConcept");
+    /*package*/ static final SConcept DesignSystemReferenceType$6W = MetaAdapterFactory.getConcept(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b98a806L, "DesignSystem.System.structure.DesignSystemReferenceType");
   }
 
   private static final class LINKS {
-    /*package*/ static final SReferenceLink ref$LGOo = MetaAdapterFactory.getReferenceLink(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e1538L, 0x6909f7b4b60530dL, "ref");
+    /*package*/ static final SReferenceLink reference$DKYX = MetaAdapterFactory.getReferenceLink(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b98a806L, 0x6909f7b4b98a807L, "reference");
   }
 }

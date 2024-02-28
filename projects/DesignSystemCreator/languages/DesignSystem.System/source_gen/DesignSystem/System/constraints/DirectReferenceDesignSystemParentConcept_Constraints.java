@@ -9,25 +9,16 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.core.behavior.ScopeProvider__BehaviorDescriptor;
-import jetbrains.mps.scope.ListScope;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.HashMap;
 import java.util.function.Predicate;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import DesignSystem.System.behavior.DesignSystemParentConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Objects;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public class DirectReferenceDesignSystemParentConcept_Constraints extends BaseConstraintsDescriptor {
@@ -41,21 +32,7 @@ public class DirectReferenceDesignSystemParentConcept_Constraints extends BaseCo
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseScopeProvider() {
-          @Override
-          public SNodeReference getSearchScopeValidatorNode() {
-            return new SNodePointer("r:dc304f5b-253e-4327-b014-96295c9dad99(DesignSystem.System.constraints)", "473053312770241080");
-          }
-          @Override
-          public Scope createScope(final ReferenceConstraintsContext _context) {
-            for (SNode current = _context.getContextNode(); (current != null); current = SNodeOperations.getParent(current)) {
-              if (SNodeOperations.isInstanceOf(current, CONCEPTS.ScopeProvider$aq)) {
-                return ScopeProvider__BehaviorDescriptor.getScope_id52_Geb4QDV$.invoke(SNodeOperations.cast(current, CONCEPTS.ScopeProvider$aq), CONCEPTS.DesignSystemConcept$8a, _context.getContextNode());
-              }
-            }
-            return ListScope.forNamedElements(Sequence.fromStream(SModelOperations.rootsIncludingImported(SNodeOperations.getModel(_context.getContextNode()), CONCEPTS.DesignSystemConcept$8a).stream().filter(DirectReferenceDesignSystemParentConcept_Constraints.this._additional_isNotParentOf(_context.getContextNode()))));
-          }
-        };
+        return ReferenceScopeProvider.fromHierarchy(CONCEPTS.DesignSystemConcept$8a, new SNodePointer("r:dc304f5b-253e-4327-b014-96295c9dad99(DesignSystem.System.constraints)", "473053312771476367"));
       }
     };
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -75,7 +52,6 @@ public class DirectReferenceDesignSystemParentConcept_Constraints extends BaseCo
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept DirectReferenceDesignSystemParentConcept$Bq = MetaAdapterFactory.getConcept(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b689f05L, "DesignSystem.System.structure.DirectReferenceDesignSystemParentConcept");
-    /*package*/ static final SInterfaceConcept ScopeProvider$aq = MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L, "jetbrains.mps.lang.core.structure.ScopeProvider");
     /*package*/ static final SConcept DesignSystemConcept$8a = MetaAdapterFactory.getConcept(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e14e7L, "DesignSystem.System.structure.DesignSystemConcept");
   }
 

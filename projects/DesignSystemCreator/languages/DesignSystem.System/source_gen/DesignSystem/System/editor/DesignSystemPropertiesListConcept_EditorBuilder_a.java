@@ -74,7 +74,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
       return LINKS.contents$TbQ9;
     }
     public SAbstractConcept getChildSConcept() {
-      return CONCEPTS.DesignSystemPropertyConcept$OI;
+      return CONCEPTS.AbstractDesignSystemPropertyConcept$8G;
     }
 
     public EditorCell createNodeCell(SNode elementNode) {
@@ -130,6 +130,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept DesignSystemPropertyConcept$OI = MetaAdapterFactory.getConcept(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e1504L, "DesignSystem.System.structure.DesignSystemPropertyConcept");
+    /*package*/ static final SConcept AbstractDesignSystemPropertyConcept$8G = MetaAdapterFactory.getConcept(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b97586bL, "DesignSystem.System.structure.AbstractDesignSystemPropertyConcept");
   }
 }

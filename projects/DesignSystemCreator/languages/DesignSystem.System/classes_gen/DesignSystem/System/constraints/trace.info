@@ -11,73 +11,69 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="13,0,29,0" name="DesignSystem.System.constraints.ConstraintsAspectDescriptor" />
+      <unit at="13,0,31,0" name="DesignSystem.System.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:dc304f5b-253e-4327-b014-96295c9dad99(DesignSystem.System.constraints)/473053312768843548">
     <file name="DirectReferenceDesignSystemParentConcept_Constraints.java">
-      <node id="473053312768843548" at="34,65,35,64" concept="8" />
-      <node id="473053312769033285" at="46,63,47,133" concept="6" />
-      <node id="473053312770260552" at="52,85,53,205" concept="6" />
-      <node id="473053312770264993" at="55,13,56,322" concept="6" />
-      <node id="473053312768843548" at="60,6,61,131" concept="5" />
-      <node id="473053312769033285" at="61,131,62,42" concept="1" />
-      <node id="473053312768843548" at="62,42,63,22" concept="6" />
-      <node id="473053312770395517" at="68,44,69,23" concept="6" />
-      <node id="473053312770398424" at="71,7,72,18" concept="6" />
-      <node id="473053312768843548" at="77,0,78,0" concept="7" trace="DirectReferenceDesignSystemParentConcept$Bq" />
-      <node id="473053312768843548" at="78,0,79,0" concept="7" trace="ScopeProvider$aq" />
-      <node id="473053312768843548" at="79,0,80,0" concept="7" trace="DesignSystemConcept$8a" />
-      <node id="473053312768843548" at="83,0,84,0" concept="7" trace="designSystemConcept$PxdX" />
-      <node id="473053312768843548" at="84,0,85,0" concept="7" trace="parent$cIP7" />
-      <node id="473053312768843548" at="34,0,37,0" concept="0" trace="DirectReferenceDesignSystemParentConcept_Constraints#()V" />
-      <node id="473053312770249548" at="51,126,54,15" concept="3" />
-      <node id="473053312770393159" at="67,255,70,9" concept="3" />
-      <node id="473053312769033285" at="45,0,49,0" concept="4" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="473053312770245320" at="50,80,55,13" concept="2" />
-      <node id="473053312770358199" at="66,20,71,7" concept="2" />
-      <node id="473053312770428266" at="65,72,73,6" concept="6" />
-      <node id="473053312769033285" at="49,0,58,0" concept="4" trace="createScope#(Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
-      <node id="473053312770519645" at="65,0,75,0" concept="4" trace="_additional_isNotParentOf#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/function/Predicate;" />
-      <node id="473053312769033285" at="43,56,58,10" concept="6" />
-      <node id="473053312769033285" at="41,0,60,0" concept="4" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-      <node id="473053312769033285" at="39,90,60,6" concept="5" />
-      <node id="473053312768843548" at="38,0,65,0" concept="4" trace="getSpecifiedReferences#()Ljava/util/Map;" />
-      <scope id="473053312768843548" at="34,65,35,64" />
-      <scope id="473053312769033285" at="46,63,47,133" />
-      <scope id="473053312770249550" at="52,85,53,205" />
-      <scope id="473053312770393161" at="68,44,69,23" />
-      <scope id="473053312768843548" at="34,0,37,0" />
-      <scope id="473053312770245322" at="51,126,54,15" />
-      <scope id="473053312770358201" at="67,255,70,9" />
-      <scope id="473053312769033285" at="45,0,49,0" />
-      <scope id="473053312770245320" at="50,80,55,13">
-        <var name="current" id="473053312770245321" />
-      </scope>
-      <scope id="473053312770358199" at="66,20,71,7">
+      <node id="473053312768843548" at="25,65,26,64" concept="8" />
+      <node id="473053312769033285" at="34,56,35,200" concept="6" />
+      <node id="473053312768843548" at="37,6,38,131" concept="5" />
+      <node id="473053312769033285" at="38,131,39,42" concept="1" />
+      <node id="473053312768843548" at="39,42,40,22" concept="6" />
+      <node id="473053312770395517" at="45,44,46,23" concept="6" />
+      <node id="473053312770398424" at="48,7,49,18" concept="6" />
+      <node id="473053312768843548" at="54,0,55,0" concept="7" trace="DirectReferenceDesignSystemParentConcept$Bq" />
+      <node id="473053312768843548" at="55,0,56,0" concept="7" trace="DesignSystemConcept$8a" />
+      <node id="473053312768843548" at="59,0,60,0" concept="7" trace="designSystemConcept$PxdX" />
+      <node id="473053312768843548" at="60,0,61,0" concept="7" trace="parent$cIP7" />
+      <node id="473053312768843548" at="25,0,28,0" concept="0" trace="DirectReferenceDesignSystemParentConcept_Constraints#()V" />
+      <node id="473053312770393159" at="44,255,47,9" concept="3" />
+      <node id="473053312769033285" at="32,0,37,0" concept="4" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <node id="473053312770358199" at="43,20,48,7" concept="2" />
+      <node id="473053312769033285" at="30,90,37,6" concept="5" />
+      <node id="473053312770428266" at="42,72,50,6" concept="6" />
+      <node id="473053312770519645" at="42,0,52,0" concept="4" trace="_additional_isNotParentOf#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/function/Predicate;" />
+      <node id="473053312768843548" at="29,0,42,0" concept="4" trace="getSpecifiedReferences#()Ljava/util/Map;" />
+      <scope id="473053312768843548" at="25,65,26,64" />
+      <scope id="473053312769033285" at="34,56,35,200" />
+      <scope id="473053312770393161" at="45,44,46,23" />
+      <scope id="473053312768843548" at="25,0,28,0" />
+      <scope id="473053312770358201" at="44,255,47,9" />
+      <scope id="473053312769033285" at="32,0,37,0" />
+      <scope id="473053312770358199" at="43,20,48,7">
         <var name="current" id="473053312770358200" />
       </scope>
-      <scope id="473053312769033285" at="50,80,56,322" />
-      <scope id="473053312770309958" at="66,20,72,18" />
-      <scope id="473053312770421016" at="65,72,73,6" />
-      <scope id="473053312769033285" at="49,0,58,0">
-        <var name="_context" id="473053312769033285" />
-      </scope>
-      <scope id="473053312770519645" at="65,0,75,0">
-        <var name="node" id="473053312770429876" />
-      </scope>
-      <scope id="473053312769033285" at="43,56,58,10" />
-      <scope id="473053312769033285" at="41,0,60,0" />
-      <scope id="473053312768843548" at="39,90,63,22">
+      <scope id="473053312770309958" at="43,20,49,18" />
+      <scope id="473053312770421016" at="42,72,50,6" />
+      <scope id="473053312768843548" at="30,90,40,22">
         <var name="d0" id="473053312769033285" />
         <var name="references" id="473053312768843548" />
       </scope>
-      <scope id="473053312768843548" at="38,0,65,0" />
-      <unit id="473053312768843548" at="82,0,86,0" name="DesignSystem.System.constraints.DirectReferenceDesignSystemParentConcept_Constraints$LINKS" />
-      <unit id="473053312768843548" at="76,0,81,0" name="DesignSystem.System.constraints.DirectReferenceDesignSystemParentConcept_Constraints$CONCEPTS" />
-      <unit id="473053312769033285" at="44,19,58,9" name="DesignSystem.System.constraints.DirectReferenceDesignSystemParentConcept_Constraints$1$1" />
-      <unit id="473053312769033285" at="40,48,60,5" name="DesignSystem.System.constraints.DirectReferenceDesignSystemParentConcept_Constraints$1" />
-      <unit id="473053312768843548" at="33,0,87,0" name="DesignSystem.System.constraints.DirectReferenceDesignSystemParentConcept_Constraints" />
+      <scope id="473053312770519645" at="42,0,52,0">
+        <var name="node" id="473053312770429876" />
+      </scope>
+      <scope id="473053312768843548" at="29,0,42,0" />
+      <unit id="473053312768843548" at="53,0,57,0" name="DesignSystem.System.constraints.DirectReferenceDesignSystemParentConcept_Constraints$CONCEPTS" />
+      <unit id="473053312768843548" at="58,0,62,0" name="DesignSystem.System.constraints.DirectReferenceDesignSystemParentConcept_Constraints$LINKS" />
+      <unit id="473053312769033285" at="31,48,37,5" name="DesignSystem.System.constraints.DirectReferenceDesignSystemParentConcept_Constraints$1" />
+      <unit id="473053312768843548" at="24,0,63,0" name="DesignSystem.System.constraints.DirectReferenceDesignSystemParentConcept_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:dc304f5b-253e-4327-b014-96295c9dad99(DesignSystem.System.constraints)/473053312772397216">
+    <file name="AbstractDesignSystemPropertyConcept_Constraints.java">
+      <node id="473053312772397216" at="10,60,11,59" concept="8" />
+      <node id="473053312772397216" at="15,47,16,51" concept="6" />
+      <node id="473053312772397216" at="20,0,21,0" concept="7" trace="AbstractDesignSystemPropertyConcept$8G" />
+      <node id="473053312772397216" at="21,0,22,0" concept="7" trace="DesignSystemPropertyConcept$OI" />
+      <node id="473053312772397216" at="10,0,13,0" concept="0" trace="AbstractDesignSystemPropertyConcept_Constraints#()V" />
+      <node id="473053312772397216" at="14,0,18,0" concept="4" trace="getDefaultConcreteConcept#()Lorg/jetbrains/mps/openapi/language/SConcept;" />
+      <scope id="473053312772397216" at="10,60,11,59" />
+      <scope id="473053312772397216" at="15,47,16,51" />
+      <scope id="473053312772397216" at="10,0,13,0" />
+      <scope id="473053312772397216" at="14,0,18,0" />
+      <unit id="473053312772397216" at="19,0,23,0" name="DesignSystem.System.constraints.AbstractDesignSystemPropertyConcept_Constraints$CONCEPTS" />
+      <unit id="473053312772397216" at="9,0,24,0" name="DesignSystem.System.constraints.AbstractDesignSystemPropertyConcept_Constraints" />
     </file>
   </root>
 </debug-info>

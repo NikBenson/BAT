@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="-8sqrgzm6qvmwx1bo5v5m2nurzouunnf">
-  <files names="BaseDesignSystemParentConcept__BehaviorDescriptor.java:BehaviorAspectDescriptor.java:DesignSystemParentConcept__BehaviorDescriptor.java:DesignSystemSubsystemListConcept__BehaviorDescriptor.java:DirectReferenceDesignSystemParentConcept__BehaviorDescriptor.java:IndirectReferenceDesignSystemParentConcept__BehaviorDescriptor.java" />
+<product version="3" modelHash="-de01hf8w40o4n5ur9lsiirry6uokju">
+  <files names="BaseDesignSystemParentConcept__BehaviorDescriptor.java:BehaviorAspectDescriptor.java:DesignSystemFileConcept__BehaviorDescriptor.java:DesignSystemParentConcept__BehaviorDescriptor.java:DesignSystemSubsystemListConcept__BehaviorDescriptor.java:DirectReferenceDesignSystemParentConcept__BehaviorDescriptor.java:IndirectReferenceDesignSystemParentConcept__BehaviorDescriptor.java" />
 </product>
 

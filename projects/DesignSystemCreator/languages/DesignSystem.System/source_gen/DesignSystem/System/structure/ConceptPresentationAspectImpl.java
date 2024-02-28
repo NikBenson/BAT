@@ -9,18 +9,28 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private ConceptPresentation props_AbstractDesignSystemPropertyConcept;
   private ConceptPresentation props_BaseDesignSystemParentConcept;
+  private ConceptPresentation props_DesignSystemColorTypeConcept;
   private ConceptPresentation props_DesignSystemConcept;
+  private ConceptPresentation props_DesignSystemEnumItemConcept;
+  private ConceptPresentation props_DesignSystemEnumTypeConcept;
+  private ConceptPresentation props_DesignSystemFileConcept;
   private ConceptPresentation props_DesignSystemParentConcept;
+  private ConceptPresentation props_DesignSystemPrimitiveTypeConcept;
   private ConceptPresentation props_DesignSystemPropertiesListConcept;
   private ConceptPresentation props_DesignSystemPropertyConcept;
   private ConceptPresentation props_DesignSystemPropertyParameterConcept;
   private ConceptPresentation props_DesignSystemPropertyParametersListConcept;
+  private ConceptPresentation props_DesignSystemReferenceType;
+  private ConceptPresentation props_DesignSystemSetTypeConcept;
+  private ConceptPresentation props_DesignSystemStringTypeConcept;
   private ConceptPresentation props_DesignSystemSubsystemListConcept;
+  private ConceptPresentation props_DesignSystemTypeConcept;
   private ConceptPresentation props_DirectReferenceDesignSystemParentConcept;
-  private ConceptPresentation props_IDesignSystemPropertyType;
-  private ConceptPresentation props_IDesignSystemValueType;
+  private ConceptPresentation props_IDesignSystemCreatesType;
   private ConceptPresentation props_IndirectReferenceDesignSystemParentConcept;
+  private ConceptPresentation props_ParametizedDesignSystemPropertyConcept;
   private ConceptPresentation props_ReferenceDesignSystemParentConcept;
 
   @Override
@@ -28,6 +38,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.AbstractDesignSystemPropertyConcept:
+        if (props_AbstractDesignSystemPropertyConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AbstractDesignSystemPropertyConcept = cpb.create();
+        }
+        return props_AbstractDesignSystemPropertyConcept;
       case LanguageConceptSwitch.BaseDesignSystemParentConcept:
         if (props_BaseDesignSystemParentConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -35,6 +51,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_BaseDesignSystemParentConcept = cpb.create();
         }
         return props_BaseDesignSystemParentConcept;
+      case LanguageConceptSwitch.DesignSystemColorTypeConcept:
+        if (props_DesignSystemColorTypeConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Color");
+          props_DesignSystemColorTypeConcept = cpb.create();
+        }
+        return props_DesignSystemColorTypeConcept;
       case LanguageConceptSwitch.DesignSystemConcept:
         if (props_DesignSystemConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -42,12 +65,39 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_DesignSystemConcept = cpb.create();
         }
         return props_DesignSystemConcept;
+      case LanguageConceptSwitch.DesignSystemEnumItemConcept:
+        if (props_DesignSystemEnumItemConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_DesignSystemEnumItemConcept = cpb.create();
+        }
+        return props_DesignSystemEnumItemConcept;
+      case LanguageConceptSwitch.DesignSystemEnumTypeConcept:
+        if (props_DesignSystemEnumTypeConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_DesignSystemEnumTypeConcept = cpb.create();
+        }
+        return props_DesignSystemEnumTypeConcept;
+      case LanguageConceptSwitch.DesignSystemFileConcept:
+        if (props_DesignSystemFileConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DesignSystem");
+          props_DesignSystemFileConcept = cpb.create();
+        }
+        return props_DesignSystemFileConcept;
       case LanguageConceptSwitch.DesignSystemParentConcept:
         if (props_DesignSystemParentConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           props_DesignSystemParentConcept = cpb.create();
         }
         return props_DesignSystemParentConcept;
+      case LanguageConceptSwitch.DesignSystemPrimitiveTypeConcept:
+        if (props_DesignSystemPrimitiveTypeConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_DesignSystemPrimitiveTypeConcept = cpb.create();
+        }
+        return props_DesignSystemPrimitiveTypeConcept;
       case LanguageConceptSwitch.DesignSystemPropertiesListConcept:
         if (props_DesignSystemPropertiesListConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -76,6 +126,27 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_DesignSystemPropertyParametersListConcept = cpb.create();
         }
         return props_DesignSystemPropertyParametersListConcept;
+      case LanguageConceptSwitch.DesignSystemReferenceType:
+        if (props_DesignSystemReferenceType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b98a806L, 0x6909f7b4b98a807L, "reference", "", "");
+          props_DesignSystemReferenceType = cpb.create();
+        }
+        return props_DesignSystemReferenceType;
+      case LanguageConceptSwitch.DesignSystemSetTypeConcept:
+        if (props_DesignSystemSetTypeConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Set");
+          props_DesignSystemSetTypeConcept = cpb.create();
+        }
+        return props_DesignSystemSetTypeConcept;
+      case LanguageConceptSwitch.DesignSystemStringTypeConcept:
+        if (props_DesignSystemStringTypeConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("String");
+          props_DesignSystemStringTypeConcept = cpb.create();
+        }
+        return props_DesignSystemStringTypeConcept;
       case LanguageConceptSwitch.DesignSystemSubsystemListConcept:
         if (props_DesignSystemSubsystemListConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -83,6 +154,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_DesignSystemSubsystemListConcept = cpb.create();
         }
         return props_DesignSystemSubsystemListConcept;
+      case LanguageConceptSwitch.DesignSystemTypeConcept:
+        if (props_DesignSystemTypeConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_DesignSystemTypeConcept = cpb.create();
+        }
+        return props_DesignSystemTypeConcept;
       case LanguageConceptSwitch.DirectReferenceDesignSystemParentConcept:
         if (props_DirectReferenceDesignSystemParentConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -90,18 +167,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_DirectReferenceDesignSystemParentConcept = cpb.create();
         }
         return props_DirectReferenceDesignSystemParentConcept;
-      case LanguageConceptSwitch.IDesignSystemPropertyType:
-        if (props_IDesignSystemPropertyType == null) {
+      case LanguageConceptSwitch.IDesignSystemCreatesType:
+        if (props_IDesignSystemCreatesType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          props_IDesignSystemPropertyType = cpb.create();
+          props_IDesignSystemCreatesType = cpb.create();
         }
-        return props_IDesignSystemPropertyType;
-      case LanguageConceptSwitch.IDesignSystemValueType:
-        if (props_IDesignSystemValueType == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          props_IDesignSystemValueType = cpb.create();
-        }
-        return props_IDesignSystemValueType;
+        return props_IDesignSystemCreatesType;
       case LanguageConceptSwitch.IndirectReferenceDesignSystemParentConcept:
         if (props_IndirectReferenceDesignSystemParentConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -109,6 +180,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_IndirectReferenceDesignSystemParentConcept = cpb.create();
         }
         return props_IndirectReferenceDesignSystemParentConcept;
+      case LanguageConceptSwitch.ParametizedDesignSystemPropertyConcept:
+        if (props_ParametizedDesignSystemPropertyConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ParametizedDesignSystemPropertyConcept");
+          props_ParametizedDesignSystemPropertyConcept = cpb.create();
+        }
+        return props_ParametizedDesignSystemPropertyConcept;
       case LanguageConceptSwitch.ReferenceDesignSystemParentConcept:
         if (props_ReferenceDesignSystemParentConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
