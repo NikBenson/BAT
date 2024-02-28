@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="ev0xr8qmi0qs5v9iff8rdppbakdrb4y">
-  <files names="ConstraintsAspectDescriptor.java:DirectReferenceDesignSystemParentConcept_Constraints.java" />
+<product version="3" modelHash="-9vewihr6jtfxglccfp49ocps1mp7jtj">
+  <files names="AbstractDesignSystemPropertyConcept_Constraints.java:ConstraintsAspectDescriptor.java:DirectReferenceDesignSystemParentConcept_Constraints.java" />
 </product>
 

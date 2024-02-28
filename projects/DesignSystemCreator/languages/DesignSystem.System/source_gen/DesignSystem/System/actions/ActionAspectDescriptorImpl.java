@@ -18,6 +18,8 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
       switch (concept.getName()) {
         case "IndirectReferenceDesignSystemParentConcept":
           return Collections.<NodeFactory>singletonList(new DesignSystemParentDotSyntaxFactory.NodeFactory_473053312771238599());
+        case "ParametizedDesignSystemPropertyConcept":
+          return Collections.<NodeFactory>singletonList(new DesignSystemPropertyBySyntaxFactory.NodeFactory_473053312771886551());
         default:
       }
     }

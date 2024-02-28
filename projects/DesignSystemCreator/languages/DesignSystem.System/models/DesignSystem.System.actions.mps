@@ -100,5 +100,38 @@
       </node>
     </node>
   </node>
+  <node concept="37WguZ" id="qgBRHb_KRm">
+    <property role="TrG5h" value="DesignSystemPropertyBySyntaxFactory" />
+    <node concept="37WvkG" id="qgBRHb_KRn" role="37WGs$">
+      <ref role="37XkoT" to="8usw:qgBRHb_uRN" resolve="ParametizedDesignSystemPropertyConcept" />
+      <node concept="37Y9Zx" id="qgBRHb_KRo" role="37ZfLb">
+        <node concept="3clFbS" id="qgBRHb_KRp" role="2VODD2">
+          <node concept="Jncv_" id="qgBRHb_KRq" role="3cqZAp">
+            <ref role="JncvD" to="8usw:qgBRHbnxk4" resolve="DesignSystemPropertyConcept" />
+            <node concept="1r4N5L" id="qgBRHb_KRr" role="JncvB" />
+            <node concept="3clFbS" id="qgBRHb_KRs" role="Jncv$">
+              <node concept="3clFbF" id="qgBRHb_Mef" role="3cqZAp">
+                <node concept="37vLTI" id="qgBRHb_NKV" role="3clFbG">
+                  <node concept="Jnkvi" id="qgBRHb_Oh7" role="37vLTx">
+                    <ref role="1M0zk5" node="qgBRHb_KRz" resolve="original" />
+                  </node>
+                  <node concept="2OqwBi" id="qgBRHb_MoS" role="37vLTJ">
+                    <node concept="1r4Lsj" id="qgBRHb_Mee" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="qgBRHb_Uiv" role="2OqNvi">
+                      <ref role="3Tt5mk" to="8usw:qgBRHb_PxG" resolve="property" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="JncvC" id="qgBRHb_KRz" role="JncvA">
+              <property role="TrG5h" value="original" />
+              <node concept="2jxLKc" id="qgBRHb_KR$" role="1tU5fm" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
