@@ -28,7 +28,7 @@
       <unit at="25,0,69,0" name="DesignSystem.System.editor.DirectReferenceDesignSystemParentConcept_SubstituteMenu" />
     </file>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="17,0,93,0" name="DesignSystem.System.editor.EditorAspectDescriptorImpl" />
+      <unit at="17,0,97,0" name="DesignSystem.System.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:1ff72d29-0f7c-4311-91e4-82b72c1e73e2(DesignSystem.System.editor)/473053312768162926">
@@ -2889,6 +2889,92 @@
       <unit id="473053312773301442" at="127,0,130,0" name="DesignSystem.System.editor.DesignSystemSetTypeConcept_EditorBuilder_a$LINKS" />
       <unit id="473053312773301442" at="69,0,120,0" name="DesignSystem.System.editor.DesignSystemSetTypeConcept_EditorBuilder_a$genericSingleRoleHandler_ri53g9_c0" />
       <unit id="473053312773301442" at="23,0,131,0" name="DesignSystem.System.editor.DesignSystemSetTypeConcept_EditorBuilder_a" />
+    </file>
+  </root>
+  <root nodeRef="r:1ff72d29-0f7c-4311-91e4-82b72c1e73e2(DesignSystem.System.editor)/473053312777491130">
+    <file name="DesignSystemIntegerType_Editor.java">
+      <node id="473053312777491130" at="11,79,12,89" concept="7" />
+      <node id="473053312777491130" at="11,0,14,0" concept="5" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="473053312777491130" at="11,79,12,89" />
+      <scope id="473053312777491130" at="11,0,14,0">
+        <var name="editorContext" id="473053312777491130" />
+        <var name="node" id="473053312777491130" />
+      </scope>
+      <unit id="473053312777491130" at="10,0,15,0" name="DesignSystem.System.editor.DesignSystemIntegerType_Editor" />
+    </file>
+    <file name="DesignSystemIntegerType_EditorBuilder_a.java">
+      <node id="473053312777491130" at="16,103,17,19" concept="10" />
+      <node id="473053312777491130" at="17,19,18,18" concept="1" />
+      <node id="473053312777491130" at="23,26,24,18" concept="7" />
+      <node id="473053312777491130" at="27,39,28,30" concept="7" />
+      <node id="473053312777491132" at="31,41,32,100" concept="6" />
+      <node id="473053312777491132" at="32,100,33,46" concept="1" />
+      <node id="473053312777491132" at="33,46,34,28" concept="1" />
+      <node id="473053312777491132" at="34,28,35,31" concept="1" />
+      <node id="473053312777491132" at="35,31,36,34" concept="1" />
+      <node id="473053312777491132" at="36,34,37,22" concept="7" />
+      <node id="473053312777491130" at="13,0,15,0" concept="2" trace="myNode" />
+      <node id="473053312777491130" at="27,0,30,0" concept="5" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="473053312777491130" at="16,0,20,0" concept="0" trace="DesignSystemIntegerType_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="473053312777491130" at="21,0,26,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="473053312777491132" at="31,0,39,0" concept="5" trace="createConstant_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="473053312777491130" at="23,26,24,18" />
+      <scope id="473053312777491130" at="27,39,28,30" />
+      <scope id="473053312777491130" at="16,103,18,18" />
+      <scope id="473053312777491130" at="27,0,30,0" />
+      <scope id="473053312777491130" at="16,0,20,0">
+        <var name="context" id="473053312777491130" />
+        <var name="node" id="473053312777491130" />
+      </scope>
+      <scope id="473053312777491130" at="21,0,26,0" />
+      <scope id="473053312777491132" at="31,41,37,22">
+        <var name="editorCell" id="473053312777491132" />
+      </scope>
+      <scope id="473053312777491132" at="31,0,39,0" />
+      <unit id="473053312777491130" at="12,0,40,0" name="DesignSystem.System.editor.DesignSystemIntegerType_EditorBuilder_a" />
+    </file>
+  </root>
+  <root nodeRef="r:1ff72d29-0f7c-4311-91e4-82b72c1e73e2(DesignSystem.System.editor)/473053312777491136">
+    <file name="DesignSystemDecimalType_Editor.java">
+      <node id="473053312777491136" at="11,79,12,89" concept="7" />
+      <node id="473053312777491136" at="11,0,14,0" concept="5" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="473053312777491136" at="11,79,12,89" />
+      <scope id="473053312777491136" at="11,0,14,0">
+        <var name="editorContext" id="473053312777491136" />
+        <var name="node" id="473053312777491136" />
+      </scope>
+      <unit id="473053312777491136" at="10,0,15,0" name="DesignSystem.System.editor.DesignSystemDecimalType_Editor" />
+    </file>
+    <file name="DesignSystemDecimalType_EditorBuilder_a.java">
+      <node id="473053312777491136" at="16,103,17,19" concept="10" />
+      <node id="473053312777491136" at="17,19,18,18" concept="1" />
+      <node id="473053312777491136" at="23,26,24,18" concept="7" />
+      <node id="473053312777491136" at="27,39,28,30" concept="7" />
+      <node id="473053312777491141" at="31,41,32,100" concept="6" />
+      <node id="473053312777491141" at="32,100,33,46" concept="1" />
+      <node id="473053312777491141" at="33,46,34,28" concept="1" />
+      <node id="473053312777491141" at="34,28,35,31" concept="1" />
+      <node id="473053312777491141" at="35,31,36,34" concept="1" />
+      <node id="473053312777491141" at="36,34,37,22" concept="7" />
+      <node id="473053312777491136" at="13,0,15,0" concept="2" trace="myNode" />
+      <node id="473053312777491136" at="27,0,30,0" concept="5" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="473053312777491136" at="16,0,20,0" concept="0" trace="DesignSystemDecimalType_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="473053312777491136" at="21,0,26,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="473053312777491141" at="31,0,39,0" concept="5" trace="createConstant_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="473053312777491136" at="23,26,24,18" />
+      <scope id="473053312777491136" at="27,39,28,30" />
+      <scope id="473053312777491136" at="16,103,18,18" />
+      <scope id="473053312777491136" at="27,0,30,0" />
+      <scope id="473053312777491136" at="16,0,20,0">
+        <var name="context" id="473053312777491136" />
+        <var name="node" id="473053312777491136" />
+      </scope>
+      <scope id="473053312777491136" at="21,0,26,0" />
+      <scope id="473053312777491141" at="31,41,37,22">
+        <var name="editorCell" id="473053312777491141" />
+      </scope>
+      <scope id="473053312777491141" at="31,0,39,0" />
+      <unit id="473053312777491136" at="12,0,40,0" name="DesignSystem.System.editor.DesignSystemDecimalType_EditorBuilder_a" />
     </file>
   </root>
 </debug-info>

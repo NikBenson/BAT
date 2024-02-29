@@ -34,6 +34,7 @@
       <concept id="473053312773301441" name="DesignSystem.System.structure.DesignSystemSetTypeConcept" flags="ng" index="1df3IU">
         <child id="473053312773301485" name="generic" index="1df3Im" />
       </concept>
+      <concept id="473053312777491129" name="DesignSystem.System.structure.DesignSystemIntegerType" flags="ng" index="1dv0R2" />
       <concept id="473053312768152888" name="DesignSystem.System.structure.DesignSystemPropertyParameterConcept" flags="ng" index="1dNCD3">
         <child id="473053312771812857" name="type" index="1d1na2" />
       </concept>
@@ -198,9 +199,9 @@
     <node concept="1dNCIs" id="qgBRHb_edj" role="1d0gr$">
       <property role="TrG5h" value="CounterApp" />
       <node concept="1dNCI9" id="qgBRHb_edk" role="1dNCIc">
-        <node concept="1dNCDZ" id="qgBRHbNfpz" role="1dNFP7">
-          <property role="TrG5h" value="test" />
-          <node concept="1d2DG3" id="qgBRHbNfpB" role="1dNCDL" />
+        <node concept="1dNCDZ" id="qgBRHbVPTY" role="1dNFP7">
+          <property role="TrG5h" value="buttonSize" />
+          <node concept="1dv0R2" id="qgBRHbVPU2" role="1dNCDL" />
         </node>
       </node>
       <node concept="1dNCIa" id="qgBRHb_rpR" role="1dNCIe" />

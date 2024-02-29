@@ -344,5 +344,19 @@
       <ref role="20lvS9" node="qgBRHb_ruL" resolve="DesignSystemTypeConcept" />
     </node>
   </node>
+  <node concept="1TIwiD" id="qgBRHbV9aT">
+    <property role="EcuMT" value="473053312777491129" />
+    <property role="3GE5qa" value="types.primitive" />
+    <property role="TrG5h" value="DesignSystemIntegerType" />
+    <property role="34LRSv" value="Integer" />
+    <ref role="1TJDcQ" node="qgBRHbAaw9" resolve="DesignSystemPrimitiveTypeConcept" />
+  </node>
+  <node concept="1TIwiD" id="qgBRHbV9aZ">
+    <property role="EcuMT" value="473053312777491135" />
+    <property role="3GE5qa" value="types.primitive" />
+    <property role="TrG5h" value="DesignSystemDecimalType" />
+    <property role="34LRSv" value="Decimal" />
+    <ref role="1TJDcQ" node="qgBRHbAaw9" resolve="DesignSystemPrimitiveTypeConcept" />
+  </node>
 </model>
 

@@ -304,6 +304,18 @@
         <ref role="v9R2y" node="qgBRHbPzHg" resolve="reduce_DesignSystemReferenceTypeConcept" />
       </node>
     </node>
+    <node concept="3aamgX" id="qgBRHbV9ba" role="3acgRq">
+      <ref role="30HIoZ" to="8usw:qgBRHbV9aZ" resolve="DesignSystemDecimalType" />
+      <node concept="j$656" id="qgBRHbV9bb" role="1lVwrX">
+        <ref role="v9R2y" node="qgBRHbV9b8" resolve="reduce_DesignSystemDecimalType" />
+      </node>
+    </node>
+    <node concept="3aamgX" id="qgBRHbV9bx" role="3acgRq">
+      <ref role="30HIoZ" to="8usw:qgBRHbV9aT" resolve="DesignSystemIntegerType" />
+      <node concept="j$656" id="qgBRHbV9by" role="1lVwrX">
+        <ref role="v9R2y" node="qgBRHbV9bv" resolve="reduce_DesignSystemIntegerType" />
+      </node>
+    </node>
   </node>
   <node concept="Qs71p" id="qgBRHbFxT0">
     <property role="3GE5qa" value="types.reference.enum" />
@@ -1212,6 +1224,24 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="13MO4I" id="qgBRHbV9b8">
+    <property role="TrG5h" value="reduce_DesignSystemDecimalType" />
+    <property role="3GE5qa" value="types.primitive" />
+    <ref role="3gUMe" to="8usw:qgBRHbV9aZ" resolve="DesignSystemDecimalType" />
+    <node concept="3uibUv" id="qgBRHbV9bS" role="13RCb5">
+      <ref role="3uigEE" to="wyt6:~Double" resolve="Double" />
+      <node concept="raruj" id="qgBRHbV9bT" role="lGtFl" />
+    </node>
+  </node>
+  <node concept="13MO4I" id="qgBRHbV9bv">
+    <property role="TrG5h" value="reduce_DesignSystemIntegerType" />
+    <property role="3GE5qa" value="types.primitive" />
+    <ref role="3gUMe" to="8usw:qgBRHbV9aT" resolve="DesignSystemIntegerType" />
+    <node concept="3uibUv" id="qgBRHbV9bW" role="13RCb5">
+      <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
+      <node concept="raruj" id="qgBRHbV9bX" role="lGtFl" />
     </node>
   </node>
 </model>
