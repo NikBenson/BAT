@@ -13,12 +13,12 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/5351203823916750322:jetbrains.mps.baseLanguage.structure.TryUniversalStatement" />
   <root>
-    <file name="DesignSystemReferenceType_SubstituteMenu.java">
-      <unit at="61,0,64,0" name="DesignSystem.System.editor.DesignSystemReferenceType_SubstituteMenu$CONCEPTS" />
-      <unit at="65,0,68,0" name="DesignSystem.System.editor.DesignSystemReferenceType_SubstituteMenu$LINKS" />
-      <unit at="38,0,45,0" name="DesignSystem.System.editor.DesignSystemReferenceType_SubstituteMenu$SMP_ReferenceScope_td2gog_a" />
-      <unit at="45,0,60,0" name="DesignSystem.System.editor.DesignSystemReferenceType_SubstituteMenu$SMP_Subconcepts_td2gog_b" />
-      <unit at="25,0,69,0" name="DesignSystem.System.editor.DesignSystemReferenceType_SubstituteMenu" />
+    <file name="DesignSystemReferenceTypeConcept_SubstituteMenu.java">
+      <unit at="61,0,64,0" name="DesignSystem.System.editor.DesignSystemReferenceTypeConcept_SubstituteMenu$CONCEPTS" />
+      <unit at="65,0,68,0" name="DesignSystem.System.editor.DesignSystemReferenceTypeConcept_SubstituteMenu$LINKS" />
+      <unit at="38,0,45,0" name="DesignSystem.System.editor.DesignSystemReferenceTypeConcept_SubstituteMenu$SMP_ReferenceScope_yt0o5g_a" />
+      <unit at="45,0,60,0" name="DesignSystem.System.editor.DesignSystemReferenceTypeConcept_SubstituteMenu$SMP_Subconcepts_yt0o5g_b" />
+      <unit at="25,0,69,0" name="DesignSystem.System.editor.DesignSystemReferenceTypeConcept_SubstituteMenu" />
     </file>
     <file name="DirectReferenceDesignSystemParentConcept_SubstituteMenu.java">
       <unit at="61,0,64,0" name="DesignSystem.System.editor.DirectReferenceDesignSystemParentConcept_SubstituteMenu$CONCEPTS" />
@@ -2250,18 +2250,18 @@
     </file>
   </root>
   <root nodeRef="r:1ff72d29-0f7c-4311-91e4-82b72c1e73e2(DesignSystem.System.editor)/473053312772026511">
-    <file name="DesignSystemReferenceType_Editor.java">
-      <node id="473053312772026511" at="11,79,12,91" concept="7" />
+    <file name="DesignSystemReferenceTypeConcept_Editor.java">
+      <node id="473053312772026511" at="11,79,12,98" concept="7" />
       <node id="473053312772026511" at="11,0,14,0" concept="5" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <scope id="473053312772026511" at="11,79,12,91" />
+      <scope id="473053312772026511" at="11,79,12,98" />
       <scope id="473053312772026511" at="11,0,14,0">
         <var name="editorContext" id="473053312772026511" />
         <var name="node" id="473053312772026511" />
       </scope>
-      <unit id="473053312772026511" at="10,0,15,0" name="DesignSystem.System.editor.DesignSystemReferenceType_Editor" />
+      <unit id="473053312772026511" at="10,0,15,0" name="DesignSystem.System.editor.DesignSystemReferenceTypeConcept_Editor" />
     </file>
-    <file name="DesignSystemReferenceType_EditorBuilder_a.java">
-      <node id="473053312772026511" at="43,105,44,19" concept="10" />
+    <file name="DesignSystemReferenceTypeConcept_EditorBuilder_a.java">
+      <node id="473053312772026511" at="43,112,44,19" concept="10" />
       <node id="473053312772026511" at="44,19,45,18" concept="1" />
       <node id="473053312772026511" at="50,26,51,18" concept="7" />
       <node id="473053312772026511" at="54,39,55,32" concept="7" />
@@ -2324,7 +2324,7 @@
       <node id="473053312772026515" at="102,0,104,0" concept="2" trace="myNode" />
       <node id="473053312772026511" at="54,0,57,0" concept="5" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="473053312772026515" at="112,0,115,0" concept="5" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="473053312772026511" at="43,0,47,0" concept="0" trace="DesignSystemReferenceType_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="473053312772026511" at="43,0,47,0" concept="0" trace="DesignSystemReferenceTypeConcept_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="473053312772026511" at="87,0,91,5" concept="4" />
       <node id="473053312772026511" at="48,0,53,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="473053312772026511" at="94,205,99,22" concept="4" />
@@ -2343,7 +2343,7 @@
       <scope id="473053312772026515" at="112,41,113,32" />
       <scope id="473053312772026515" at="118,28,119,20" />
       <scope id="473053312772026522" at="142,17,143,42" />
-      <scope id="473053312772026511" at="43,105,45,18" />
+      <scope id="473053312772026511" at="43,112,45,18" />
       <scope id="473053312772026511" at="88,40,90,48" />
       <scope id="473053312772026511" at="95,73,97,145">
         <var name="manager" id="473053312772026511" />
@@ -2398,12 +2398,12 @@
         <var name="referenceLink" id="473053312772026511" />
       </scope>
       <scope id="473053312772026511" at="66,0,101,0" />
-      <unit id="473053312772026511" at="148,0,151,0" name="DesignSystem.System.editor.DesignSystemReferenceType_EditorBuilder_a$LINKS" />
-      <unit id="473053312772026511" at="157,0,160,0" name="DesignSystem.System.editor.DesignSystemReferenceType_EditorBuilder_a$PROPS" />
-      <unit id="473053312772026511" at="152,0,156,0" name="DesignSystem.System.editor.DesignSystemReferenceType_EditorBuilder_a$CONCEPTS" />
-      <unit id="473053312772026511" at="68,42,83,5" name="DesignSystem.System.editor.DesignSystemReferenceType_EditorBuilder_a$1" />
-      <unit id="473053312772026515" at="101,0,147,0" name="DesignSystem.System.editor.DesignSystemReferenceType_EditorBuilder_a$Inline_Builder0" />
-      <unit id="473053312772026511" at="39,0,161,0" name="DesignSystem.System.editor.DesignSystemReferenceType_EditorBuilder_a" />
+      <unit id="473053312772026511" at="148,0,151,0" name="DesignSystem.System.editor.DesignSystemReferenceTypeConcept_EditorBuilder_a$LINKS" />
+      <unit id="473053312772026511" at="157,0,160,0" name="DesignSystem.System.editor.DesignSystemReferenceTypeConcept_EditorBuilder_a$PROPS" />
+      <unit id="473053312772026511" at="152,0,156,0" name="DesignSystem.System.editor.DesignSystemReferenceTypeConcept_EditorBuilder_a$CONCEPTS" />
+      <unit id="473053312772026511" at="68,42,83,5" name="DesignSystem.System.editor.DesignSystemReferenceTypeConcept_EditorBuilder_a$1" />
+      <unit id="473053312772026515" at="101,0,147,0" name="DesignSystem.System.editor.DesignSystemReferenceTypeConcept_EditorBuilder_a$Inline_Builder0" />
+      <unit id="473053312772026511" at="39,0,161,0" name="DesignSystem.System.editor.DesignSystemReferenceTypeConcept_EditorBuilder_a" />
     </file>
   </root>
   <root nodeRef="r:1ff72d29-0f7c-4311-91e4-82b72c1e73e2(DesignSystem.System.editor)/473053312772080761">

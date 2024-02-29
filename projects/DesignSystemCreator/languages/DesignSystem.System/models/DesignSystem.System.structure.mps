@@ -218,6 +218,9 @@
     <node concept="PrWs8" id="qgBRHb$oZi" role="PzmwI">
       <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
+    <node concept="PrWs8" id="qgBRHbLQmF" role="PzmwI">
+      <ref role="PrY4T" to="tpck:hLJPP0O" resolve="IWrapper" />
+    </node>
     <node concept="1TJgyj" id="qgBRHb$pAv" role="1TKVEi">
       <property role="IQ2ns" value="473053312771529119" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -297,7 +300,7 @@
   </node>
   <node concept="1TIwiD" id="qgBRHbAaw6">
     <property role="EcuMT" value="473053312771991558" />
-    <property role="TrG5h" value="DesignSystemReferenceType" />
+    <property role="TrG5h" value="DesignSystemReferenceTypeConcept" />
     <property role="3GE5qa" value="types.reference" />
     <ref role="1TJDcQ" node="qgBRHb_ruL" resolve="DesignSystemTypeConcept" />
     <node concept="1TJgyj" id="qgBRHbAaw7" role="1TKVEi">

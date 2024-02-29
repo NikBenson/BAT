@@ -11,7 +11,7 @@
     </facet>
   </facets>
   <accessoryModels>
-    <model modelUID="r:6afa8ab2-92f0-4d04-9d0e-89f2578bffc1(DesignSystem.System)" />
+    <model modelUID="r:50605edf-c31c-47ed-994f-29ec32b3eb3e(DesignSystem.System.accessory)" />
   </accessoryModels>
   <generators>
     <generator alias="main" namespace="DesignSystem.System.generator" uuid="8bccbf6d-ba20-4425-aeb8-7feb5bb80fec">

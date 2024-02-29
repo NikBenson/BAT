@@ -22,7 +22,7 @@ public final class LanguageConceptSwitch {
   public static final int DesignSystemPropertyConcept = 10;
   public static final int DesignSystemPropertyParameterConcept = 11;
   public static final int DesignSystemPropertyParametersListConcept = 12;
-  public static final int DesignSystemReferenceType = 13;
+  public static final int DesignSystemReferenceTypeConcept = 13;
   public static final int DesignSystemSetTypeConcept = 14;
   public static final int DesignSystemStringTypeConcept = 15;
   public static final int DesignSystemSubsystemListConcept = 16;
@@ -48,7 +48,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x6909f7b4b5e1504L, DesignSystemPropertyConcept);
     builder.put(0x6909f7b4b5e1538L, DesignSystemPropertyParameterConcept);
     builder.put(0x6909f7b4b5e152aL, DesignSystemPropertyParametersListConcept);
-    builder.put(0x6909f7b4b98a806L, DesignSystemReferenceType);
+    builder.put(0x6909f7b4b98a806L, DesignSystemReferenceTypeConcept);
     builder.put(0x6909f7b4baca4c1L, DesignSystemSetTypeConcept);
     builder.put(0x6909f7b4b9b4a21L, DesignSystemStringTypeConcept);
     builder.put(0x6909f7b4b5e14f1L, DesignSystemSubsystemListConcept);

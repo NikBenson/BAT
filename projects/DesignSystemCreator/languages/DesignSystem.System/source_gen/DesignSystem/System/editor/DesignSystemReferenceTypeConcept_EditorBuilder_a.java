@@ -36,11 +36,11 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-/*package*/ class DesignSystemReferenceType_EditorBuilder_a extends AbstractEditorBuilder {
+/*package*/ class DesignSystemReferenceTypeConcept_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
   private SNode myNode;
 
-  public DesignSystemReferenceType_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
+  public DesignSystemReferenceTypeConcept_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
     super(context);
     myNode = node;
   }
@@ -57,7 +57,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
   private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_iilnru_a");
+    editorCell.setCellId("Collection_o5aa5q_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
     editorCell.addEditorCell(createRefCell_0());

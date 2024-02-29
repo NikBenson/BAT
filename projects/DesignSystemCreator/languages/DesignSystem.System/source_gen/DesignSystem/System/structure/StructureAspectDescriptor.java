@@ -25,7 +25,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptDesignSystemPropertyConcept = createDescriptorForDesignSystemPropertyConcept();
   /*package*/ final ConceptDescriptor myConceptDesignSystemPropertyParameterConcept = createDescriptorForDesignSystemPropertyParameterConcept();
   /*package*/ final ConceptDescriptor myConceptDesignSystemPropertyParametersListConcept = createDescriptorForDesignSystemPropertyParametersListConcept();
-  /*package*/ final ConceptDescriptor myConceptDesignSystemReferenceType = createDescriptorForDesignSystemReferenceType();
+  /*package*/ final ConceptDescriptor myConceptDesignSystemReferenceTypeConcept = createDescriptorForDesignSystemReferenceTypeConcept();
   /*package*/ final ConceptDescriptor myConceptDesignSystemSetTypeConcept = createDescriptorForDesignSystemSetTypeConcept();
   /*package*/ final ConceptDescriptor myConceptDesignSystemStringTypeConcept = createDescriptorForDesignSystemStringTypeConcept();
   /*package*/ final ConceptDescriptor myConceptDesignSystemSubsystemListConcept = createDescriptorForDesignSystemSubsystemListConcept();
@@ -49,7 +49,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractDesignSystemPropertyConcept, myConceptBaseDesignSystemParentConcept, myConceptDesignSystemColorTypeConcept, myConceptDesignSystemConcept, myConceptDesignSystemEnumItemConcept, myConceptDesignSystemEnumTypeConcept, myConceptDesignSystemFileConcept, myConceptDesignSystemParentConcept, myConceptDesignSystemPrimitiveTypeConcept, myConceptDesignSystemPropertiesListConcept, myConceptDesignSystemPropertyConcept, myConceptDesignSystemPropertyParameterConcept, myConceptDesignSystemPropertyParametersListConcept, myConceptDesignSystemReferenceType, myConceptDesignSystemSetTypeConcept, myConceptDesignSystemStringTypeConcept, myConceptDesignSystemSubsystemListConcept, myConceptDesignSystemTypeConcept, myConceptDirectReferenceDesignSystemParentConcept, myConceptIDesignSystemCreatesType, myConceptIndirectReferenceDesignSystemParentConcept, myConceptParametizedDesignSystemPropertyConcept, myConceptReferenceDesignSystemParentConcept);
+    return Arrays.asList(myConceptAbstractDesignSystemPropertyConcept, myConceptBaseDesignSystemParentConcept, myConceptDesignSystemColorTypeConcept, myConceptDesignSystemConcept, myConceptDesignSystemEnumItemConcept, myConceptDesignSystemEnumTypeConcept, myConceptDesignSystemFileConcept, myConceptDesignSystemParentConcept, myConceptDesignSystemPrimitiveTypeConcept, myConceptDesignSystemPropertiesListConcept, myConceptDesignSystemPropertyConcept, myConceptDesignSystemPropertyParameterConcept, myConceptDesignSystemPropertyParametersListConcept, myConceptDesignSystemReferenceTypeConcept, myConceptDesignSystemSetTypeConcept, myConceptDesignSystemStringTypeConcept, myConceptDesignSystemSubsystemListConcept, myConceptDesignSystemTypeConcept, myConceptDirectReferenceDesignSystemParentConcept, myConceptIDesignSystemCreatesType, myConceptIndirectReferenceDesignSystemParentConcept, myConceptParametizedDesignSystemPropertyConcept, myConceptReferenceDesignSystemParentConcept);
   }
 
   @Override
@@ -82,8 +82,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptDesignSystemPropertyParameterConcept;
       case LanguageConceptSwitch.DesignSystemPropertyParametersListConcept:
         return myConceptDesignSystemPropertyParametersListConcept;
-      case LanguageConceptSwitch.DesignSystemReferenceType:
-        return myConceptDesignSystemReferenceType;
+      case LanguageConceptSwitch.DesignSystemReferenceTypeConcept:
+        return myConceptDesignSystemReferenceTypeConcept;
       case LanguageConceptSwitch.DesignSystemSetTypeConcept:
         return myConceptDesignSystemSetTypeConcept;
       case LanguageConceptSwitch.DesignSystemStringTypeConcept:
@@ -173,6 +173,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.System", "DesignSystemFileConcept", 0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b918fd1L);
     b.class_(false, false, true);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x11c6fd75034L);
     b.origin("r:291ddc1b-d6e7-4ca6-a0e2-a1fae46ab1b7(DesignSystem.System.structure)/473053312771526609");
     b.version(3);
     b.aggregate("content", 0x6909f7b4b91999fL).target(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e14e7L).optional(false).ordered(true).multiple(false).origin("473053312771529119").done();
@@ -233,8 +234,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("parameters", 0x6909f7b4b5e1536L).target(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e1538L).optional(false).ordered(true).multiple(true).origin("473053312768152886").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForDesignSystemReferenceType() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.System", "DesignSystemReferenceType", 0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b98a806L);
+  private static ConceptDescriptor createDescriptorForDesignSystemReferenceTypeConcept() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.System", "DesignSystemReferenceTypeConcept", 0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b98a806L);
     b.class_(false, false, false);
     // extends: DesignSystem.System.structure.DesignSystemTypeConcept
     b.super_(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b95b7b1L);
