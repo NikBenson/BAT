@@ -84,20 +84,20 @@
   </root>
   <root nodeRef="r:65fc9ec3-451a-4eb7-97c9-6568d7bac295(DesignSystem.System.sandbox)/473053312771744594">
     <file name="CounterApp.java">
-      <node id="473053312771744594" at="10,0,11,0" concept="3" trace="instance" />
-      <node id="473053312775419491" at="13,0,14,0" concept="2" trace="test" />
-      <node id="473053312771744594" at="15,236,16,71" concept="4" />
-      <node id="473053312775419491" at="16,71,17,21" concept="1" />
-      <node id="473053312771744594" at="15,0,19,0" concept="0" trace="CounterApp#(Ljava/awt/Color;LDesignSystem/System/sandbox/Material/ColorSwatch;LDesignSystem/System/sandbox/Material/TextTheme;Ljava/util/function/Function;Ljava/util/function/Function;)V" />
-      <scope id="473053312771744594" at="15,236,17,21" />
-      <scope id="473053312771744594" at="15,0,19,0">
+      <node id="473053312771744594" at="9,0,10,0" concept="3" trace="instance" />
+      <node id="473053312777674366" at="12,0,13,0" concept="2" trace="buttonSize" />
+      <node id="473053312771744594" at="14,244,15,71" concept="4" />
+      <node id="473053312777674366" at="15,71,16,33" concept="1" />
+      <node id="473053312771744594" at="14,0,18,0" concept="0" trace="CounterApp#(Ljava/lang/Integer;LDesignSystem/System/sandbox/Material/ColorSwatch;LDesignSystem/System/sandbox/Material/TextTheme;Ljava/util/function/Function;Ljava/util/function/Function;)V" />
+      <scope id="473053312771744594" at="14,244,16,33" />
+      <scope id="473053312771744594" at="14,0,18,0">
+        <var name="buttonSize" id="473053312777674366" />
         <var name="colorSwatch" id="473053312772712138" />
         <var name="outlineButtonTheme" id="473053312773301413" />
-        <var name="test" id="473053312775419491" />
         <var name="textButtonTheme" id="473053312773239086" />
         <var name="textTheme" id="473053312772712145" />
       </scope>
-      <unit id="473053312771744594" at="9,0,20,0" name="DesignSystem.System.sandbox.CounterApp" />
+      <unit id="473053312771744594" at="8,0,19,0" name="DesignSystem.System.sandbox.CounterApp" />
     </file>
   </root>
   <root nodeRef="r:65fc9ec3-451a-4eb7-97c9-6568d7bac295(DesignSystem.System.sandbox)/473053312772009030">

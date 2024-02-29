@@ -529,5 +529,19 @@
       <node concept="l2Vlx" id="qgBRHbFaje" role="2iSdaV" />
     </node>
   </node>
+  <node concept="24kQdi" id="qgBRHbV9aU">
+    <property role="3GE5qa" value="types.primitive" />
+    <ref role="1XX52x" to="8usw:qgBRHbV9aT" resolve="DesignSystemIntegerType" />
+    <node concept="3F0ifn" id="qgBRHbV9aW" role="2wV5jI">
+      <property role="3F0ifm" value="Integer" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="qgBRHbV9b0">
+    <property role="3GE5qa" value="types.primitive" />
+    <ref role="1XX52x" to="8usw:qgBRHbV9aZ" resolve="DesignSystemDecimalType" />
+    <node concept="3F0ifn" id="qgBRHbV9b5" role="2wV5jI">
+      <property role="3F0ifm" value="Decimal" />
+    </node>
+  </node>
 </model>
 

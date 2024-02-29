@@ -16,9 +16,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptBaseDesignSystemParentConcept = createDescriptorForBaseDesignSystemParentConcept();
   /*package*/ final ConceptDescriptor myConceptDesignSystemColorTypeConcept = createDescriptorForDesignSystemColorTypeConcept();
   /*package*/ final ConceptDescriptor myConceptDesignSystemConcept = createDescriptorForDesignSystemConcept();
+  /*package*/ final ConceptDescriptor myConceptDesignSystemDecimalType = createDescriptorForDesignSystemDecimalType();
   /*package*/ final ConceptDescriptor myConceptDesignSystemEnumItemConcept = createDescriptorForDesignSystemEnumItemConcept();
   /*package*/ final ConceptDescriptor myConceptDesignSystemEnumTypeConcept = createDescriptorForDesignSystemEnumTypeConcept();
   /*package*/ final ConceptDescriptor myConceptDesignSystemFileConcept = createDescriptorForDesignSystemFileConcept();
+  /*package*/ final ConceptDescriptor myConceptDesignSystemIntegerType = createDescriptorForDesignSystemIntegerType();
   /*package*/ final ConceptDescriptor myConceptDesignSystemParentConcept = createDescriptorForDesignSystemParentConcept();
   /*package*/ final ConceptDescriptor myConceptDesignSystemPrimitiveTypeConcept = createDescriptorForDesignSystemPrimitiveTypeConcept();
   /*package*/ final ConceptDescriptor myConceptDesignSystemPropertiesListConcept = createDescriptorForDesignSystemPropertiesListConcept();
@@ -49,7 +51,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractDesignSystemPropertyConcept, myConceptBaseDesignSystemParentConcept, myConceptDesignSystemColorTypeConcept, myConceptDesignSystemConcept, myConceptDesignSystemEnumItemConcept, myConceptDesignSystemEnumTypeConcept, myConceptDesignSystemFileConcept, myConceptDesignSystemParentConcept, myConceptDesignSystemPrimitiveTypeConcept, myConceptDesignSystemPropertiesListConcept, myConceptDesignSystemPropertyConcept, myConceptDesignSystemPropertyParameterConcept, myConceptDesignSystemPropertyParametersListConcept, myConceptDesignSystemReferenceTypeConcept, myConceptDesignSystemSetTypeConcept, myConceptDesignSystemStringTypeConcept, myConceptDesignSystemSubsystemListConcept, myConceptDesignSystemTypeConcept, myConceptDirectReferenceDesignSystemParentConcept, myConceptIDesignSystemCreatesType, myConceptIndirectReferenceDesignSystemParentConcept, myConceptParametizedDesignSystemPropertyConcept, myConceptReferenceDesignSystemParentConcept);
+    return Arrays.asList(myConceptAbstractDesignSystemPropertyConcept, myConceptBaseDesignSystemParentConcept, myConceptDesignSystemColorTypeConcept, myConceptDesignSystemConcept, myConceptDesignSystemDecimalType, myConceptDesignSystemEnumItemConcept, myConceptDesignSystemEnumTypeConcept, myConceptDesignSystemFileConcept, myConceptDesignSystemIntegerType, myConceptDesignSystemParentConcept, myConceptDesignSystemPrimitiveTypeConcept, myConceptDesignSystemPropertiesListConcept, myConceptDesignSystemPropertyConcept, myConceptDesignSystemPropertyParameterConcept, myConceptDesignSystemPropertyParametersListConcept, myConceptDesignSystemReferenceTypeConcept, myConceptDesignSystemSetTypeConcept, myConceptDesignSystemStringTypeConcept, myConceptDesignSystemSubsystemListConcept, myConceptDesignSystemTypeConcept, myConceptDirectReferenceDesignSystemParentConcept, myConceptIDesignSystemCreatesType, myConceptIndirectReferenceDesignSystemParentConcept, myConceptParametizedDesignSystemPropertyConcept, myConceptReferenceDesignSystemParentConcept);
   }
 
   @Override
@@ -64,12 +66,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptDesignSystemColorTypeConcept;
       case LanguageConceptSwitch.DesignSystemConcept:
         return myConceptDesignSystemConcept;
+      case LanguageConceptSwitch.DesignSystemDecimalType:
+        return myConceptDesignSystemDecimalType;
       case LanguageConceptSwitch.DesignSystemEnumItemConcept:
         return myConceptDesignSystemEnumItemConcept;
       case LanguageConceptSwitch.DesignSystemEnumTypeConcept:
         return myConceptDesignSystemEnumTypeConcept;
       case LanguageConceptSwitch.DesignSystemFileConcept:
         return myConceptDesignSystemFileConcept;
+      case LanguageConceptSwitch.DesignSystemIntegerType:
+        return myConceptDesignSystemIntegerType;
       case LanguageConceptSwitch.DesignSystemParentConcept:
         return myConceptDesignSystemParentConcept;
       case LanguageConceptSwitch.DesignSystemPrimitiveTypeConcept:
@@ -151,6 +157,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("parent", 0x6909f7b4b689f0bL).target(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b720450L).optional(false).ordered(true).multiple(false).origin("473053312768843531").done();
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForDesignSystemDecimalType() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.System", "DesignSystemDecimalType", 0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4bec92bfL);
+    b.class_(false, false, false);
+    // extends: DesignSystem.System.structure.DesignSystemPrimitiveTypeConcept
+    b.super_(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b98a809L);
+    b.origin("r:291ddc1b-d6e7-4ca6-a0e2-a1fae46ab1b7(DesignSystem.System.structure)/473053312777491135");
+    b.version(3);
+    b.alias("Decimal");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForDesignSystemEnumItemConcept() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.System", "DesignSystemEnumItemConcept", 0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b95b8c3L);
     b.class_(false, false, false);
@@ -178,6 +194,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(3);
     b.aggregate("content", 0x6909f7b4b91999fL).target(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e14e7L).optional(false).ordered(true).multiple(false).origin("473053312771529119").done();
     b.alias("DesignSystem");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForDesignSystemIntegerType() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.System", "DesignSystemIntegerType", 0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4bec92b9L);
+    b.class_(false, false, false);
+    // extends: DesignSystem.System.structure.DesignSystemPrimitiveTypeConcept
+    b.super_(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b98a809L);
+    b.origin("r:291ddc1b-d6e7-4ca6-a0e2-a1fae46ab1b7(DesignSystem.System.structure)/473053312777491129");
+    b.version(3);
+    b.alias("Integer");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDesignSystemParentConcept() {

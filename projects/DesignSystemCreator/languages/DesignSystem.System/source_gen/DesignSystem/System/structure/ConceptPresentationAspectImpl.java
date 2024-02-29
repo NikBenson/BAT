@@ -13,9 +13,11 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_BaseDesignSystemParentConcept;
   private ConceptPresentation props_DesignSystemColorTypeConcept;
   private ConceptPresentation props_DesignSystemConcept;
+  private ConceptPresentation props_DesignSystemDecimalType;
   private ConceptPresentation props_DesignSystemEnumItemConcept;
   private ConceptPresentation props_DesignSystemEnumTypeConcept;
   private ConceptPresentation props_DesignSystemFileConcept;
+  private ConceptPresentation props_DesignSystemIntegerType;
   private ConceptPresentation props_DesignSystemParentConcept;
   private ConceptPresentation props_DesignSystemPrimitiveTypeConcept;
   private ConceptPresentation props_DesignSystemPropertiesListConcept;
@@ -65,6 +67,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_DesignSystemConcept = cpb.create();
         }
         return props_DesignSystemConcept;
+      case LanguageConceptSwitch.DesignSystemDecimalType:
+        if (props_DesignSystemDecimalType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Decimal");
+          props_DesignSystemDecimalType = cpb.create();
+        }
+        return props_DesignSystemDecimalType;
       case LanguageConceptSwitch.DesignSystemEnumItemConcept:
         if (props_DesignSystemEnumItemConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -86,6 +95,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_DesignSystemFileConcept = cpb.create();
         }
         return props_DesignSystemFileConcept;
+      case LanguageConceptSwitch.DesignSystemIntegerType:
+        if (props_DesignSystemIntegerType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Integer");
+          props_DesignSystemIntegerType = cpb.create();
+        }
+        return props_DesignSystemIntegerType;
       case LanguageConceptSwitch.DesignSystemParentConcept:
         if (props_DesignSystemParentConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
