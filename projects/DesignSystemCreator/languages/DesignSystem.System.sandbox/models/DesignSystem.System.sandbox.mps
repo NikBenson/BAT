@@ -4,9 +4,7 @@
   <languages>
     <use id="43e160c7-168c-4805-904b-c45c336610e7" name="DesignSystem.System" version="0" />
   </languages>
-  <imports>
-    <import index="1jet" ref="r:6afa8ab2-92f0-4d04-9d0e-89f2578bffc1(DesignSystem.System)" implicit="true" />
-  </imports>
+  <imports />
   <registry>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -20,11 +18,15 @@
       <concept id="473053312771526609" name="DesignSystem.System.structure.DesignSystemFileConcept" flags="ng" index="1d0h2E">
         <child id="473053312771529119" name="content" index="1d0gr$" />
       </concept>
+      <concept id="473053312771799235" name="DesignSystem.System.structure.DesignSystemEnumItemConcept" flags="ng" index="1d1iuS" />
+      <concept id="473053312771799232" name="DesignSystem.System.structure.DesignSystemEnumTypeConcept" flags="ng" index="1d1iuV">
+        <child id="473053312771799238" name="items" index="1d1iuX" />
+      </concept>
       <concept id="473053312771812851" name="DesignSystem.System.structure.ParametizedDesignSystemPropertyConcept" flags="ng" index="1d1na8">
         <child id="473053312771812854" name="parameters" index="1d1nad" />
         <child id="473053312771905644" name="property" index="1d1Wsn" />
       </concept>
-      <concept id="473053312771991558" name="DesignSystem.System.structure.DesignSystemReferenceType" flags="ng" index="1d23tX">
+      <concept id="473053312771991558" name="DesignSystem.System.structure.DesignSystemReferenceTypeConcept" flags="ng" index="1d23tX">
         <reference id="473053312771991559" name="reference" index="1d23tW" />
       </concept>
       <concept id="473053312772080760" name="DesignSystem.System.structure.DesignSystemColorTypeConcept" flags="ng" index="1d2DG3" />
@@ -87,7 +89,7 @@
               <property role="TrG5h" value="state" />
               <node concept="1df3IU" id="qgBRHbFxRU" role="1d1na2">
                 <node concept="1d23tX" id="qgBRHbFxRX" role="1df3Im">
-                  <ref role="1d23tW" to="1jet:qgBRHbFafY" resolve="MaterialState" />
+                  <ref role="1d23tW" node="qgBRHbFafY" resolve="MaterialState" />
                 </node>
               </node>
             </node>
@@ -105,7 +107,7 @@
               <property role="TrG5h" value="state" />
               <node concept="1df3IU" id="qgBRHbFxRN" role="1d1na2">
                 <node concept="1d23tX" id="qgBRHbFxRQ" role="1df3Im">
-                  <ref role="1d23tW" to="1jet:qgBRHbFafY" resolve="MaterialState" />
+                  <ref role="1d23tW" node="qgBRHbFafY" resolve="MaterialState" />
                 </node>
               </node>
             </node>
@@ -166,7 +168,7 @@
                 <node concept="1dNCDZ" id="qgBRHbCUpu" role="1dNFP7">
                   <property role="TrG5h" value="fontWeight" />
                   <node concept="1d23tX" id="qgBRHbCUpF" role="1dNCDL">
-                    <ref role="1d23tW" to="1jet:qgBRHbAwfV" resolve="FontWeight" />
+                    <ref role="1d23tW" node="qgBRHbAwfV" resolve="FontWeight" />
                   </node>
                 </node>
               </node>
@@ -195,11 +197,85 @@
     <property role="3GE5qa" value="de.whs.ni37900.bat.designsystem.system.sandbox" />
     <node concept="1dNCIs" id="qgBRHb_edj" role="1d0gr$">
       <property role="TrG5h" value="CounterApp" />
-      <node concept="1dNCI9" id="qgBRHb_edk" role="1dNCIc" />
-      <node concept="1dY01Y" id="qgBRHb_rpM" role="1dY01K">
-        <ref role="1dY01X" node="qgBRHb_edc" resolve="Material" />
+      <node concept="1dNCI9" id="qgBRHb_edk" role="1dNCIc">
+        <node concept="1dNCDZ" id="qgBRHbNfpz" role="1dNFP7">
+          <property role="TrG5h" value="test" />
+          <node concept="1d2DG3" id="qgBRHbNfpB" role="1dNCDL" />
+        </node>
       </node>
       <node concept="1dNCIa" id="qgBRHb_rpR" role="1dNCIe" />
+      <node concept="1dY01Y" id="qgBRHbQAW0" role="1dY01K">
+        <ref role="1dY01X" node="qgBRHb_edc" resolve="Material" />
+      </node>
+    </node>
+  </node>
+  <node concept="1d1iuV" id="qgBRHbAeL6">
+    <property role="TrG5h" value="Brightness" />
+    <property role="3GE5qa" value="de.whs.ni37900.bat.designsystem.system.sandbox" />
+    <node concept="1d1iuS" id="qgBRHbAeL7" role="1d1iuX">
+      <property role="TrG5h" value="dark" />
+    </node>
+    <node concept="1d1iuS" id="qgBRHbAeL8" role="1d1iuX">
+      <property role="TrG5h" value="light" />
+    </node>
+  </node>
+  <node concept="1d1iuV" id="qgBRHbAwfV">
+    <property role="TrG5h" value="FontWeight" />
+    <property role="3GE5qa" value="de.whs.ni37900.bat.designsystem.system.sandbox" />
+    <node concept="1d1iuS" id="qgBRHbAwfW" role="1d1iuX">
+      <property role="TrG5h" value="w100" />
+    </node>
+    <node concept="1d1iuS" id="qgBRHbAwfX" role="1d1iuX">
+      <property role="TrG5h" value="w200" />
+    </node>
+    <node concept="1d1iuS" id="qgBRHbAwg0" role="1d1iuX">
+      <property role="TrG5h" value="w300" />
+    </node>
+    <node concept="1d1iuS" id="qgBRHbAwg4" role="1d1iuX">
+      <property role="TrG5h" value="w400" />
+    </node>
+    <node concept="1d1iuS" id="qgBRHbAwg9" role="1d1iuX">
+      <property role="TrG5h" value="w500" />
+    </node>
+    <node concept="1d1iuS" id="qgBRHbAwgf" role="1d1iuX">
+      <property role="TrG5h" value="w600" />
+    </node>
+    <node concept="1d1iuS" id="qgBRHbAwg$" role="1d1iuX">
+      <property role="TrG5h" value="w700" />
+    </node>
+    <node concept="1d1iuS" id="qgBRHbAwgG" role="1d1iuX">
+      <property role="TrG5h" value="w800" />
+    </node>
+    <node concept="1d1iuS" id="qgBRHbAwgP" role="1d1iuX">
+      <property role="TrG5h" value="w900" />
+    </node>
+  </node>
+  <node concept="1d1iuV" id="qgBRHbFafY">
+    <property role="TrG5h" value="MaterialState" />
+    <property role="3GE5qa" value="de.whs.ni37900.bat.designsystem.system.sandbox" />
+    <node concept="1d1iuS" id="qgBRHbFafZ" role="1d1iuX">
+      <property role="TrG5h" value="hovered" />
+    </node>
+    <node concept="1d1iuS" id="qgBRHbFagS" role="1d1iuX">
+      <property role="TrG5h" value="focussed" />
+    </node>
+    <node concept="1d1iuS" id="qgBRHbFagV" role="1d1iuX">
+      <property role="TrG5h" value="pressed" />
+    </node>
+    <node concept="1d1iuS" id="qgBRHbFah3" role="1d1iuX">
+      <property role="TrG5h" value="dragged" />
+    </node>
+    <node concept="1d1iuS" id="qgBRHbFah9" role="1d1iuX">
+      <property role="TrG5h" value="selected" />
+    </node>
+    <node concept="1d1iuS" id="qgBRHbFahh" role="1d1iuX">
+      <property role="TrG5h" value="scrolledUnder" />
+    </node>
+    <node concept="1d1iuS" id="qgBRHbFahp" role="1d1iuX">
+      <property role="TrG5h" value="disabled" />
+    </node>
+    <node concept="1d1iuS" id="qgBRHbFahy" role="1d1iuX">
+      <property role="TrG5h" value="error" />
     </node>
   </node>
 </model>

@@ -40,7 +40,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 9:
         return Collections.<ConceptEditor>singletonList(new DesignSystemPropertyParametersListConcept_Editor());
       case 10:
-        return Collections.<ConceptEditor>singletonList(new DesignSystemReferenceType_Editor());
+        return Collections.<ConceptEditor>singletonList(new DesignSystemReferenceTypeConcept_Editor());
       case 11:
         return Collections.<ConceptEditor>singletonList(new DesignSystemSetTypeConcept_Editor());
       case 12:
@@ -78,7 +78,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     SAbstractConcept cncpt = concept;
     switch (conceptIndex2.index(cncpt)) {
       case 0:
-        return Collections.<SubstituteMenu>singletonList(new DesignSystemReferenceType_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new DesignSystemReferenceTypeConcept_SubstituteMenu());
       case 1:
         return Collections.<SubstituteMenu>singletonList(new DirectReferenceDesignSystemParentConcept_SubstituteMenu());
       default:

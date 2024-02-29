@@ -448,7 +448,7 @@
   </node>
   <node concept="24kQdi" id="qgBRHbAj2f">
     <property role="3GE5qa" value="types.reference" />
-    <ref role="1XX52x" to="8usw:qgBRHbAaw6" resolve="DesignSystemReferenceType" />
+    <ref role="1XX52x" to="8usw:qgBRHbAaw6" resolve="DesignSystemReferenceTypeConcept" />
     <node concept="1iCGBv" id="qgBRHbAj2h" role="2wV5jI">
       <ref role="1NtTu8" to="8usw:qgBRHbAaw7" resolve="reference" />
       <node concept="1sVBvm" id="qgBRHbAj2j" role="1sWHZn">

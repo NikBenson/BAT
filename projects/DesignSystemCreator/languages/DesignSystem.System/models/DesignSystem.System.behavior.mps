@@ -157,6 +157,9 @@
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
+      <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
+        <reference id="1138056395725" name="property" index="3TsBF5" />
+      </concept>
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
@@ -769,6 +772,72 @@
         <node concept="3Tqbb2" id="qgBRHb$9v1" role="1tU5fm" />
       </node>
       <node concept="3Tm1VV" id="qgBRHb$9v2" role="1B3o_S" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="qgBRHbNWbh">
+    <property role="3GE5qa" value="design_system.properties" />
+    <ref role="13h7C2" to="8usw:qgBRHb_PxF" resolve="AbstractDesignSystemPropertyConcept" />
+    <node concept="13hLZK" id="qgBRHbNWbi" role="13h7CW">
+      <node concept="3clFbS" id="qgBRHbNWbj" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="qgBRHbNWb$" role="13h7CS">
+      <property role="TrG5h" value="getPropertyName" />
+      <property role="13i0it" value="true" />
+      <property role="13i0iv" value="true" />
+      <node concept="3Tm1VV" id="qgBRHbNWb_" role="1B3o_S" />
+      <node concept="17QB3L" id="qgBRHbNWcc" role="3clF45" />
+      <node concept="3clFbS" id="qgBRHbNWbB" role="3clF47" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="qgBRHbOChK">
+    <property role="3GE5qa" value="design_system.properties" />
+    <ref role="13h7C2" to="8usw:qgBRHbnxk4" resolve="DesignSystemPropertyConcept" />
+    <node concept="13hLZK" id="qgBRHbOChL" role="13h7CW">
+      <node concept="3clFbS" id="qgBRHbOChM" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="qgBRHbOCi3" role="13h7CS">
+      <property role="TrG5h" value="getPropertyName" />
+      <ref role="13i0hy" node="qgBRHbNWb$" resolve="getPropertyName" />
+      <node concept="3Tm1VV" id="qgBRHbOCi4" role="1B3o_S" />
+      <node concept="3clFbS" id="qgBRHbOCi7" role="3clF47">
+        <node concept="3clFbF" id="qgBRHbOCia" role="3cqZAp">
+          <node concept="2OqwBi" id="qgBRHbODfy" role="3clFbG">
+            <node concept="13iPFW" id="qgBRHbOD2e" role="2Oq$k0" />
+            <node concept="3TrcHB" id="qgBRHbODsk" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="17QB3L" id="qgBRHbOCi8" role="3clF45" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="qgBRHbODuX">
+    <property role="3GE5qa" value="design_system.properties" />
+    <ref role="13h7C2" to="8usw:qgBRHb_uRN" resolve="ParametizedDesignSystemPropertyConcept" />
+    <node concept="13hLZK" id="qgBRHbODuY" role="13h7CW">
+      <node concept="3clFbS" id="qgBRHbODuZ" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="qgBRHbODvg" role="13h7CS">
+      <property role="TrG5h" value="getPropertyName" />
+      <ref role="13i0hy" node="qgBRHbNWb$" resolve="getPropertyName" />
+      <node concept="3Tm1VV" id="qgBRHbODvh" role="1B3o_S" />
+      <node concept="3clFbS" id="qgBRHbODvk" role="3clF47">
+        <node concept="3clFbF" id="qgBRHbODJS" role="3cqZAp">
+          <node concept="2OqwBi" id="qgBRHbOEyd" role="3clFbG">
+            <node concept="2OqwBi" id="qgBRHbODWj" role="2Oq$k0">
+              <node concept="13iPFW" id="qgBRHbODJR" role="2Oq$k0" />
+              <node concept="3TrEf2" id="qgBRHbOE7s" role="2OqNvi">
+                <ref role="3Tt5mk" to="8usw:qgBRHb_PxG" resolve="property" />
+              </node>
+            </node>
+            <node concept="2qgKlT" id="qgBRHbOEL1" role="2OqNvi">
+              <ref role="37wK5l" node="qgBRHbNWb$" resolve="getPropertyName" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="17QB3L" id="qgBRHbODvl" role="3clF45" />
     </node>
   </node>
 </model>
