@@ -18,9 +18,16 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myDesignSystemParentConcept__BehaviorDescriptor = new DesignSystemParentConcept__BehaviorDescriptor();
   private final BHDescriptor myBaseDesignSystemParentConcept__BehaviorDescriptor = new BaseDesignSystemParentConcept__BehaviorDescriptor();
   private final BHDescriptor myIndirectReferenceDesignSystemParentConcept__BehaviorDescriptor = new IndirectReferenceDesignSystemParentConcept__BehaviorDescriptor();
-  private final BHDescriptor myDesignSystemFileConcept__BehaviorDescriptor = new DesignSystemFileConcept__BehaviorDescriptor();
+  private final BHDescriptor myDesignSystemTypeConcept__BehaviorDescriptor = new DesignSystemTypeConcept__BehaviorDescriptor();
   private final BHDescriptor myParametizedDesignSystemPropertyConcept__BehaviorDescriptor = new ParametizedDesignSystemPropertyConcept__BehaviorDescriptor();
   private final BHDescriptor myAbstractDesignSystemPropertyConcept__BehaviorDescriptor = new AbstractDesignSystemPropertyConcept__BehaviorDescriptor();
+  private final BHDescriptor myDesignSystemReferenceTypeConcept__BehaviorDescriptor = new DesignSystemReferenceTypeConcept__BehaviorDescriptor();
+  private final BHDescriptor myDesignSystemColorTypeConcept__BehaviorDescriptor = new DesignSystemColorTypeConcept__BehaviorDescriptor();
+  private final BHDescriptor myDesignSystemStringTypeConcept__BehaviorDescriptor = new DesignSystemStringTypeConcept__BehaviorDescriptor();
+  private final BHDescriptor myDesignSystemSetTypeConcept__BehaviorDescriptor = new DesignSystemSetTypeConcept__BehaviorDescriptor();
+  private final BHDescriptor myDesignSystemIntegerType__BehaviorDescriptor = new DesignSystemIntegerType__BehaviorDescriptor();
+  private final BHDescriptor myDesignSystemDecimalType__BehaviorDescriptor = new DesignSystemDecimalType__BehaviorDescriptor();
+  private final BHDescriptor myAbstractDesignSystemFileConcept__BehaviorDescriptor = new AbstractDesignSystemFileConcept__BehaviorDescriptor();
 
   public BehaviorAspectDescriptor() {
   }
@@ -30,26 +37,40 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     SAbstractConcept cncpt = concept;
     switch (conceptIndex.index(cncpt)) {
       case 0:
-        return myAbstractDesignSystemPropertyConcept__BehaviorDescriptor;
+        return myAbstractDesignSystemFileConcept__BehaviorDescriptor;
       case 1:
-        return myBaseDesignSystemParentConcept__BehaviorDescriptor;
+        return myAbstractDesignSystemPropertyConcept__BehaviorDescriptor;
       case 2:
-        return myDesignSystemFileConcept__BehaviorDescriptor;
+        return myBaseDesignSystemParentConcept__BehaviorDescriptor;
       case 3:
-        return myDesignSystemParentConcept__BehaviorDescriptor;
+        return myDesignSystemColorTypeConcept__BehaviorDescriptor;
       case 4:
-        return myDesignSystemPropertyConcept__BehaviorDescriptor;
+        return myDesignSystemDecimalType__BehaviorDescriptor;
       case 5:
-        return myDesignSystemSubsystemListConcept__BehaviorDescriptor;
+        return myDesignSystemIntegerType__BehaviorDescriptor;
       case 6:
-        return myDirectReferenceDesignSystemParentConcept__BehaviorDescriptor;
+        return myDesignSystemParentConcept__BehaviorDescriptor;
       case 7:
-        return myIndirectReferenceDesignSystemParentConcept__BehaviorDescriptor;
+        return myDesignSystemPropertyConcept__BehaviorDescriptor;
       case 8:
+        return myDesignSystemReferenceTypeConcept__BehaviorDescriptor;
+      case 9:
+        return myDesignSystemSetTypeConcept__BehaviorDescriptor;
+      case 10:
+        return myDesignSystemStringTypeConcept__BehaviorDescriptor;
+      case 11:
+        return myDesignSystemSubsystemListConcept__BehaviorDescriptor;
+      case 12:
+        return myDesignSystemTypeConcept__BehaviorDescriptor;
+      case 13:
+        return myDirectReferenceDesignSystemParentConcept__BehaviorDescriptor;
+      case 14:
+        return myIndirectReferenceDesignSystemParentConcept__BehaviorDescriptor;
+      case 15:
         return myParametizedDesignSystemPropertyConcept__BehaviorDescriptor;
       default:
     }
     return null;
   }
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b97586bL), MetaIdFactory.conceptId(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b720507L), MetaIdFactory.conceptId(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b918fd1L), MetaIdFactory.conceptId(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b720450L), MetaIdFactory.conceptId(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e1504L), MetaIdFactory.conceptId(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e14f1L), MetaIdFactory.conceptId(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b689f05L), MetaIdFactory.conceptId(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b81ef0aL), MetaIdFactory.conceptId(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b95edf3L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4c129d2bL), MetaIdFactory.conceptId(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b97586bL), MetaIdFactory.conceptId(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b720507L), MetaIdFactory.conceptId(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b9a0478L), MetaIdFactory.conceptId(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4bec92bfL), MetaIdFactory.conceptId(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4bec92b9L), MetaIdFactory.conceptId(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b720450L), MetaIdFactory.conceptId(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e1504L), MetaIdFactory.conceptId(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b98a806L), MetaIdFactory.conceptId(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4baca4c1L), MetaIdFactory.conceptId(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b9b4a21L), MetaIdFactory.conceptId(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e14f1L), MetaIdFactory.conceptId(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b95b7b1L), MetaIdFactory.conceptId(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b689f05L), MetaIdFactory.conceptId(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b81ef0aL), MetaIdFactory.conceptId(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b95edf3L)).seal();
 }

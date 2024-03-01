@@ -9,6 +9,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private ConceptPresentation props_AbstractDesignSystemFileConcept;
   private ConceptPresentation props_AbstractDesignSystemPropertyConcept;
   private ConceptPresentation props_BaseDesignSystemParentConcept;
   private ConceptPresentation props_DesignSystemColorTypeConcept;
@@ -40,6 +41,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.AbstractDesignSystemFileConcept:
+        if (props_AbstractDesignSystemFileConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AbstractDesignSystemFileConcept = cpb.create();
+        }
+        return props_AbstractDesignSystemFileConcept;
       case LanguageConceptSwitch.AbstractDesignSystemPropertyConcept:
         if (props_AbstractDesignSystemPropertyConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

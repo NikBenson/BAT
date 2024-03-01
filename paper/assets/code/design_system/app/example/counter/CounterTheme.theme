@@ -1,4 +1,4 @@
-CounterTheme: Material by brightness: Brightness
+app CounterTheme: Material by brightness: Brightness
 	tokens:
 		colors = AllColorTokens by brightness
 		fonts = FontTokens

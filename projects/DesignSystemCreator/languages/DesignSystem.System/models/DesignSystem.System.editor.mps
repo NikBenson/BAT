@@ -169,7 +169,7 @@
         <node concept="VPM3Z" id="qgBRHbnILX" role="3F10Kt" />
         <node concept="3F0ifn" id="qgBRHbnJnp" role="3EZMnx">
           <property role="3F0ifm" value="subsystems:" />
-          <ref role="1k5W1q" node="qgBRHbW9Zl" resolve="keyword" />
+          <ref role="1k5W1q" node="qgBRHbW9Zl" resolve="ndkeyword" />
           <node concept="ljvvj" id="qgBRHbnJnJ" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
@@ -195,7 +195,7 @@
         </node>
         <node concept="3F0ifn" id="qgBRHbnJob" role="3EZMnx">
           <property role="3F0ifm" value="properties:" />
-          <ref role="1k5W1q" node="qgBRHbW9Zl" resolve="keyword" />
+          <ref role="1k5W1q" node="qgBRHbW9Zl" resolve="ndkeyword" />
           <node concept="lj46D" id="qgBRHbnJot" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
@@ -317,7 +317,7 @@
       <node concept="1sVBvm" id="qgBRHbq9W9" role="1sWHZn">
         <node concept="3F0A7n" id="qgBRHbq9Wa" role="2wV5jI">
           <property role="1Intyy" value="true" />
-          <ref role="1NtTu8" to="tpck:h0TrG11" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         </node>
       </node>
     </node>
@@ -327,7 +327,7 @@
     <ref role="1XX52x" to="8usw:qgBRHbswk7" resolve="BaseDesignSystemParentConcept" />
     <node concept="3F0ifn" id="qgBRHbtyn3" role="2wV5jI">
       <property role="3F0ifm" value="DesignSystem" />
-      <ref role="1k5W1q" node="qgBRHbW9Zl" resolve="keyword" />
+      <ref role="1k5W1q" node="qgBRHbW9Zl" resolve="ndkeyword" />
     </node>
   </node>
   <node concept="24kQdi" id="qgBRHbw$Sa">
@@ -524,7 +524,7 @@
     <node concept="3EZMnI" id="qgBRHbBIou" role="2wV5jI">
       <node concept="3F0ifn" id="qgBRHbBIoJ" role="3EZMnx">
         <property role="3F0ifm" value="enum" />
-        <ref role="1k5W1q" node="qgBRHbW9Zl" resolve="keyword" />
+        <ref role="1k5W1q" node="qgBRHbW9Zl" resolve="ndkeyword" />
       </node>
       <node concept="3F0A7n" id="qgBRHbBIoP" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
@@ -661,6 +661,10 @@
     <ref role="1XX52x" to="8usw:qgBRHbnxjB" resolve="DesignSystemConcept" />
     <node concept="3EZMnI" id="qgBRHbYw$7" role="2wV5jI">
       <node concept="2iRfu4" id="qgBRHbYw$8" role="2iSdaV" />
+      <node concept="3F0ifn" id="qgBRHc1Gfc" role="3EZMnx">
+        <property role="3F0ifm" value="system" />
+        <ref role="1k5W1q" node="qgBRHbW9Zl" resolve="ndkeyword" />
+      </node>
       <node concept="3F0A7n" id="qgBRHbYw$9" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>

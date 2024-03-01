@@ -1,4 +1,4 @@
-FontTokens: PrimitiveTokens<Material.TextTheme.TextStyle>
+primitive tokens FontTokens<Material.TextTheme.TextStyle>
 	bold:
 	    fontFamily: "RobotoMono"
 	    fontWeight: FontWeight.w900

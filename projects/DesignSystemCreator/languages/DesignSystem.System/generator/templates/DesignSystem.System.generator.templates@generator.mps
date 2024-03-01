@@ -257,7 +257,7 @@
     </node>
     <node concept="3lhOvk" id="qgBRHbFyQw" role="3lj3bC">
       <ref role="30HIoZ" to="8usw:qgBRHb_rz0" resolve="DesignSystemEnumTypeConcept" />
-      <ref role="3lhOvi" node="qgBRHbFxT0" resolve="Name" />
+      <ref role="3lhOvi" node="qgBRHbFxT0" resolve="reduce_DesignSystemEnumTypeConcept" />
     </node>
     <node concept="3aamgX" id="qgBRHbMtZi" role="3acgRq">
       <ref role="30HIoZ" to="8usw:qgBRHbnxjB" resolve="DesignSystemConcept" />
@@ -275,7 +275,7 @@
       <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="8usw:qgBRHbswhg" resolve="DesignSystemParentConcept" />
       <node concept="j$656" id="qgBRHbIKVz" role="1lVwrX">
-        <ref role="v9R2y" node="qgBRHbIKVw" resolve="reduce_BaseDesignSystemParentConcept" />
+        <ref role="v9R2y" node="qgBRHbIKVw" resolve="reduce_DesignSystemParentConcept" />
       </node>
     </node>
     <node concept="3aamgX" id="qgBRHbJsr1" role="3acgRq">
@@ -300,7 +300,7 @@
       <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="8usw:qgBRHb_PxF" resolve="AbstractDesignSystemPropertyConcept" />
       <node concept="j$656" id="qgBRHbN8RC" role="1lVwrX">
-        <ref role="v9R2y" node="qgBRHbN8R_" resolve="reduce_DesignSystemPropertyConcept" />
+        <ref role="v9R2y" node="qgBRHbN8R_" resolve="reduce_AbstractDesignSystemPropertyConcept_as_field" />
       </node>
     </node>
     <node concept="3aamgX" id="qgBRHbP_ur" role="3acgRq">
@@ -348,7 +348,7 @@
     </node>
     <node concept="QsSxf" id="qgBRHbFyA4" role="Qtgdg">
       <property role="TrG5h" value="item" />
-      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" />
+      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
       <node concept="2b32R4" id="qgBRHbFyLb" role="lGtFl">
         <node concept="3JmXsc" id="qgBRHbFyLe" role="2P8S$">
           <node concept="3clFbS" id="qgBRHbFyLf" role="2VODD2">
@@ -885,7 +885,7 @@
             </node>
           </node>
           <node concept="5jKBG" id="qgBRHbNkA9" role="lGtFl">
-            <ref role="v9R2y" node="qgBRHbNMhJ" resolve="reduce_designSystemProperty_as_methode_parameter" />
+            <ref role="v9R2y" node="qgBRHbNMhJ" resolve="reduce_AbstractDesignSystemPropertyConcept_as_methode_declaration_parameter" />
           </node>
         </node>
       </node>
@@ -1020,7 +1020,7 @@
       <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
       <node concept="raruj" id="qgBRHbO0PR" role="lGtFl" />
       <node concept="1sPUBX" id="qgBRHbPr2B" role="lGtFl">
-        <ref role="v9R2y" node="qgBRHbPr4X" resolve="test" />
+        <ref role="v9R2y" node="qgBRHbPr4X" resolve="switch_AbstractDesignSystemPropertyConcept_as_type" />
       </node>
     </node>
   </node>
@@ -1210,7 +1210,7 @@
   <node concept="13MO4I" id="qgBRHbPzHg">
     <property role="TrG5h" value="reduce_DesignSystemReferenceTypeConcept" />
     <property role="3GE5qa" value="types.reference" />
-    <ref role="3gUMe" to="8usw:qgBRHbAaw6" resolve="DesignSystemReferenceType" />
+    <ref role="3gUMe" to="8usw:qgBRHbAaw6" resolve="DesignSystemReferenceTypeConcept" />
     <node concept="3uibUv" id="qgBRHbPzHh" role="13RCb5">
       <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
       <node concept="raruj" id="qgBRHbPzHi" role="lGtFl" />
