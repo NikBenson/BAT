@@ -16,10 +16,12 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SEmptyContainmentSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
-import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
+import DesignSystem.System.editor.DesignSystem_StyleSheet.typeStyleClass;
+import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import DesignSystem.System.editor.DesignSystem_StyleSheet.baseStyleClass;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
@@ -88,6 +90,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       if (editorCell.getSRole() == null) {
         editorCell.setSRole(LINKS.parent$OA8y);
       }
+      Style style = new StyleImpl();
+      new typeStyleClass(this).apply(style, editorCell);
+      editorCell.getStyle().putAll(style);
     }
     @Override
     protected EditorCell createEmptyCell() {
@@ -111,6 +116,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ".");
     editorCell.setCellId("Constant_42ica4_b0");
     Style style = new StyleImpl();
+    new baseStyleClass(this).apply(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -153,6 +159,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       if (editorCell.getSRole() == null) {
         editorCell.setSRole(LINKS.child$F5Im);
       }
+      Style style = new StyleImpl();
+      new typeStyleClass(this).apply(style, editorCell);
+      editorCell.getStyle().putAll(style);
     }
     @Override
     protected EditorCell createEmptyCell() {

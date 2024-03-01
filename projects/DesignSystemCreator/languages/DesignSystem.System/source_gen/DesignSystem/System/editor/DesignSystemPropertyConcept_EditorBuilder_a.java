@@ -13,6 +13,9 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.SPropertyAccessor;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import DesignSystem.System.editor.DesignSystem_StyleSheet.baseStyleClass;
 import jetbrains.mps.nodeEditor.cellMenu.SPropertySubstituteInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -22,8 +25,6 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -32,6 +33,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SEmptyContainmentSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
+import DesignSystem.System.editor.DesignSystem_StyleSheet.typeStyleClass;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -75,6 +77,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
       editorCell.setDefaultText("<no name>");
       editorCell.setCellId("property_name");
+      Style style = new StyleImpl();
+      new baseStyleClass(this).apply(style, editorCell);
+      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
       setCellContext(editorCell);
       Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
@@ -92,6 +97,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ":");
     editorCell.setCellId("Constant_mlo6df_b0");
     Style style = new StyleImpl();
+    new baseStyleClass(this).apply(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -133,6 +139,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
       if (editorCell.getSRole() == null) {
         editorCell.setSRole(LINKS.type$pHYn);
       }
+      Style style = new StyleImpl();
+      new typeStyleClass(this).apply(style, editorCell);
+      style.set(StyleAttributes.LAST_POSITION_ALLOWED, true);
+      editorCell.getStyle().putAll(style);
     }
     @Override
     protected EditorCell createEmptyCell() {
