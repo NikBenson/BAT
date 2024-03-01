@@ -31,6 +31,7 @@
         <property id="1071599893252" name="sourceCardinality" index="20lbJX" />
         <property id="1071599937831" name="metaClass" index="20lmBu" />
         <property id="241647608299431140" name="linkId" index="IQ2ns" />
+        <reference id="1071599698500" name="specializedLink" index="20ksaX" />
         <reference id="1071599976176" name="target" index="20lvS9" />
       </concept>
     </language>
@@ -80,7 +81,7 @@
     <property role="TrG5h" value="DesignSystemSubsystemListConcept" />
     <property role="34LRSv" value="subsystems" />
     <property role="3GE5qa" value="design_system.subsystems" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="qgBRHbnxk1" role="1TKVEi">
       <property role="IQ2ns" value="473053312768152833" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -97,7 +98,7 @@
     <property role="TrG5h" value="DesignSystemPropertiesListConcept" />
     <property role="34LRSv" value="properties" />
     <property role="3GE5qa" value="design_system.properties" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="qgBRHbny8W" role="1TKVEi">
       <property role="IQ2ns" value="473053312768156220" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -169,7 +170,7 @@
     <property role="TrG5h" value="DesignSystemParentConcept" />
     <property role="R5$K7" value="true" />
     <property role="3GE5qa" value="design_system.parent" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="qgBRHbswk7">
     <property role="EcuMT" value="473053312769459463" />
@@ -214,19 +215,14 @@
     <property role="19KtqR" value="true" />
     <property role="3GE5qa" value="design_system" />
     <property role="34LRSv" value="DesignSystem" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
-    <node concept="PrWs8" id="qgBRHb$oZi" role="PzmwI">
-      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
-    </node>
-    <node concept="PrWs8" id="qgBRHbLQmF" role="PzmwI">
-      <ref role="PrY4T" to="tpck:hLJPP0O" resolve="IWrapper" />
-    </node>
+    <ref role="1TJDcQ" node="qgBRHc4DOF" resolve="AbstractDesignSystemFileConcept" />
     <node concept="1TJgyj" id="qgBRHb$pAv" role="1TKVEi">
       <property role="IQ2ns" value="473053312771529119" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="content" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="qgBRHbnxjB" resolve="DesignSystemConcept" />
+      <ref role="20ksaX" node="qgBRHc4Jz$" resolve="content" />
     </node>
   </node>
   <node concept="1TIwiD" id="qgBRHb_ruL">
@@ -234,7 +230,7 @@
     <property role="TrG5h" value="DesignSystemTypeConcept" />
     <property role="R5$K7" value="true" />
     <property role="3GE5qa" value="types" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="qgBRHb_rz0">
     <property role="EcuMT" value="473053312771799232" />
@@ -258,7 +254,7 @@
     <property role="EcuMT" value="473053312771799235" />
     <property role="3GE5qa" value="types.reference.enum" />
     <property role="TrG5h" value="DesignSystemEnumItemConcept" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="qgBRHb_rz4" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -288,7 +284,7 @@
     <property role="TrG5h" value="AbstractDesignSystemPropertyConcept" />
     <property role="R5$K7" value="true" />
     <property role="3GE5qa" value="design_system.properties" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="PlHQZ" id="qgBRHbAaw1">
     <property role="EcuMT" value="473053312771991553" />
@@ -357,6 +353,25 @@
     <property role="TrG5h" value="DesignSystemDecimalType" />
     <property role="34LRSv" value="Decimal" />
     <ref role="1TJDcQ" node="qgBRHbAaw9" resolve="DesignSystemPrimitiveTypeConcept" />
+  </node>
+  <node concept="1TIwiD" id="qgBRHc4DOF">
+    <property role="EcuMT" value="473053312779984171" />
+    <property role="TrG5h" value="AbstractDesignSystemFileConcept" />
+    <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="qgBRHb$oZi" role="PzmwI">
+      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
+    </node>
+    <node concept="PrWs8" id="qgBRHbLQmF" role="PzmwI">
+      <ref role="PrY4T" to="tpck:hLJPP0O" resolve="IWrapper" />
+    </node>
+    <node concept="1TJgyj" id="qgBRHc4Jz$" role="1TKVEi">
+      <property role="IQ2ns" value="473053312780007652" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="content" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
   </node>
 </model>
 

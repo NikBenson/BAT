@@ -1,4 +1,4 @@
-AllColorTokens: PrimitiveTokensSet<Brightness brightness => ColorTokens>
+resolve AllColorTokens<ColorTokens> by brightness: Brightness
 	switch(brightness) {
 		Brightness.LIGHT => LightColorTokens,
 		Brightness.DARK => DarkColorTokens,

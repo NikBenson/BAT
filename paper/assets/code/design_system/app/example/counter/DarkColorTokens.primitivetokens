@@ -1,4 +1,3 @@
-DarkColorTokens: PrimitiveTokens<Color> implements ColorTokens
-	red: 0xFF0000
-	green: 0x00FF00
-	blue: 0x0000FF
+primitive tokens DarkColorTokens<Color>: ColorTokens
+	green: 0x00B000
+	blue: 0x0000B0

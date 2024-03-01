@@ -84,7 +84,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return (String) AbstractDesignSystemPropertyConcept__BehaviorDescriptor.getPropertyName_idqgBRHbNWb$.invoke(_context.getNode());
   }
   public static boolean ifMacro_Condition_7_0(final IfMacroContext _context) {
-    return SNodeOperations.hasRole(_context.getNode(), LINKS.content$ZP3j);
+    return SNodeOperations.hasRole(_context.getNode(), LINKS.content$soeS);
   }
   public static SNode sourceNodeQuery_6_0(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), LINKS.generic$Le5W);
@@ -93,7 +93,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return SLinkOperations.getTarget(_context.getNode(), LINKS.parent$cIP7);
   }
   public static SNode sourceNodeQuery_8_0(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), LINKS.content$ZP3j);
+    return SLinkOperations.getTarget(_context.getNode(), LINKS.content$soeS);
   }
   public static SNode sourceNodeQuery_14_0(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), LINKS.type$pHYn);
@@ -339,7 +339,7 @@ public class QueriesGenerated extends QueryProviderBase {
     /*package*/ static final SContainmentLink parameters$XoyZ = MetaAdapterFactory.getContainmentLink(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b95edf3L, 0x6909f7b4b95edf6L, "parameters");
     /*package*/ static final SContainmentLink parameters$qcVt = MetaAdapterFactory.getContainmentLink(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e152aL, 0x6909f7b4b5e1536L, "parameters");
     /*package*/ static final SReferenceLink reference$DKYX = MetaAdapterFactory.getReferenceLink(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b98a806L, 0x6909f7b4b98a807L, "reference");
-    /*package*/ static final SContainmentLink content$ZP3j = MetaAdapterFactory.getContainmentLink(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b918fd1L, 0x6909f7b4b91999fL, "content");
+    /*package*/ static final SContainmentLink content$soeS = MetaAdapterFactory.getContainmentLink(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4c129d2bL, 0x6909f7b4c12f8e4L, "content");
     /*package*/ static final SContainmentLink generic$Le5W = MetaAdapterFactory.getContainmentLink(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4baca4c1L, 0x6909f7b4baca4edL, "generic");
     /*package*/ static final SContainmentLink parent$cIP7 = MetaAdapterFactory.getContainmentLink(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e14e7L, 0x6909f7b4b689f0bL, "parent");
     /*package*/ static final SContainmentLink type$pHYn = MetaAdapterFactory.getContainmentLink(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e1504L, 0x6909f7b4b5e150aL, "type");

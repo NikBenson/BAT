@@ -11,13 +11,15 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SEmptyContainmentSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
-import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 /*package*/ class DesignSystemFileConcept_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -47,7 +49,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     return editorCell;
   }
   private EditorCell createRefNode_0() {
-    SingleRoleCellProvider provider = new contentSingleRoleHandler_uvn1h2_a0(myNode, LINKS.content$ZP3j, getEditorContext());
+    SingleRoleCellProvider provider = new contentSingleRoleHandler_uvn1h2_a0(myNode, LINKS.content$soeS, getEditorContext());
     return provider.createCell();
   }
   private static class contentSingleRoleHandler_uvn1h2_a0 extends SingleRoleCellProvider {
@@ -66,13 +68,16 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     }
 
     protected EditorCell createChildCell(SNode child) {
-      EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.content$ZP3j, child));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.content$ZP3j, child));
+      EditorCell editorCell = getUpdateSession().updateChildNodeCell(child, new SNodeLocation.FromNode(child, CONCEPTS.DesignSystemConcept$8a));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.content$soeS, child, CONCEPTS.DesignSystemConcept$8a));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.content$soeS, child, CONCEPTS.DesignSystemConcept$8a));
       installCellInfo(child, editorCell, false);
       return editorCell;
     }
 
+    protected SAbstractConcept getTargetConcept() {
+      return CONCEPTS.DesignSystemConcept$8a;
+    }
 
 
     private void installCellInfo(SNode child, EditorCell editorCell, boolean isEmpty) {
@@ -80,13 +85,13 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
         editorCell.setSubstituteInfo((isEmpty ? new SEmptyContainmentSubstituteInfo(editorCell) : new SChildSubstituteInfo(editorCell)));
       }
       if (editorCell.getSRole() == null) {
-        editorCell.setSRole(LINKS.content$ZP3j);
+        editorCell.setSRole(LINKS.content$soeS);
       }
     }
     @Override
     protected EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.content$ZP3j));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.content$soeS, CONCEPTS.DesignSystemConcept$8a));
       try {
         EditorCell editorCell = super.createEmptyCell();
         editorCell.setCellId("empty_content");
@@ -103,6 +108,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink content$ZP3j = MetaAdapterFactory.getContainmentLink(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b918fd1L, 0x6909f7b4b91999fL, "content");
+    /*package*/ static final SContainmentLink content$soeS = MetaAdapterFactory.getContainmentLink(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4c129d2bL, 0x6909f7b4c12f8e4L, "content");
+  }
+
+  private static final class CONCEPTS {
+    /*package*/ static final SConcept DesignSystemConcept$8a = MetaAdapterFactory.getConcept(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b5e14e7L, "DesignSystem.System.structure.DesignSystemConcept");
   }
 }
