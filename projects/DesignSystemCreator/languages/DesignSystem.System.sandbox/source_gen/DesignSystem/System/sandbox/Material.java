@@ -4,7 +4,6 @@ package DesignSystem.System.sandbox;
 
 import DesignSystem.System.DesignSystem;
 import java.awt.Color;
-import java.util.function.Function;
 import java.util.Set;
 
 public class Material extends DesignSystem {
@@ -65,10 +64,10 @@ public class Material extends DesignSystem {
 
   public final ColorSwatch colorSwatch;
   public final TextTheme textTheme;
-  public final Function<Set<MaterialState>, ButtonTheme> textButtonTheme;
-  public final Function<Set<MaterialState>, ButtonTheme> outlineButtonTheme;
+  public final DesignSystem.Function1<Set<MaterialState>, ButtonTheme> textButtonTheme;
+  public final DesignSystem.Function1<Set<MaterialState>, ButtonTheme> outlineButtonTheme;
 
-  public Material(ColorSwatch colorSwatch, TextTheme textTheme, Function<Set<MaterialState>, ButtonTheme> textButtonTheme, Function<Set<MaterialState>, ButtonTheme> outlineButtonTheme) {
+  public Material(ColorSwatch colorSwatch, TextTheme textTheme, DesignSystem.Function1<Set<MaterialState>, ButtonTheme> textButtonTheme, DesignSystem.Function1<Set<MaterialState>, ButtonTheme> outlineButtonTheme) {
     super();
     this.colorSwatch = colorSwatch;
     this.textTheme = textTheme;
