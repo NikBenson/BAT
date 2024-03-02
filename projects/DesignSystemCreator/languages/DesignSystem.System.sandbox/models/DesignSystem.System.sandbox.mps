@@ -15,9 +15,10 @@
       </concept>
     </language>
     <language id="43e160c7-168c-4805-904b-c45c336610e7" name="DesignSystem.System">
-      <concept id="473053312771526609" name="DesignSystem.System.structure.DesignSystemFileConcept" flags="ng" index="1d0h2E">
-        <child id="473053312771529119" name="content" index="1d0gr$" />
+      <concept id="473053312779984171" name="DesignSystem.System.structure.AbstractDesignSystemFileConcept" flags="ng" index="1aww9g">
+        <child id="473053312780007652" name="content" index="1awAuv" />
       </concept>
+      <concept id="473053312771526609" name="DesignSystem.System.structure.DesignSystemFileConcept" flags="ng" index="1d0h2E" />
       <concept id="473053312771799235" name="DesignSystem.System.structure.DesignSystemEnumItemConcept" flags="ng" index="1d1iuS" />
       <concept id="473053312771799232" name="DesignSystem.System.structure.DesignSystemEnumTypeConcept" flags="ng" index="1d1iuV">
         <child id="473053312771799238" name="items" index="1d1iuX" />
@@ -61,155 +62,6 @@
       </concept>
     </language>
   </registry>
-  <node concept="1d0h2E" id="qgBRHb_edb">
-    <property role="3GE5qa" value="de.whs.ni37900.bat.designsystem.system.sandbox" />
-    <node concept="1dNCIs" id="qgBRHb_edc" role="1d0gr$">
-      <property role="TrG5h" value="Material" />
-      <node concept="1dNCI9" id="qgBRHb_edd" role="1dNCIc">
-        <node concept="1dNCDZ" id="qgBRHbCUra" role="1dNFP7">
-          <property role="TrG5h" value="colorSwatch" />
-          <node concept="1d23tX" id="qgBRHbCUre" role="1dNCDL">
-            <ref role="1d23tW" node="qgBRHb_rq1" resolve="ColorSwatch" />
-          </node>
-        </node>
-        <node concept="1dNCDZ" id="qgBRHbCUrh" role="1dNFP7">
-          <property role="TrG5h" value="textTheme" />
-          <node concept="1d23tX" id="qgBRHbCUrn" role="1dNCDL">
-            <ref role="1d23tW" node="qgBRHb_rsk" resolve="TextTheme" />
-          </node>
-        </node>
-        <node concept="1d1na8" id="qgBRHbEV4I" role="1dNFP7">
-          <node concept="1dNCDZ" id="qgBRHbEV4J" role="1d1Wsn">
-            <property role="TrG5h" value="textButtonTheme" />
-            <node concept="1d23tX" id="qgBRHbEV4K" role="1dNCDL">
-              <ref role="1d23tW" node="qgBRHb_rsA" resolve="ButtonTheme" />
-            </node>
-          </node>
-          <node concept="1dNCDh" id="qgBRHbEV4L" role="1d1nad">
-            <node concept="1dNCD3" id="qgBRHbEV4O" role="1dNCDd">
-              <property role="TrG5h" value="state" />
-              <node concept="1df3IU" id="qgBRHbFxRU" role="1d1na2">
-                <node concept="1d23tX" id="qgBRHbFxRX" role="1df3Im">
-                  <ref role="1d23tW" node="qgBRHbFafY" resolve="MaterialState" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1d1na8" id="qgBRHbFai_" role="1dNFP7">
-          <node concept="1dNCDZ" id="qgBRHbFaiA" role="1d1Wsn">
-            <property role="TrG5h" value="outlineButtonTheme" />
-            <node concept="1d23tX" id="qgBRHbFaiB" role="1dNCDL">
-              <ref role="1d23tW" node="qgBRHb_rsA" resolve="ButtonTheme" />
-            </node>
-          </node>
-          <node concept="1dNCDh" id="qgBRHbFaiC" role="1d1nad">
-            <node concept="1dNCD3" id="qgBRHbFaiF" role="1dNCDd">
-              <property role="TrG5h" value="state" />
-              <node concept="1df3IU" id="qgBRHbFxRN" role="1d1na2">
-                <node concept="1d23tX" id="qgBRHbFxRQ" role="1df3Im">
-                  <ref role="1d23tW" node="qgBRHbFafY" resolve="MaterialState" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="1dSDDW" id="qgBRHb_edf" role="1dY01K" />
-      <node concept="1dNCIa" id="qgBRHb_rpZ" role="1dNCIe">
-        <node concept="1dNCIs" id="qgBRHb_rq1" role="1dNCDU">
-          <property role="TrG5h" value="ColorSwatch" />
-          <node concept="1dNCI9" id="qgBRHb_rq2" role="1dNCIc">
-            <node concept="1dNCDZ" id="qgBRHbCUot" role="1dNFP7">
-              <property role="TrG5h" value="primary" />
-              <node concept="1d2DG3" id="qgBRHbCUo_" role="1dNCDL" />
-            </node>
-            <node concept="1dNCDZ" id="qgBRHbCUoK" role="1dNFP7">
-              <property role="TrG5h" value="secondary" />
-              <node concept="1d2DG3" id="qgBRHbCUoS" role="1dNCDL" />
-            </node>
-            <node concept="1dNCDZ" id="qgBRHbCUoX" role="1dNFP7">
-              <property role="TrG5h" value="tertiary" />
-              <node concept="1d2DG3" id="qgBRHbCUpe" role="1dNCDL" />
-            </node>
-          </node>
-          <node concept="1dSDDW" id="qgBRHb_rqp" role="1dY01K" />
-        </node>
-        <node concept="1dNCIs" id="qgBRHb_rsk" role="1dNCDU">
-          <property role="TrG5h" value="TextTheme" />
-          <node concept="1dNCI9" id="qgBRHb_rsl" role="1dNCIc">
-            <node concept="1dNCDZ" id="qgBRHbCUqa" role="1dNFP7">
-              <property role="TrG5h" value="bodySmall" />
-              <node concept="1d23tX" id="qgBRHbCUqr" role="1dNCDL">
-                <ref role="1d23tW" node="qgBRHb_rsX" resolve="TextStyle" />
-              </node>
-            </node>
-            <node concept="1dNCDZ" id="qgBRHbCUpV" role="1dNFP7">
-              <property role="TrG5h" value="bodyMedium" />
-              <node concept="1d23tX" id="qgBRHbCUqu" role="1dNCDL">
-                <ref role="1d23tW" node="qgBRHb_rsX" resolve="TextStyle" />
-              </node>
-            </node>
-            <node concept="1dNCDZ" id="qgBRHbCUpI" role="1dNFP7">
-              <property role="TrG5h" value="bodyLarge" />
-              <node concept="1d23tX" id="qgBRHbCUqx" role="1dNCDL">
-                <ref role="1d23tW" node="qgBRHb_rsX" resolve="TextStyle" />
-              </node>
-            </node>
-          </node>
-          <node concept="1dSDDW" id="qgBRHb_rsz" role="1dY01K" />
-          <node concept="1dNCIa" id="qgBRHb_rsV" role="1dNCIe">
-            <node concept="1dNCIs" id="qgBRHb_rsX" role="1dNCDU">
-              <property role="TrG5h" value="TextStyle" />
-              <node concept="1dNCI9" id="qgBRHb_rsY" role="1dNCIc">
-                <node concept="1dNCDZ" id="qgBRHbCUpk" role="1dNFP7">
-                  <property role="TrG5h" value="fontFamily" />
-                  <node concept="1d2Xlq" id="qgBRHbCUpr" role="1dNCDL" />
-                </node>
-                <node concept="1dNCDZ" id="qgBRHbCUpu" role="1dNFP7">
-                  <property role="TrG5h" value="fontWeight" />
-                  <node concept="1d23tX" id="qgBRHbCUpF" role="1dNCDL">
-                    <ref role="1d23tW" node="qgBRHbAwfV" resolve="FontWeight" />
-                  </node>
-                </node>
-              </node>
-              <node concept="1dSDDW" id="qgBRHb_rtg" role="1dY01K" />
-            </node>
-          </node>
-        </node>
-        <node concept="1dNCIs" id="qgBRHb_rsA" role="1dNCDU">
-          <property role="TrG5h" value="ButtonTheme" />
-          <node concept="1dNCI9" id="qgBRHb_rsB" role="1dNCIc">
-            <node concept="1dNCDZ" id="qgBRHbCUqP" role="1dNFP7">
-              <property role="TrG5h" value="foregroundColor" />
-              <node concept="1d2DG3" id="qgBRHbCUr4" role="1dNCDL" />
-            </node>
-            <node concept="1dNCDZ" id="qgBRHbCUqG" role="1dNFP7">
-              <property role="TrG5h" value="backgroundColor" />
-              <node concept="1d2DG3" id="qgBRHbCUr7" role="1dNCDL" />
-            </node>
-          </node>
-          <node concept="1dSDDW" id="qgBRHb_rsS" role="1dY01K" />
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="1d0h2E" id="qgBRHb_edi">
-    <property role="3GE5qa" value="de.whs.ni37900.bat.designsystem.system.sandbox" />
-    <node concept="1dNCIs" id="qgBRHb_edj" role="1d0gr$">
-      <property role="TrG5h" value="CounterApp" />
-      <node concept="1dNCI9" id="qgBRHb_edk" role="1dNCIc">
-        <node concept="1dNCDZ" id="qgBRHbVPTY" role="1dNFP7">
-          <property role="TrG5h" value="buttonSize" />
-          <node concept="1dv0R2" id="qgBRHbVPU2" role="1dNCDL" />
-        </node>
-      </node>
-      <node concept="1dNCIa" id="qgBRHb_rpR" role="1dNCIe" />
-      <node concept="1dY01Y" id="qgBRHc0cIO" role="1dY01K">
-        <ref role="1dY01X" node="qgBRHb_edc" resolve="Material" />
-      </node>
-    </node>
-  </node>
   <node concept="1d1iuV" id="qgBRHbAeL6">
     <property role="TrG5h" value="Brightness" />
     <property role="3GE5qa" value="de.whs.ni37900.bat.designsystem.system.sandbox" />
@@ -277,6 +129,154 @@
     </node>
     <node concept="1d1iuS" id="qgBRHbFahy" role="1d1iuX">
       <property role="TrG5h" value="error" />
+    </node>
+  </node>
+  <node concept="1d0h2E" id="qgBRHcgqEk">
+    <property role="3GE5qa" value="de.whs.ni37900.bat.designsystem.system.sandbox" />
+    <node concept="1dNCIs" id="qgBRHcgqEm" role="1awAuv">
+      <property role="TrG5h" value="Material" />
+      <node concept="1dNCI9" id="qgBRHcgqEo" role="1dNCIc">
+        <node concept="1dNCDZ" id="qgBRHcgqI1" role="1dNFP7">
+          <property role="TrG5h" value="colorSwatch" />
+          <node concept="1d23tX" id="qgBRHcgqI5" role="1dNCDL">
+            <ref role="1d23tW" node="qgBRHcgqEY" resolve="ColorSwatch" />
+          </node>
+        </node>
+        <node concept="1dNCDZ" id="qgBRHcgqI8" role="1dNFP7">
+          <property role="TrG5h" value="textTheme" />
+          <node concept="1d23tX" id="qgBRHcgqIe" role="1dNCDL">
+            <ref role="1d23tW" node="qgBRHcgqG6" resolve="TextTheme" />
+          </node>
+        </node>
+        <node concept="1d1na8" id="qgBRHcgqIs" role="1dNFP7">
+          <node concept="1dNCDZ" id="qgBRHcgqIt" role="1d1Wsn">
+            <property role="TrG5h" value="textButtonTheme" />
+            <node concept="1d23tX" id="qgBRHcgqIu" role="1dNCDL">
+              <ref role="1d23tW" node="qgBRHcgqHe" resolve="ButtonTheme" />
+            </node>
+          </node>
+          <node concept="1dNCDh" id="qgBRHcgqIv" role="1d1nad">
+            <node concept="1dNCD3" id="qgBRHcgqIy" role="1dNCDd">
+              <property role="TrG5h" value="state" />
+              <node concept="1df3IU" id="qgBRHcgqIM" role="1d1na2">
+                <node concept="1d23tX" id="qgBRHcgqIP" role="1df3Im">
+                  <ref role="1d23tW" node="qgBRHbFafY" resolve="MaterialState" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1d1na8" id="qgBRHcgqJ6" role="1dNFP7">
+          <node concept="1dNCDZ" id="qgBRHcgqJ7" role="1d1Wsn">
+            <property role="TrG5h" value="outlineButtonTheme" />
+            <node concept="1d23tX" id="qgBRHcgqJz" role="1dNCDL">
+              <ref role="1d23tW" node="qgBRHcgqHe" resolve="ButtonTheme" />
+            </node>
+          </node>
+          <node concept="1dNCDh" id="qgBRHcgqJ9" role="1d1nad">
+            <node concept="1dNCD3" id="qgBRHcgqJc" role="1dNCDd">
+              <property role="TrG5h" value="state" />
+              <node concept="1df3IU" id="qgBRHcgqJA" role="1d1na2">
+                <node concept="1d23tX" id="qgBRHcgqJD" role="1df3Im">
+                  <ref role="1d23tW" node="qgBRHbFafY" resolve="MaterialState" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1dSDDW" id="qgBRHcgqE$" role="1dY01K" />
+      <node concept="1dNCIa" id="qgBRHcgqEW" role="1dNCIe">
+        <node concept="1dNCIs" id="qgBRHcgqEY" role="1dNCDU">
+          <property role="TrG5h" value="ColorSwatch" />
+          <node concept="1dNCI9" id="qgBRHcgqEZ" role="1dNCIc">
+            <node concept="1dNCDZ" id="qgBRHcgqF7" role="1dNFP7">
+              <property role="TrG5h" value="primary" />
+              <node concept="1d2DG3" id="qgBRHcgqFb" role="1dNCDL" />
+            </node>
+            <node concept="1dNCDZ" id="qgBRHcgqFe" role="1dNFP7">
+              <property role="TrG5h" value="secondary" />
+              <node concept="1d2DG3" id="qgBRHcgqFk" role="1dNCDL" />
+            </node>
+            <node concept="1dNCDZ" id="qgBRHcgqFn" role="1dNFP7">
+              <property role="TrG5h" value="tertiary" />
+              <node concept="1d2DG3" id="qgBRHcgqFv" role="1dNCDL" />
+            </node>
+          </node>
+          <node concept="1dSDDW" id="qgBRHcgqF4" role="1dY01K" />
+        </node>
+        <node concept="1dNCIs" id="qgBRHcgqG6" role="1dNCDU">
+          <property role="TrG5h" value="TextTheme" />
+          <node concept="1dNCI9" id="qgBRHcgqG7" role="1dNCIc">
+            <node concept="1dNCDZ" id="qgBRHcgqGN" role="1dNFP7">
+              <property role="TrG5h" value="bodySmall" />
+              <node concept="1d23tX" id="qgBRHcgqGR" role="1dNCDL">
+                <ref role="1d23tW" node="qgBRHcgqGq" resolve="TextStyle" />
+              </node>
+            </node>
+            <node concept="1dNCDZ" id="qgBRHcgqGU" role="1dNFP7">
+              <property role="TrG5h" value="bodyMedium" />
+              <node concept="1d23tX" id="qgBRHcgqH0" role="1dNCDL">
+                <ref role="1d23tW" node="qgBRHcgqGq" resolve="TextStyle" />
+              </node>
+            </node>
+            <node concept="1dNCDZ" id="qgBRHcgqH3" role="1dNFP7">
+              <property role="TrG5h" value="bodyLarge" />
+              <node concept="1d23tX" id="qgBRHcgqHb" role="1dNCDL">
+                <ref role="1d23tW" node="qgBRHcgqGq" resolve="TextStyle" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dSDDW" id="qgBRHcgqGl" role="1dY01K" />
+          <node concept="1dNCIa" id="qgBRHcgqGo" role="1dNCIe">
+            <node concept="1dNCIs" id="qgBRHcgqGq" role="1dNCDU">
+              <property role="TrG5h" value="TextStyle" />
+              <node concept="1dNCI9" id="qgBRHcgqGr" role="1dNCIc">
+                <node concept="1dNCDZ" id="qgBRHcgqGz" role="1dNFP7">
+                  <property role="TrG5h" value="fontFamily" />
+                  <node concept="1d2Xlq" id="qgBRHcgqGB" role="1dNCDL" />
+                </node>
+                <node concept="1dNCDZ" id="qgBRHcgqGE" role="1dNFP7">
+                  <property role="TrG5h" value="fontWeight" />
+                  <node concept="1d23tX" id="qgBRHcgqGK" role="1dNCDL">
+                    <ref role="1d23tW" node="qgBRHbAwfV" resolve="FontWeight" />
+                  </node>
+                </node>
+              </node>
+              <node concept="1dSDDW" id="qgBRHcgqGw" role="1dY01K" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dNCIs" id="qgBRHcgqHe" role="1dNCDU">
+          <property role="TrG5h" value="ButtonTheme" />
+          <node concept="1dNCI9" id="qgBRHcgqHf" role="1dNCIc">
+            <node concept="1dNCDZ" id="qgBRHcgqHL" role="1dNFP7">
+              <property role="TrG5h" value="foregroundColor" />
+              <node concept="1d2DG3" id="qgBRHcgqHP" role="1dNCDL" />
+            </node>
+            <node concept="1dNCDZ" id="qgBRHcgqHS" role="1dNFP7">
+              <property role="TrG5h" value="backgroundColor" />
+              <node concept="1d2DG3" id="qgBRHcgqHY" role="1dNCDL" />
+            </node>
+          </node>
+          <node concept="1dSDDW" id="qgBRHcgqHI" role="1dY01K" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1d0h2E" id="qgBRHcgqEB">
+    <property role="3GE5qa" value="de.whs.ni37900.bat.designsystem.system.sandbox" />
+    <node concept="1dNCIs" id="qgBRHcgqED" role="1awAuv">
+      <property role="TrG5h" value="CounterTheme" />
+      <node concept="1dNCI9" id="qgBRHcgqEF" role="1dNCIc">
+        <node concept="1dNCDZ" id="qgBRHcgqEP" role="1dNFP7">
+          <property role="TrG5h" value="buttonSize" />
+          <node concept="1dv0R2" id="qgBRHcgqET" role="1dNCDL" />
+        </node>
+      </node>
+      <node concept="1dY01Y" id="qgBRHcgqEM" role="1dY01K">
+        <ref role="1dY01X" node="qgBRHcgqEm" resolve="Material" />
+      </node>
     </node>
   </node>
 </model>

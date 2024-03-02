@@ -4,10 +4,7 @@ package DesignSystem.App.sandbox;
 
 
 public class FontTokens {
-  public TextStyle bold() {
+  public  getBold() {
     return "bold";
-  }
-  public TextStyle semiBold() {
-    return "semi-bold";
   }
 }

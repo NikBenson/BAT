@@ -7,12 +7,16 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.HashMap;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public class AbstractDesignSystemPrimitiveTokensConceptReference_Constraints extends BaseConstraintsDescriptor {
   public AbstractDesignSystemPrimitiveTokensConceptReference_Constraints() {
@@ -21,7 +25,20 @@ public class AbstractDesignSystemPrimitiveTokensConceptReference_Constraints ext
 
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
-    BaseReferenceConstraintsDescriptor d0 = new BaseReferenceConstraintsDescriptor(LINKS.abstractDesignSystemPrimitiveTokensConcept$LQUh, this, true, false) {
+    BaseReferenceConstraintsDescriptor d0 = new BaseReferenceConstraintsDescriptor(LINKS.abstractDesignSystemPrimitiveTokensConcept$LQUh, this, true, true) {
+      @Override
+      public boolean validate(final SNode referenceNode, final SNode oldReferentNode, final SNode newReferentNode) {
+        return true;
+      }
+      @Override
+      public void onReferenceSet(final SNode referenceNode, final SNode oldReferentNode, final SNode newReferentNode) {
+        {
+          final SNode parent = SNodeOperations.getParent(referenceNode);
+          if (SNodeOperations.isInstanceOf(parent, CONCEPTS.DesignSystemPrimitiveTokensConcept$P$)) {
+            SLinkOperations.setTarget(parent, LINKS.type$aWVE, SLinkOperations.getTarget(newReferentNode, LINKS.type$aWVE));
+          }
+        }
+      }
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -35,10 +52,12 @@ public class AbstractDesignSystemPrimitiveTokensConceptReference_Constraints ext
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept AbstractDesignSystemPrimitiveTokensConceptReference$Y_ = MetaAdapterFactory.getConcept(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c0af97bL, "DesignSystem.App.structure.AbstractDesignSystemPrimitiveTokensConceptReference");
+    /*package*/ static final SConcept DesignSystemPrimitiveTokensConcept$P$ = MetaAdapterFactory.getConcept(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4b5e14ecL, "DesignSystem.App.structure.DesignSystemPrimitiveTokensConcept");
     /*package*/ static final SConcept AbstractDesignSystemPrimitiveTokensConcept$M1 = MetaAdapterFactory.getConcept(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c064ef7L, "DesignSystem.App.structure.AbstractDesignSystemPrimitiveTokensConcept");
   }
 
   private static final class LINKS {
     /*package*/ static final SReferenceLink abstractDesignSystemPrimitiveTokensConcept$LQUh = MetaAdapterFactory.getReferenceLink(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c0af97bL, 0x6909f7b4c0af97cL, "abstractDesignSystemPrimitiveTokensConcept");
+    /*package*/ static final SContainmentLink type$aWVE = MetaAdapterFactory.getContainmentLink(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c064ef7L, 0x6909f7b4b5e150aL, "type");
   }
 }
