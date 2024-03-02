@@ -56,55 +56,49 @@
       </node>
     </node>
   </node>
-  <node concept="1a_Fz8" id="qgBRHc9dfL">
-    <node concept="1dNCIn" id="qgBRHc9dfM" role="1awAuv">
+  <node concept="1a_Fz8" id="4y2cPgZHWoP">
+    <node concept="1dNCIn" id="4y2cPgZHWoQ" role="1awAuv">
       <property role="TrG5h" value="LightColorTokens" />
-      <node concept="1aA$jE" id="qgBRHcacHq" role="1aAeNM">
+      <node concept="1d2DG3" id="4y2cPgZHWoR" role="1dNCDL" />
+      <node concept="1aAAo0" id="4y2cPgZHWoT" role="1aAAo2">
+        <ref role="1aAAo7" node="qgBRHc9dfo" resolve="ColorTokens" />
+      </node>
+      <node concept="1aA$jE" id="4y2cPgZHWoV" role="1aAeNM">
         <property role="TrG5h" value="green" />
         <property role="1aA$jD" value="0x00af00" />
       </node>
-      <node concept="1aA$jE" id="qgBRHcacHv" role="1aAeNM">
+      <node concept="1aA$jE" id="4y2cPgZHWrT" role="1aAeNM">
         <property role="TrG5h" value="blue" />
         <property role="1aA$jD" value="0x0000af" />
       </node>
-      <node concept="1aAAo0" id="qgBRHcdJFw" role="1aAAo2">
-        <ref role="1aAAo7" node="qgBRHc9dfo" resolve="ColorTokens" />
-      </node>
-      <node concept="1d23tX" id="qgBRHcdJF$" role="1dNCDL">
-        <ref role="1d23tW" to="qyyx:qgBRHbAeL6" resolve="Brightness" />
-      </node>
     </node>
   </node>
-  <node concept="1a_Fz8" id="qgBRHcacHz">
-    <node concept="1dNCIn" id="qgBRHcacH$" role="1awAuv">
+  <node concept="1a_Fz8" id="4y2cPgZHWrX">
+    <node concept="1dNCIn" id="4y2cPgZHWrY" role="1awAuv">
       <property role="TrG5h" value="DarkColorTokens" />
-      <node concept="1d2DG3" id="qgBRHcacH_" role="1dNCDL" />
-      <node concept="1aA$jE" id="qgBRHcacHA" role="1aAeNM">
+      <node concept="1d2DG3" id="4y2cPgZHWrZ" role="1dNCDL" />
+      <node concept="1aAAo0" id="4y2cPgZHWs0" role="1aAAo2">
+        <ref role="1aAAo7" node="qgBRHc9dfo" resolve="ColorTokens" />
+      </node>
+      <node concept="1aA$jE" id="4y2cPgZHWs1" role="1aAeNM">
         <property role="TrG5h" value="green" />
         <property role="1aA$jD" value="0x00b000" />
       </node>
-      <node concept="1aA$jE" id="qgBRHcacHB" role="1aAeNM">
+      <node concept="1aA$jE" id="4y2cPgZHWs2" role="1aAeNM">
         <property role="TrG5h" value="blue" />
         <property role="1aA$jD" value="0x0000b0" />
       </node>
-      <node concept="1aAAo0" id="qgBRHcdJFu" role="1aAAo2">
-        <ref role="1aAAo7" node="qgBRHc9dfo" resolve="ColorTokens" />
-      </node>
     </node>
   </node>
-  <node concept="1a_Fz8" id="qgBRHcacHC">
-    <node concept="1dNCIn" id="qgBRHcacHD" role="1awAuv">
+  <node concept="1a_Fz8" id="4y2cPgZHWsO">
+    <node concept="1dNCIn" id="4y2cPgZHWsP" role="1awAuv">
       <property role="TrG5h" value="FontTokens" />
-      <node concept="1d23tX" id="qgBRHcacHE" role="1dNCDL">
-        <ref role="1d23tW" to="qyyx:qgBRHb_rsX" resolve="TextStyle" />
-      </node>
-      <node concept="1aA$jE" id="qgBRHcacHG" role="1aAeNM">
+      <node concept="1aA$jE" id="4y2cPgZHWsU" role="1aAeNM">
         <property role="TrG5h" value="bold" />
         <property role="1aA$jD" value="bold" />
       </node>
-      <node concept="1aA$jE" id="qgBRHcacHL" role="1aAeNM">
-        <property role="TrG5h" value="semiBold" />
-        <property role="1aA$jD" value="semi-bold" />
+      <node concept="1d23tX" id="4y2cPgZHWsQ" role="1dNCDL">
+        <ref role="1d23tW" to="qyyx:qgBRHcgqGq" resolve="TextStyle" />
       </node>
     </node>
   </node>

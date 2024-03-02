@@ -5,10 +5,10 @@ package DesignSystem.App.sandbox;
 import java.awt.Color;
 
 public class DarkColorTokens extends ColorTokens {
-  public Color green() {
+  public Color getGreen() {
     return "0x00b000";
   }
-  public Color blue() {
+  public Color getBlue() {
     return "0x0000b0";
   }
 }

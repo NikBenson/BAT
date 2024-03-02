@@ -5,9 +5,9 @@ package DesignSystem.App.sandbox;
 import java.awt.Color;
 
 public abstract class ColorTokens {
-  public Color red() {
+  public Color getRed() {
     return "0xff0000";
   }
-  public abstract Color green();
-  public abstract Color blue();
+  public abstract Color getGreen();
+  public abstract Color getBlue();
 }
