@@ -299,3 +299,8 @@ TSWLatexianTemp*
 
 antrag/
 out/
+
+# Mermaid Chart
+*.mmd.svg
+*.mmd.png
+*.mmd.pdf

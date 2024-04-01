@@ -18,6 +18,8 @@
       <bib-run-config>[BibTeX.main bibliography]</bib-run-config>
       <makeindex-run-config>[]</makeindex-run-config>
     </texify>
-    <method v="2" />
+    <method v="2">
+      <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_External Tools_Mermaid" />
+    </method>
   </configuration>
 </component>

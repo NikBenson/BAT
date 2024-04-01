@@ -138,25 +138,49 @@
 \bibliography{main}
 
 \begin{document}
-    \pagenumbering{gobble}
     \include{title}
 
-    \pagenumbering{Roman}
-    \setcounter{page}{2}
-    \tableofcontents
-    \addcontentsline{toc}{section}{Abbildungsverzeichnis}
-    \listoffigures
-    \addcontentsline{toc}{section}{Codeverzeichnis}
-    \lstlistoflistings
-    \newpage
-    \pagenumbering{arabic}
+    \input{toc}
 
-    \input{design_system}
 
-    \newpage
-    \pagenumbering{roman}
-    \addcontentsline{toc}{section}{Literatur}
-    \printbibliography
+    % 1: 2-3
+    % 2: 20
+    % 3: 10
+    % 4: 10
+    % 5: 5
+    % 6: 5
+    % 7: 2-3
+
+
+    \section{Einleitung}\label{sec:einleitung}
+    \input{einleitung}
+
+
+    \section{Grundlagen}\label{sec:grundlagen}
+    \input{grundlagen}
+
+
+    \section{Vergleich anhand eines einfachen Biespiels}\label{sec:vergleich-anhand-eines-einfachen-biespiels}
+    \input{vergleich-anhand-eines-einfachen-biespiels}
+
+
+    \section{Umsetzung eines komplexen Beispiels}\label{sec:umsetzung-eines-komplexen-beispiels}
+    \input{umsetzung-eines-komplexen-beispiels}
+
+
+    \section{Evaluation des Prototypen}\label{sec:evaluation-des-prototypen}
+    \input{evaluation-des-prototypen}
+
+
+    \section{Diskussion}\label{sec:diskussion}
+    \input{diskussion}
+
+
+    \section{Fazit}\label{sec:fazit}
+    \input{fazit}
+
+    \include{literatur}
 
     \include{appendix}
+
 \end{document}
