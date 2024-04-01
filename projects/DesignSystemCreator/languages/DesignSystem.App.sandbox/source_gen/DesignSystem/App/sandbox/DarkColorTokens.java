@@ -5,6 +5,12 @@ package DesignSystem.App.sandbox;
 import java.awt.Color;
 
 public class DarkColorTokens extends ColorTokens {
+
+  public String test() {
+    return "Keine Referenz: true true false";
+  }
+
+
   public Color getGreen() {
     return "0x00b000";
   }

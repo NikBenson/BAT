@@ -215,7 +215,7 @@
     <property role="EcuMT" value="473053312781750019" />
     <property role="3GE5qa" value="expression" />
     <property role="TrG5h" value="DesignSystemExpressionConcept" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
 </model>
 

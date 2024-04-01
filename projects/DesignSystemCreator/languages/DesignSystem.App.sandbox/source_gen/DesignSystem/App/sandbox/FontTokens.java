@@ -4,6 +4,12 @@ package DesignSystem.App.sandbox;
 
 
 public class FontTokens {
+
+  public String test() {
+    return "Keine Referenz: true true false";
+  }
+
+
   public  getBold() {
     return "bold";
   }
