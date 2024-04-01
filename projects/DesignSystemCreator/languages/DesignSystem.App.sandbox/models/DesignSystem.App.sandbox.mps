@@ -97,8 +97,8 @@
         <property role="TrG5h" value="bold" />
         <property role="1aA$jD" value="bold" />
       </node>
-      <node concept="1d23tX" id="4y2cPgZHWsQ" role="1dNCDL">
-        <ref role="1d23tW" to="qyyx:qgBRHcgqGq" resolve="TextStyle" />
+      <node concept="1d23tX" id="4ST5ZIJzdGJ" role="1dNCDL">
+        <ref role="1d23tW" to="qyyx:qgBRHbAeL6" resolve="Brightness" />
       </node>
     </node>
   </node>

@@ -11,9 +11,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import jetbrains.mps.generator.template.InsertMacroContext;
-import jetbrains.mps.generator.template.TemplateVarContext;
+import jetbrains.mps.generator.template.MapSrcMacroContext;
 import java.util.Map;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import java.util.HashMap;
@@ -29,10 +29,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
-import jetbrains.mps.generator.impl.query.VariableValueQuery;
-import jetbrains.mps.generator.impl.query.InsertMacroQuery;
+import jetbrains.mps.generator.impl.query.MapNodeQuery;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 @Generated
 public class QueriesGenerated extends QueryProviderBase {
@@ -63,28 +63,26 @@ public class QueriesGenerated extends QueryProviderBase {
   public static SNode sourceNodeQuery_2_0(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), LINKS.content$soeS);
   }
+  public static SNode sourceNodeQuery_4_0(final SourceSubstituteMacroNodeContext _context) {
+    return SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), CONCEPTS.AbstractDesignSystemPrimitiveTokensConcept$M1);
+  }
   public static Iterable<SNode> sourceNodesQuery_1_0(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), LINKS.tokens$Jwcn);
   }
   public static Iterable<SNode> sourceNodesQuery_3_0(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), LINKS.tokens$Jwcn);
   }
-  public static SNode insertMacro_Query_4_0(final InsertMacroContext _context) {
-    return ((SNode) _context.getVariable("type"));
-  }
-  public static SNode insertMacro_Query_5_0(final InsertMacroContext _context) {
-    return ((SNode) _context.getVariable("type"));
-  }
-  public static Object varMacro_Value_1_0(final TemplateVarContext _context) {
+  public static SNode mapSrcMacro_map_4_0(final MapSrcMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), LINKS.type$aWVE);
   }
-  public static Object varMacro_Value_3_0(final TemplateVarContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), LINKS.type$aWVE);
+  public static SNode mapSrcMacro_map_5_0(final MapSrcMacroContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), CONCEPTS.AbstractDesignSystemPrimitiveTokensConcept$M1), LINKS.type$aWVE);
   }
   private final Map<String, SourceNodeQuery> snqMethods = new HashMap<String, SourceNodeQuery>();
   {
     int i = 0;
     snqMethods.put("473053312781502864", new SNQ(i++));
+    snqMethods.put("5636562778381492153", new SNQ(i++));
   }
   @NotNull
   @Override
@@ -102,6 +100,8 @@ public class QueriesGenerated extends QueryProviderBase {
       switch (methodKey) {
         case 0:
           return QueriesGenerated.sourceNodeQuery_2_0(ctx);
+        case 1:
+          return QueriesGenerated.sourceNodeQuery_4_0(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
@@ -227,57 +227,29 @@ public class QueriesGenerated extends QueryProviderBase {
       }
     }
   }
-  private final Map<String, VariableValueQuery> vvqMethods = new HashMap<String, VariableValueQuery>();
+  private final Map<String, MapNodeQuery> mnqMethods = new HashMap<String, MapNodeQuery>();
   {
-    vvqMethods.put("5224794954643526086", new VVQ(0));
-    vvqMethods.put("5224794954643538245", new VVQ(1));
+    mnqMethods.put("5636562778380386822", new MNQ(0));
+    mnqMethods.put("5636562778380377742", new MNQ(1));
   }
   @NotNull
   @Override
-  public VariableValueQuery getVariableValueQuery(@NotNull QueryKey queryKey) {
-    VariableValueQuery query = queryKey.forTemplateNode(vvqMethods);
-    return (query != null ? query : super.getVariableValueQuery(queryKey));
+  public MapNodeQuery getMapNodeQuery(@NotNull QueryKey queryKey) {
+    MapNodeQuery query = queryKey.forTemplateNode(mnqMethods);
+    return (query != null ? query : super.getMapNodeQuery(queryKey));
   }
-  private static class VVQ implements VariableValueQuery {
+  private static class MNQ implements MapNodeQuery {
     private final int methodKey;
-    /*package*/ VVQ(int methodKey) {
+    /*package*/ MNQ(int methodKey) {
       this.methodKey = methodKey;
     }
     @Nullable
-    public Object evaluate(@NotNull TemplateVarContext ctx) throws GenerationFailureException {
+    public SNode evaluate(@NotNull MapSrcMacroContext ctx) throws GenerationFailureException {
       switch (methodKey) {
         case 0:
-          return QueriesGenerated.varMacro_Value_1_0(ctx);
+          return QueriesGenerated.mapSrcMacro_map_4_0(ctx);
         case 1:
-          return QueriesGenerated.varMacro_Value_3_0(ctx);
-        default:
-          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
-      }
-    }
-  }
-  private final Map<String, InsertMacroQuery> imqMethods = new HashMap<String, InsertMacroQuery>();
-  {
-    imqMethods.put("5224794954643046890", new IMQ(0));
-    imqMethods.put("5224794954643056765", new IMQ(1));
-  }
-  @NotNull
-  @Override
-  public InsertMacroQuery getInsertMacroQuery(@NotNull QueryKey queryKey) {
-    InsertMacroQuery query = queryKey.forTemplateNode(imqMethods);
-    return (query != null ? query : super.getInsertMacroQuery(queryKey));
-  }
-  private static class IMQ implements InsertMacroQuery {
-    private final int methodKey;
-    /*package*/ IMQ(int methodKey) {
-      this.methodKey = methodKey;
-    }
-    @Nullable
-    public SNode evaluate(@NotNull InsertMacroContext ctx) throws GenerationFailureException {
-      switch (methodKey) {
-        case 0:
-          return QueriesGenerated.insertMacro_Query_4_0(ctx);
-        case 1:
-          return QueriesGenerated.insertMacro_Query_5_0(ctx);
+          return QueriesGenerated.mapSrcMacro_map_5_0(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
@@ -295,5 +267,9 @@ public class QueriesGenerated extends QueryProviderBase {
     /*package*/ static final SContainmentLink content$soeS = MetaAdapterFactory.getContainmentLink(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4c129d2bL, 0x6909f7b4c12f8e4L, "content");
     /*package*/ static final SContainmentLink tokens$Jwcn = MetaAdapterFactory.getContainmentLink(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c064ef7L, 0x6909f7b4c087389L, "tokens");
     /*package*/ static final SContainmentLink type$aWVE = MetaAdapterFactory.getContainmentLink(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c064ef7L, 0x6909f7b4b5e150aL, "type");
+  }
+
+  private static final class CONCEPTS {
+    /*package*/ static final SConcept AbstractDesignSystemPrimitiveTokensConcept$M1 = MetaAdapterFactory.getConcept(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c064ef7L, "DesignSystem.App.structure.AbstractDesignSystemPrimitiveTokensConcept");
   }
 }

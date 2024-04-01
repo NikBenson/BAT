@@ -400,7 +400,7 @@
     <node concept="3aamgX" id="qgBRHciot2" role="3acgRq">
       <ref role="30HIoZ" to="8usw:qgBRHbnxkS" resolve="DesignSystemPropertyParameterConcept" />
       <node concept="j$656" id="qgBRHciot3" role="1lVwrX">
-        <ref role="v9R2y" node="qgBRHciot0" resolve="reduce_DesignSystemPropertyParameterConcept" />
+        <ref role="v9R2y" node="qgBRHciot0" resolve="reduce_DesignSystemPropertyParameterConcept_as_methode_parameter" />
       </node>
     </node>
   </node>
@@ -446,7 +446,7 @@
       </node>
     </node>
     <node concept="2ZBi8u" id="qgBRHcgOit" role="lGtFl">
-      <ref role="2rW$FS" node="qgBRHcgNN7" resolve="EnumDeclaration" />
+      <ref role="2rW$FS" node="qgBRHcgNN7" resolve="ReferenceTypeDeclaration" />
     </node>
   </node>
   <node concept="13MO4I" id="qgBRHbFzrc">
@@ -1906,7 +1906,7 @@
       <node concept="1ZhdrF" id="4y2cPgZB0A_" role="lGtFl">
         <property role="2qtEX8" value="variableDeclaration" />
         <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
-        <ref role="3cqZAo" node="qgBRHcr$qt" resolve="p1" />
+        <ref role="3cqZAo" node="qgBRHbT2sB" resolve="current" />
         <node concept="3$xsQk" id="4y2cPgZB0AA" role="3$ytzL">
           <node concept="3clFbS" id="4y2cPgZB0AB" role="2VODD2">
             <node concept="3clFbF" id="4y2cPgZB0BH" role="3cqZAp">
