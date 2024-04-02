@@ -73,7 +73,7 @@ acs-*.bib
 # endnotes
 *.ent
 
-# fixme
+# _fixme
 *.lox
 
 # feynmf/feynmp
@@ -140,8 +140,6 @@ acs-*.bib
 
 # knitr
 *-concordance.tex
-# TODO Uncomment the next line if you use knitr and want to ignore its generated tikz files
-# *.tikz
 *-tikzDictionary
 
 # listings
@@ -230,7 +228,7 @@ pythontex-files-*/
 *.hst
 *.ver
 
-# easy-todo
+# easy-_todo
 *.lod
 
 # xcolor
