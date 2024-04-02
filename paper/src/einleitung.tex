@@ -44,7 +44,7 @@ Der konkrete Anwendungsfall ist allerdings in dieser Arbeit zweitrangig.
 
 \subsubsection{Persönliche Motivation}
 Die Entwicklung des Prototyps ist von meiner persönlichen Motivation geleitet, die Potenziale von \acp{DSL} zu erschließen und die Entwicklung von Software zu verbessern.
-Ich sehe \acp{DSL} als eine Möglichkeit, auch Laien die präzise Beschreibung von komplexen Systemen zu ermöglichen und die IT--Branche zu demokratisieren.
+Ich sehe \acp{DSL} als eine Möglichkeit, auch Laien die präzise Beschreibung von komplexen Systemen zu ermöglichen und die \acs{IT}--Branche zu demokratisieren.
 Durch die Förderung der \ac{DSL}--Entwicklung und die Verbreitung von Wissen über diese Technologie möchte ich zu einer Renaissance des Compilerbaus beitragen und die Wertschätzung für die Grundlagen der Softwareentwicklung stärken.
 
 \subsection{Zielsetzung}\label{subsec:zielsetzung}
@@ -52,15 +52,20 @@ Die Arbeit adressiert die folgenden Forschungsfragen:
 \begin{itemize}
     \item Ist die nutzung von \ac{MPS} zur entwicklung von \ac{DSL} wirtschaftlich?
     \item Wie kann die Benutzerfreundlichkeit von \ac{DSL}--Entwicklungsumgebungen gesteigert werden?
-    \item Wie kann die Entwicklung von \acp{DSL} in der IT--Branche gefördert werden?
+    \item Wie kann die Entwicklung von \acp{DSL} in der \acs{IT}--Branche gefördert werden?
 \end{itemize}
 Die erwarteten Ergebnisse der Arbeit sind:
 \begin{itemize}
     \item Ein direkter Vergleich der Entwicklung von \acp{DSL} mithilfe von \ac{MPS} und herkömmlichen Tools
     \item Ein funktionsfähiger Prototyp zur effizienten und intuitiven Entwicklung von DSLs.
     \item Eine Evaluierung der Benutzerfreundlichkeit des Prototyps.
-    \item Handlungsempfehlungen zur Förderung der DSL-Entwicklung in der IT--Branche.
+    \item Handlungsempfehlungen zur Förderung der DSL-Entwicklung in der \acs{IT}--Branche.
 \end{itemize}
 
 \subsection{Aufbau der Arbeit}\label{subsec:aufbau-der-arbeit}
-\lipsum[5]
+Zunächst wird diese Arbeit sich in~\autoref{sec:grundlagen} mit einigen Grundlagen auseinandersetzen.
+Dazu zählen vor allem \ac{MPS} und der herkömmliche Compilerbau.
+
+Anschließend wird in~\autoref{sec:vergleich-anhand-eines-einfachen-biespiels} anhand von einem einfachen Parser, der einen Fragenkatalog zu \ac{JSON} parst, \ac{MPS} mit den herkömmlichen Tools verglichen.
+
+Zuletzt folgt in~\autoref{sec:umsetzung-eines-komplexen-beispiels} das komplexe Beispiel in \ac{MPS}: Zwei zusammengehörige Sprachen; eine um Design--Systeme zu beschreiben und eine andere, um App--Themes in diesen Systemen zu beschreiben, gefolgt von deren Auswertung anhand der Ziele aus~\autoref{subsec:zielsetzung}.
