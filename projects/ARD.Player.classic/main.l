@@ -1,19 +1,46 @@
+%option noyywrap
+
 %{
-#include "parser.tab.h" // Include your header file for tokens
+#include "parser.tab.h"
+#include "symbol_table.h"
 %}
 
 %%
 
-"Ja" { yylval = false; return BOOLEAN; }
-"Nein" { yylval = false; return BOOLEAN; }
+"Ist autoplay aktiviert?" { /*yylval = symbol_table_add(AUTOPLAY);*/ return QUESTION; }
+"Ist loop aktiviert?" { /*yylval = symbol_table_add(LOOP);*/ return QUESTION; }
+"Wie viel Offset hat die UI vom unteren Rand?" { /*yylval = symbol_table_add(OFFSET);*/ return QUESTION; }
 
-[\w]+ ;  // Ignore whitespace
+"Ja" {
+    bool* value = malloc(sizeof(bool));
+    *value = true;
+    yylval = symbol_table_add(value); return BOOLEAN;
+}
+"Nein" {
+    bool* value = malloc(sizeof(bool));
+    *value = false;
+    yylval = symbol_table_add(value); return BOOLEAN;
+}
 
-.|\n { fprintf(stderr, "Lexical error: %s\n", yytext); exit(1); }
+[0-9]+ {
+    int* value = malloc(sizeof(int));
+    *value = atoi(yytext);
+    yylval = symbol_table_add(value);
+    return INT;
+}
+
+[0-9]+\.[0-9]+ {
+    double* value = malloc(sizeof(double));
+    *value = atof(yytext);
+    yylval = symbol_table_add(value);
+    return FLOAT;
+}
+
+[/]{2}.* ;
+\w+ ;
 
 %%
 
-int main() {
-  yylex();
-  return 0;
-}
+const char AUTOPLAY[] = "autoplay";
+const char LOOP[] = "loop";
+const char OFFSET[] = "offset";

@@ -1,6 +1,10 @@
-#include <stdio.h>
+#include "parser.tab.h"
+#include "symbol_table.h"
+
+extern int yyparse();
 
 int main() {
-    printf("Hello, World!\n");
+    symbol_table_init();
+    yyparse();
     return 0;
 }
