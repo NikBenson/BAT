@@ -16,24 +16,26 @@ Eine allgemeingültige lösung wollen aktuell \acp{LLM} schaffen.
 Diesen mangelt es allerdings für viele Anwendungsfälle an Präzision.
 
 \acp{DSL} bieten hier eine potenzielle Lösung.
+Eine \ac{DSL} ist eine Sprache, die spezifisch zur verwendung durch einen Experten in einem bestimmten Bereich designt wurde.
+Eine detaillierte definition ist in \autoref{subsec:domain-specific-languages} zu finden.
 
 \subsubsection{Aktuelle Herausforderungen}
 Die Entwicklung von \acp{DSL} ist jedoch nach wie vor mit einigen Herausforderungen verbunden.
-Dazu gehört die hohe Komplexität der \ac{DSL}--Entwicklung, die tiefgreifendes Wissen in Sprachtheorie, Compilerbau und Softwareentwicklung erfordert.
+Dazu gehört die hohe Komplexität der \acs{DSL}--Entwicklung, die tiefgreifendes Wissen in Sprachtheorie, Compilerbau und Softwareentwicklung erfordert.
 Es fehlt zudem an einem einheitlichen Ansatz zur Entwicklung von \acp{DSL}, der für verschiedene Anwendungsbereiche geeignet ist.
 Des Weiteren sind \acp{DSL} oft nicht in bestehende Entwicklungsumgebungen integriert, was zu Inkompatibilitäten und Fragmentierung führt.
 
-\subsubsection{Bedarf an intuitiven und effizienten \acp{DSL}}
+\subsubsection{Bedarf an intuitiven und effizienten \aclp{DSL}}
 Eine Bedarfsanalyse kann diese Arbeit leider nicht bieten, allerdings soll sie die Möglichkeiten aufzeigen.
 
-Sprachen schnell formulieren zu können hat in jedem Fall viele Anwendungsmöglichkeiten, die aktuell weitestgehend mittels anderer technologien gelöst werden.
+Sprachen schnell formulieren zu können hat in jedem Fall viele Anwendungsmöglichkeiten, die aktuell weitestgehend mittels anderer Technologien gelöst werden.
 
 Häufig kommen im Enterprise Bereich hier komplizierte \acp{UI} zum Einsatz.
 Ein Beispiel dafür wäre SAP\@. % TODO: Quelle hinzufügen
 Hier wurde sich dafür entschieden eine parallele zwischen \acp{UI} und \acp{DSL} zu nutzen, da \ac{DSL} ab einer gewissen komplexität einfacher zu handhaben sind.
 
 Wir nehmen an, dass der Bedarf aktuell künstlich durch weniger optimale Technologien gedeckt wird, da \acp{DSL} zu kompliziert sind.
-Es ist davon auszugehen, dass \ac{DSL} wieder inder Breite eingesetzt werden, sobald die Technologie dafür hinreichend einfach zu lernen ist.
+Es ist davon auszugehen, dass \ac{DSL} wieder in der Breite eingesetzt werden, sobald die Technologie dafür hinreichend einfach zu lernen ist.
 
 \subsubsection{Potenzial des Prototyps}
 Der vorliegende Prototyp zielt darauf ab zu prüfen, ob \ac{MPS}~\autocite{jetbrains-sro-2021} die Entwicklung von \acp{DSL} bereits so weit vereinfacht hat, dass es wirtschaftlich ist, diese Technologie einzusetzen.
@@ -42,30 +44,25 @@ Des weiteren soll die Interaktion zwischen Entwicklern und Designern in dem spä
 Dabei werden unnötige Copy--Paste Arbeiten unterbunden.
 Der konkrete Anwendungsfall ist allerdings in dieser Arbeit zweitrangig.
 
-\subsubsection{Persönliche Motivation}
-Die Entwicklung des Prototyps ist von meiner persönlichen Motivation geleitet, die Potenziale von \acp{DSL} zu erschließen und die Entwicklung von Software zu verbessern.
-Ich sehe \acp{DSL} als eine Möglichkeit, auch Laien die präzise Beschreibung von komplexen Systemen zu ermöglichen und die \acs{IT}--Branche zu demokratisieren.
-Durch die Förderung der \ac{DSL}--Entwicklung und die Verbreitung von Wissen über diese Technologie möchte ich zu einer Renaissance des Compilerbaus beitragen und die Wertschätzung für die Grundlagen der Softwareentwicklung stärken.
-
 \subsection{Zielsetzung}\label{subsec:zielsetzung}
 Die Arbeit adressiert die folgenden Forschungsfragen:
 \begin{itemize}
-    \item Ist die nutzung von \ac{MPS} zur entwicklung von \ac{DSL} wirtschaftlich?
-    \item Wie kann die Benutzerfreundlichkeit von \ac{DSL}--Entwicklungsumgebungen gesteigert werden?
-    \item Wie kann die Entwicklung von \acp{DSL} in der \acs{IT}--Branche gefördert werden?
+    \item Kann die Nutzung von \ac{MPS} zur Entwicklung von \ac{DSL} wirtschaftlich sein?
+    \item Welche weiteren Anforderungen können an \ac{DSL}--Entwicklungsumgebungen gestellt werden, um die Entwicklung von \ac{DSL} weiter zu vereinfachen?
+    \item Wie kann die Entwicklung von \acp{DSL} in der \acs{IT}--Branche, am Beispiel der netTrek GmbH \& Co. KG, gefördert werden?
 \end{itemize}
 Die erwarteten Ergebnisse der Arbeit sind:
 \begin{itemize}
     \item Ein direkter Vergleich der Entwicklung von \acp{DSL} mithilfe von \ac{MPS} und herkömmlichen Tools
     \item Ein funktionsfähiger Prototyp zur effizienten und intuitiven Entwicklung von DSLs.
     \item Eine Evaluierung der Benutzerfreundlichkeit des Prototyps.
-    \item Handlungsempfehlungen zur Förderung der DSL-Entwicklung in der \acs{IT}--Branche.
+    \item Handlungsempfehlungen zur Förderung der DSL-Entwicklung.
 \end{itemize}
 
 \subsection{Aufbau der Arbeit}\label{subsec:aufbau-der-arbeit}
 Zunächst wird diese Arbeit sich in~\autoref{sec:grundlagen} mit einigen Grundlagen auseinandersetzen.
-Dazu zählen vor allem \ac{MPS} und der herkömmliche Compilerbau.
+Dazu zählen vor allem \ac{MPS} und der herkömmliche\footnote{\qq{herkömmlich} bezieht sich dabei auf die Techniken und Tools aus dem sogenannten Dragonbook.~\autocite{aho-2006}} Compilerbau.
 
-Anschließend wird in~\autoref{sec:vergleich-anhand-eines-einfachen-biespiels} anhand von einem einfachen Parser, der einen Fragenkatalog zu \ac{JSON} parst, \ac{MPS} mit den herkömmlichen Tools verglichen.
+Anschließend wird in~\autoref{sec:vergleich-der-tool-sets-anhand-eines-einfachen-beispiels} anhand von einem einfachen Parser, der einen Fragenkatalog zu \ac{JSON} parst, \ac{MPS} mit den herkömmlichen Tools verglichen.
 
-Zuletzt folgt in~\autoref{sec:umsetzung-eines-komplexen-beispiels} das komplexe Beispiel in \ac{MPS}: Zwei zusammengehörige Sprachen; eine um Design--Systeme zu beschreiben und eine andere, um App--Themes in diesen Systemen zu beschreiben, gefolgt von deren Auswertung anhand der Ziele aus~\autoref{subsec:zielsetzung}.
+Zuletzt folgt in~\autoref{sec:umsetzung-eines-komplexen-beispiels-in-mps} das komplexe Beispiel in \ac{MPS}: Zwei zusammengehörige Sprachen; eine, um Design--Systeme zu beschreiben und eine andere, um App--Themes in diesen Systemen zu beschreiben, gefolgt von deren Auswertung anhand der Ziele aus~\autoref{subsec:zielsetzung}.
