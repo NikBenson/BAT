@@ -1,0 +1,3 @@
+/Users/nbenson/StudioProjects/BAT/projects/ARD.Player.classic/cmake-build-debug/CMakeFiles/ARD_Player_classic.dir
+/Users/nbenson/StudioProjects/BAT/projects/ARD.Player.classic/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/nbenson/StudioProjects/BAT/projects/ARD.Player.classic/cmake-build-debug/CMakeFiles/rebuild_cache.dir

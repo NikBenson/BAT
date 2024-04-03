@@ -86,7 +86,7 @@
         </node>
       </node>
       <node concept="1GjwBS" id="qgBRHaQ9U_" role="3JXyrO">
-        <ref role="sa$J1" to="fudv:1mFJTG7e$j" />
+        <ref role="sa$J1" to="fudv:1mFJTG7e$j" resolve="FailingPropertyConstraints" />
         <ref role="1Gj$d9" to="9wcb:klCEXd9DnR" resolve="key" />
       </node>
     </node>
