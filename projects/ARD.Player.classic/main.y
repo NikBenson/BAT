@@ -1,26 +1,36 @@
 %{
 #include <stdio.h>
-#include "parser.tab.h" // Include your header file for tokens and data types
-%}
-
-%token BOOLEAN
-
-%%
-
-program : expr '\n' {
-  printf("Expression: %s\n", $1 ? "true" : "false");
-} ;
-
-expr : BOOLEAN ;
-
-%%
-
+#include "parser.tab.h"
+#include "symbol_table.h"
+extern FILE *yyin;
+extern int yylex();
 int yyerror(char *s) {
   fprintf(stderr, "Parse error: %s\n", s);
   return 1;
 }
+%}
 
-int main() {
-  yyparse();
-  return 0;
-}
+%token QUESTION
+
+%token BOOLEAN
+%token INT
+%token FLOAT
+
+%%
+
+program : questions { printf("object\n"); };
+
+questions : question questions
+    | question
+    ;
+
+question : QUESTION answer { printf("key, %s\n", symbol_table_get($1)); };
+
+answer : BOOLEAN { printf("bool, %s\n", *((bool*)symbol_table_get($1))? "true" : "false"); }
+    | INT { printf("int, %d\n", *((int*) symbol_table_get($1))); }
+    | FLOAT { printf("float, %f\n", *((double*) symbol_table_get($1))); }
+    ;
+
+%%
+
+int yyparse();

@@ -16,9 +16,11 @@ endif(NOT BISON_FOUND)
 set(LEX_FILE main.l)
 set(YACC_FILE main.y)
 
-FLEX_TARGET(lex ${LEX_FILE} ${CMAKE_CURRENT_BINARY_DIR}/lex.yy.c)
-BISON_TARGET(yacc ${YACC_FILE} ${CMAKE_CURRENT_BINARY_DIR}/parser.tab.c)
+FLEX_TARGET(lex ${LEX_FILE} ${CMAKE_CURRENT_SOURCE_DIR}/lex.yy.c)
+BISON_TARGET(bison ${YACC_FILE} ${CMAKE_CURRENT_SOURCE_DIR}/parser.tab.c)
 
 
-add_executable(ARD_Player_classic main.c lex.yy.c parser.tab.c)
+add_executable(ARD_Player_classic main.c lex.yy.c parser.tab.c parser.tab.h
+        symbol_table.c
+        symbol_table.h)
 

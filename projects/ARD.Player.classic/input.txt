@@ -1,0 +1,3 @@
+Ist autoplay aktiviert? Ja
+Ist loop aktiviert? Nein
+Wie viel Offset hat die UI vom unteren Rand? 20.0

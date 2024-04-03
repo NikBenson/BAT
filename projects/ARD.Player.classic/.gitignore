@@ -1,0 +1,5 @@
+cmake-build-debug/
+
+*.yy.c
+*.tab.h
+*.tab.c
