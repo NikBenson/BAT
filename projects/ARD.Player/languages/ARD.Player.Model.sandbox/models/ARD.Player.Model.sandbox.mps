@@ -24,7 +24,9 @@
       </concept>
     </language>
     <language id="bbf76c73-c6c8-40c0-ab7b-9998034e6ff8" name="json.model">
-      <concept id="366377818497914300" name="json.model.structure.JSONArray" flags="ng" index="18cNsj" />
+      <concept id="366377818497914300" name="json.model.structure.JSONArray" flags="ng" index="18cNsj">
+        <child id="366377818497914339" name="value" index="18cNtc" />
+      </concept>
       <concept id="366377818497914295" name="json.model.structure.JSONObject" flags="ng" index="18cNso">
         <child id="366377818497914365" name="value" index="18cNti" />
       </concept>
@@ -32,7 +34,9 @@
         <property id="366377818497914359" name="key" index="18cNto" />
         <child id="366377818497914363" name="value" index="18cNtk" />
       </concept>
-      <concept id="366377818497914305" name="json.model.structure.JSONBoolean" flags="ng" index="18cNtI" />
+      <concept id="366377818497914305" name="json.model.structure.JSONBoolean" flags="ng" index="18cNtI">
+        <property id="366377818497914341" name="value" index="18cNta" />
+      </concept>
       <concept id="366377818497914320" name="json.model.structure.JSONDouble" flags="ng" index="18cNtZ">
         <property id="366377818497914349" name="decimal" index="18cNt2" />
         <property id="366377818497914347" name="integer" index="18cNt4" />
@@ -61,7 +65,15 @@
       <node concept="18cNso" id="qgBRHa_kyV" role="1882Nx">
         <node concept="18cNtv" id="qgBRHa_kyY" role="18cNti">
           <property role="18cNto" value="aaa" />
-          <node concept="18cNsj" id="qgBRHa_kz8" role="18cNtk" />
+          <node concept="18cNsj" id="qgBRHa_kz8" role="18cNtk">
+            <node concept="18cNtI" id="4NaybJxsYqb" role="18cNtc">
+              <property role="18cNta" value="true" />
+            </node>
+            <node concept="18cNtZ" id="4NaybJxsYqm" role="18cNtc">
+              <property role="18cNt4" value="7" />
+              <property role="18cNt2" value="0" />
+            </node>
+          </node>
         </node>
         <node concept="18cNtv" id="qgBRHa_kzd" role="18cNti">
           <property role="18cNto" value="b" />

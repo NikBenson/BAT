@@ -1,9 +1,40 @@
-\lipsum[5]
+In diesem Kapitel werden die grundsätzlichen Definitionen und eine historische einordnung sowie ein Überblich über die aktuellen Möglichkeiten von \ac{DSL} geschaffen.
 
 \subsection{\aclp{DSL}}\label{subsec:domain-specific-languages}
-\lipsum[5]
+Die erste Frage, die es zu klären gibt, ist: Was sind eigentlich \ac{DSL}?
+\begin{displayquote}[\cite{jetbrains-sro-no-dateC}]
+    A \ac{DSL} is a programming language with a higher level of abstraction optimized for a specific class of problems.
+    A \ac{DSL} uses the concepts and rules from the field or domain.
+\end{displayquote}
+Laut JetBrains definieren sich \acp{DSL} also über ihr Sprachdesign, welches Konzepte einer spezifischen, fachlichen Domäne beinhaltet.
+Wikipedia definiert es etwas anders:
+\begin{displayquote}[\cite{wikipedia-contributors-2024C}]
+    A \ac{DSL} is a computer language specialized to a particular application domain.
+    This is in contrast to a \ac{GPL}, which is broadly applicable across domains.
+\end{displayquote}
+Hier werden \acp{DSL} als gegenteil von \acp{GPL} genannt, welche zusammen die Programmiersprachen ausmachen.
+Diese sind im Wörterbuch definiert als:
+\begin{displayquote}[\cite{unknown-author-no-date}]
+    Code of reserved words and symbols used in computer programs, which give instructions to the computer on how to accomplish certain computing tasks.
+\end{displayquote}
+Also eine Kodierung, welche Anweisungen an einen Computer gibt.
+
+Zusammenfassend lässt sich sagen, dass \acp{DSL} Kodierungen sind, die fachspezifisch von einer Menge von Schlüsselwörtern und strukturierten, dynamischen Inhalt auf eine von (mindestens) einem Computer--(Programm) verstandene Eingabe--(Datei) abbildet.
+Dabei stehen fachspezifische Paradigmen vor den klassischen Programmierparadigmen~\autocite{wikipedia-contributors-2024D} im Zentrum des Sprachdesigns.
+
+Das wohl bekannteste Beispiel ist \ac{SQL}.~\autocite{unknown-author-2023}
+\ac{SQL} ist eine durch die \ac{ISO} genormte \ac{DSL}; spezifischer eine sogenannte \textit{query language}.
+Auf Deutsch Abfragesprachen genannt, dienen diese \acp{DSL}, der interaktionen mit \acp{DBMS}.
+Die Domäne ist in diesem Fall also die Datenhaltung \textit{strukturierter} Daten.
+
+Da es etliche \acp{DBMS} gibt, welche dem \ac{SQL}--Standard folgen, gibt es für \ac{SQL} auch etliche Compiler beziehungsweise Interpreter.
+Diese Compiler sind dabei stark mit dem jeweiligen \ac{DBMS} verwoben.
+Es gibt also keine einheitliche Codebasis.
+Dies wäre mit bekannten Tools des Compilerbaus, namentlich \textbf{Lex} \& \textbf{YACC}.
+Diese werden im folgenden Kapitel behandelt.
 
 \subsection{Compilerbau}\label{subsec:compilerbau}
+
 \begin{wrapfigure}{rH}{0.5\textwidth}
     \begin{center}
         \includegraphics[width=0.48\textwidth]{../assets/img/diagrams/compiler_phases.mmd}
@@ -13,7 +44,13 @@
 \end{wrapfigure}
 \lipsum[5]
 
-\subsubsection{Parser und Compiler}
+\subsubsection{Tokenizer --- Lex}
+\lipsum[5]
+
+\subsubsection{Parser --- \acs{YACC}}
+\lipsum[5]
+
+\subsubsection{Compiler --- C}
 \lipsum[5]
 
 \subsection{\acl{MPS}}\label{subsec:meta-programming-system}
