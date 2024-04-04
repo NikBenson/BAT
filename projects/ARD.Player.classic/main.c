@@ -51,7 +51,8 @@ void print_ast(AST_NODE *node) {
 
 
 int main() {
-    AST_NODE *root = ast(yyparse());
+    yyparse();
+    AST_NODE *root = full_ast();
 
     print_ast(root);
 

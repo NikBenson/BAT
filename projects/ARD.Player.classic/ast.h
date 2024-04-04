@@ -20,9 +20,15 @@ typedef struct AST_NODE {
 
 int node(AST_TYPE type, unsigned int count, ...);
 
+int va_node(AST_TYPE type, unsigned int count, const int *children);
+
 int leaf(AST_TYPE type, YYSTYPE value);
 
 int merge(unsigned int count, ...);
+
+int va_merge(unsigned int count, const int *nodes);
+
+AST_NODE *full_ast();
 
 AST_NODE *ast(int id);
 

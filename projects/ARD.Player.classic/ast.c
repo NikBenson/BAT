@@ -38,6 +38,17 @@ bool grow_array() {
 }
 
 int node(AST_TYPE type, unsigned int count, ...) {
+    int children[count];
+
+    va_list args;
+    va_start(args, count);
+    for (int i = 0; i < count; ++i)
+        children[i] = va_arg(args, int);
+    va_end(args);
+
+    return va_node(type, count, children);
+}
+int va_node(AST_TYPE type, unsigned int count, const int *children){
     if (size == capacity && !grow_array()) {
         yyerror("Error: Failed to allocate memory for AST node.\n");
         return -1;
@@ -53,19 +64,16 @@ int node(AST_TYPE type, unsigned int count, ...) {
             yyerror("Error: Failed to allocate memory for AST node children.\n");
             return -1;
         }
-        va_list args;
-        va_start(args, count);
+
         for (int i = 0; i < count; ++i) {
-            new_node->children[i] = va_arg(args, int);
+            new_node->children[i] = children[i];
             // Validate child id
             if (new_node->children[i] < 0 || new_node->children[i] >= size) {
                 yyerror("Error: Invalid child node id provided.\n");
                 free(new_node->children);
-                va_end(args);
                 return -1;
             }
         }
-        va_end(args);
     } else {
         new_node->children = NULL;
     }
@@ -90,44 +98,49 @@ int leaf(AST_TYPE type, YYSTYPE value) {
 }
 
 int merge(unsigned int count, ...) {
+    int nodes[count];
+
+    va_list args;
+    va_start(args, count);
+    for (int i = 0; i < count; ++i)
+        nodes[i] = va_arg(args, int);
+    va_end(args);
+
+    return va_merge(count, nodes);
+}
+
+int va_merge(unsigned int count, const int *nodes) {
     if (count <= 1) {
         yyerror("Error: Merge requires at least two nodes.\n");
         return -1;
     }
 
-    va_list args;
-    va_start(args, count);
-    // Check if all nodes have the same type
-    AST_TYPE first_type = array[va_arg(args, int)].type;
+    AST_TYPE first_type = array[*nodes].type;
     for (int i = 1; i < count; ++i) {
-        if (array[va_arg(args, int)].type != first_type) {
+        if (array[nodes[i]].type != first_type) {
             yyerror("Error: Merging nodes with different types.\n");
-            va_end(args);
             return -1;
         }
     }
-    va_end(args);
 
-    va_start(args, count);
     unsigned int child_count = 0;
     for (int i = 0; i < count; ++i) {
-        child_count += array[va_arg(args, int)].children_count;
+        child_count += array[nodes[i]].children_count;
     }
-    va_end(args);
 
-    va_start(args, count);
-    unsigned int children[child_count];
+    int children[child_count];
     for (int i = 0; i < count; ++i) {
-        NODE node = array[va_arg(args, int)];
+        NODE node = array[nodes[i]];
         for (int j = 0; j < node.children_count; ++j) {
-            children[i+j] = node.children[j];
+            children[i + j] = node.children[j];
         }
-        child_count += array[va_arg(args, int)].children_count;
     }
-    va_end(args);
 
-    // count should be the sum of child_count property of all children and instead of 0
-    return node(first_type, child_count, children);
+    return va_node(first_type, child_count, children);
+}
+
+AST_NODE *full_ast() {
+    return ast(size - 1);
 }
 
 AST_NODE *ast(int id) {
