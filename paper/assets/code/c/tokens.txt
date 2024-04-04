@@ -1,0 +1,1 @@
+<QUESTION_1> <BOOL, true> <QUESTION_2> <BOOL, false> <QUESTION_3> <FLOAT, 20.0>
