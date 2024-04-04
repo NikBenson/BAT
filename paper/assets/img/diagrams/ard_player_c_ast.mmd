@@ -1,0 +1,35 @@
+graph TB
+
+    pc(t_OBJECT)
+
+    e1(t_ELEMENT)
+    e2(t_ELEMENT)
+    e3(t_ELEMENT)
+
+    k1(t_KEY, autoplay)
+    k2(t_KEY, loop)
+    k3(t_KEY, offset)
+
+    v1(t_VALUE)
+    v2(t_VALUE)
+    v3(t_VALUE)
+
+    b1(t_BOOL, true)
+    b2(t_BOOL, true)
+    f1(t_FLOAT, 20.0)
+
+    pc --> e1
+    pc --> e2
+    pc --> e3
+
+    e1 --> k1
+    e2 --> k2
+    e3 --> k3
+
+    e1 --> v1
+    e2 --> v2
+    e3 --> v3
+
+    v1 --> b1
+    v2 --> b2
+    v3 --> f1

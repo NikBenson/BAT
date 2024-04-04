@@ -17,6 +17,9 @@
 \usepackage{subcaption}
 \usepackage{pdfpages}
 \usepackage[printonlyused]{acronym}
+\usepackage{framed}
+\usepackage{tikz}
+\usepackage{pgfplots}
 
 \usepackage{float}
 \usepackage[section]{placeins}
@@ -95,6 +98,45 @@
     keywords={abstract, by, switch, if},
     ndkeywords={PrimitiveTokens, PrimitiveTokensSet, DesignSystem, subsystems, properties, tokens, resolve, primitive, app},
     emph={Color, Brightness, ButtonState, FontWeight, String},
+    commentstyle={\color{codegreen}\ttfamily},
+    stringstyle={\color{codepurple}\ttfamily},
+    keywordstyle={\color{magenta}\bfseries},
+    ndkeywordstyle={\color{orange}\bfseries},
+    emphstyle={\color{codepurple}},
+    identifierstyle=\color{black},
+}
+\lstdefinelanguage{txt}{
+    commentstyle={\color{codegreen}\ttfamily},
+    stringstyle={\color{codepurple}\ttfamily},
+    keywordstyle={\color{magenta}\bfseries},
+    ndkeywordstyle={\color{orange}\bfseries},
+    emphstyle={\color{codepurple}},
+    identifierstyle=\color{black},
+}
+\lstdefinelanguage{JavaScript}{
+    sensitive=false,
+    keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+    ndkeywords={class, export, boolean, throw, implements, import, this},
+    identifierstyle=\color{black},
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]',
+    morestring=[b]",
+    commentstyle={\color{codegreen}\ttfamily},
+    stringstyle={\color{codepurple}\ttfamily},
+    keywordstyle={\color{magenta}\bfseries},
+    ndkeywordstyle={\color{orange}\bfseries},
+    emphstyle={\color{codepurple}},
+    identifierstyle=\color{black},
+}
+\lstdefinelanguage{tokens}{
+    sensitive=true,
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]",
+    keywords={},
+    ndkeywords={QUESTION_1, QUESTION_2, QUESTION_3, BOOL, FLOAT},
+    emph={},
     commentstyle={\color{codegreen}\ttfamily},
     stringstyle={\color{codepurple}\ttfamily},
     keywordstyle={\color{magenta}\bfseries},

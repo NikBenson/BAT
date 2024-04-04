@@ -1,7 +1,3 @@
-//
-// Created by Nik Benson on 04.04.24.
-//
-
 #include "parser.tab.h"
 #include "ast.h"
 #include <stdarg.h>

@@ -1,1 +1,30 @@
 \lipsum{5}
+\begin{figure}
+    \begin{framed}
+        \lstinputlisting[label={lst:c-input},language=txt,nolol,numbers=none,backgroundcolor={}]{../assets/code/c/input.txt}
+    \end{framed}
+    \begin{tikzpicture}
+        \path[draw=none] (0,0) -- (\textwidth,0);
+        \draw[->] (0.5\textwidth,1) -- (0.5\textwidth,0) node[midway,above,right] {Lex};
+    \end{tikzpicture}
+    \begin{framed}
+        \lstinputlisting[label={lst:c-tokens},language=tokens,nolol,numbers=none,backgroundcolor={}]{../assets/code/c/tokens.txt}
+    \end{framed}
+    \begin{tikzpicture}
+        \path[draw=none] (0,0) -- (\textwidth,0);
+        \draw[->] (0.5\textwidth,1) -- (0.5\textwidth,0) node[midway,above,right] {\acs{YACC}};
+    \end{tikzpicture}
+    \begin{framed}
+        \includegraphics[width=\textwidth]{../assets/img/diagrams/ard_player_c_ast.mmd}
+    \end{framed}
+    \begin{tikzpicture}
+        \path[draw=none] (0,0) -- (\textwidth,0);
+        \draw[->] (0.5\textwidth,1) -- (0.5\textwidth,0) node[midway,above,right] {Selbstgeschriebener C Compiler};
+    \end{tikzpicture}
+    \begin{framed}
+        \lstinputlisting[label={lst:c-output},language=JavaScript,nolol,numbers=none,backgroundcolor={}]{../assets/code/c/output.txt}
+    \end{framed}
+    \caption{Schritte des Compilierens der PlayerConfig Sprache mit Lex \& \acs{YACC}}
+    \label{fig:ard-player-c-stages}
+\end{figure}
+\lipsum{5}

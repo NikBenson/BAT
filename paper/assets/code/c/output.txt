@@ -1,0 +1,1 @@
+{"autoplay": true, "loop": false, "offset": 20.000000}
