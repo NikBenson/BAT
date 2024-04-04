@@ -21,6 +21,6 @@ BISON_TARGET(bison ${YACC_FILE} ${CMAKE_CURRENT_SOURCE_DIR}/parser.tab.c)
 
 
 add_executable(ARD_Player_classic main.c lex.yy.c parser.tab.c parser.tab.h
-        symbol_table.c
-        symbol_table.h)
+        ast.c
+        ast.h)
 
