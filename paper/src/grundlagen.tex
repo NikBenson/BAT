@@ -33,25 +33,119 @@ Es gibt also keine einheitliche Codebasis.
 Dies wäre mit bekannten Tools des Compilerbaus, namentlich \textbf{Lex} \& \textbf{YACC}.
 Diese werden im folgenden Kapitel behandelt.
 
+\begin{figure}[ht]
+    \begin{subfigure}[c]{0.5\textwidth}
+        \begin{center}
+            \includegraphics[height=2.5cm]{../assets/img/diagrams/compiler.mmd}
+        \end{center}
+        \caption{Compiler}
+        \label{subfig:compiler-and-interpreter-compiler}
+    \end{subfigure}
+    \begin{subfigure}[c]{0.5\textwidth}
+        \begin{center}
+            \includegraphics[height=2.5cm]{../assets/img/diagrams/interpreter.mmd}
+        \end{center}
+        \caption{Interpreter}
+        \label{subfig:compiler-and-interpreter-interpreter}
+    \end{subfigure}
+    \caption{Compiler \& Interpreter~\autocite{aho-2006}}
+    \label{fig:compiler-and-interpreter}
+\end{figure}
+\newpage
+
 \subsection{Compilerbau}\label{subsec:compilerbau}
-
-\begin{wrapfigure}{rH}{0.5\textwidth}
+\begin{wrapfigure}{rH}{0.47\textwidth}
     \begin{center}
-        \includegraphics[width=0.48\textwidth]{../assets/img/diagrams/compiler_phases.mmd}
+        \includegraphics[width=0.45\textwidth]{../assets/img/diagrams/compiler_phases.mmd}
     \end{center}
-    \caption{Phasen der Compilerpipeline~\autocite{aho-2006}}
-    \label{fig:cpmpiler-phases}
+    \caption{Phasen der Compiler--Pipeline~\autocite{aho-2006}}
+    \label{fig:compiler-phases}
 \end{wrapfigure}
+Was von Entwicklern umgangssprachlich \qq{Compiler} genannt wird, bezeichnet eigentlich die Compiler--Pipeline.
+Der eigentliche Compiler, oder auch Code Generator, (Siehe \autoref{fig:compiler-phases}) ist ein Tool, welches aus einer abstrakten Representation die Zielsprache, im folgenden Programm genannt, generiert.
+
+Ein Programm ist dabei definiert als eine Black--Box, welche eine Eingabe in eine Ausgabe transformiert.
+Damit kann zwischen zwei verschiedenen Aufbauten unterscheiden: Compiler erstellen aus Code ein Programm, welches eine Eingabe in eine Ausgabe transformiert (Siehe \autoref{subfig:compiler-and-interpreter-compiler}) und Interpreter transformieren unter der Verwendung von Code eine Eingabe in eine Ausgabe.~(Siehe \autoref{subfig:compiler-and-interpreter-interpreter})
+
+Effektiv benötigen beide Klassen von Tools die selben Phasen.
+Es muss auf irgend einem Weg, durch das konsekutive ausführen von Transformationen aus dem Code das Programm werden.
+
+Diese Phasen sind klassischer Weise jene aus \autoref{fig:compiler-phases}.
+Diese Phasen wurden auch im \ac{POSIX}, einem Standard für Betriebssysteme, festgehalten.~\autocite{ieee-sa-1993}
+
+\paragraph{Lexical Analyzer,} oder auch \textbf{Tokenizer}, gruppieren dabei den Code in \textbf{Tokens}.
+Ein Token ist dabei ein Zweitupel aus seinem Typen und seinem Wert, ein optionalen Eintrag in der SymbolTable.
+
+Die zugrundeliegende Datenstruktur bleibt dabei ein Stream.
+Es handelt sich also immer noch um eine lineare Datenstruktur.
+
+Der wohl bekannteste Tokenizer ist dabei Lex.~\autocite{wikipedia-contributors-2024G}
+Lex folgt dem \ac{POSIX} Standard und ist in \autoref{subsubsec:lex} beschriebene.
+
+\paragraph{Syntax Analyzer,} oder auch \textbf{Parser}, analysieren die Reihenfolge, in der die einzelnen Tokens evaluiert werden.
+Dazu wird mittels einer \ac{CFG}~\autocite{wikipedia-contributors-2024H} ein \textbf{syntax tree}, oder auch \textbf{\ac{AST}}, erstellt.
+
 \lipsum[5]
 
-\subsubsection{Tokenizer --- Lex}
+\paragraph{Semantic Analyzer} analysiert die Nodes des \ac{AST} auf semantische korrektheit.
+
 \lipsum[5]
 
-\subsubsection{Parser --- \acs{YACC}}
+\paragraph{Intermediate Code Generator} erstellt Text aus dem \ac{AST} eine Computer--verständliche Zwischendarstellung.
+
+Ein Beispiel aus~\cite{aho-2006} wäre der three--address code.
+Dieser ist eine klassische \textbf{intermediate representation} beim Kompilieren zu Assembly.
+
+Der Zweck dieser Zwischendarstellung ist meistens, dass sie in einer Textdatei abgelegt werden kann.
+Der Vorteil davon ist, dass das Frontend der Compiler--Pipeline\footnote{Als Frontend des Compilers werden die ersten 5 Phasen bezeichnet, als Backend die letzten beiden.} klassischerweise unabhängig von der Prozessorarchitektur ist und es so potenziell mehrere, unabhängig voneinander entwickelte, Backends für die verschiedenen Prozessorarchitekturen geben kann.
+
+Da \acp{DSL} im Gegensatz zu \acp{GPL} meist keine Abhängigkeit zu Prozessorarchitekturen haben, fällt die Wahl der intermediate representation häufig direkt auf den \ac{AST}.
+
+\paragraph{Machine--Independent Code Optimizer} tun genau das, was der Name auch sagt: sie nehmen mögliche Optimierungen an der intermediate representation vor.
+
+Diese Optimierungen beinhalten zum Beispiel das entfernen von unnötigem Code, Obfuscating von Identifiers, Aufräumen von Ressourcen, \dots.
+
+Der Code kann anhand von verschiedensten Metriken optimiert werden.
+Dazu zählt Geschwindigkeit, Dateigröße\footnote{Ist im Web wichtig.}, \dots.
+
+Optimierungsphasen sind immer optional.
+Im C Compiler kann zum Beispiel auch eingestellt werden, wie stark der Code optimiert werden soll.
+
+\paragraph{Code Generator,} oder auch \textbf{Compiler}, \lipsum[5]
+
+\paragraph{Machine--Dependent Code Optimizer} optimieren den Code analog zu Machine--Independent Code Optimizer, nur spezifisch für die Zielplattform.
+
+\subsubsection{Lex}\label{subsubsec:lex}
 \lipsum[5]
 
-\subsubsection{Compiler --- C}
+\subsubsection{\acs{YACC}}
+\lipsum[5]
+
+\subsubsection{Compiler}
+Auch zum erstellen von Compilern gibt es Tools, allerdings ist es hier auch üblich, diese manuel zu erstellen.
+In \autoref{lst:compiler} ist beispielhaft ein solcher Compiler für den in \autoref{sec:vergleich-der-tool-sets-anhand-eines-einfachen-beispiels} verwendeten Compiler der PlayerConfig--Sprache abgebildet.
+\lstinputlisting[label={lst:compiler},caption={Einfacher Compiler in C},language=c]{../assets/code/c/compiler.c}
 \lipsum[5]
 
 \subsection{\acl{MPS}}\label{subsec:meta-programming-system}
+\lipsum[5]
+
+\subsubsection{Structure}
+\begin{figure}
+    \includegraphics[width=\textwidth]{../assets/img/diagrams/ard_player_mps_structure.mmd}
+    \caption{ARD.Player MPS Sprache Struktur}
+    \label{fig:ard-player-mps-structure}
+\end{figure}
+\lipsum[5]
+
+\subsubsection{TextGen}
+\lipsum[5]
+
+\subsubsection{Generator}
+\lipsum[5]
+
+\subsubsection{GenPlan}
+\lipsum[5]
+
+\subsubsection{Editor}
 \lipsum[5]
