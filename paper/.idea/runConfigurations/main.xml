@@ -19,7 +19,7 @@
       <makeindex-run-config>[]</makeindex-run-config>
     </texify>
     <method v="2">
-      <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_External Tools_Mermaid" />
+      <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_External Tools_mermaid" />
     </method>
   </configuration>
 </component>
