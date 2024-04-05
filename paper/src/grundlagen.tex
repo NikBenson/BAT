@@ -128,6 +128,25 @@ In \autoref{lst:compiler} ist beispielhaft ein solcher Compiler für den in \aut
 \lipsum[5]
 
 \subsection{\acl{MPS}}\label{subsec:meta-programming-system}
+\ac{MPS} macht einiges anders als \ac{POSIX}.
+Der Ausgangspunkt\footnote{Eingabe des Programms} ist keine Textdatei, sondern der \ac{AST} der zu definierenden Sprache.
+Dies funktioniert, da \ac{MPS} nur in der gleichnamigen \ac{IDE} verwendet werden kann.
+
+\begin{wrapfigure}{lH}{0.5\textwidth}
+    \begin{center}
+        \includegraphics[width=0.48\textwidth]{../assets/img/diagrams/mps.mmd}
+    \end{center}
+    \caption{Grundlegende Struktur von \acs{MPS}}
+    \label{fig:mps}
+\end{wrapfigure}
+Der \ac{AST} wird dabei durch den \textbf{Editor} in eine Representation für den Menschen gerendert und über Transformationsregeln bearbeitet.
+
+Auch das Kompilieren läuft in der Regel anders.
+Einfache Sprachen haben klassischen Code Generator, in \ac{MPS} \textbf{TextGen} genannt.
+Im Regelfall werden allerdings Transpiler\footnote{Ein Compiler, der eine Sprache als Eingabe und eine andere Sprache als Ausgabe hat.} verwendet.
+Diese übersetzen mittels einer Template--Sprache von einem \ac{MPS} \ac{AST} in einen anderen \ac{MPS} \ac{AST}.
+So wird durch die konkatinierung
+
 \lipsum[5]
 
 \subsubsection{Structure}
