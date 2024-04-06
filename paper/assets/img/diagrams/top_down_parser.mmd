@@ -1,0 +1,35 @@
+graph TD
+    player_config[player_config]
+    answer[answer]
+    answer1[answer_1]
+    answer2[answer_2]
+    answer3[answer_3]
+    question1a[question_1]
+    question2a[question_2]
+    question3a[question_3]
+    question1b[QUESTION_1]
+    question2b[QUESTION_2]
+    question3b[QUESTION_3]
+    bool1a[t_bool]
+    bool2a[t_bool]
+    float1a[t_float]
+    bool1b[t_BOOL]
+    bool2b[t_BOOL]
+    float1b[t_FLOAT]
+    player_config --> player_config
+    player_config --> answer
+    answer --> answer1
+    answer --> answer2
+    answer --> answer3
+    answer1 --> question1a
+    answer2 --> question2a
+    answer3 --> question3a
+    question1a --> question1b
+    question2a --> question2b
+    question3a --> question3b
+    answer1 --> bool1a
+    answer2 --> bool2a
+    answer3 --> float1a
+    bool1a --> bool1b
+    bool2a --> bool2b
+    float1a --> float1b

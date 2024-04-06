@@ -73,7 +73,7 @@ Es muss auf irgend einem Weg, durch das konsekutive ausführen von Transformatio
 Diese Phasen sind klassischer Weise jene aus \autoref{fig:compiler-phases}.
 Diese Phasen wurden auch im \ac{POSIX}, einem Standard für Betriebssysteme, festgehalten.~\autocite{ieee-sa-1993}
 
-\paragraph{Lexical Analyzer,} oder auch \textbf{Tokenizer}, gruppieren dabei den Code in \textbf{Tokens}.
+\paragraph{Lexical Analyzer,} oder auch \textbf{Tokenizer}, gruppieren den Code in \textbf{Tokens}.
 Ein Token ist dabei ein Zweitupel aus seinem Typen und seinem Wert, ein optionalen Eintrag in der SymbolTable.
 
 Die zugrundeliegende Datenstruktur bleibt dabei ein Stream.
@@ -85,11 +85,54 @@ Lex folgt dem \ac{POSIX} Standard und ist in \autoref{subsubsec:lex} beschrieben
 \paragraph{Syntax Analyzer,} oder auch \textbf{Parser}, analysieren die Reihenfolge, in der die einzelnen Tokens evaluiert werden.
 Dazu wird mittels einer \ac{CFG}~\autocite{wikipedia-contributors-2024H} ein \textbf{syntax tree}, oder auch \textbf{\ac{AST}}, erstellt.
 
-\lipsum[5]
+Der \ac{AST} beinhaltet im Regelfall die Tokens, die vom Tokenizer erstellt wurden, als Leafs.
+Die Semantische bedeutung des \ac{AST} ist entsprechend die konsekutive Gruppierung von Tokens und anderen Gruppen.
+
+Es werden verschiedene Arten von Parsern eingesetzt, die sich in ihrer Herangehensweise an die Analyse der Eingabesequenz unterscheiden.
+Zwei wichtige Kategorien sind Top--Down-- und Bottom--Up--Parser.
+\begin{figure}[ht]
+    \begin{subfigure}[c]{0.5\textwidth}
+        \begin{center}
+            \includegraphics[width=\textwidth]{../assets/img/diagrams/bottom_up_parser.mmd}
+        \end{center}
+        \caption{Bottom--Up--Parser}
+        \label{subfig:bottom-up-parser}
+    \end{subfigure}
+    \begin{subfigure}[c]{0.5\textwidth}
+        \begin{center}
+            \includegraphics[width=\textwidth]{../assets/img/diagrams/top_down_parser.mmd}
+        \end{center}
+        \caption{Top--Down--Parser}
+        \label{subfig:top-down-parser}
+    \end{subfigure}
+    \caption{Arten von Parsern}
+    \label{fig:parser-types}
+\end{figure}
+
+\subparagraph{Top--Down--Parser} (Siehe \autoref{subfig:top-down-parser}) starten, indem sie die größte Struktur der Grammatik versuchen, anzuwenden.~\autocite{geeksforgeeks-2021A}
+Diese wird dann recursive immer weiter zerteilt.
+
+Dabei liest er von links nach rechts.
+Dadurch kann es schwierig werden, einen sinnvollen \ac{AST} zu erzeugen, wenn es uneindeutige Abfolgen gibt.
+
+\subparagraph{Bottom--Up--Parser} (Siehe \autoref{subfig:bottom-up-parser}) starten, mit den Terminalen der Grammatik.~\autocite{geeksforgeeks-2021A}
+Diese werden dann nach und nach zu größeren Strukturen zusammengesetzt.
+
+Dabei liest er von rechts nach links.
+Dadurch kann es schwierig sein, den nächsten Token auszuwählen.
 
 \paragraph{Semantic Analyzer} analysiert die Nodes des \ac{AST} auf semantische korrektheit.
+Hier werden zum Beispiel Variable auf Scopes geprüft und das Typechecking durchgeführt.
+Auch werden Konstante werte errechnet.
 
-\lipsum[5]
+Kurzum ist diese Phase dafür verantwortlich, Feedback zum Code zu geben.
+Dabei werden in der Regel Warnings und Errors ausgegeben.
+
+Dies stellt sicher, dass nur korrekte Programme weiter kompiliert werden.
+Ausnahmen dazu gibt es zum Beispiel mit JavaScript.
+Hier wird jedes Statement versucht zu interpretieren, um einfache Fehler unter den Tisch zu kehren.
+
+
 
 \paragraph{Intermediate Code Generator} erstellt Text aus dem \ac{AST} eine Computer--verständliche Zwischendarstellung.
 
@@ -109,7 +152,7 @@ Der Code kann anhand von verschiedensten Metriken optimiert werden.
 Dazu zählt Geschwindigkeit, Dateigröße\footnote{Ist im Web wichtig.}, \dots.
 
 Optimierungsphasen sind immer optional.
-Im C Compiler kann zum Beispiel auch eingestellt werden, wie stark der Code optimiert werden soll.
+Im C Compiler kann zum Beispiel auch eingestellt werden, wie stark der Code optimiert werden soll.~\autocite{gnu-project-no-date}
 
 \paragraph{Code Generator,} oder auch \textbf{Compiler}, \lipsum[5]
 
@@ -117,8 +160,16 @@ Im C Compiler kann zum Beispiel auch eingestellt werden, wie stark der Code opti
 
 \subsubsection{Lex}\label{subsubsec:lex}
 \lipsum[5]
+\lstinputlisting[label={lst:lex-structure},caption={Aufbau eines Lex Programms},language=lex]{../assets/code/c/lex_structure.l}
+\lipsum[5]
 
 \subsubsection{\acs{YACC}}
+\ac{YACC} ist ein Tool zum erstellen von \ac{LALR} rightmost derivation Parsern nach dem \ac{POSIX} Standard.
+\acs{LALR}--Parser sind dabei eine Untergruppe der Bottom--Up--Parser.
+Sie funktionieren, indem \lipsum[5]
+
+Ein \ac{YACC} Programm ist immer in die folgenden 3 Teile gegliedert:
+\lstinputlisting[label={lst:yacc-structure},caption={Aufbau eines \acs{YACC} Programms},language=yacc]{../assets/code/c/yacc_structure.y}
 \lipsum[5]
 
 \subsubsection{Compiler}
