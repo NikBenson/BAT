@@ -4,6 +4,8 @@
 #include "parser.tab.h"
 %}
 
+int yylex();
+
 %%
 
 "Ist autoplay aktiviert?" {return QUESTION_1;}

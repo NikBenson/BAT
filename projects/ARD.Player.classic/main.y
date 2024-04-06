@@ -1,10 +1,6 @@
 %{
-#include <stdio.h>
-#include <stdlib.h>
 #include "parser.tab.h"
 #include "ast.h"
-extern FILE *yyin;
-extern int yylex();
 int yyerror(char *s) {
   fprintf(stderr, "Parse error: %s\n", s);
   return 1;
@@ -24,14 +20,14 @@ int yyerror(char *s) {
 
 %%
 
-player_config : answer { $$ = node(t_OBJECT, 1, $1); }
-    | player_config player_config { $$ = merge(2, $1, $2); }
-    ;
+player_config: answer { $$ = node(t_OBJECT, 1, $1); }
+             | player_config answer { $$ = merge(2, $1, node(t_OBJECT, 1, $2)); }
+             ;
 
 answer: answer_1 | answer_2 | answer_3;
-answer_1: question_1 t_bool { $$ = node(t_ELEMENT, 2, $1, node(t_VALUE, 1, $2)) };
-answer_2: question_2 t_bool { $$ = node(t_ELEMENT, 2, $1, node(t_VALUE, 1, $2)) };
-answer_3: question_3 t_float { $$ = node(t_ELEMENT, 2, $1, node(t_VALUE, 1, $2)) };
+answer_1: question_1 t_bool { $$ = node(t_ELEMENT, 2, $1, node(t_VALUE, 1, $2)); };
+answer_2: question_2 t_bool { $$ = node(t_ELEMENT, 2, $1, node(t_VALUE, 1, $2)); };
+answer_3: question_3 t_float { $$ = node(t_ELEMENT, 2, $1, node(t_VALUE, 1, $2)); };
 
 question_1: QUESTION_1 { $$ = leaf(t_KEY, (YYSTYPE) "autoplay"); };
 question_2: QUESTION_2 { $$ = leaf(t_KEY, (YYSTYPE) "loop"); };
