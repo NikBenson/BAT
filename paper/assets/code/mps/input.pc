@@ -1,0 +1,22 @@
+test/pc.g.json: PlayerConfig
+
+generic:
+    is time remaining display = true
+    is show subtitle at start = false
+    is autoplay = <no isAutoplay>
+    is muted = <no isMuted>
+    VOD start = <no vodStartSeconds> Seconds
+    VOD end = <no vodEndSeconds> Seconds
+    VOD initial playhead = 5.3 Seconds
+    is DVR enabled = <no isDvrEnabled>
+    volume = <no volumePercent> %
+    image template:
+        <no imageTemplateConfig>
+    web:
+        <no web>
+    android:
+        <no android>
+    iOS:
+        <no iOS>
+    plugins:
+        << ... >>
