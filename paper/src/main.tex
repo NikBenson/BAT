@@ -154,6 +154,54 @@
     emphstyle={\color{codepurple}},
     identifierstyle=\color{black},
 }
+\lstdefinelanguage{c}{
+    sensitive=true,
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]",
+    keywords={auto, break, case, char, const, continue, default, do, double, else, enum, extern, float, for, goto, if, int, long, register, return, short, signed, sizeof, static, struct, switch, typedef, union, unsigned, void, volatile, while},
+    ndkeywords={NULL, TRUE, FALSE, EOF},
+    emph={printf, scanf, malloc, free, memcpy, strcmp},
+    commentstyle={\color{codegreen}\ttfamily},
+    stringstyle={\color{codepurple}\ttfamily},
+    keywordstyle={\color{magenta}\bfseries},
+    ndkeywordstyle={\color{orange}\bfseries},
+    emphstyle={\color{codepurple}},
+    identifierstyle=\color{black},
+}
+
+\lstdefinelanguage{yacc}{
+    sensitive=true,
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]",
+    keywords={token, precedence, nonterminal, start, \%\%},
+    ndkeywords={\$\$, \$, accept, error},
+    emph={yylex, yyparse, yylval, yytext},
+    commentstyle={\color{codegreen}\ttfamily},
+    stringstyle={\color{codepurple}\ttfamily},
+    keywordstyle={\color{magenta}\bfseries},
+    ndkeywordstyle={\color{orange}\bfseries},
+    emphstyle={\color{codepurple}},
+    identifierstyle=\color{black},
+}
+
+\lstdefinelanguage{lex}{
+    sensitive=true,
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]",
+    keywords={BEGIN, DEF, RETURN, RULE},
+    ndkeywords={yylval, yytext, ECHO, yyleng},
+    emph={yylex, yyerror, input},
+    commentstyle={\color{codegreen}\ttfamily},
+    stringstyle={\color{codepurple}\ttfamily},
+    keywordstyle={\color{magenta}\bfseries},
+    ndkeywordstyle={\color{orange}\bfseries},
+    emphstyle={\color{codepurple}},
+    identifierstyle=\color{black},
+}
+
 
 \lstdefinestyle{default}{
     backgroundcolor=\color{backcolour},
@@ -202,6 +250,7 @@
     % 5: 2?
     % 6: 3?
     % 7: 2?
+
 
     \section{Einleitung}\label{sec:einleitung}
     \input{einleitung}
