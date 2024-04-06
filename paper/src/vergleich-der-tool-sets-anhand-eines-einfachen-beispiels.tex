@@ -27,10 +27,47 @@
         \draw[->] (0.5\textwidth,1) -- (0.5\textwidth,0) node[midway,above,right] {Selbstgeschriebener C Compiler};
     \end{tikzpicture}
     \begin{framed}
-        \lstinputlisting[label={lst:c-output},language=JavaScript,nolol,numbers=none,backgroundcolor={}]{../assets/code/c/output.txt}
+        \lstinputlisting[label={lst:c-output},language=JavaScript,nolol,numbers=none,backgroundcolor={}]{../assets/code/c/output.json}
     \end{framed}
     \caption{Schritte des Compilierens der PlayerConfig Sprache mit Lex \& \acs{YACC}}
     \label{fig:ard-player-c-stages}
+\end{figure}
+\lipsum[5]
+\begin{figure}
+    \begin{framed}
+        \lstinputlisting[label={lst:mps-editor},language=PlayerConfig,nolol,numbers=none,backgroundcolor={}]{../assets/code/mps/input.pc}
+    \end{framed}
+    \begin{tikzpicture}
+        \path[draw=none] (0,0) -- (\textwidth,0);
+        \draw[->] (0.5\textwidth,0) -- (0.5\textwidth,1) node[midway,above,right] {Editor};
+    \end{tikzpicture}
+    \begin{framed}
+        \includegraphics[width=\textwidth]{../assets/img/diagrams/ard_player_mps_ast_1.mmd}
+    \end{framed}
+    \caption{Darstellung der PlayerConfig Sprache mit \acs{MPS}}
+    \label{fig:ard-player-mps-stages-frontend}
+\end{figure}
+\lipsum[5]
+\begin{figure}
+    \begin{framed}
+        \includegraphics[width=\textwidth]{../assets/img/diagrams/ard_player_mps_ast_1.mmd}
+    \end{framed}
+    \begin{tikzpicture}
+        \path[draw=none] (0,0) -- (\textwidth,0);
+        \draw[->] (0.5\textwidth,1) -- (0.5\textwidth,0) node[midway,above,right] {Generator};
+    \end{tikzpicture}
+    \begin{framed}
+        \includegraphics[width=\textwidth]{../assets/img/diagrams/ard_player_mps_ast_2.mmd}
+    \end{framed}
+    \begin{tikzpicture}
+        \path[draw=none] (0,0) -- (\textwidth,0);
+        \draw[->] (0.5\textwidth,1) -- (0.5\textwidth,0) node[midway,above,right] {TextGen};
+    \end{tikzpicture}
+    \begin{framed}
+        \lstinputlisting[label={lst:mps-output},language=JavaScript,nolol,numbers=none,backgroundcolor={}]{../assets/code/mps/output.json}
+    \end{framed}
+    \caption{Schritte des Compilierens der PlayerConfig Sprache mit \acs{MPS}}
+    \label{fig:ard-player-mps-stages-backend}
 \end{figure}
 \lipsum[5]
 

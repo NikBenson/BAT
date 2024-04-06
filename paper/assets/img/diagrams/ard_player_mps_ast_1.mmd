@@ -1,0 +1,16 @@
+graph TB
+
+    pc("PlayerConfig, (path=test, name=pc)")
+
+    generic(GenericConfig)
+
+    g1(JSONBoolean, true)
+    g2(JSONBoolean, false)
+    g3(JSONDouble, 5.3)
+
+
+    pc -- "generic" --> generic
+
+    generic -- "isTimeRemainingDisplay" --> g1
+    generic -- "isShowSubtitleAtStart" --> g2
+    generic -- "vodInitialPlayheadSeconds" --> g3

@@ -5,8 +5,8 @@
       <compiler-path />
       <compiler-arguments />
       <envs>
-        <env name="BIBINPUTS" value="$PROJECT_DIR$/src" />
-        <env name="BSTINPUTS" value="$PROJECT_DIR$/src:" />
+        <env name="BSTINPUTS" value="$PROJECT_DIR$/src" />
+        <env name="BSTOUTPUTS" value="$PROJECT_DIR$/out" />
       </envs>
       <main-file>$PROJECT_DIR$/src/main.tex</main-file>
       <aux-dir>$PROJECT_DIR$/out</aux-dir>

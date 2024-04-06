@@ -1,0 +1,24 @@
+graph TB
+    file("JSONFile, (path=test, name=pc)")
+    pc(JSONObject)
+    e1("JSONObjectEntry, 'generic'")
+    e2("JSONObjectEntry, 'pluginData'")
+    plugins(JSONObject)
+    generic(JSONObject)
+    e2_1("JSONObjectEntry, 'isTimeRemainingDisplay'")
+    e2_2("JSONObjectEntry, 'isShowSubtitleAtStart'")
+    e2_3("JSONObjectEntry, 'vodInitialPlayheadSeconds'")
+    g1(JSONBoolean, true)
+    g2(JSONBoolean, false)
+    g3(JSONDouble, 5.3)
+    file --> pc
+    pc --> e1
+    pc --> e2
+    e1 --> generic
+    generic --> e2_1
+    generic --> e2_2
+    generic --> e2_3
+    e2_1 --> g1
+    e2_2 --> g2
+    e2_3 --> g3
+    e2 --> plugins
