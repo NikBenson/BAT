@@ -27,8 +27,8 @@ Das wohl bekannteste Beispiel ist \ac{SQL}.~\autocite{unknown-author-2023}
 Auf Deutsch Abfragesprachen genannt, dienen diese \acp{DSL}, der interaktionen mit \acp{DBMS}.
 Die Domäne ist in diesem Fall also die Datenhaltung \textit{strukturierter} Daten.
 
-Da es etliche \acp{DBMS} gibt, welche dem \ac{SQL}--Standard folgen, gibt es für \ac{SQL} auch etliche Compiler beziehungsweise Interpreter.
-Diese Compiler sind dabei stark mit dem jeweiligen \ac{DBMS} verwoben.
+Da es etliche \acp{DBMS} gibt, welche dem \ac{SQL}--Standard folgen, gibt es für \ac{SQL} auch etliche Compiler--Pipelines beziehungsweise Interpreter.
+Diese Compiler--Pipelines sind dabei stark mit dem jeweiligen \ac{DBMS} verwoben.
 Es gibt also keine einheitliche Codebasis.
 Dies wäre mit bekannten Tools des Compilerbaus, namentlich \textbf{Lex} \& \textbf{YACC}.
 Diese werden im folgenden Kapitel behandelt.
@@ -64,7 +64,7 @@ Diese werden im folgenden Kapitel behandelt.
 Was von Entwicklern umgangssprachlich \qq{Compiler} genannt wird, bezeichnet eigentlich die Compiler--Pipeline.
 Der eigentliche Compiler, oder auch Code Generator, (Siehe \autoref{fig:compiler-phases}) ist ein Tool, welches aus einer abstrakten Representation die Zielsprache, im folgenden Programm genannt, generiert.
 
-Ein Programm ist dabei definiert als eine Black--Box, welche eine Eingabe in eine Ausgabe transformiert.
+Ein Programm ist dabei definiert als eine \qq{Black--Box}, welche eine Eingabe in eine Ausgabe transformiert.
 Damit kann zwischen zwei verschiedenen Aufbauten unterscheiden: Compiler erstellen aus Code ein Programm, welches eine Eingabe in eine Ausgabe transformiert (Siehe \autoref{subfig:compiler-and-interpreter-compiler}) und Interpreter transformieren unter der Verwendung von Code eine Eingabe in eine Ausgabe.~(Siehe \autoref{subfig:compiler-and-interpreter-interpreter})
 
 Effektiv benötigen beide Klassen von Tools die selben Phasen.
@@ -132,8 +132,6 @@ Dies stellt sicher, dass nur korrekte Programme weiter kompiliert werden.
 Ausnahmen dazu gibt es zum Beispiel mit JavaScript.
 Hier wird jedes Statement versucht zu interpretieren, um einfache Fehler unter den Tisch zu kehren.
 
-
-
 \paragraph{Intermediate Code Generator} erstellt Text aus dem \ac{AST} eine Computer--verständliche Zwischendarstellung.
 
 Ein Beispiel aus~\cite{aho-2006} wäre der three--address code.
@@ -152,16 +150,52 @@ Der Code kann anhand von verschiedensten Metriken optimiert werden.
 Dazu zählt Geschwindigkeit, Dateigröße\footnote{Ist im Web wichtig.}, \dots.
 
 Optimierungsphasen sind immer optional.
-Im C Compiler kann zum Beispiel auch eingestellt werden, wie stark der Code optimiert werden soll.~\autocite{gnu-project-no-date}
+Im C--Compiler der \ac{GCC} kann zum Beispiel auch eingestellt werden, wie stark der Code optimiert werden soll.~\autocite{gnu-project-no-date}
 
-\paragraph{Code Generator,} oder auch \textbf{Compiler}, \lipsum[5]
+\paragraph{Code Generator,} oder auch \textbf{Compiler}, erzeugen nun aus der \textbf{intermediate representation} den \textbf{target--machine code}.
+
+Im Gegensatz zu den meisten anderen Schritten ist diese Phase nicht so standardisiert.
+Dies liegt an der möglichen abhängigkeit von Prozessorarchitekturen.
+
+Tools wie \ac{LLVM}~\autocite{llvm-project-2024} nehmen sich der Verallgemeinerung der meisten Prozessorarchitekturen an.
+Damit sind sie allerdings relevanter beim Entwickeln von \ac{GPL} als \ac{DSL}.
+
+Tools speziell für \ac{DSL} konnten wir nicht finden.
+Allerdings ist diese letzte transformation, wie die Umsetzung aus \autoref{lst:compiler} zeigt, nach entsprechender Aufbereitung der Daten durch die restliche Pipeline, nicht explizit kompliziert.
+
 
 \paragraph{Machine--Dependent Code Optimizer} optimieren den Code analog zu Machine--Independent Code Optimizer, nur spezifisch für die Zielplattform.
 
 \subsubsection{Lex}\label{subsubsec:lex}
-\lipsum[5]
+Lex ist die Abkürzung für Lexical Analyzer und das bekannteste Tool zur erstellung von Tokenizern.
+
+Die Tokens werden dabei durch \acp{RegEx} identifiziert und von links nach rechts eingelesen.
+Standardmäßig sucht Lex nach dem längsten Treffer, es kann allerdings auch über eine Flag des \ac{CLI} nach dem kürzesten Match gesucht werden.
+
+Lex Programme sind dabei in drei Abschnitte unterteilt:
 \lstinputlisting[label={lst:lex-structure},caption={Aufbau eines Lex Programms},language=lex]{../assets/code/c/lex_structure.l}
+
+\paragraph{Definitions} beinhalten vor allem die Namen der Tokens.
+Aber auch gegebenenfalls Optionen zur konfiguration des Lex Compilers oder auch C Code, meistens Imports.
+
+Wird Lex zusammen mit \ac{YACC} verwendet, so werden die Namen der Tokens in YACC definiert.
+In dem Fall wird hier nur der \ac{YACC} Header importiert und der Abschnitt bleibt ansonsten weitestgehend leer.
+
+\paragraph{Rules} spezifizieren die \ac{RegEx} Ausdrücke und die zugehörigen Tokens, also die Namen aus der ersten Sektion und gegebenenfalls anfallende Einträge in der Symbol Table.
 \lipsum[5]
+
+\paragraph{Auxiliary Functions} sind einfach beliebige C funktionen.
+Diese werden allerdings nicht über einen Header exposed, sondern sind nur zur Verwendung innerhalb des Lex Programms gedacht.
+
+Soll ein Lex Programm ein eigenes \ac{CLI} definieren, so wird hier üblicherweise die \verb|main()| Methode definiert.
+Anderenfalls bleibt dieser Abschnitt zumeist leer, da Funktionen ausgelagert werden.
+In dem Fall werden sie im ersten Abschnitt importiert.
+
+\paragraph*{}
+Das ergebnis des Lex Compilers ist immer eine C--Datei.
+Diese kann entweder von anderen C--Programmen verwendet werden, oder mittels eines herkömmlichen C--Compilers kompiliert werden.
+
+Meistens wird Lex zusammen mit \ac{YACC} verwendet.
 
 \subsubsection{\acs{YACC}}
 \ac{YACC} ist ein Tool zum erstellen von \ac{LALR} rightmost derivation Parsern nach dem \ac{POSIX} Standard.
