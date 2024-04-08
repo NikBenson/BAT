@@ -9,11 +9,10 @@ int yyerror(char *s) {
 
 %start player_config
 
-%union { bool b; int i; double f; char* s; }
-
 %token QUESTION_1 QUESTION_2 QUESTION_3
 %token BOOL INT FLOAT
 
+%union { bool b; int i; double f; char* s; }
 %type <b> BOOL
 %type <i> INT player_config answer answer_1 answer_2 answer_3 question_1 question_2 question_3 t_bool t_int t_float
 %type <f> FLOAT
