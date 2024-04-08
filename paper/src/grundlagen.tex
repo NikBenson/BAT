@@ -163,7 +163,6 @@ Damit sind sie allerdings relevanter beim Entwickeln von \ac{GPL} als \ac{DSL}.
 Tools speziell für \ac{DSL} konnten wir nicht finden.
 Allerdings ist diese letzte transformation, wie die Umsetzung aus \autoref{lst:compiler} zeigt, nach entsprechender Aufbereitung der Daten durch die restliche Pipeline, nicht explizit kompliziert.
 
-
 \paragraph{Machine--Dependent Code Optimizer} optimieren den Code analog zu Machine--Independent Code Optimizer, nur spezifisch für die Zielplattform.
 
 \subsubsection{Lex}\label{subsubsec:lex}
@@ -175,14 +174,36 @@ Standardmäßig sucht Lex nach dem längsten Treffer, es kann allerdings auch ü
 Lex Programme sind dabei in drei Abschnitte unterteilt:
 \lstinputlisting[label={lst:lex-structure},caption={Aufbau eines Lex Programms},language=lex]{../assets/code/c/lex_structure.l}
 
-\paragraph{Definitions} beinhalten vor allem die Namen der Tokens.
+\paragraph{Declarations} beinhalten vor allem die Namen der Tokens.
 Aber auch gegebenenfalls Optionen zur konfiguration des Lex Compilers oder auch C Code, meistens Imports.
 
 Wird Lex zusammen mit \ac{YACC} verwendet, so werden die Namen der Tokens in YACC definiert.
 In dem Fall wird hier nur der \ac{YACC} Header importiert und der Abschnitt bleibt ansonsten weitestgehend leer.
 
 \paragraph{Rules} spezifizieren die \ac{RegEx} Ausdrücke und die zugehörigen Tokens, also die Namen aus der ersten Sektion und gegebenenfalls anfallende Einträge in der Symbol Table.
-\lipsum[5]
+In \autoref{lst:lex-rule} ist beispielhaft eine solche Regel für einen Ganzzahlwert dargestellt, wie sie im Beispiel aus \autoref{sec:vergleich-der-tool-sets-anhand-eines-einfachen-beispiels} verwendet wird.
+\begin{lstlisting}[label={lst:lex-rule},caption={Lex Regel},language=lex]
+[0-9]+ { yylval.i = atoi(yytext); return INT; }
+\end{lstlisting}
+\begin{itemize}
+    \item \verb|[0-9]+| legt fest, dass eine beliebig lange Folge von Digits erkannt wird.
+    \item In den geschweiften Klammern kann zunächst beliebiger C--Code stehen.
+    Dieser ist optional.
+    Wird anstelle der Klammern ein Semicolon verwendet, so wird das Match ignoriert.
+    Dies wird meistens für Whitespace verwendet.
+    \begin{itemize}
+        \item \verb|yylval| ist eine Variable, die einen eintrag in der Symbol Table repräsentiert.
+        Der zugewiesene Wert wird automatisch dem Token zugeordnet, sodass in \ac{YACC} später darauf zugegriffen werden kann.
+        Standardmäßig ist \verb|yylval| ein integer, hier ist es ein Union--Type.
+        Dies kann in \ac{YACC} eingestellt werden.
+        \item \verb|yytext| ist das \acs{RegEx}--Match als String.
+        \item \verb|INT| ist der zuvor deklarierte Name des Tokens.
+    \end{itemize}
+\end{itemize}
+
+Es wird also einem \ac{RegEx} Match eine Funktion zugeordnet.
+Diese kann theoretisch alles machen, muss aber den namen des Tokens benennen.
+Im regelfall werden allerdings höchstens zwei Statements analog zu \autoref{lst:lex-rule} verwendet.
 
 \paragraph{Auxiliary Functions} sind einfach beliebige C funktionen.
 Diese werden allerdings nicht über einen Header exposed, sondern sind nur zur Verwendung innerhalb des Lex Programms gedacht.
@@ -198,13 +219,80 @@ Diese kann entweder von anderen C--Programmen verwendet werden, oder mittels ein
 Meistens wird Lex zusammen mit \ac{YACC} verwendet.
 
 \subsubsection{\acs{YACC}}
-\ac{YACC} ist ein Tool zum erstellen von \ac{LALR} rightmost derivation Parsern nach dem \ac{POSIX} Standard.
-\acs{LALR}--Parser sind dabei eine Untergruppe der Bottom--Up--Parser.
-Sie funktionieren, indem \lipsum[5]
+\ac{YACC} ist ein Tool zum erstellen von \ac{LALR} Parsern nach dem \ac{POSIX} Standard.
 
+\paragraph{\acs{LALR}--Parser} sind dabei eine Untergruppe der Bottom--Up--Parser.
+Besonders beliebt sind \acs{LALR}--Parser in der Praxis, da sie besonders effizient und robust sind, obwohl sie alle \ac{CFG} parsen können.
+Außerdem ermöglicht der Lookahead es, mehrdeutige Grammatiken zu parsen.
+
+Einige Alternativen sind:
+\subparagraph{\ac{LL} Parser,} diese sind schneller, bilden allerdings nicht alle \ac{CFG} ab.
+
+\subparagraph{\ac{LR} Parser,} spezifischer LR(1) Parser, auch genannt canonical \acs{LR} Parser.
+Diese sind die mächtigsten Parser in der Familie der \ac{LR} parser.
+Allerdings benötigen sie mehr Speicherplatz und sind schwierig zu konstruieren.
+
+\paragraph*{}
 Ein \ac{YACC} Programm ist immer in die folgenden 3 Teile gegliedert:
 \lstinputlisting[label={lst:yacc-structure},caption={Aufbau eines \acs{YACC} Programms},language=yacc]{../assets/code/c/yacc_structure.y}
-\lipsum[5]
+
+\paragraph{Definitions} beinhalten unter anderem die definition der Tokens.
+Diese werden dann auch von Lex übernommen.
+
+Im Kontext von Parsern werden die Namen der Tokens als Terminale bezeichnet.
+Dies ergibt sich aus der definition der \ac{CFG} als 4--Tupel $G=(V,\Sigma,R,S)$.~\autocite{wikipedia-contributors-2024H}
+\begin{itemize}
+    \item[$\Sigma$] repräsentiert die Terminale.
+    Terminale sind die \qq{Wörter} der Grammatik.
+    Also die atomaren bausteine eines \qq{Satzes}.
+    \item[$V$] sind die Nicht--Terminale.
+    Nicht--Terminale können als Variable verstanden werden.
+    \item[$R$] sind die Regeln.
+    Sie beschreiben, wie ein Nicht--Terminal in andere Terminale und Nicht--Terminale zerteilt werden kann.
+    \item[$S$] ist das startsymbol.
+    Es ist immer ein Element aus $V$ oder $R$ und beschreibt, was die Grammatik abbilden will.
+\end{itemize}
+Die Regeln und Nicht--Terminale werden im zweiten Abschnitt des Programms definiert, allerdings werden die anderen beiden im ersten festgelegt.
+
+Neben $S$ und $\Sigma$ kann hier auch der Aufbau der Symbol Table beschrieben werden.
+Es wird festgelegt, welche Typen ihr zugewiesen werden können.
+Im Regelfall ist dies ein Union Type.
+In dem Fall muss für alle Terminale und Nicht--Terminale definiert werden, welchen Typ sie speichern wollen.
+
+\paragraph{Rules} spezifizieren die Nicht--Terminale direkt zusammen mit den Ableitungsregeln.
+\begin{lstlisting}[label={lst:yacc-rule},caption={\acs{YACC} Regel},language=yacc]
+expression: INT { $$ = $1; }
+          | INT PLUS expression { $$ = $1 + $3; }
+          ;
+\end{lstlisting}
+\autoref{lst:yacc-rule} ist dazu ein komplett fiktives Beispiel ohne Zusammenhang.
+
+Es wird das Nicht--Terminal \verb|expression| definiert.
+Dieses lässt sich konstruieren aus den beiden Konstruktionsregeln ($R$):
+\begin{itemize}
+    \item Terminal \verb|INT|
+    \item oder der Abfolge Terminal \verb|INT|, Terminal \verb|PLUS|, Nicht--Terminal \verb|expression|.
+\end{itemize}
+Es ist also rekursiv definiert.
+
+In den geschweiften Klammern kann wieder beliebiger C--Code stehen.
+Allerdings wird hier im Regelfall nur die Symbol Table manipuliert.
+\verb|$$| repräsentiert dabei den Eintrag des gebildeten Nicht--Terminals (hier \verb|expression|) und \verb|$i| den Eintrag des $i$--ten Kinds.
+
+\paragraph{Auxiliary Functions} sind analog zu Lex auch einfache C--Funktionen.
+
+\paragraph*{}
+\ac{YACC} erstellt dabei nicht automatisch einen \ac{AST}.
+Um eine Sinnvolle Ausgabe zu erhalten muss der Entwickler selbst eine Datenstruktur erzeugen.
+
+Im Regelfall wird dies dadurch gelöst, dass die Nodes des Baumes teil des Union--Types der Symbol Table sind.
+Alternativ können die Nodes auch anhand von Integer--IDs identifiziert werden.
+So macht es auch das Beispiel aus \autoref{sec:vergleich-der-tool-sets-anhand-eines-einfachen-beispiels}.
+\begin{lstlisting}[label={lst:yacc-ast},caption={\acs{YACC} \acs{AST}},language=yacc]
+answer_1: question_1 t_bool { $$ = node(t_ELEMENT, 2, $1, node(t_VALUE, 1, $2)); };
+t_bool: BOOL { $$ = leaf(t_BOOL, (YYSTYPE) $1); };
+\end{lstlisting}
+Analog zu \autoref{lst:yacc-ast} kann so der \ac{AST} leicht konstruiert werden.
 
 \subsubsection{Compiler}
 Auch zum erstellen von Compilern gibt es Tools, allerdings ist es hier auch üblich, diese manuel zu erstellen.
