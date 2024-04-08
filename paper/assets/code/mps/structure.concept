@@ -1,0 +1,14 @@
+concept ConceptName extends BaseConcept
+                    implements <none>
+
+    instance can be root: false
+    alias: <no alias>
+    short description: <no short description>
+
+    properties:
+    << ... >>
+
+    children:
+    << ... >>
+    references:
+    << ... >>

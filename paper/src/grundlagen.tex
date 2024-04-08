@@ -226,6 +226,7 @@ Besonders beliebt sind \acs{LALR}--Parser in der Praxis, da sie besonders effizi
 Außerdem ermöglicht der Lookahead es, mehrdeutige Grammatiken zu parsen.
 
 Einige Alternativen sind:
+
 \subparagraph{\ac{LL} Parser,} diese sind schneller, bilden allerdings nicht alle \ac{CFG} ab.
 
 \subparagraph{\ac{LR} Parser,} spezifischer LR(1) Parser, auch genannt canonical \acs{LR} Parser.
@@ -298,7 +299,13 @@ Analog zu \autoref{lst:yacc-ast} kann so der \ac{AST} leicht konstruiert werden.
 Auch zum erstellen von Compilern gibt es Tools, allerdings ist es hier auch üblich, diese manuel zu erstellen.
 In \autoref{lst:compiler} ist beispielhaft ein solcher Compiler für den in \autoref{sec:vergleich-der-tool-sets-anhand-eines-einfachen-beispiels} verwendeten Compiler der PlayerConfig--Sprache abgebildet.
 \lstinputlisting[label={lst:compiler},caption={Einfacher Compiler in C},language=c]{../assets/code/c/compiler.c}
-\lipsum[5]
+Da in diesem Fall die intermediate representation identisch zum \ac{AST} ist, muss hier lediglich der Baum traversiert werden.
+Sind diese beiden Modelle nicht identisch, muss das Modell der intermediate representation traversiert werden.
+In jedem fall bleibt es allerdings bei einer traversierung.
+
+In diesem Fall wird über eine rekursive Funktion und ein Switch--Statement das \acs{JSON}--Objekt ausgegeben.
+
+Daraus ist ersichtlich, dass bei entsprechend guter Aufbereitung der Daten in den vorangegangenen Phasen der Compiler--Pipeline, das manuelle erstellen eines Compilers keine nicht zu bewältigende Aufgabe ist.
 
 \subsection{\acl{MPS}}\label{subsec:meta-programming-system}
 \ac{MPS} macht einiges anders als \ac{POSIX}.
@@ -309,35 +316,137 @@ Dies funktioniert, da \ac{MPS} nur in der gleichnamigen \ac{IDE} verwendet werde
     \begin{center}
         \includegraphics[width=0.48\textwidth]{../assets/img/diagrams/mps.mmd}
     \end{center}
-    \caption{Grundlegende Struktur von \acs{MPS}}
-    \label{fig:mps}
+    \caption{\acs{MPS} \qq{Compiler--Pipeline}}
+    \label{fig:mps-compiler-pipeline}
 \end{wrapfigure}
 Der \ac{AST} wird dabei durch den \textbf{Editor} in eine Representation für den Menschen gerendert und über Transformationsregeln bearbeitet.
 
 Auch das Kompilieren läuft in der Regel anders.
-Einfache Sprachen haben klassischen Code Generator, in \ac{MPS} \textbf{TextGen} genannt.
+Einfache Sprachen haben klassische Code Generatoren, in \ac{MPS} \textbf{TextGen} genannt.
 Im Regelfall werden allerdings Transpiler\footnote{Ein Compiler, der eine Sprache als Eingabe und eine andere Sprache als Ausgabe hat.} verwendet.
 Diese übersetzen mittels einer Template--Sprache von einem \ac{MPS} \ac{AST} in einen anderen \ac{MPS} \ac{AST}.
-So wird durch die Konkatenation
 
-\lipsum[5]
+So werden verschiedene Sprachen kaskadiert, bis jedes verbleibende Node im \ac{AST} einen zugehörigen TextGen aspect hat.
+Dies hat den Vorteil, dass Compiler wiederverwendet werden können und sich durch Emergenz komplexe Systeme ergeben.
 
-\subsubsection{Structure}
+Da kein Text bearbeitet wird ist auch die Entwicklererfahrung eine andere.
+Es wird nicht nur die Compiler--Pipeleine beschrieben, sondern auch die zugehörigen \acs{IDE}--Features.
+Dies bietet dem Sprachdesigner mehr freiheit um die Entwicklererfahrung zu optimieren.
+Diese Features sind aber alle nicht notwendig, um eine funktionierende Sprache zu erstellen.
+
+\subsubsection{BaseLanguage}
+\ac{MPS} Sprachen zielen meistens darauf ab, Transpiler zu existierenden \ac{GPL} oder \ac{DSL} zu sein.
+Deshalb sind \ac{XML} und Java bereits als Sprachen mit einem vorhandenem TextGen Aspect implementiert.
+
+\ac{MPS} selbst basiert auf Java.
+Deshalb wird die vorhandene Java implementierung auch als BaseLanguage bezeichnet.
+
+Alle Aspekte (siehe \autoref{subsubsec:aspekte}) definieren ihre eigene Sprache basierend auf BaseLanguage.
+Das heißt, auch beim beschreiben von Logik für TextGen, Migrationen, Generatoren, etc.\ wird BaseLanguage verwendet.
+Alle Aspekte sind gute Beispiele für Emergenz in \ac{MPS}.
+
+\subsubsection{Aufbau von \acs{MPS}}
+JetBrains IntelliJ basierte \acp{IDE}, wie \ac{MPS}, untergliedern Projekte in Module.~\autocite{jetbrains-sro-no-dateD}
+Ein projekt hat dabei ein oder mehrere Module.
+Ein Modul ist dabei immer etwas, das kompiliert werden kann.
+So können in einem \ac{IDE} Fenster / Projekt / Monorepo mehrere Programmiersprachen / Frameworks mit unterschiedlichen Compiler--Pipelines hausen.
+
+\ac{MPS} kennt dabei primär zwei arten von Modulen:
+Sprachen (language) und Lösungen (solution.)
+Sprachen beschreiben dabei im weitesten Sinne eine Compiler--Pipeline und Lösungen sind Programme in diesen Sprachen.
+
+Auch zu erwähnen sind DevKits, welche mehrere Sprachen und Lösungen gruppieren können.
+
+\paragraph{Sprachen} setzen sich aus verschiedenen Aspekten zusammen.
+Aber auch zugehörige Lösungen, wie der Generator gehören zu der Sprache.
+
+\paragraph{Lösungen} sind untergliedert in Models.~\autocite{jetbrains-sro-no-dateA}
+Models sind organisatorische Einheiten, die Code beinhalten.
+Sie können Dependencies auf andere Models und verwendete Sprachen spezifizieren.
+
+In Models können nun instanzen von \ac{AST} Nodes erstellt werden, die von einer verwendeten Sprache als \textit {rootable} ($S$) markiert wurden.
+Diese können dann wie sonst Dateien geöffnet und damit über den Editor Aspekt bearbeitet werden.
+
+Außerdem können \qq{Dateien} in \qq{Ordner} untergliedert werden.
+Dies nennt sich dann virtuelles Package und ist in wirklichkeit teil des \qq{Dateinamens}.
+
+\subsubsection{Aspekte}\label{subsubsec:aspekte}
+Anstelle einer Compiler--Pipeline, wie in \autoref{fig:mps-compiler-pipeline} suggeriert, sind \ac{MPS} Sprachen untergliedert in verschiedene Aspekte.
+Grundlegend stimmt der Fluss aus \autoref{fig:mps-compiler-pipeline}, allerdings passieren einige Aspekte an den Pfeilen.
+
+Durch das untergliedern der Sprachen in Aspekte erzielt \ac{MPS} \ac{SoC}.
+Die meisten Aspekte sind optional.
+Der Overhead ist also minimal.
+
+\paragraph{Structure} beschreibt den \ac{AST} der Sprache.
 \begin{figure}
     \includegraphics[width=\textwidth]{../assets/img/diagrams/ard_player_mps_structure.mmd}
     \caption{ARD.Player MPS Sprache Struktur}
     \label{fig:ard-player-mps-structure}
 \end{figure}
+
+\lstinputlisting[label={lst:concept-structure},caption={Aufbau eines Concepts},language=mps-concept]{../assets/code/mps/structure.concept}
 \lipsum[5]
 
-\subsubsection{TextGen}
+\paragraph{Editor}
+\lipsum[5]
+
+\paragraph{Actions}
+\lipsum[5]
+
+\paragraph{Intentions}
+\lipsum[5]
+
+\paragraph{Refactorings}
+\lipsum[5]
+
+\paragraph{FindUsages}
+\lipsum[5]
+
+\paragraph{Scripts}
+\lipsum[5]
+
+\paragraph{Constraints}
+\lipsum[5]
+
+\paragraph{Typesystem}
+\lipsum[5]
+
+\paragraph{Feedback}
+\lipsum[5]
+
+\paragraph{DataFlow}
+\lipsum[5]
+
+\paragraph{TextGen}
+\lipsum[5]
+
+\paragraph{Behavior}
+\lipsum[5]
+
+\paragraph{Plugin}
+\lipsum[5]
+
+\paragraph{Test}
+\lipsum[5]
+
+\paragraph{Migration}
+\lipsum[5]
+
+\paragraph{\ac{VCS}}
 \lipsum[5]
 
 \subsubsection{Generator}
 \lipsum[5]
 
-\subsubsection{GenPlan}
+\paragraph{GenPlan}
 \lipsum[5]
 
-\subsubsection{Editor}
+\paragraph{Debugging}
+\lipsum[5]
+
+\paragraph{Accessory Model}
+\lipsum[5]
+
+\paragraph{Runtime Module}
 \lipsum[5]
