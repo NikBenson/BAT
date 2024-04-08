@@ -177,7 +177,7 @@
     morestring=[b]",
     keywords={token, precedence, nonterminal, start, \%\%},
     ndkeywords={\$\$, \$1, \$2, \$3, \$4, \$5, accept, error},
-    emph={yylex, yyparse, yylval, yytext},
+    emph={yylex, yyparse, yylval, yytext, YYSTYPE},
     commentstyle={\color{codegreen}\ttfamily},
     stringstyle={\color{codepurple}\ttfamily},
     keywordstyle={\color{magenta}\bfseries},
@@ -194,6 +194,21 @@
     keywords={BEGIN, DEF, RETURN, RULE},
     ndkeywords={yylval, yytext, ECHO, yyleng},
     emph={yylex, yyerror, input},
+    commentstyle={\color{codegreen}\ttfamily},
+    stringstyle={\color{codepurple}\ttfamily},
+    keywordstyle={\color{magenta}\bfseries},
+    ndkeywordstyle={\color{orange}\bfseries},
+    emphstyle={\color{codepurple}},
+    identifierstyle=\color{black},
+}
+\lstdefinelanguage{mps-concept}{
+    sensitive=true,
+    morecomment=[s]{<}{>},
+    morecomment=[s]{<<}{>>},
+    morestring=[b]",
+    keywords={BaseConcept},
+    ndkeywords={abstract, concept, extends, implements, instance, can, be, root, alias, short, description, properties, children, references},
+    emph={true, false},
     commentstyle={\color{codegreen}\ttfamily},
     stringstyle={\color{codepurple}\ttfamily},
     keywordstyle={\color{magenta}\bfseries},
@@ -244,7 +259,7 @@
     \input{toc}
 
     % 1 : 2
-    % 2 : 10?
+    % 2 : 15?
     % 3 : 6?
     % 4 : 10?
     % 5 : 2?
@@ -283,5 +298,4 @@
     \include{literatur}
 
     \include{appendix}
-
 \end{document}
