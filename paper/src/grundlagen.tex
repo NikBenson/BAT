@@ -54,9 +54,9 @@ Diese werden im folgenden Kapitel behandelt.
 \newpage
 
 \subsection{Compilerbau}\label{subsec:compilerbau}
-\begin{wrapfigure}{rH}{0.47\textwidth}
+\begin{wrapfigure}{rH}{0.5\textwidth}
     \begin{center}
-        \includegraphics[width=0.45\textwidth]{../assets/img/diagrams/compiler_phases.mmd}
+        \includegraphics[width=0.47\textwidth]{../assets/img/diagrams/compiler_phases.mmd}
     \end{center}
     \caption{Phasen der Compiler--Pipeline~\autocite{aho-2006}}
     \label{fig:compiler-phases}
@@ -115,7 +115,7 @@ Diese wird dann recursive immer weiter zerteilt.
 Dabei liest er von links nach rechts.
 Dadurch kann es schwierig werden, einen sinnvollen \ac{AST} zu erzeugen, wenn es uneindeutige Abfolgen gibt.
 
-\subparagraph{Bottom--Up--Parser} (Siehe \autoref{subfig:bottom-up-parser}) starten, mit den Terminalen der Grammatik.~\autocite{geeksforgeeks-2021A}
+\subparagraph{Bottom--Up--Parser} (Siehe \autoref{subfig:bottom-up-parser}) starten, mit den Terminalen der Grammatik.~\autocite{geeksforgeeks-2021B}
 Diese werden dann nach und nach zu größeren Strukturen zusammengesetzt.
 
 Dabei liest er von rechts nach links.
@@ -241,7 +241,7 @@ Ein \ac{YACC} Programm ist immer in die folgenden 3 Teile gegliedert:
 Diese werden dann auch von Lex übernommen.
 
 Im Kontext von Parsern werden die Namen der Tokens als Terminale bezeichnet.
-Dies ergibt sich aus der definition der \ac{CFG} als 4--Tupel $G=(V,\Sigma,R,S)$.~\autocite{wikipedia-contributors-2024H}
+Dies ergibt sich aus der definition der \ac{CFG} als 4--Tupel $G=(V,\Sigma,R,S)$.~\autocite{sipser-1997}
 \begin{itemize}
     \item[$\Sigma$] repräsentiert die Terminale.
     Terminale sind die \qq{Wörter} der Grammatik.
@@ -312,6 +312,13 @@ Daraus ist ersichtlich, dass bei entsprechend guter Aufbereitung der Daten in de
 Der Ausgangspunkt\footnote{Eingabe des Programms} ist keine Textdatei, sondern der \ac{AST} der zu definierenden Sprache.
 Dies funktioniert, da \ac{MPS} nur in der gleichnamigen \ac{IDE} verwendet werden kann.
 
+Der \ac{AST} wird dabei durch den \textbf{Editor} in eine Representation für den Menschen gerendert und über Transformationsregeln bearbeitet.
+
+Auch das Kompilieren läuft in der Regel anders.
+Einfache Sprachen haben klassische Code Generatoren, in \ac{MPS} \textbf{TextGen} genannt.
+Im Regelfall werden allerdings Transpiler\footnote{Ein Compiler, der eine Sprache als Eingabe und eine andere Sprache als Ausgabe hat.} verwendet.
+Diese übersetzen mittels einer Template--Sprache von einem \ac{MPS} \ac{AST} in einen anderen \ac{MPS} \ac{AST}.
+
 \begin{wrapfigure}{lH}{0.5\textwidth}
     \begin{center}
         \includegraphics[width=0.48\textwidth]{../assets/img/diagrams/mps.mmd}
@@ -319,12 +326,6 @@ Dies funktioniert, da \ac{MPS} nur in der gleichnamigen \ac{IDE} verwendet werde
     \caption{\acs{MPS} \qq{Compiler--Pipeline}}
     \label{fig:mps-compiler-pipeline}
 \end{wrapfigure}
-Der \ac{AST} wird dabei durch den \textbf{Editor} in eine Representation für den Menschen gerendert und über Transformationsregeln bearbeitet.
-
-Auch das Kompilieren läuft in der Regel anders.
-Einfache Sprachen haben klassische Code Generatoren, in \ac{MPS} \textbf{TextGen} genannt.
-Im Regelfall werden allerdings Transpiler\footnote{Ein Compiler, der eine Sprache als Eingabe und eine andere Sprache als Ausgabe hat.} verwendet.
-Diese übersetzen mittels einer Template--Sprache von einem \ac{MPS} \ac{AST} in einen anderen \ac{MPS} \ac{AST}.
 
 So werden verschiedene Sprachen kaskadiert, bis jedes verbleibende Node im \ac{AST} einen zugehörigen TextGen aspect hat.
 Dies hat den Vorteil, dass Compiler wiederverwendet werden können und sich durch Emergenz komplexe Systeme ergeben.
@@ -379,16 +380,75 @@ Die meisten Aspekte sind optional.
 Der Overhead ist also minimal.
 
 \paragraph{Structure} beschreibt den \ac{AST} der Sprache.
+Die Nodes des \ac{AST} werden dabei durch Konzepte beschrieben.
+Nodes sind also serialisierungen von Konzepten, so wie in der \ac{OOP} Objekte serialisierungen von Klassen sind.
+
+\lstinputlisting[label={lst:concept-structure},caption={Aufbau eines Concepts},language=mps-concept]{../assets/code/mps/structure.concept}
+Konzepte sind dabei weitestgehend analog zu \ac{CFG} aufgebaut.
+
+\subparagraph*{}
+Spezifischer, mehrere Grammatiken, da es mehrere Startsymbole ($S$) geben kann.
+Ein Konzept ist ein Startsymbol, wenn $\verb|instance can be root|=\verb|true|$.
+Technisch gesehen arbeitet \ac{MPS} also nicht mit einem einzelnen \ac{AST}, sondern mit einem Wald von \acp{AST}.
+Jedes Root--Node produziert dabei seine eigene Datei\footnote{Es können im Generator allerdings auch noch mehrere Roots kombiniert werden oder neue Roots erzeugt werden. Die Regel ist nur für TextGen auch eine explizite Regel.}.
+
+\subparagraph*{}
+\verb|properties| sind die Terminale ($\Sigma$) der \ac{CFG}.
+Sie werden in \ac{MPS} as primitive Typen bezeichnet.
+Sie umfassen allerdings nicht von Haus aus alle primitiven Typen, die Java spezifiziert.
+\ac{MPS} spezifiziert lediglich \verb|boolean|, \verb|integer| und \verb|string|.
+Weitere primitive Typen können allerdings manuel spezifiziert werden.
+
+\textbf{Constrained Data Types} funktionieren genau wie Lex, indem sie einen \ac{RegEx} spezifizieren.
+Allerdings gibt es in \ac{MPS} keine Symbol Table.
+Deshalb wird nur der Name und \ac{RegEx} spezifiziert.
+
+\textbf{Enumerations,} oder Enums, sind lediglich eine direkte auflistung an erlaubten werten.
+
+\subparagraph*{}
 \begin{figure}
     \includegraphics[width=\textwidth]{../assets/img/diagrams/ard_player_mps_structure.mmd}
     \caption{ARD.Player MPS Sprache Struktur}
     \label{fig:ard-player-mps-structure}
 \end{figure}
+\verb|children| und \verb|references| sind die Nicht--Terminale ($V$) sowie Produktionsregeln ($R$).
+Sie verweisen jeweils nicht auf primitive Typen, sondern auf andere Konzepte.
 
-\lstinputlisting[label={lst:concept-structure},caption={Aufbau eines Concepts},language=mps-concept]{../assets/code/mps/structure.concept}
-\lipsum[5]
+Im Klassendiagramm aus \autoref{fig:ard-player-mps-structure} sind vor allem Aggregationen zu erkennen.
+Diese werden durch die \verb|children| beschrieben.
+Es gibt allerdings auch Associationen.
+Diese sind die \verb|references|.
 
-\paragraph{Editor}
+\textbf{Aggregationen} haben dabei eine Kardinalität von \verb|1| (Required), \verb|0..1| (Optional), \verb|1..n| (Many) oder \verb|0..n| (Many Optional.)
+Sie sind einfache Kinder im Sinne der Baum Datenstruktur und gehören damit ausschließlich zu diesem Node.
+
+\textbf{Associationen} hingegen haben eine Kardinalität von \verb|1| (Required) oder \verb|0..1| (Optional.)
+In den meisten Fällen ersetzen die \verb|references| die Symbol Table.
+Dies tun sie, indem sie einen direkten Verweis auf ein beliebiges Node herstellen.
+
+\verb|references| sind also eigentlich eine Mischung aus Terminalen und Nicht--Terminalen, da würden wir sie nur als Nicht--Terminale betrachten, der \ac{AST} kein Baum, sondern ein Graph, wäre.
+Sie können als Terminale betrachtet werden, die einen Eintrag in einer nicht--existenten Symbol Table repräsentieren.
+
+Diese spezifische Art von Einträgen bezieht sich auf verschiedene \qq{Stacks}.
+Also zum Beispiel den Call--Stack, den Variable--Stack, etc.
+Effektiv alles, was ein Scope hat.
+
+\verb|references| bieten somit einen einfachen Weg, um komplexe Sprachfeatures, wie Variablen, Methoden und Klassen umzusetzen.
+
+\subparagraph*{}
+Das letzte, wichtige Feature der Struktur als Grammatik ist die Abstraktion.
+Sie ist beispielhaft an der \ac{JSON}--Sprache aus \autoref{fig:ard-player-mps-structure} zu erkennen.
+
+Analog zu Java gibt es abstrakte Konzepte (Klasse) sowie Interfaces.
+Damit wird Mehrfachvererbung umgangen, da jedes Konzept nur einen direkten Parent haben kann, aber beliebig viele Interfaces implementieren kann.
+
+Diese Vererbung, beziehungsweise der daraus hervorgehende Polymorphismus, mach es möglich, dass eine Regel (also \verb|children| oder \verb|references|) auf mehrere Arten aufgelöst werden kann.
+Und diese Auflösungsmöglichkeiten können sogar von anderen Sprachen erweitert werden\footnote{Ist dies nicht gewünscht, kann das erben von einem Konzept mit dem \textit{final} Schlüsselwort unterbunden werden.}.
+
+Außerdem werden \acs{OOP}--Paradigmen eingebracht.
+Da \ac{OOP} eines der bekanntesten Paradigmen von \ac{GPL} sind, macht es die Struktur für viele Entwickler intuitiver als \acp{CFG}.
+
+\paragraph{Editor} beschreibt die Darstellung sowie grundlegende Modifikation des \ac{AST}.
 \lipsum[5]
 
 \paragraph{Actions}

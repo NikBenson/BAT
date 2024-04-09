@@ -302,3 +302,4 @@ out/
 *.mmd.svg
 *.mmd.png
 *.mmd.pdf
+*.mmd.hash

@@ -12,7 +12,7 @@ if not exist "!target_dir!" (
 )
 
 for /f "tokens=*" %%a in ('dir /b /s "!target_dir!\*.mmd"') do (
-  mmdc -i "%%a" -t default -b transparent -e png
+  mmdc -i "%%a" -t default -b transparent -e pdf -f
 )
 
 endlocal
