@@ -61,10 +61,10 @@ Diese werden im folgenden Kapitel behandelt.
     \caption{Phasen der Compiler--Pipeline~\autocite{aho-2006}}
     \label{fig:compiler-phases}
 \end{wrapfigure}
-Was von Entwicklern umgangssprachlich \qq{Compiler} genannt wird, bezeichnet eigentlich die Compiler--Pipeline.
+Was von Entwicklern umgangssprachlich \enquote{Compiler} genannt wird, bezeichnet eigentlich die Compiler--Pipeline.
 Der eigentliche Compiler, oder auch Code Generator, (Siehe \autoref{fig:compiler-phases}) ist ein Tool, welches aus einer abstrakten Representation die Zielsprache, im folgenden Programm genannt, generiert.
 
-Ein Programm ist dabei definiert als eine \qq{Black--Box}, welche eine Eingabe in eine Ausgabe transformiert.
+Ein Programm ist dabei definiert als eine \enquote{Black--Box}, welche eine Eingabe in eine Ausgabe transformiert.
 Damit kann zwischen zwei verschiedenen Aufbauten unterscheiden: Compiler erstellen aus Code ein Programm, welches eine Eingabe in eine Ausgabe transformiert (Siehe \autoref{subfig:compiler-and-interpreter-compiler}) und Interpreter transformieren unter der Verwendung von Code eine Eingabe in eine Ausgabe.~(Siehe \autoref{subfig:compiler-and-interpreter-interpreter})
 
 Effektiv benötigen beide Klassen von Tools die selben Phasen.
@@ -244,8 +244,8 @@ Im Kontext von Parsern werden die Namen der Tokens als Terminale bezeichnet.
 Dies ergibt sich aus der definition der \ac{CFG} als 4--Tupel $G=(V,\Sigma,R,S)$.~\autocite{sipser-1997}
 \begin{itemize}
     \item[$\Sigma$] repräsentiert die Terminale.
-    Terminale sind die \qq{Wörter} der Grammatik.
-    Also die atomaren bausteine eines \qq{Satzes}.
+    Terminale sind die \enquote{Wörter} der Grammatik.
+    Also die atomaren bausteine eines \enquote{Satzes}.
     \item[$V$] sind die Nicht--Terminale.
     Nicht--Terminale können als Variable verstanden werden.
     \item[$R$] sind die Regeln.
@@ -323,7 +323,7 @@ Diese übersetzen mittels einer Template--Sprache von einem \ac{MPS} \ac{AST} in
     \begin{center}
         \includegraphics[width=0.48\textwidth]{../assets/img/diagrams/mps.mmd}
     \end{center}
-    \caption{\acs{MPS} \qq{Compiler--Pipeline}}
+    \caption{\acs{MPS} \enquote{Compiler--Pipeline}}
     \label{fig:mps-compiler-pipeline}
 \end{wrapfigure}
 
@@ -368,8 +368,8 @@ Sie können Dependencies auf andere Models und verwendete Sprachen spezifizieren
 In Models können nun instanzen von \ac{AST} Nodes erstellt werden, die von einer verwendeten Sprache als \textit {rootable} ($S$) markiert wurden.
 Diese können dann wie sonst Dateien geöffnet und damit über den Editor Aspekt bearbeitet werden.
 
-Außerdem können \qq{Dateien} in \qq{Ordner} untergliedert werden.
-Dies nennt sich dann virtuelles Package und ist in wirklichkeit teil des \qq{Dateinamens}.
+Außerdem können \enquote{Dateien} in \enquote{Ordner} untergliedert werden.
+Dies nennt sich dann virtuelles Package und ist in wirklichkeit teil des \enquote{Dateinamens}.
 
 \subsubsection{Aspekte}\label{subsubsec:aspekte}
 Anstelle einer Compiler--Pipeline, wie in \autoref{fig:mps-compiler-pipeline} suggeriert, sind \ac{MPS} Sprachen untergliedert in verschiedene Aspekte.
@@ -429,7 +429,7 @@ Dies tun sie, indem sie einen direkten Verweis auf ein beliebiges Node herstelle
 \verb|references| sind also eigentlich eine Mischung aus Terminalen und Nicht--Terminalen, da würden wir sie nur als Nicht--Terminale betrachten, der \ac{AST} kein Baum, sondern ein Graph, wäre.
 Sie können als Terminale betrachtet werden, die einen Eintrag in einer nicht--existenten Symbol Table repräsentieren.
 
-Diese spezifische Art von Einträgen bezieht sich auf verschiedene \qq{Stacks}.
+Diese spezifische Art von Einträgen bezieht sich auf verschiedene \enquote{Stacks}.
 Also zum Beispiel den Call--Stack, den Variable--Stack, etc.
 Effektiv alles, was ein Scope hat.
 
@@ -449,10 +449,56 @@ Außerdem werden \acs{OOP}--Paradigmen eingebracht.
 Da \ac{OOP} eines der bekanntesten Paradigmen von \ac{GPL} sind, macht es die Struktur für viele Entwickler intuitiver als \acp{CFG}.
 
 \paragraph{Editor} beschreibt die Darstellung sowie grundlegende Modifikation des \ac{AST}.
-\lipsum[5]
+Im Editor--Aspekt, beziehungsweise der zugehörigen Editor--Sprache\footnote{\ac{MPS} folgt dem Grundsatz des \ac{LOP}, deshalb definieren die meisten Aspekte ihre eigenen Sprache.}, gibt es deutlich mehr Konzepte als in der Structure.
 
-\paragraph{Actions}
-\lipsum[5]
+Diese Konzepte untergliedern sich in zwei Arten, \textbf{Editoren} und \textbf{Transformatoren}.
+Editoren zeigen dabei den \ac{AST} strukturiert an\footnote{Properties können in Editoren auch ohne weiteres bearbeitet werden und benötigen keine Transformatoren. Außerdem können Nodes erstellt und zerstört werden.} und Transformatoren beschreiben, wie der \ac{AST} bearbeitet werden kann.
+Beides passiert immer pro Konzept.
+
+Es gibt zwei Arten von Editoren:
+\begin{itemize}
+    \item \textbf{Reflective Editor} ist der Standardeditor.
+    Ist für ein Konzept kein Custom Editor spezifiziert, so wird immer der Reflective Editor verwendet.
+    Die Darstellung ist sehr nah am \ac{AST} gehalten und erlaubt es immer, alles zu editieren.
+    Der Nutzer der Sprache kann sich im Zweifelsfall immer mittels eines Hotkeys den Reflective Editor anzeigen lassen.
+    \item \textbf{Custom Editor}, kurz Editor, ist eine vom Sprachdesigner definierte Ansicht für ein Konzept.
+    Diese ansichten werden dann ineinander geschachtelt, sodass sich eine \enquote{schöne} gesamtansicht ergibt.
+    Im weiteren wird sich nur auf diese Art von Editor bezogen.
+\end{itemize}
+
+\subparagraph{Editor} hat als seine drei wichtigsten Konzepte den \verb|Concept Editor|, also den Editor für ein Konzept; die \verb|Editor Component|, eine wiederverwendbare Teildarstellung eines Konzepts und Stylesheets.
+Die \enquote{Bühne} des Editors untergliedert sich dabei in zwei Bereiche:
+\begin{itemize}
+    \item Der klassische Datei--Editor verhält sich, wie der Texteditor jeder anderen Textbasierten Programmiersprache.
+    \item Der Inspector hingegen, ist ein \ac{UI}--Panel der \ac{IDE}, welches, basierend auf der Cursor--Position, die möglichkeit bietet, meist ein einzelnes Node, mit weiteren Werten und Einstellungen zu bereichern.
+    Ein Beispiel ist die Editor--Sprache selbst.
+    Hier wird das Layout im Datei--Editor beschrieben, aber Stylings unt nutzerinteraktionen der einzelnen Zellen werden im Inspektor festgelegt.
+\end{itemize}
+Kurz gesagt gibt es also einen allgemeinen und einen, optionalen, spezifischen Editor.
+
+Beide dieser Bereiche werden mit der selben Layout--Sprache, der Editor--Sprache, beschrieben.
+Dabei wird die Position der einzelnen \verb|properties|, \verb|children| und \verb|references| festgelegt.
+
+Dies ermöglicht es auch, Tabellen und Diagramme als Editor einzufügen.
+
+\subparagraph{Transformator} ist in erster Linie das \verb|Transformation Menu|--Konzept.
+In erster Linie werden Textbasierte Transformationen beschrieben.
+Das heißt, entweder links oder rechts von einem existierenden Node oder an einer Stelle, an der ein neues Node erwartet wird, wird Text geschrieben.
+Für diesen Text wird dann bei jeder Veränderung eine Methode aufgerufen, welche evaluiert, was passieren soll.
+Ist der Text spezifisch genug, so wird zumeist sofort eine Änderung am \ac{AST} vollzogen.
+Anderenfalls wird meist das Autocomplete--Menü um Optionen angereichert.
+
+Des weiteren kann analog zum Autocomplete--Menü der sogenannte \textbf{Context Assistant} bereichert werden.
+Dieser ist ein eigenes \acs{UI}--Panel in der \ac{IDE}.
+
+\paragraph{Actions} beschreiben, wie Nodes sich verändern.
+\lstinputlisting[label={lst:nodefactories},caption={Node Factories Beispiel},language=mps-nodefactories]{../assets/code/mps/json.nodefactories}
+\verb|Node Factories| sind vor allem für die Transformatoren wichtig.
+In \autoref{lst:nodefactories} wird zum beispiel gezeigt, wie immer, wenn ein \verb|JSONDouble| erstellt wird, er zu \verb|0.0| initialisiert wird.
+Außerdem wird, wenn er einen \verb|JSONInteger| ersetzt, die ganzzahl übernommen.
+Hier werden also neue Nodes initialisiert.
+
+Des weiteren wird das verhalten von Copy und Paste in den \verb|Copy/Paste Handlers| beschrieben.
 
 \paragraph{Intentions}
 \lipsum[5]
@@ -469,17 +515,23 @@ Da \ac{OOP} eines der bekanntesten Paradigmen von \ac{GPL} sind, macht es die St
 \paragraph{Constraints}
 \lipsum[5]
 
+\paragraph{Feedback} beschreibt, wie das verstoßen gegen Constraints angezeigt werden soll.
+Es werden also Fehlermeldungen aus den umgebenen Nodes zusammengetragen.
+
 \paragraph{Typesystem}
 \lipsum[5]
 
-\paragraph{Feedback}
-\lipsum[5]
+\paragraph{DataFlow} beschreibt den Kontrollfluss einer \ac{DSL}.
+Das Ziel dabei ist es, unnötigen Code zu finden.
+Es ist also ein Optimizer.
+Dabei wird vom \ac{AST} zu einer semantischen Darstellung abgebildet, sodass diese analyse weitestgehend automatisiert ablaufen kann.
 
-\paragraph{DataFlow}
-\lipsum[5]
+\paragraph{TextGen} ist \ac{MPS} equivalent zu einem klassischen Compiler.
+Hier werden Nodes in String umgewandelt.
+Hierzu wird für jedes Konzept eine Funktion erstellt.
+Diese Funktion gibt geordnete Strings und Knoten aus, sodass die \verb|children| und \verb|references| zusammen mit dem Knoten selbst dargestellt werden.
 
-\paragraph{TextGen}
-\lipsum[5]
+Root--Nodes müssen zusätzlich einen Namen und Pfad, relativ zum Generationsausgabeverzeichnis, spezifizieren, damit eine Datei erstellt werden kann.
 
 \paragraph{Behavior}
 \lipsum[5]
@@ -493,20 +545,36 @@ Da \ac{OOP} eines der bekanntesten Paradigmen von \ac{GPL} sind, macht es die St
 \paragraph{Migration}
 \lipsum[5]
 
-\paragraph{\ac{VCS}}
-\lipsum[5]
+\paragraph{\ac{VCS}} beschreibt, wie Merge--Konflikte behandelt werden sollen.
+Da \ac{MPS} keine Textdatei als eingabe hat, sondern der \ac{AST} als XML Datei gespeichert wird, sind klassische Tools, wie Git, zwar nicht nutzlos, allerdings kommen sie doch schnell an ihre Grenzen.
+In Diesem Aspekt wird daher beschrieben, wie verschiedene Teilbäume ineinander gemerged werden können.
+Dies bietet den größen Vorteil, dass ungleich bei Textbasierten Programmiersprachen, der Merge mit rücksicht auf die Syntax der Sprache stattfindet.
 
 \subsubsection{Generator}
 \lipsum[5]
 
-\paragraph{GenPlan}
-\lipsum[5]
+\paragraph{GenPlan} beschreibt die Reihenfolge, in der verschiedene Generatoren ausgeführt werden.
+Für die meisten, einfachen Sprachen erstellt \ac{MPS} automatisiert einen GenPlan.
+Bei komplexen \ac{MPS}--Projekten kann ein manuel erstellter GenPlan allerdings schnell notwendig werden.
 
-\paragraph{Debugging}
-\lipsum[5]
+Außerdem ist es mit einem GenPlan möglich, eine Sprache in mehrere Zielsprachen zu kompilieren.
+Es kann zum Beispiel ein GenPlan für \ac{JSON} und einer für \ac{XML} erstellt werden.
 
-\paragraph{Accessory Model}
-\lipsum[5]
+\paragraph{Debugging} des Generators funktioniert am einfachsten über sogenannte Transient Models.
+Diese können auf Kosten der geschwindigkeit beim kompilieren aktiviert werden.
+Anschließend können sich, nach jedem Compilieren, alle Zwischenergebnisse der verschiedenen Compiler angeschaut werden.
+Damit lässt sich meistens der Reducer ausmachen, der für einen Fehler verantwortlich ist.
 
-\paragraph{Runtime Module}
-\lipsum[5]
+\subsubsection{Library Code}
+Es gibt zwei Wege, um Libraries mit einer Sprache zu verknüpfen.
+
+\paragraph{Accessory Model} ist ein Model, welches mit einer Sprache assoziiert wird.
+Es ist also eine Möglichkeit, Nodes, die die Konzepte serialisieren mit der Sprache zu verbinden.
+Dies ermöglicht es dem Nutzer der Sprache, bestimmte Strukturen vorab bereitgestellt zu bekommen.
+Dies ist analog zu den sogenannten Standardbibliotheken der meisten, herkömmlichen \ac{GPL}.
+
+\paragraph{Runtime Module,} oder auch Library genannt, sind Module, die beschreiben, wie eine bestimmte, Nicht--\acs{MPS}--Bibliothek aufgebaut ist.
+Im Sinne der BaseLanguage können so zum Beispiel vorhandene Java Bibliotheken nutzbar gemacht werden.
+
+Im falle von Java können diese mittels eines Scripts automatisiert erstellt werden.
+Für andere Sprachen müssen korrespondierende Nodes manuel erstellt werden.

@@ -1,0 +1,11 @@
+node factories JSONValueFactory
+
+node concept: JSONDouble
+    description: Copy integer value to double
+    set-up     : (newNode, sampleNode, enclosingNode, index, model)->void {
+                   newNode.integer = 0;
+                   newNode.decimal = 0;
+                   ifInstanceOf (sampleNode is JSONInteger original) {
+                     newNode.integer = original.value;
+                   }
+                 }
