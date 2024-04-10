@@ -186,18 +186,18 @@ In \autoref{lst:lex-rule} ist beispielhaft eine solche Regel für einen Ganzzahl
 [0-9]+ { yylval.i = atoi(yytext); return INT; }
 \end{lstlisting}
 \begin{itemize}
-    \item \verb|[0-9]+| legt fest, dass eine beliebig lange Folge von Digits erkannt wird.
+    \item {\ttfamily [0-9]+} legt fest, dass eine beliebig lange Folge von Digits erkannt wird.
     \item In den geschweiften Klammern kann zunächst beliebiger C--Code stehen.
     Dieser ist optional.
     Wird anstelle der Klammern ein Semicolon verwendet, so wird das Match ignoriert.
     Dies wird meistens für Whitespace verwendet.
     \begin{itemize}
-        \item \verb|yylval| ist eine Variable, die einen eintrag in der Symbol Table repräsentiert.
+        \item {\ttfamily yylval} ist eine Variable, die einen eintrag in der Symbol Table repräsentiert.
         Der zugewiesene Wert wird automatisch dem Token zugeordnet, sodass in \ac{YACC} später darauf zugegriffen werden kann.
-        Standardmäßig ist \verb|yylval| ein integer, hier ist es ein Union--Type.
+        Standardmäßig ist {\ttfamily yylval} ein integer, hier ist es ein Union--Type.
         Dies kann in \ac{YACC} eingestellt werden.
-        \item \verb|yytext| ist das \acs{RegEx}--Match als String.
-        \item \verb|INT| ist der zuvor deklarierte Name des Tokens.
+        \item {\ttfamily yytext} ist das \acs{RegEx}--Match als String.
+        \item {\ttfamily INT} ist der zuvor deklarierte Name des Tokens.
     \end{itemize}
 \end{itemize}
 
@@ -208,7 +208,7 @@ Im regelfall werden allerdings höchstens zwei Statements analog zu \autoref{lst
 \paragraph{Auxiliary Functions} sind einfach beliebige C funktionen.
 Diese werden allerdings nicht über einen Header exposed, sondern sind nur zur Verwendung innerhalb des Lex Programms gedacht.
 
-Soll ein Lex Programm ein eigenes \ac{CLI} definieren, so wird hier üblicherweise die \verb|main()| Methode definiert.
+Soll ein Lex Programm ein eigenes \ac{CLI} definieren, so wird hier üblicherweise die {\ttfamily main()} Methode definiert.
 Anderenfalls bleibt dieser Abschnitt zumeist leer, da Funktionen ausgelagert werden.
 In dem Fall werden sie im ersten Abschnitt importiert.
 
@@ -268,17 +268,17 @@ expression: INT { $$ = $1; }
 \end{lstlisting}
 \autoref{lst:yacc-rule} ist dazu ein komplett fiktives Beispiel ohne Zusammenhang.
 
-Es wird das Nicht--Terminal \verb|expression| definiert.
+Es wird das Nicht--Terminal {\ttfamily expression} definiert.
 Dieses lässt sich konstruieren aus den beiden Konstruktionsregeln ($R$):
 \begin{itemize}
-    \item Terminal \verb|INT|
-    \item oder der Abfolge Terminal \verb|INT|, Terminal \verb|PLUS|, Nicht--Terminal \verb|expression|.
+    \item Terminal {\ttfamily INT}
+    \item oder der Abfolge Terminal {\ttfamily INT}, Terminal {\ttfamily PLUS}, Nicht--Terminal {\ttfamily expression}.
 \end{itemize}
 Es ist also rekursiv definiert.
 
 In den geschweiften Klammern kann wieder beliebiger C--Code stehen.
 Allerdings wird hier im Regelfall nur die Symbol Table manipuliert.
-\verb|$$| repräsentiert dabei den Eintrag des gebildeten Nicht--Terminals (hier \verb|expression|) und \verb|$i| den Eintrag des $i$--ten Kinds.
+{\ttfamily \$\$} repräsentiert dabei den Eintrag des gebildeten Nicht--Terminals (hier {\ttfamily expression}) und {\ttfamily \$i} den Eintrag des $i$--ten Kinds.
 
 \paragraph{Auxiliary Functions} sind analog zu Lex auch einfache C--Funktionen.
 
@@ -388,15 +388,15 @@ Konzepte sind dabei weitestgehend analog zu \ac{CFG} aufgebaut.
 
 \subparagraph*{}
 Spezifischer, mehrere Grammatiken, da es mehrere Startsymbole ($S$) geben kann.
-Ein Konzept ist ein Startsymbol, wenn $\verb|instance can be root|=\verb|true|$.
+Ein Konzept ist ein Startsymbol, wenn $\text{\ttfamily instance can be root}=\text{\ttfamily true}$.
 Technisch gesehen arbeitet \ac{MPS} also nicht mit einem einzelnen \ac{AST}, sondern mit einem Wald von \acp{AST}.
 Jedes Root--Node produziert dabei seine eigene Datei\footnote{Es können im Generator allerdings auch noch mehrere Roots kombiniert werden oder neue Roots erzeugt werden. Die Regel ist nur für TextGen auch eine explizite Regel.}.
 
 \subparagraph*{}
-\verb|properties| sind die Terminale ($\Sigma$) der \ac{CFG}.
+{\ttfamily properties} sind die Terminale ($\Sigma$) der \ac{CFG}.
 Sie werden in \ac{MPS} as primitive Typen bezeichnet.
 Sie umfassen allerdings nicht von Haus aus alle primitiven Typen, die Java spezifiziert.
-\ac{MPS} spezifiziert lediglich \verb|boolean|, \verb|integer| und \verb|string|.
+\ac{MPS} spezifiziert lediglich {\ttfamily boolean}, {\ttfamily integer} und {\ttfamily string}.
 Weitere primitive Typen können allerdings manuel spezifiziert werden.
 
 \textbf{Constrained Data Types} funktionieren genau wie Lex, indem sie einen \ac{RegEx} spezifizieren.
@@ -411,29 +411,29 @@ Deshalb wird nur der Name und \ac{RegEx} spezifiziert.
     \caption{ARD.Player MPS Sprache Struktur}
     \label{fig:ard-player-mps-structure}
 \end{figure}
-\verb|children| und \verb|references| sind die Nicht--Terminale ($V$) sowie Produktionsregeln ($R$).
+{\ttfamily children} und {\ttfamily references} sind die Nicht--Terminale ($V$) sowie Produktionsregeln ($R$).
 Sie verweisen jeweils nicht auf primitive Typen, sondern auf andere Konzepte.
 
 Im Klassendiagramm aus \autoref{fig:ard-player-mps-structure} sind vor allem Aggregationen zu erkennen.
-Diese werden durch die \verb|children| beschrieben.
+Diese werden durch die {\ttfamily children} beschrieben.
 Es gibt allerdings auch Associationen.
-Diese sind die \verb|references|.
+Diese sind die {\ttfamily references}.
 
-\textbf{Aggregationen} haben dabei eine Kardinalität von \verb|1| (Required), \verb|0..1| (Optional), \verb|1..n| (Many) oder \verb|0..n| (Many Optional.)
+\textbf{Aggregationen} haben dabei eine Kardinalität von {\ttfamily 1} (Required), {\ttfamily 0..1} (Optional), {\ttfamily 1..n} (Many) oder {\ttfamily 0..n} (Many Optional.)
 Sie sind einfache Kinder im Sinne der Baum Datenstruktur und gehören damit ausschließlich zu diesem Node.
 
-\textbf{Associationen} hingegen haben eine Kardinalität von \verb|1| (Required) oder \verb|0..1| (Optional.)
-In den meisten Fällen ersetzen die \verb|references| die Symbol Table.
+\textbf{Associationen} hingegen haben eine Kardinalität von {\ttfamily 1} (Required) oder {\ttfamily 0..1} (Optional.)
+In den meisten Fällen ersetzen die {\ttfamily references} die Symbol Table.
 Dies tun sie, indem sie einen direkten Verweis auf ein beliebiges Node herstellen.
 
-\verb|references| sind also eigentlich eine Mischung aus Terminalen und Nicht--Terminalen, da würden wir sie nur als Nicht--Terminale betrachten, der \ac{AST} kein Baum, sondern ein Graph, wäre.
+{\ttfamily references} sind also eigentlich eine Mischung aus Terminalen und Nicht--Terminalen, da würden wir sie nur als Nicht--Terminale betrachten, der \ac{AST} kein Baum, sondern ein Graph, wäre.
 Sie können als Terminale betrachtet werden, die einen Eintrag in einer nicht--existenten Symbol Table repräsentieren.
 
 Diese spezifische Art von Einträgen bezieht sich auf verschiedene \enquote{Stacks}.
 Also zum Beispiel den Call--Stack, den Variable--Stack, etc.
 Effektiv alles, was ein Scope hat.
 
-\verb|references| bieten somit einen einfachen Weg, um komplexe Sprachfeatures, wie Variablen, Methoden und Klassen umzusetzen.
+{\ttfamily references} bieten somit einen einfachen Weg, um komplexe Sprachfeatures, wie Variablen, Methoden und Klassen umzusetzen.
 
 \subparagraph*{}
 Das letzte, wichtige Feature der Struktur als Grammatik ist die Abstraktion.
@@ -442,7 +442,7 @@ Sie ist beispielhaft an der \ac{JSON}--Sprache aus \autoref{fig:ard-player-mps-s
 Analog zu Java gibt es abstrakte Konzepte (Klasse) sowie Interfaces.
 Damit wird Mehrfachvererbung umgangen, da jedes Konzept nur einen direkten Parent haben kann, aber beliebig viele Interfaces implementieren kann.
 
-Diese Vererbung, beziehungsweise der daraus hervorgehende Polymorphismus, mach es möglich, dass eine Regel (also \verb|children| oder \verb|references|) auf mehrere Arten aufgelöst werden kann.
+Diese Vererbung, beziehungsweise der daraus hervorgehende Polymorphismus, mach es möglich, dass eine Regel (also {\ttfamily children} oder {\ttfamily references}) auf mehrere Arten aufgelöst werden kann.
 Und diese Auflösungsmöglichkeiten können sogar von anderen Sprachen erweitert werden\footnote{Ist dies nicht gewünscht, kann das erben von einem Konzept mit dem \textit{final} Schlüsselwort unterbunden werden.}.
 
 Außerdem werden \acs{OOP}--Paradigmen eingebracht.
@@ -466,7 +466,7 @@ Es gibt zwei Arten von Editoren:
     Im weiteren wird sich nur auf diese Art von Editor bezogen.
 \end{itemize}
 
-\subparagraph{Editor} hat als seine drei wichtigsten Konzepte den \verb|Concept Editor|, also den Editor für ein Konzept; die \verb|Editor Component|, eine wiederverwendbare Teildarstellung eines Konzepts und Stylesheets.
+\subparagraph{Editor} hat als seine drei wichtigsten Konzepte den {\ttfamily Concept Editor}, also den Editor für ein Konzept; die {\ttfamily Editor Component}, eine wiederverwendbare Teildarstellung eines Konzepts und Stylesheets.
 Die \enquote{Bühne} des Editors untergliedert sich dabei in zwei Bereiche:
 \begin{itemize}
     \item Der klassische Datei--Editor verhält sich, wie der Texteditor jeder anderen Textbasierten Programmiersprache.
@@ -477,11 +477,11 @@ Die \enquote{Bühne} des Editors untergliedert sich dabei in zwei Bereiche:
 Kurz gesagt gibt es also einen allgemeinen und einen, optionalen, spezifischen Editor.
 
 Beide dieser Bereiche werden mit der selben Layout--Sprache, der Editor--Sprache, beschrieben.
-Dabei wird die Position der einzelnen \verb|properties|, \verb|children| und \verb|references| festgelegt.
+Dabei wird die Position der einzelnen {\ttfamily properties}, {\ttfamily children} und {\ttfamily references} festgelegt.
 
 Dies ermöglicht es auch, Tabellen und Diagramme als Editor einzufügen.
 
-\subparagraph{Transformator} ist in erster Linie das \verb|Transformation Menu|--Konzept.
+\subparagraph{Transformator} ist in erster Linie das {\ttfamily Transformation Menu}--Konzept.
 In erster Linie werden Textbasierte Transformationen beschrieben.
 Das heißt, entweder links oder rechts von einem existierenden Node oder an einer Stelle, an der ein neues Node erwartet wird, wird Text geschrieben.
 Für diesen Text wird dann bei jeder Veränderung eine Methode aufgerufen, welche evaluiert, was passieren soll.
@@ -493,35 +493,63 @@ Dieser ist ein eigenes \acs{UI}--Panel in der \ac{IDE}.
 
 \paragraph{Actions} beschreiben, wie Nodes sich verändern.
 \lstinputlisting[label={lst:nodefactories},caption={Node Factories Beispiel},language=mps-nodefactories]{../assets/code/mps/json.nodefactories}
-\verb|Node Factories| sind vor allem für die Transformatoren wichtig.
-In \autoref{lst:nodefactories} wird zum beispiel gezeigt, wie immer, wenn ein \verb|JSONDouble| erstellt wird, er zu \verb|0.0| initialisiert wird.
-Außerdem wird, wenn er einen \verb|JSONInteger| ersetzt, die ganzzahl übernommen.
+{\ttfamily Node Factories} sind vor allem für die Transformatoren wichtig.
+In \autoref{lst:nodefactories} wird zum beispiel gezeigt, wie immer, wenn ein {\ttfamily JSONDouble} erstellt wird, er zu {\ttfamily 0.0} initialisiert wird.
+Außerdem wird, wenn er einen {\ttfamily JSONInteger} ersetzt, die ganzzahl übernommen.
 Hier werden also neue Nodes initialisiert.
 
-Des weiteren wird das verhalten von Copy und Paste in den \verb|Copy/Paste Handlers| beschrieben.
+Des weiteren wird das verhalten von Copy und Paste in den {\ttfamily Copy/Paste Handlers} beschrieben.
 
-\paragraph{Intentions}
-\lipsum[5]
+\paragraph{Intentions} ermöglichen es, das Context--Menü zu befüllen.
 
-\paragraph{Refactorings}
-\lipsum[5]
+Zusammen mit den Autocomplete--Menü ist das Context--Menü einer der ersten beiden Hotkeys, die in jedem IntelliJ Tutorial gezeigt werden.
+Hier erscheinen Vorschläge, basierend auf der Cursorposition.
 
-\paragraph{FindUsages}
-\lipsum[5]
+Häufig sind dies sogenannte Error--Intentions, die beschreiben, wie ein semantischer Fehler, oder auch Linter--Fehler, behoben werden kann.
+Es können aber auch weitere Optionen, wie zum Beispiel das automatische vereinfachen von Ausdrücken oder Entfernen von ungenutztem Code, angeboten werden.
 
-\paragraph{Scripts}
-\lipsum[5]
+Klassisch sind dabei auch sogenannte Surround--With--Intentions.
+Diese umgeben ein Node mit einem neuen Node.
+Ein Bekanntes Beispiel ist \enquote{Sourround with Try--Catch} aus der Java--Entwicklung in IntelliJ\@.
 
-\paragraph{Constraints}
-\lipsum[5]
+\paragraph{Plugin} ermöglichen es, der \ac{IDE} beliebige Funktionalitäten hinzuzufügen.
+Es kann jedes Menü bearbeitet werden, \ac{UI}--Panels hinzugefügt werden, Progress--Indikatoren angezeigt werden, etc.
+
+\paragraph{Refactorings} spezialisieren sich auf eine bestimmte Art von \ac{IDE} feature.
+Dabei müssen sie von einem Plugin aufgerufen werden.
+
+Refactorings beschreiben dabei komplexe Codeanpassungen.
+Ein Beispiel wäre das \enquote{Umbenennen} Feature bei textbasierten Sprachen.
+
+\paragraph{FindUsages} erleichtern die Navigation durch den Code.
+Sie sorgen dafür, dass {\ttfamily references} in beide Richtungen aufgelöst werden können.
+
+\paragraph{Scripts} lassen sich über die Menüleiste aufrufen.
+Scripts sind dafür gedacht, Änderung an einer großen Menge an Nodes vorzunehmen.
+
+Sie sind der Vorläufer von Migrationen und führen effektiv eine, nicht an die Versionsnummer gebundene, Migration aus.
+
+\paragraph{Constraints} sind \ac{MPS} equivalent zu Semantic Analyzern.
+Constraints prüfen, nach jeder Transformation, ob der \ac{AST} noch korrekt ist.
+
+In der einfachsten Form werden die Methoden {\ttfamily can be parent}, {\ttfamily can be child} oder {\ttfamily can be ancestor} implementiert.
+Es können aber auch Constraints für {\ttfamily properties} oder {\ttfamily references}, einschließlich getter und setter, definiert werden.
+
+Einer der wichtigsten Funktionen von Constraints ist es auch, \textbf{Scopes} für {\ttfamily references} zu definieren.
+Es kann also eingeschränkt werden, welche Nodes eines Konzepts in eine Referenz passen.
+Dies ist zum Beispiel bei Methoden und Variablen wichtig.
+
+Häufig wierd diese Funktion über einen sogenannten {\ttfamily ScopeProvider} an das Behaviour übertragen.
+So wird ein Bubbling erzielt, bei dem die Scopes definieren, was erreichbar sit, und nicht die Referenz im umliegenden \ac{AST} suchen muss.
 
 \paragraph{Feedback} beschreibt, wie das verstoßen gegen Constraints angezeigt werden soll.
 Es werden also Fehlermeldungen aus den umgebenen Nodes zusammengetragen.
 
-\paragraph{Typesystem}
-\lipsum[5]
+\paragraph{Typesystem} kann genutzt werden, um Sprachen ein Typsystem zu geben.
+Dabei wird beschrieben, was eine serialising von was ist, und wer Sub-- beziehungsweise Supertyp von wem ist.
+Dies kann dann in den anderen Aspekten, zum beispiel den Constraints, abgefragt werden.
 
-\paragraph{DataFlow} beschreibt den Kontrollfluss einer \ac{DSL}.
+\paragraph{DataFlow} beschreibt den Kontrollfluss.
 Das Ziel dabei ist es, unnötigen Code zu finden.
 Es ist also ein Optimizer.
 Dabei wird vom \ac{AST} zu einer semantischen Darstellung abgebildet, sodass diese analyse weitestgehend automatisiert ablaufen kann.
@@ -529,29 +557,88 @@ Dabei wird vom \ac{AST} zu einer semantischen Darstellung abgebildet, sodass die
 \paragraph{TextGen} ist \ac{MPS} equivalent zu einem klassischen Compiler.
 Hier werden Nodes in String umgewandelt.
 Hierzu wird für jedes Konzept eine Funktion erstellt.
-Diese Funktion gibt geordnete Strings und Knoten aus, sodass die \verb|children| und \verb|references| zusammen mit dem Knoten selbst dargestellt werden.
+Diese Funktion gibt geordnete Strings und Knoten aus, sodass die {\ttfamily children} und {\ttfamily references} zusammen mit dem Knoten selbst dargestellt werden.
 
 Root--Nodes müssen zusätzlich einen Namen und Pfad, relativ zum Generationsausgabeverzeichnis, spezifizieren, damit eine Datei erstellt werden kann.
 
-\paragraph{Behavior}
-\lipsum[5]
+\paragraph{Behavior} beschreibt eine Art Companion--Class zu einem Konzept.
+Hier können beliebige Methoden und Felde angelegt werden.
+Dies dient dem Zweck, dass die anderen Aspekte diese nutzen können.
+Statische Methoden können entsprechend auf dem Konzept und nicht statische Methoden auf dem Node aufgerufen werden.
 
-\paragraph{Plugin}
-\lipsum[5]
+Das Behaviour respektiert dabei die Vererbung des Konzepts.
+Es können also abstrakte Methoden erstellt werden, welche von erbenden Konzepten implementiert werden müssen.
+Dies fördert die möglichkeiten der Emergenz in \ac{MPS}, da es das erweitern von \acp{AST} deutlich erleichtert.
 
-\paragraph{Test}
-\lipsum[5]
+\paragraph{Test} ermöglicht das schreiben von Unit--Tests.
+Dazu kann entweder der Test--Aspekt genutzt werden oder ein Test--Model erstellt werden.
 
-\paragraph{Migration}
-\lipsum[5]
+In beiden Fällen wird die {\ttfamily jetbrains.mps.lang.test} Sprache genutzt.
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|c|p{\textwidth-5cm}|}
+        \hline
+        \textbf{Test--Konzept}    & \textbf{getestete Konzepte}                                       \\
+        \hline
+        \hline
+        {\ttfamily EditorTestCases}    & Intentions, Actions, Side-transforms, Editor, ActionMaps, KeyMaps \\
+        \hline
+        {\ttfamily NodesTestCases}     & Constraints, Scopes, Type-system, Dataflow                        \\
+        \hline
+        {\ttfamily GeneratorTests}     & Generator, TextGen                                                \\
+        \hline
+        {\ttfamily MigrationTestCases} & Migrations                                                        \\
+        \hline
+    \end{tabular}
+    \caption{Zuordnung der Aspekte zu Arten von Tests~\autocite{jetbrains-sro-no-dateE}}
+    \label{tab:testcases}
+\end{table}
+Mittels der in \autoref{tab:testcases} dargestellten Arten von Tests lassen sich dabei die meisten Konzepte testen.
+
+\paragraph{Migration} beschreiben, wie sich die Sprache zwischen zwei Versionen verändert hat.
+Häufig können schon kleinere Änderungen an der Structure einer vorhandenen Sprache die Solutions unbrauchbar machen.
+Deshalb müssen Migrationen geschrieben werden.
+Dies kann allerdings auch dabei helfen, Deprecation von Sprachfeatures zu umgehen.
 
 \paragraph{\ac{VCS}} beschreibt, wie Merge--Konflikte behandelt werden sollen.
 Da \ac{MPS} keine Textdatei als eingabe hat, sondern der \ac{AST} als XML Datei gespeichert wird, sind klassische Tools, wie Git, zwar nicht nutzlos, allerdings kommen sie doch schnell an ihre Grenzen.
 In Diesem Aspekt wird daher beschrieben, wie verschiedene Teilbäume ineinander gemerged werden können.
 Dies bietet den größen Vorteil, dass ungleich bei Textbasierten Programmiersprachen, der Merge mit rücksicht auf die Syntax der Sprache stattfindet.
 
+\paragraph*{}
+Neben diesen, von \ac{MPS} definierten Aspekten können auch eigene Aspekte erstellt werden.
+Darauf soll hier aber nicht weiter eingegangen werden.
+
 \subsubsection{Generator}
-\lipsum[5]
+Zuvor wurde bereits erwähnt, dass die wenigsten Sprachen in \ac{MPS} einen TextGen--Aspekt haben.
+Im regelfall bricht der Generator den \ac{AST} soweit herunter, sodass, durch Kaskadierung mehrerer Sprachen (bzw.\ deren Generatoren,) ein \ac{AST} herauskommt, in dem jedes Node einen TextGen--Aspekt hat.
+
+Technisch gesehen ist der Generator dabei kein Aspekt, sondern ein eigenes Modul.
+Er wird allerdings in der \ac{MPS} \ac{IDE} im Regelfall als socher dargestellt.
+Dies birgt den Vorteil, dass eine Sprache mehrere Generatoren haben kann und damit eine Sprache mehrere Zielsprachen haben kann.
+
+Als Einstiegspunk für jeden Generator dient die {\ttfamily Mapping Configuration}.
+Hier werden vor allem die einzelnen Konzepte des Generators registriert.
+
+Das wohl wichtigste sind dabei {\ttfamily reduction rules}, {\ttfamily root mapping rules} sowie {\ttfamily reduce references}.
+Sie machen alle drei dasselbe, für Konzepte im allgemeinen, für Roots sowie für {\ttfamily references}: Ein Node wird mittels der sogenannten Templating--Sprache in einen anderen (Teil--) Baum umgebaut.
+
+Die Templating--Sprache funktioniert durch Attributes, auch Annotationen genannt.
+Diese erlauben es, eine Sprache zu erweitern, ohne etwas über den \ac{AST} der sprache zu wissen.
+Deshalb muss auch in der Templating sprache zunächst lediglich ein programm in der Zielsprache geschrieben werden.
+Anschließend werden die bereiche mit Annotationen versehen, die ausgetauscht werden sollen.
+In der Templating--Sprache heißen diese Annotationen Macros.
+
+Es gibt Node--, Property-- und Reference--Macros.
+Der einfachste und wichtigste Fall ist dabei das Mapping.
+Hier wird ein Kind des Nodes positioniert und wieder über die Regeln der {\ttfamily Mapping Configuration} reduziert.
+Es können aber auch neue Nodes erstellt werden oder andere Templates eingebunden werden.
+
+Bei {\ttfamily references} kommen dabei die sogenannten {\ttfamily mapping labls} zum Einsatz.
+Diese werden in der {\ttfamily Mapping Configuration} spezifiziert und markieren eine Stelle, an der etwas referenzierbares erstellt wird.
+Damit können Referenzen der Zielsprache an anderen Stellen gefunden werden.
+
+Weitere Features de {\ttfamily Mapping Configuration} beinhalten pre-- und post--processing Scripts sowie das ignorieren bestimmter (Teil--) Bäume.
 
 \paragraph{GenPlan} beschreibt die Reihenfolge, in der verschiedene Generatoren ausgeführt werden.
 Für die meisten, einfachen Sprachen erstellt \ac{MPS} automatisiert einen GenPlan.
