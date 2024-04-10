@@ -1,10 +1,23 @@
-\lipsum[5]
+Die unterschiede der \ac{POSIX} Lösung, sowie der \ac{MPS} Lösung zum Compilerbau werden in diesem Kapitel strukturiert verglichen.
+Dazu wird ein Beispiel verwendet, welches in beiden Frameworks umgesetzt wurde.
 
 \subsection{Anforderungen}\label{subsec:anforderungen2}
-\lipsum[5]
+Das Beispiel basiert auf der Konfiguration des Media--Players der \ac{ARD}.
+Dieser bekommt als ein Datenmodell die sogenannte {\ttfamily PlayerConfig}.
+Die Funktion dieser Konfigurationsdatei ist für diese Arbeit irrelevant.
+Wichtig ist nur, dass es sich dabei um ein \ac{JSON} Datenmodell handelt.
+
+Das Problem an \ac{JSON} ist, dass es nicht Typsicher ist.
+Daher soll eine Sprache definiert werden, die nur valide {\ttfamily PlayerConfig}s akzeptiert.
+
+Zwecks dieses Beispiels wurde diese Anforderung noch etwas weiter reduziert.
+Wie in \autoref{fig:ard-player-mps-structure} zu er kennen ist, unterstützt die \ac{MPS} implementierung die volle {\ttfamily PlayerConfig}\footnote{In der Flutter--Implementierung, Version 6.4.0}.
+Allerdings wird im folgenden nur betrachtet, wie drei Wertezuweisungen, zwei Wahrheitswerte und eine Fließkommazahl, zu drei spezifischen Schlüsseln, betrachtet werden.
+Diese sollen in der Sprache abstrakt als Fragen erkennbar sein, und zu einer \ac{JSON}--Datei kompiliert werden.
+Diese Datei beinhaltet das Objekt mit drei Einträgen, die jeweils die \ac{ID} der Frage als Schlüssel haben, und die Antwort als Wert.
 
 \subsection{Vergleich der Transformationsschritte}\label{subsec:vergleich-der-transformationsschritte}
-\begin{figure}
+\begin{figure}[H]
     \begin{framed}
         \lstinputlisting[label={lst:c-input},language=txt,nolol,numbers=none,backgroundcolor={}]{../assets/code/c/input.txt}
     \end{framed}
@@ -32,23 +45,10 @@
     \caption{Schritte des Compilierens der PlayerConfig Sprache mit Lex \& \acs{YACC}}
     \label{fig:ard-player-c-stages}
 \end{figure}
-\lipsum[5]
-\begin{figure}
-    \begin{framed}
-        \lstinputlisting[label={lst:mps-editor},language=PlayerConfig,nolol,numbers=none,backgroundcolor={}]{../assets/code/mps/input.pc}
-    \end{framed}
-    \begin{tikzpicture}
-        \path[draw=none] (0,0) -- (\textwidth,0);
-        \draw[->] (0.5\textwidth,0) -- (0.5\textwidth,1) node[midway,above,right] {Editor};
-    \end{tikzpicture}
-    \begin{framed}
-        \includegraphics[width=\textwidth]{../assets/img/diagrams/ard_player_mps_ast_1.mmd}
-    \end{framed}
-    \caption{Darstellung der PlayerConfig Sprache mit \acs{MPS}}
-    \label{fig:ard-player-mps-stages-frontend}
-\end{figure}
-\lipsum[5]
-\begin{figure}
+In der \ac{POSIX} Implementierung sind, wie in \autoref{fig:ard-player-c-stages} zu erkennen ist, drei Transformationen notwendig.
+Bei diesem Beispiel konnten auf grund mangelnder Komplexität einige Phasen aus der Compiler--Pipeline aus \autoref{fig:compiler-phases} weggelassen werden.
+
+\begin{figure}[H]
     \begin{framed}
         \includegraphics[width=\textwidth]{../assets/img/diagrams/ard_player_mps_ast_1.mmd}
     \end{framed}
@@ -69,13 +69,94 @@
     \caption{Schritte des Compilierens der PlayerConfig Sprache mit \acs{MPS}}
     \label{fig:ard-player-mps-stages-backend}
 \end{figure}
-\lipsum[5]
+Die \ac{MPS} Implementierung hat sogar noch eine Phase weniger.
+Hier sind es, wie in \autoref{fig:ard-player-mps-stages-backend} zu erkennen ist, nur zwei Phasen.
+
+\begin{figure}[H]
+    \begin{framed}
+        \lstinputlisting[label={lst:mps-editor},language=PlayerConfig,nolol,numbers=none,backgroundcolor={}]{../assets/code/mps/input.pc}
+    \end{framed}
+    \begin{tikzpicture}
+        \path[draw=none] (0,0) -- (\textwidth,0);
+        \draw[->] (0.5\textwidth,0) -- (0.5\textwidth,1) node[midway,above,right] {Editor};
+    \end{tikzpicture}
+    \begin{framed}
+        \includegraphics[width=\textwidth]{../assets/img/diagrams/ard_player_mps_ast_1.mmd}
+    \end{framed}
+    \caption{Darstellung der PlayerConfig Sprache mit \acs{MPS}}
+    \label{fig:ard-player-mps-stages-frontend}
+\end{figure}
+Allerdings ist es dabei wichtig zu beachten, dass dazu noch die Darstellung mittels des Editors (siehe \autoref{fig:ard-player-mps-stages-frontend}) kommt.
+
+Der große Unterschied kommt in der Komplexität der Transformationen zustande.
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|p{0.3\textwidth}|p{0.3\textwidth}|p{0.3\textwidth}|}
+        \hline
+        Bezeichnung                               & \ac{POSIX}                     & \ac{MPS}           \\
+        \hline
+        \hline
+        Wandlung Mensch-- / Computer--Darstellung & Lex, \ac{YACC}                 & Editor             \\
+        \hline
+        Compiler                                  & Selbstgeschriebener C Compiler & Generator, TextGen \\
+        \hline
+    \end{tabular}
+    \caption{Zuordnung der \acs{POSIX}--Phasen zu den \acs{MPS}--Phasen}
+    \label{tab:zuordnung-phasen-posix-mps}
+\end{table}
+Bei der Wandlung Mensch-- / Computer--Darstellung (siehe \autoref{tab:zuordnung-phasen-posix-mps}) muss beim \ac{POSIX} Compiler eine Grammatik definiert werden sowie die Tokens über \acp{RegEx} separiert werden.
+Dies kann schnell eine komplexe Aufgabe werden und will gelernt sein.
+Der Editor in \ac{MPS} hingegen, erlaubt es, in einer einfachen Layout--Sprache, Zellen zu positionieren.
+
+Beim Compiler ist der Vergleich hingegen differenzierter zu betrachten.
+Bei diesem weniger komplexen Beispiel war der selbstgeschriebene C Compiler noch bedeutend schneller in der Umsetzung.
+Allerdings bietet \ac{MPS} mit der separaten \ac{JSON} Sprache \ac{SoC}.
 
 \subsection{Vergleich der Code--Generatoren}\label{subsec:vergleich-der-code--generatoren}
-\lipsum[5]
+Der \ac{POSIX} Compiler ist komplett in C geschrieben.
+Hier gibt es sehr wenige Funktionen, ohne Libraries einzubinden.
+Beim Compiler selbst werden auch wenige, externe Funktionen benötigt.\ (Siehe \autoref{lst:compiler}.)
+Allerdings ist im Beispiel der gesamte \ac{AST} selbstgebaut.
+Für größere Projekte wird es hier mit sicherheit Libraries geben, die das erstellen eines \ac{AST} erleichtern, allerdings ist dies ein Overhead, der hier nicht von Nöten ist.
+
+Der \ac{MPS} Compiler hingegen ist in zwei Sprachen untergliedert.
+Die \ac{JSON} Sprache ist aufgrund der geringen Komplexität von \ac{JSON} leicht zu erstellen.
+Mit der Aufteilung der Generation auf die einzelnen Aspekte und dem daraus resultierenden \ac{SoC} ist der TextGen der \ac{JSON}--Sprache leicht verständlich.
+Aber auch die Transpilation mit der Template--Sprache gestaltet sich sehr einfach, vor allem da die Blätter des {\ttfamily PlayerConfig} \ac{AST} bereits Teil der \ac{JSON}--Sprache sind.\ (Siehe \autoref{fig:ard-player-mps-stages-backend}.)
 
 \subsection{Vor-- und Nachteile der klassischen Tools}\label{subsec:vor---und-nachteile-der-klassischen-tools}
-\lipsum[5]
+Vorteile der \ac{POSIX}--Lösung sind, dass Textdateien als eingabe dienen.
+Das ist, was Entwickler gewohnt sind und interagiert am besten mit den meisten anderen Tools auf dem Markt.
+Nennenswert wären hier \ac{CLI} Application, vor allem für \acs{CI}/\acs{CD} zwecke.
+
+Auch die Bearbeitungsmöglichkeiten sind umfangreicher.
+Der Entwickler ist nicht an IntelliJ gebunden.
+
+\paragraph*{}
+Allerdings ist der Compilerbau mit \ac{POSIX} Technologien sehr nah an der Mathematik.
+Es muss zunächst ein grundlegendes Verständnis von Grammatiken bestehen.
+Es basiert wenig auf klassischen Paradigmen der Softwareentwicklung und ist daher schwer zu lernen.
+
+Außerdem ist der \ac{IDE}--Support suboptimal.
+Für IntelliJ gibt es zurzeit keinen Lex Plugin.
 
 \subsection{Vor-- und Nachteile von \acs{MPS}}\label{subsec:vor---und-nachteile-von-mps}
-\lipsum[5]
+Vorteile von \ac{MPS} sind zunächst, dass der Editor den Nutzer einschränkt, sodass er nur valide Eingaben tätigen kann.
+Der Nutzer muss nicht in der Dokumentation nachschlagen oder es ausprobieren, bis es funktioniert, um eine valide eingabe zu erzeugen.
+Der Nutzer muss seine \ac{IDE} also seltener verlassen.
+
+Außerdem richtet sich \ac{MPS} stark nach den bekannten Programmierparadigmen aus der Softwareentwicklung, vor allem \ac{OOP}.
+Dies macht komplexe Sprachen deutlich übersichtlicher und leichter zu handhaben.
+Des weiteren ist \ac{MPS} dadurch leichter, für Softwareentwickler zu lernen.
+
+Auch \ac{SoC} ist deutlich präsenter in \ac{MPS}.
+
+Zuletzt lässt sich erwähnen, dass nicht nur eine Sprache, sondern auch alle \ac{IDE} features mit \ac{MPS} entwickelt werden.
+Die Möglichkeiten des Editors sind also deutlich weitreichender, was der Sprache viel mehr möglichkeiten gibt.
+Auch wenn diese Features alle viel Entwicklungszeit in Anspruch nehmen können, so sind sie doch alle optional, was dies zu einem großen Vorteil macht.
+
+\paragraph*{}
+Nachteile beinhalten zum einen die eingeschränkte Interaktion mit Text, aber auch die einschränkung auf die IntelliJ \ac{IDE}.
+
+Des weiteren ist \ac{MPS}, obwohl es bereits seit 2016 öffentlich ist, nicht weit verbreitet.
+Entsprechend wenige Ressourcen gibt es online.

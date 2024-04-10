@@ -408,7 +408,7 @@ Deshalb wird nur der Name und \ac{RegEx} spezifiziert.
 \subparagraph*{}
 \begin{figure}
     \includegraphics[width=\textwidth]{../assets/img/diagrams/ard_player_mps_structure.mmd}
-    \caption{ARD.Player MPS Sprache Struktur}
+    \caption{\acs{ARD}.Player MPS Sprache Struktur}
     \label{fig:ard-player-mps-structure}
 \end{figure}
 {\ttfamily children} und {\ttfamily references} sind die Nicht--Terminale ($V$) sowie Produktionsregeln ($R$).
@@ -630,6 +630,8 @@ Anschließend werden die bereiche mit Annotationen versehen, die ausgetauscht we
 In der Templating--Sprache heißen diese Annotationen Macros.
 
 Es gibt Node--, Property-- und Reference--Macros.
+Sie werden als Annotationen in die Sprache integriert und anschließend über den Inspektor konfiguriert.
+
 Der einfachste und wichtigste Fall ist dabei das Mapping.
 Hier wird ein Kind des Nodes positioniert und wieder über die Regeln der {\ttfamily Mapping Configuration} reduziert.
 Es können aber auch neue Nodes erstellt werden oder andere Templates eingebunden werden.
