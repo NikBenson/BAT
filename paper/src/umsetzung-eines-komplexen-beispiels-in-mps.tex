@@ -21,31 +21,31 @@ Die \ac{DSL}, beziehungsweise die beiden \acp{DSL}, sollen für Designer ausgele
     \caption{Ablauf Designanpassungen}
     \label{fig:ablauf-designanpassungen}
 \end{figure}
-Das Ziel dieses Beispiels soll es sein, den Kommunikationsoverhead beim Erstellen von Themes zu eliminieren.
+Das Ziel dieses Beispiels soll es sein, den Kommunikations--Overhead beim Erstellen von Themes zu eliminieren.
 
 Dazu wird zunächst der aktuelle Ablauf aus dem Team App des \ac{SWR} aus \autoref{subfig:ablauf-designanpassungen-alt} betrachtet.
 Hier gibt es viele Indirektionen, die zum einen Zeitaufwändig sind, aber auch Fehler verursachen können.
 
 Bedeutend effektiver wäre der Ablauf aus \autoref{subfig:ablauf-designanpassungen-neu}.
-Hier bearbeitet ausschließlich die Authorität (Designer) über das Feature (Aussehen) auch dieses Feature.
+Hier bearbeitet ausschließlich die Autorität (Designer) über das Feature (Aussehen) auch dieses Feature.
 Alle anderen Schritte sind automatisiert.
 
 Der große Vorteil dabei ist, dass eine \ac{SSOT} sichergestellt wird.
 Es handelt sich also um eine Optimierung der Informationsarchitektur.
 
-Unter beachtung der zur verfügung stehenden Zeit musste allerdings auf ein paar Aspekte verzichtet werden.
+Unter Beachtung der zur Verfügung stehenden Zeit musste allerdings auf ein paar Aspekte verzichtet werden.
 Zunächst wird kein Figma Projekt generiert werden.
-Dies wäre zunächst zu komplex, da eine Generation von Figmas\footnote{Figma istv ein Tool zum erstellen von Designs und Prototypen~\autocite{figma-inc-no-date}} eigenem Dateiformat erstellt werden müsste.
-Des weiteren wird als Zielsprache zunächst ausschließlich Java implementiert.
-Um die Sprachen im Team App effektiv einsetzen zu können müsste eine Generation zu Dart und optimalerweise parallel zu Kotlin sowie Swift stadtfinden.
+Dies wäre zunächst zu komplex, da eine Generation von Figmas\footnote{Figma ist ein Tool zum Erstellen von Designs und Prototypen~\autocite{figma-inc-no-date}} eigenem Dateiformat erstellt werden müsste.
+Des Weiteren wird als Zielsprache zunächst ausschließlich Java implementiert.
+Um die Sprachen im Team App effektiv einsetzen zu können, müsste eine Generation zu Dart und optimalerweise parallel zu Kotlin sowie Swift stattfinden.
 Hierzu wäre es allerdings zunächst nötig, diese Sprachen mit einem TextGen Aspekt abzubilden.
-Da die BaseLanguage Java bereits abbildet zeigt die Umsetzung in Java, was zukünftig möglich ist.
+Da die BaseLanguage Java bereits abbildet, zeigt die Umsetzung in Java, was zukünftig möglich ist.
 
 \paragraph*{}
 Die erste der beiden Sprachen soll es ermöglichen, Designsysteme zu erstellen.
 Diese werden dann in Java als ein Datenmodell abgelegt.
 In dieser Sprache könnten die Entwickler ein Framework für die Designer festlegen.
-Des weiteren soll in Zukunft zum Beispiel das Material Theme von Flutter~\autocite{google-ireland-limited-no-date} bereits als Runtime Environment bestehen, sodass Systeme bestehender Frameworks genutzt werden können.
+Des Weiteren soll in Zukunft zum Beispiel das Material Theme von Flutter~\autocite{google-ireland-limited-no-date} bereits als Runtime Environment bestehen, sodass Systeme bestehender Frameworks genutzt werden können.
 
 \paragraph*{}
 Die zweite der beiden Sprachen soll es nun erlauben, diese Designsysteme mit Werten zu befüllen.
@@ -67,27 +67,27 @@ Letztere sind direkt in der Sprache als Konzept definiert.
 Es sind die grundlegenden Designelemente, wie Farben, Abstände oder Strings.
 
 Des Weiteren können {\ttfamily properties} über das {\ttfamily by} Schlüsselwort parametrisiert werden.
-Dies ist hilfreich, wenn dinge an Zustände geknüpft sind.
+Dies ist hilfreich, wenn Dinge an Zustände geknüpft sind.
 Ein einfaches Beispiel sind Buttons.
 
-\subsubsection{App Theme --- CounterAppTheme}
-Das App Theme konsumiert nun ein (oder mehrere) Designsysteme.
+\subsubsection{App--Theme --- CounterAppTheme}
+Das App--Theme konsumiert nun ein (oder mehrere) Designsysteme.
 
 Im Regelfall verwenden Designer in Themes nicht direkt statische Werte.
 Analog zu Figma~\autocite{figma-inc-no-date} implementiert die App Theme Sprache sogenannte primitive Tokens.
 \lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily Primitive Tokens} Konzepts anhand von hellen Farben},label={lst:sprachdesign-light-color-tokens}]{../assets/code/design_system/app/example/counter/LightColorTokens.primitivetokens}
 \lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily Primitive Tokens} Konzepts anhand von dunklen Farben},label={lst:sprachdesign-dark-color-tokenn}]{../assets/code/design_system/app/example/counter/DarkColorTokens.primitivetokens}
 Diese sind konstante Werte, welche anschließend in Themes ihrer Funktion zugeordnet werden.
-Dies stellt sicher, dass es eine \ac{SSOT} gibt und werte in der App einheitlich sind.
+Dies stellt sicher, dass es eine \ac{SSOT} gibt und Werte in der App einheitlich sind.
 
-In dieser Sprache können Themes in abhängigkeit von Parametern definiert werden.
+In dieser Sprache können Themes in Abhängigkeit von Parametern definiert werden.
 Das klassischste Beispiel hierzu wäre ein Light-- und ein Dark--Theme in Abhängigkeit zu der in \autoref{lst:sprachdesign-enum} spezifizierten Aufzählung.
 \lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily abstract Primitive Tokens} Konzepts anhand von Farben},label={lst:sprachdesign-color-tokens}]{../assets/code/design_system/app/example/counter/ColorTokens.primitivetokens}
 In Anbetracht darauf können bereits die primitiven Tokens eine Vererbungshierarchie erzeugen.
 Dabei werden in der abstrakten Klasse alle Tokens deklariert, aber nur die Themeunabhängigen definiert.
 Die konkreten Klassen definieren anschließend die fehlenden Werte.
 \lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily Primitive Tokens Resolver} Konzepts anhand von Farben},label={lst:sprachdesign-all-color-tokens}]{../assets/code/design_system/app/example/counter/AllColorTokens.primitivetokens}
-Anschließend kann spezifiziert werden, wann welche implementierung verwendet wird.
+Anschließend kann spezifiziert werden, wann welche Implementierung verwendet wird.
 \lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily Primitive Tokens} Konzepts anhand von Textstyles},label={lst:sprachdesign-font-tokens}]{../assets/code/design_system/app/example/counter/FontTokens.primitivetokens}
 Die primitiven Tokens sind gruppiert nach ihren Typen.
 Die Typen können erneut primitiver Natur sein, oder auf einer Referenz basieren.
@@ -101,7 +101,7 @@ Die Kontrollflussanweisungen beziehen sich dabei immer auf die Parameter des The
 
 \subsection{Umsetzung}\label{subsec:umsetzung}
 Beide Sprachen benötigen nicht alle Aspekte von \ac{MPS}.
-Neben der Structure werden noch Editor, Actions, Constraints, Behaviour, Typesystem und Intentions verwendet.
+Neben der Struktur werden noch Editor, Actions, Constraints, Behaviour, Typesystem und Intentions verwendet.
 
 \subsection{Herausforderungen und Probleme}\label{subsec:herausforderungen-und-probleme}
 \lipsum[5]
