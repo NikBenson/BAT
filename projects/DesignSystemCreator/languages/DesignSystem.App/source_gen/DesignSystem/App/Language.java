@@ -16,6 +16,8 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import DesignSystem.App.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.openapi.intentions.IntentionAspectDescriptor;
 import DesignSystem.App.intentions.IntentionsDescriptor;
+import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
+import DesignSystem.App.typesystem.TypesystemDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import DesignSystem.App.structure.ConceptPresentationAspectImpl;
@@ -64,6 +66,9 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == IntentionAspectDescriptor.class) {
       return aspectClass.cast(new IntentionsDescriptor());
+    }
+    if (aspectClass == IHelginsDescriptor.class) {
+      return aspectClass.cast(new TypesystemDescriptor());
     }
     if (aspectClass == StructureAspectDescriptor.class) {
       return aspectClass.cast(new DesignSystem.App.structure.StructureAspectDescriptor());

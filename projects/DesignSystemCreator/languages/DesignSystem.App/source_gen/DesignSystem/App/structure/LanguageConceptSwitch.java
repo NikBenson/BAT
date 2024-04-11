@@ -12,30 +12,46 @@ public final class LanguageConceptSwitch {
   public static final int AbstractDesignSystemPrimitiveTokenConcept = 0;
   public static final int AbstractDesignSystemPrimitiveTokensConcept = 1;
   public static final int AbstractDesignSystemPrimitiveTokensConceptReference = 2;
-  public static final int DesignSystemAppConcept = 3;
-  public static final int DesignSystemAppFileConcept = 4;
-  public static final int DesignSystemExpressionConcept = 5;
-  public static final int DesignSystemPrimitiveTokenConcept = 6;
-  public static final int DesignSystemPrimitiveTokensConcept = 7;
-  public static final int DesignSystemPrimitiveTokensFileConcept = 8;
-  public static final int DesignSystemPrimitiveTokensSetConcept = 9;
-  public static final int DesignSystemPrimitiveTokensSetFileConcept = 10;
-  public static final int IValueExpresssionConstraints = 11;
+  public static final int AndExpression = 3;
+  public static final int ColorLiteral = 4;
+  public static final int DecimalLiteral = 5;
+  public static final int DesignSystemAppConcept = 6;
+  public static final int DesignSystemAppFileConcept = 7;
+  public static final int DesignSystemPrimitiveTokenConcept = 8;
+  public static final int DesignSystemPrimitiveTokensConcept = 9;
+  public static final int DesignSystemPrimitiveTokensFileConcept = 10;
+  public static final int DesignSystemPrimitiveTokensSetConcept = 11;
+  public static final int DesignSystemPrimitiveTokensSetFileConcept = 12;
+  public static final int IDesignSystemExpressionConcept = 13;
+  public static final int IValueExpresssionConstraints = 14;
+  public static final int IfExpression = 15;
+  public static final int IntegerLiteral = 16;
+  public static final int SetLiteral = 17;
+  public static final int StringLiteral = 18;
+  public static final int UsedTokensDefinition = 19;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL);
     builder.put(0x6909f7b4c087386L, AbstractDesignSystemPrimitiveTokenConcept);
     builder.put(0x6909f7b4c064ef7L, AbstractDesignSystemPrimitiveTokensConcept);
     builder.put(0x6909f7b4c0af97bL, AbstractDesignSystemPrimitiveTokensConceptReference);
+    builder.put(0x34d76d96b8711bf6L, AndExpression);
+    builder.put(0x34d76d96b8711b0cL, ColorLiteral);
+    builder.put(0x34d76d96b87de6a9L, DecimalLiteral);
     builder.put(0x6909f7b4b5e14e4L, DesignSystemAppConcept);
     builder.put(0x6909f7b4c064effL, DesignSystemAppFileConcept);
-    builder.put(0x6909f7b4c2d8f03L, DesignSystemExpressionConcept);
     builder.put(0x6909f7b4c0adb91L, DesignSystemPrimitiveTokenConcept);
     builder.put(0x6909f7b4b5e14ecL, DesignSystemPrimitiveTokensConcept);
     builder.put(0x6909f7b4c0627b3L, DesignSystemPrimitiveTokensFileConcept);
     builder.put(0x6909f7b4c0665eeL, DesignSystemPrimitiveTokensSetConcept);
     builder.put(0x6909f7b4c0665efL, DesignSystemPrimitiveTokensSetFileConcept);
+    builder.put(0x6909f7b4c2d8f03L, IDesignSystemExpressionConcept);
     builder.put(0x6909f7b4c2bf718L, IValueExpresssionConstraints);
+    builder.put(0x34d76d96b8711bf9L, IfExpression);
+    builder.put(0x34d76d96b87f2ce8L, IntegerLiteral);
+    builder.put(0x34d76d96b87f2dffL, SetLiteral);
+    builder.put(0x34d76d96b87f2d71L, StringLiteral);
+    builder.put(0x34d76d96b871bc17L, UsedTokensDefinition);
     myIndex = builder.seal();
   }
 

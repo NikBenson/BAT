@@ -670,7 +670,7 @@
             <node concept="3clFbS" id="28" role="1pnPq1">
               <node concept="3cpWs6" id="2a" role="3cqZAp">
                 <node concept="1nCR9W" id="2b" role="3cqZAk">
-                  <property role="1nD$Q0" value="DesignSystem.App.constraints.DesignSystemExpressionConcept_Constraints" />
+                  <property role="1nD$Q0" value="DesignSystem.App.constraints.IDesignSystemExpressionConcept_Constraints" />
                   <node concept="3uibUv" id="2c" role="2lIhxL">
                     <ref role="3uigEE" to="ze1j:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
@@ -678,7 +678,7 @@
               </node>
             </node>
             <node concept="3gn64h" id="29" role="1pnPq6">
-              <ref role="3gnhBz" to="qit8:qgBRHcboW3" resolve="DesignSystemExpressionConcept" />
+              <ref role="3gnhBz" to="qit8:3jnrpqSshJN" resolve="IDesignSystemExpressionConcept" />
             </node>
           </node>
           <node concept="3clFbS" id="22" role="1prKM_" />
@@ -696,99 +696,99 @@
       </node>
     </node>
   </node>
-  <node concept="312cEu" id="2g">
+  <node concept="39dXUE" id="2g">
+    <node concept="39e2AJ" id="2h" role="39e2AI">
+      <property role="39e3Y2" value="constraintClass" />
+      <node concept="39e2AG" id="2j" role="39e3Y0">
+        <ref role="39e2AK" to="xj9a:qgBRHc2KjA" resolve="AbstractDesignSystemPrimitiveTokensConceptReference_Constraints" />
+        <node concept="385nmt" id="2l" role="385vvn">
+          <property role="385vuF" value="AbstractDesignSystemPrimitiveTokensConceptReference_Constraints" />
+          <node concept="3u3nmq" id="2n" role="385v07">
+            <property role="3u3nmv" value="473053312779486438" />
+          </node>
+        </node>
+        <node concept="39e2AT" id="2m" role="39e2AY">
+          <ref role="39e2AS" node="0" resolve="AbstractDesignSystemPrimitiveTokensConceptReference_Constraints" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="2k" role="39e3Y0">
+        <ref role="39e2AK" to="xj9a:qgBRHcboW4" resolve="IDesignSystemExpressionConcept_Constraints" />
+        <node concept="385nmt" id="2o" role="385vvn">
+          <property role="385vuF" value="IDesignSystemExpressionConcept_Constraints" />
+          <node concept="3u3nmq" id="2q" role="385v07">
+            <property role="3u3nmv" value="473053312781750020" />
+          </node>
+        </node>
+        <node concept="39e2AT" id="2p" role="39e2AY">
+          <ref role="39e2AS" node="2t" resolve="IDesignSystemExpressionConcept_Constraints" />
+        </node>
+      </node>
+    </node>
+    <node concept="39e2AJ" id="2i" role="39e2AI">
+      <property role="39e3Y2" value="aspectDescriptorClass" />
+      <node concept="39e2AG" id="2r" role="39e3Y0">
+        <property role="2mV_xN" value="true" />
+        <node concept="39e2AT" id="2s" role="39e2AY">
+          <ref role="39e2AS" node="1I" resolve="ConstraintsAspectDescriptor" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="312cEu" id="2t">
     <property role="3GE5qa" value="expression" />
-    <property role="TrG5h" value="DesignSystemExpressionConcept_Constraints" />
+    <property role="TrG5h" value="IDesignSystemExpressionConcept_Constraints" />
     <uo k="s:originTrace" v="n:473053312781750020" />
-    <node concept="3Tm1VV" id="2h" role="1B3o_S">
+    <node concept="3Tm1VV" id="2u" role="1B3o_S">
       <uo k="s:originTrace" v="n:473053312781750020" />
     </node>
-    <node concept="3uibUv" id="2i" role="1zkMxy">
+    <node concept="3uibUv" id="2v" role="1zkMxy">
       <ref role="3uigEE" to="79pl:~BaseConstraintsDescriptor" resolve="BaseConstraintsDescriptor" />
       <uo k="s:originTrace" v="n:473053312781750020" />
     </node>
-    <node concept="3clFbW" id="2j" role="jymVt">
+    <node concept="3clFbW" id="2w" role="jymVt">
       <uo k="s:originTrace" v="n:473053312781750020" />
-      <node concept="3cqZAl" id="2l" role="3clF45">
+      <node concept="3cqZAl" id="2y" role="3clF45">
         <uo k="s:originTrace" v="n:473053312781750020" />
       </node>
-      <node concept="3clFbS" id="2m" role="3clF47">
+      <node concept="3clFbS" id="2z" role="3clF47">
         <uo k="s:originTrace" v="n:473053312781750020" />
-        <node concept="XkiVB" id="2o" role="3cqZAp">
+        <node concept="XkiVB" id="2_" role="3cqZAp">
           <ref role="37wK5l" to="79pl:~BaseConstraintsDescriptor.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractConcept)" resolve="BaseConstraintsDescriptor" />
           <uo k="s:originTrace" v="n:473053312781750020" />
-          <node concept="1BaE9c" id="2p" role="37wK5m">
+          <node concept="1BaE9c" id="2A" role="37wK5m">
             <property role="1ouuDV" value="CONCEPTS" />
-            <property role="1BaxDp" value="DesignSystemExpressionConcept$eM" />
+            <property role="1BaxDp" value="IDesignSystemExpressionConcept$eM" />
             <uo k="s:originTrace" v="n:473053312781750020" />
-            <node concept="2YIFZM" id="2q" role="1Bazha">
+            <node concept="2YIFZM" id="2B" role="1Bazha">
+              <ref role="37wK5l" to="2k9e:~MetaAdapterFactory.getInterfaceConcept(long,long,long,java.lang.String)" resolve="getInterfaceConcept" />
               <ref role="1Pybhc" to="2k9e:~MetaAdapterFactory" resolve="MetaAdapterFactory" />
-              <ref role="37wK5l" to="2k9e:~MetaAdapterFactory.getConcept(long,long,long,java.lang.String)" resolve="getConcept" />
               <uo k="s:originTrace" v="n:473053312781750020" />
-              <node concept="1adDum" id="2r" role="37wK5m">
+              <node concept="1adDum" id="2C" role="37wK5m">
                 <property role="1adDun" value="0x9b844d5fd3bc48e3L" />
                 <uo k="s:originTrace" v="n:473053312781750020" />
               </node>
-              <node concept="1adDum" id="2s" role="37wK5m">
+              <node concept="1adDum" id="2D" role="37wK5m">
                 <property role="1adDun" value="0x8d2ed303cf551efeL" />
                 <uo k="s:originTrace" v="n:473053312781750020" />
               </node>
-              <node concept="1adDum" id="2t" role="37wK5m">
+              <node concept="1adDum" id="2E" role="37wK5m">
                 <property role="1adDun" value="0x6909f7b4c2d8f03L" />
                 <uo k="s:originTrace" v="n:473053312781750020" />
               </node>
-              <node concept="Xl_RD" id="2u" role="37wK5m">
-                <property role="Xl_RC" value="DesignSystem.App.structure.DesignSystemExpressionConcept" />
+              <node concept="Xl_RD" id="2F" role="37wK5m">
+                <property role="Xl_RC" value="DesignSystem.App.structure.IDesignSystemExpressionConcept" />
                 <uo k="s:originTrace" v="n:473053312781750020" />
               </node>
             </node>
           </node>
         </node>
       </node>
-      <node concept="3Tm1VV" id="2n" role="1B3o_S">
+      <node concept="3Tm1VV" id="2$" role="1B3o_S">
         <uo k="s:originTrace" v="n:473053312781750020" />
       </node>
     </node>
-    <node concept="2tJIrI" id="2k" role="jymVt">
+    <node concept="2tJIrI" id="2x" role="jymVt">
       <uo k="s:originTrace" v="n:473053312781750020" />
-    </node>
-  </node>
-  <node concept="39dXUE" id="2v">
-    <node concept="39e2AJ" id="2w" role="39e2AI">
-      <property role="39e3Y2" value="constraintClass" />
-      <node concept="39e2AG" id="2y" role="39e3Y0">
-        <ref role="39e2AK" to="xj9a:qgBRHc2KjA" resolve="AbstractDesignSystemPrimitiveTokensConceptReference_Constraints" />
-        <node concept="385nmt" id="2$" role="385vvn">
-          <property role="385vuF" value="AbstractDesignSystemPrimitiveTokensConceptReference_Constraints" />
-          <node concept="3u3nmq" id="2A" role="385v07">
-            <property role="3u3nmv" value="473053312779486438" />
-          </node>
-        </node>
-        <node concept="39e2AT" id="2_" role="39e2AY">
-          <ref role="39e2AS" node="0" resolve="AbstractDesignSystemPrimitiveTokensConceptReference_Constraints" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="2z" role="39e3Y0">
-        <ref role="39e2AK" to="xj9a:qgBRHcboW4" resolve="DesignSystemExpressionConcept_Constraints" />
-        <node concept="385nmt" id="2B" role="385vvn">
-          <property role="385vuF" value="DesignSystemExpressionConcept_Constraints" />
-          <node concept="3u3nmq" id="2D" role="385v07">
-            <property role="3u3nmv" value="473053312781750020" />
-          </node>
-        </node>
-        <node concept="39e2AT" id="2C" role="39e2AY">
-          <ref role="39e2AS" node="2g" resolve="DesignSystemExpressionConcept_Constraints" />
-        </node>
-      </node>
-    </node>
-    <node concept="39e2AJ" id="2x" role="39e2AI">
-      <property role="39e3Y2" value="aspectDescriptorClass" />
-      <node concept="39e2AG" id="2E" role="39e3Y0">
-        <property role="2mV_xN" value="true" />
-        <node concept="39e2AT" id="2F" role="39e2AY">
-          <ref role="39e2AS" node="1I" resolve="ConstraintsAspectDescriptor" />
-        </node>
-      </node>
     </node>
   </node>
 </model>

@@ -131,7 +131,7 @@
   </node>
   <node concept="1M2fIO" id="qgBRHcboW4">
     <property role="3GE5qa" value="expression" />
-    <ref role="1M2myG" to="qit8:qgBRHcboW3" resolve="DesignSystemExpressionConcept" />
+    <ref role="1M2myG" to="qit8:3jnrpqSshJN" resolve="IDesignSystemExpressionConcept" />
   </node>
 </model>
 

@@ -27,17 +27,27 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 2:
         return Collections.<ConceptEditor>singletonList(new AbstractDesignSystemPrimitiveTokensConceptReference_Editor());
       case 3:
-        return Collections.<ConceptEditor>singletonList(new DesignSystemAppFileConcept_Editor());
+        return Collections.<ConceptEditor>singletonList(new ColorLiteral_Editor());
       case 4:
-        return Collections.<ConceptEditor>singletonList(new DesignSystemPrimitiveTokenConcept_Editor());
+        return Collections.<ConceptEditor>singletonList(new DecimalLiteral_Editor());
       case 5:
-        return Collections.<ConceptEditor>singletonList(new DesignSystemPrimitiveTokensConcept_Editor());
+        return Collections.<ConceptEditor>singletonList(new DesignSystemAppFileConcept_Editor());
       case 6:
-        return Collections.<ConceptEditor>singletonList(new DesignSystemPrimitiveTokensFileConcept_Editor());
+        return Collections.<ConceptEditor>singletonList(new DesignSystemPrimitiveTokenConcept_Editor());
       case 7:
-        return Collections.<ConceptEditor>singletonList(new DesignSystemPrimitiveTokensSetConcept_Editor());
+        return Collections.<ConceptEditor>singletonList(new DesignSystemPrimitiveTokensConcept_Editor());
       case 8:
+        return Collections.<ConceptEditor>singletonList(new DesignSystemPrimitiveTokensFileConcept_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new DesignSystemPrimitiveTokensSetConcept_Editor());
+      case 10:
         return Collections.<ConceptEditor>singletonList(new DesignSystemPrimitiveTokensSetFileConcept_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new IntegerLiteral_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new SetLiteral_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new StringLiteral_Editor());
       default:
     }
     return Collections.<ConceptEditor>emptyList();
@@ -83,13 +93,15 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     switch (conceptIndex3.index(cncpt)) {
       case 0:
         return Collections.<SubstituteMenu>singletonList(new AbstractDesignSystemPrimitiveTokensConceptReference_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new UsedTokensDefinition_SubstituteMenu());
       default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }
 
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c087386L), MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c064ef7L), MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c0af97bL), MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c064effL), MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c0adb91L), MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4b5e14ecL), MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c0627b3L), MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c0665eeL), MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c0665efL)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c087386L), MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c064ef7L), MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c0af97bL), MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x34d76d96b8711b0cL), MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x34d76d96b87de6a9L), MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c064effL), MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c0adb91L), MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4b5e14ecL), MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c0627b3L), MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c0665eeL), MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c0665efL), MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x34d76d96b87f2ce8L), MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x34d76d96b87f2dffL), MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x34d76d96b87f2d71L)).seal();
   private static final ConceptSwitchIndex conceptIndex1 = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c064ef7L)).seal();
   private static final ConceptSwitchIndex conceptIndex2 = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c087386L), MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4b5e14ecL)).seal();
-  private static final ConceptSwitchIndex conceptIndex3 = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c0af97bL)).seal();
+  private static final ConceptSwitchIndex conceptIndex3 = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c0af97bL), MetaIdFactory.conceptId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x34d76d96b871bc17L)).seal();
 }

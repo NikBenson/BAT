@@ -46,9 +46,6 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_4_0(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.value$RWrh);
-  }
-  public static Object propertyMacro_GetValue_4_1(final PropertyMacroContext _context) {
     return "get" + SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL).substring(0, 1).toUpperCase() + SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL).substring(1);
   }
   public static Object propertyMacro_GetValue_5_0(final PropertyMacroContext _context) {
@@ -64,6 +61,9 @@ public class QueriesGenerated extends QueryProviderBase {
     return SLinkOperations.getTarget(_context.getNode(), LINKS.content$soeS);
   }
   public static SNode sourceNodeQuery_4_0(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), LINKS.value$YBKW);
+  }
+  public static SNode sourceNodeQuery_4_1(final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), CONCEPTS.AbstractDesignSystemPrimitiveTokensConcept$M1);
   }
   public static Iterable<SNode> sourceNodesQuery_1_0(final SourceSubstituteMacroNodesContext _context) {
@@ -82,6 +82,7 @@ public class QueriesGenerated extends QueryProviderBase {
   {
     int i = 0;
     snqMethods.put("473053312781502864", new SNQ(i++));
+    snqMethods.put("3807632504072533312", new SNQ(i++));
     snqMethods.put("5636562778381492153", new SNQ(i++));
   }
   @NotNull
@@ -102,6 +103,8 @@ public class QueriesGenerated extends QueryProviderBase {
           return QueriesGenerated.sourceNodeQuery_2_0(ctx);
         case 1:
           return QueriesGenerated.sourceNodeQuery_4_0(ctx);
+        case 2:
+          return QueriesGenerated.sourceNodeQuery_4_1(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
@@ -141,7 +144,6 @@ public class QueriesGenerated extends QueryProviderBase {
     int i = 0;
     pvqMethods.put("473053312781510255", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "PrimitiveTokens"));
     pvqMethods.put("473053312781505905", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "PrimitiveTokens"));
-    pvqMethods.put("473053312781515650", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "value"));
     pvqMethods.put("473053312781513010", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "getToken"));
     pvqMethods.put("473053312781524938", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "token"));
   }
@@ -167,8 +169,6 @@ public class QueriesGenerated extends QueryProviderBase {
         case 2:
           return QueriesGenerated.propertyMacro_GetValue_4_0(ctx);
         case 3:
-          return QueriesGenerated.propertyMacro_GetValue_4_1(ctx);
-        case 4:
           return QueriesGenerated.propertyMacro_GetValue_5_0(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
@@ -258,13 +258,13 @@ public class QueriesGenerated extends QueryProviderBase {
 
   private static final class PROPS {
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
-    /*package*/ static final SProperty value$RWrh = MetaAdapterFactory.getProperty(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c0adb91L, 0x6909f7b4c0adb92L, "value");
   }
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink parent$KX4d = MetaAdapterFactory.getContainmentLink(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4b5e14ecL, 0x6909f7b4c0af979L, "parent");
     /*package*/ static final SReferenceLink abstractDesignSystemPrimitiveTokensConcept$LQUh = MetaAdapterFactory.getReferenceLink(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c0af97bL, 0x6909f7b4c0af97cL, "abstractDesignSystemPrimitiveTokensConcept");
     /*package*/ static final SContainmentLink content$soeS = MetaAdapterFactory.getContainmentLink(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4c129d2bL, 0x6909f7b4c12f8e4L, "content");
+    /*package*/ static final SContainmentLink value$YBKW = MetaAdapterFactory.getContainmentLink(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c0adb91L, 0x34d76d96b871bc1eL, "value");
     /*package*/ static final SContainmentLink tokens$Jwcn = MetaAdapterFactory.getContainmentLink(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c064ef7L, 0x6909f7b4c087389L, "tokens");
     /*package*/ static final SContainmentLink type$aWVE = MetaAdapterFactory.getContainmentLink(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c064ef7L, 0x6909f7b4b5e150aL, "type");
   }
