@@ -1,3 +1,3 @@
 primitive tokens DarkColorTokens<Color>: ColorTokens
-	green: 0x00B000
-	blue: 0x0000B0
+    green: 0x00B000
+    blue: 0x0000B0

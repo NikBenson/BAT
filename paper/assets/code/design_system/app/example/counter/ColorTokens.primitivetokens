@@ -1,4 +1,4 @@
 abstract primitive tokens ColorTokens<Color>
-	red: 0xFF0000
-	green
-	blue
+    red: 0xFF0000
+    green
+    blue

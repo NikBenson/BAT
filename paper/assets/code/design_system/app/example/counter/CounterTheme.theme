@@ -1,7 +1,7 @@
 app CounterTheme: Material by brightness: Brightness
-	tokens:
-		colors = AllColorTokens by brightness
-		fonts = FontTokens
+    tokens:
+        colors = AllColorTokens by brightness
+        fonts = FontTokens
     properties:
         colorSwatch:
             primary: colors.red

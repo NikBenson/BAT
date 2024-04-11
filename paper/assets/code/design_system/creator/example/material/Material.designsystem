@@ -1,5 +1,5 @@
 Material: DesignSystem
-	subsystems:
+    subsystems:
         ColorSwatch: DesignSystem
             properties:
                 primary: Color
