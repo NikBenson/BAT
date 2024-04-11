@@ -9,6 +9,9 @@
   </imports>
   <registry>
     <language id="9b844d5f-d3bc-48e3-8d2e-d303cf551efe" name="DesignSystem.App">
+      <concept id="3807632504071985932" name="DesignSystem.App.structure.ColorLiteral" flags="ng" index="2cDBqq">
+        <property id="3807632504071985935" name="value" index="2cDBqp" />
+      </concept>
       <concept id="473053312779167667" name="DesignSystem.App.structure.DesignSystemPrimitiveTokensFileConcept" flags="ng" index="1a_Fz8" />
       <concept id="473053312779177719" name="DesignSystem.App.structure.AbstractDesignSystemPrimitiveTokensConcept" flags="ng" index="1a_H6c">
         <child id="473053312779318153" name="tokens" index="1aAeNM" />
@@ -17,6 +20,7 @@
       <concept id="473053312779318150" name="DesignSystem.App.structure.AbstractDesignSystemPrimitiveTokenConcept" flags="ng" index="1aAeNX" />
       <concept id="473053312779475857" name="DesignSystem.App.structure.DesignSystemPrimitiveTokenConcept" flags="ng" index="1aA$jE">
         <property id="473053312779475858" name="value" index="1aA$jD" />
+        <child id="3807632504072027166" name="value" index="2cDH68" />
       </concept>
       <concept id="473053312779483515" name="DesignSystem.App.structure.AbstractDesignSystemPrimitiveTokensConceptReference" flags="ng" index="1aAAo0">
         <reference id="473053312779483516" name="abstractDesignSystemPrimitiveTokensConcept" index="1aAAo7" />
@@ -43,17 +47,19 @@
   <node concept="1a_Fz8" id="qgBRHc9dfk">
     <node concept="1a_H6c" id="qgBRHc9dfo" role="1awAuv">
       <property role="TrG5h" value="ColorTokens" />
-      <node concept="1d2DG3" id="qgBRHcck72" role="1dNCDL" />
-      <node concept="1aA$jE" id="qgBRHc9dfu" role="1aAeNM">
+      <node concept="1aA$jE" id="3jnrpqSv9fS" role="1aAeNM">
         <property role="TrG5h" value="red" />
-        <property role="1aA$jD" value="0xff0000" />
+        <node concept="2cDBqq" id="3jnrpqSwdrn" role="2cDH68">
+          <property role="2cDBqp" value="ff0000" />
+        </node>
       </node>
-      <node concept="1aAeNX" id="qgBRHc9df$" role="1aAeNM">
+      <node concept="1aAeNX" id="3jnrpqSvuqy" role="1aAeNM">
         <property role="TrG5h" value="green" />
       </node>
       <node concept="1aAeNX" id="qgBRHc9dfG" role="1aAeNM">
         <property role="TrG5h" value="blue" />
       </node>
+      <node concept="1d2DG3" id="3jnrpqSvMNz" role="1dNCDL" />
     </node>
   </node>
   <node concept="1a_Fz8" id="4y2cPgZHWoP">

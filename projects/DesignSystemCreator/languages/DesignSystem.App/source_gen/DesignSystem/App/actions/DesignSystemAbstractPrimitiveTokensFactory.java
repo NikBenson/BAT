@@ -59,7 +59,7 @@ public class DesignSystemAbstractPrimitiveTokensFactory {
           {
             final SNode originalNotAbstract = original;
             if (SNodeOperations.isInstanceOf(originalNotAbstract, CONCEPTS.DesignSystemPrimitiveTokenConcept$9B)) {
-              SPropertyOperations.assign(newNode, PROPS.value$RWrh, SPropertyOperations.getString(originalNotAbstract, PROPS.value$RWrh));
+              SLinkOperations.setTarget(newNode, LINKS.value$YBKW, SLinkOperations.getTarget(originalNotAbstract, LINKS.value$YBKW));
             }
           }
         }
@@ -76,11 +76,11 @@ public class DesignSystemAbstractPrimitiveTokensFactory {
 
   private static final class PROPS {
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
-    /*package*/ static final SProperty value$RWrh = MetaAdapterFactory.getProperty(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c0adb91L, 0x6909f7b4c0adb92L, "value");
   }
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink type$aWVE = MetaAdapterFactory.getContainmentLink(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c064ef7L, 0x6909f7b4b5e150aL, "type");
     /*package*/ static final SContainmentLink tokens$Jwcn = MetaAdapterFactory.getContainmentLink(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c064ef7L, 0x6909f7b4c087389L, "tokens");
+    /*package*/ static final SContainmentLink value$YBKW = MetaAdapterFactory.getContainmentLink(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c0adb91L, 0x34d76d96b871bc1eL, "value");
   }
 }

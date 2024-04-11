@@ -13,22 +13,32 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAbstractDesignSystemPrimitiveTokenConcept = createDescriptorForAbstractDesignSystemPrimitiveTokenConcept();
   /*package*/ final ConceptDescriptor myConceptAbstractDesignSystemPrimitiveTokensConcept = createDescriptorForAbstractDesignSystemPrimitiveTokensConcept();
   /*package*/ final ConceptDescriptor myConceptAbstractDesignSystemPrimitiveTokensConceptReference = createDescriptorForAbstractDesignSystemPrimitiveTokensConceptReference();
+  /*package*/ final ConceptDescriptor myConceptAndExpression = createDescriptorForAndExpression();
+  /*package*/ final ConceptDescriptor myConceptColorLiteral = createDescriptorForColorLiteral();
+  /*package*/ final ConceptDescriptor myConceptDecimalLiteral = createDescriptorForDecimalLiteral();
   /*package*/ final ConceptDescriptor myConceptDesignSystemAppConcept = createDescriptorForDesignSystemAppConcept();
   /*package*/ final ConceptDescriptor myConceptDesignSystemAppFileConcept = createDescriptorForDesignSystemAppFileConcept();
-  /*package*/ final ConceptDescriptor myConceptDesignSystemExpressionConcept = createDescriptorForDesignSystemExpressionConcept();
   /*package*/ final ConceptDescriptor myConceptDesignSystemPrimitiveTokenConcept = createDescriptorForDesignSystemPrimitiveTokenConcept();
   /*package*/ final ConceptDescriptor myConceptDesignSystemPrimitiveTokensConcept = createDescriptorForDesignSystemPrimitiveTokensConcept();
   /*package*/ final ConceptDescriptor myConceptDesignSystemPrimitiveTokensFileConcept = createDescriptorForDesignSystemPrimitiveTokensFileConcept();
   /*package*/ final ConceptDescriptor myConceptDesignSystemPrimitiveTokensSetConcept = createDescriptorForDesignSystemPrimitiveTokensSetConcept();
   /*package*/ final ConceptDescriptor myConceptDesignSystemPrimitiveTokensSetFileConcept = createDescriptorForDesignSystemPrimitiveTokensSetFileConcept();
+  /*package*/ final ConceptDescriptor myConceptIDesignSystemExpressionConcept = createDescriptorForIDesignSystemExpressionConcept();
   /*package*/ final ConceptDescriptor myConceptIValueExpresssionConstraints = createDescriptorForIValueExpresssionConstraints();
-  /*package*/ final ConstrainedStringDatatypeDescriptor myCSDatatypeColor = new ConstrainedStringDatatypeDescriptorImpl(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c07b9a1L, "Color", "r:cd4652a9-2141-42ee-bf85-a59a1c128e61(DesignSystem.App.structure)/473053312779270561", "[0-0a-f]{6}");
+  /*package*/ final ConceptDescriptor myConceptIfExpression = createDescriptorForIfExpression();
+  /*package*/ final ConceptDescriptor myConceptIntegerLiteral = createDescriptorForIntegerLiteral();
+  /*package*/ final ConceptDescriptor myConceptSetLiteral = createDescriptorForSetLiteral();
+  /*package*/ final ConceptDescriptor myConceptStringLiteral = createDescriptorForStringLiteral();
+  /*package*/ final ConceptDescriptor myConceptUsedTokensDefinition = createDescriptorForUsedTokensDefinition();
+  /*package*/ final ConstrainedStringDatatypeDescriptor myCSDatatypeColor = new ConstrainedStringDatatypeDescriptorImpl(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c07b9a1L, "Color", "r:cd4652a9-2141-42ee-bf85-a59a1c128e61(DesignSystem.App.structure)/473053312779270561", "[0-9a-f]{6}");
+  /*package*/ final ConstrainedStringDatatypeDescriptor myCSDatatypeDecimal = new ConstrainedStringDatatypeDescriptorImpl(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x34d76d96b87de6acL, "Decimal", "r:cd4652a9-2141-42ee-bf85-a59a1c128e61(DesignSystem.App.structure)/3807632504072824492", "[0-9]+\\.[0-9]+");
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -45,7 +55,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractDesignSystemPrimitiveTokenConcept, myConceptAbstractDesignSystemPrimitiveTokensConcept, myConceptAbstractDesignSystemPrimitiveTokensConceptReference, myConceptDesignSystemAppConcept, myConceptDesignSystemAppFileConcept, myConceptDesignSystemExpressionConcept, myConceptDesignSystemPrimitiveTokenConcept, myConceptDesignSystemPrimitiveTokensConcept, myConceptDesignSystemPrimitiveTokensFileConcept, myConceptDesignSystemPrimitiveTokensSetConcept, myConceptDesignSystemPrimitiveTokensSetFileConcept, myConceptIValueExpresssionConstraints);
+    return Arrays.asList(myConceptAbstractDesignSystemPrimitiveTokenConcept, myConceptAbstractDesignSystemPrimitiveTokensConcept, myConceptAbstractDesignSystemPrimitiveTokensConceptReference, myConceptAndExpression, myConceptColorLiteral, myConceptDecimalLiteral, myConceptDesignSystemAppConcept, myConceptDesignSystemAppFileConcept, myConceptDesignSystemPrimitiveTokenConcept, myConceptDesignSystemPrimitiveTokensConcept, myConceptDesignSystemPrimitiveTokensFileConcept, myConceptDesignSystemPrimitiveTokensSetConcept, myConceptDesignSystemPrimitiveTokensSetFileConcept, myConceptIDesignSystemExpressionConcept, myConceptIValueExpresssionConstraints, myConceptIfExpression, myConceptIntegerLiteral, myConceptSetLiteral, myConceptStringLiteral, myConceptUsedTokensDefinition);
   }
 
   @Override
@@ -58,12 +68,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptAbstractDesignSystemPrimitiveTokensConcept;
       case LanguageConceptSwitch.AbstractDesignSystemPrimitiveTokensConceptReference:
         return myConceptAbstractDesignSystemPrimitiveTokensConceptReference;
+      case LanguageConceptSwitch.AndExpression:
+        return myConceptAndExpression;
+      case LanguageConceptSwitch.ColorLiteral:
+        return myConceptColorLiteral;
+      case LanguageConceptSwitch.DecimalLiteral:
+        return myConceptDecimalLiteral;
       case LanguageConceptSwitch.DesignSystemAppConcept:
         return myConceptDesignSystemAppConcept;
       case LanguageConceptSwitch.DesignSystemAppFileConcept:
         return myConceptDesignSystemAppFileConcept;
-      case LanguageConceptSwitch.DesignSystemExpressionConcept:
-        return myConceptDesignSystemExpressionConcept;
       case LanguageConceptSwitch.DesignSystemPrimitiveTokenConcept:
         return myConceptDesignSystemPrimitiveTokenConcept;
       case LanguageConceptSwitch.DesignSystemPrimitiveTokensConcept:
@@ -74,8 +88,20 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptDesignSystemPrimitiveTokensSetConcept;
       case LanguageConceptSwitch.DesignSystemPrimitiveTokensSetFileConcept:
         return myConceptDesignSystemPrimitiveTokensSetFileConcept;
+      case LanguageConceptSwitch.IDesignSystemExpressionConcept:
+        return myConceptIDesignSystemExpressionConcept;
       case LanguageConceptSwitch.IValueExpresssionConstraints:
         return myConceptIValueExpresssionConstraints;
+      case LanguageConceptSwitch.IfExpression:
+        return myConceptIfExpression;
+      case LanguageConceptSwitch.IntegerLiteral:
+        return myConceptIntegerLiteral;
+      case LanguageConceptSwitch.SetLiteral:
+        return myConceptSetLiteral;
+      case LanguageConceptSwitch.StringLiteral:
+        return myConceptStringLiteral;
+      case LanguageConceptSwitch.UsedTokensDefinition:
+        return myConceptUsedTokensDefinition;
       default:
         return null;
     }
@@ -83,7 +109,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
-    return Arrays.asList(myCSDatatypeColor);
+    return Arrays.asList(myCSDatatypeColor, myCSDatatypeDecimal);
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
@@ -112,9 +138,39 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForAbstractDesignSystemPrimitiveTokensConceptReference() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.App", "AbstractDesignSystemPrimitiveTokensConceptReference", 0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c0af97bL);
     b.class_(false, false, false);
+    b.parent(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b98a801L);
     b.origin("r:cd4652a9-2141-42ee-bf85-a59a1c128e61(DesignSystem.App.structure)/473053312779483515");
     b.version(3);
     b.associate("abstractDesignSystemPrimitiveTokensConcept", 0x6909f7b4c0af97cL).target(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c064ef7L).optional(false).origin("473053312779483516").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForAndExpression() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.App", "AndExpression", 0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x34d76d96b8711bf6L);
+    b.class_(false, false, false);
+    b.parent(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c2d8f03L);
+    b.origin("r:cd4652a9-2141-42ee-bf85-a59a1c128e61(DesignSystem.App.structure)/3807632504071986166");
+    b.version(3);
+    b.aggregate("condition", 0x34d76d96b8711bfaL).target(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c2d8f03L).optional(false).ordered(true).multiple(false).origin("3807632504071986170").done();
+    b.aggregate("body", 0x34d76d96b8711bfcL).target(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c2d8f03L).optional(false).ordered(true).multiple(false).origin("3807632504071986172").done();
+    b.aggregate("else", 0x34d76d96b8711bffL).target(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c2d8f03L).optional(true).ordered(true).multiple(false).origin("3807632504071986175").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForColorLiteral() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.App", "ColorLiteral", 0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x34d76d96b8711b0cL);
+    b.class_(false, false, false);
+    b.parent(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c2d8f03L);
+    b.origin("r:cd4652a9-2141-42ee-bf85-a59a1c128e61(DesignSystem.App.structure)/3807632504071985932");
+    b.version(3);
+    b.property("value", 0x34d76d96b8711b0fL).type(MetaIdFactory.dataTypeId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c07b9a1L)).origin("3807632504071985935").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForDecimalLiteral() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.App", "DecimalLiteral", 0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x34d76d96b87de6a9L);
+    b.class_(false, false, false);
+    b.parent(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c2d8f03L);
+    b.origin("r:cd4652a9-2141-42ee-bf85-a59a1c128e61(DesignSystem.App.structure)/3807632504072824489");
+    b.version(3);
+    b.property("value", 0x34d76d96b87de6adL).type(MetaIdFactory.dataTypeId(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x34d76d96b87de6acL)).origin("3807632504072824493").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDesignSystemAppConcept() {
@@ -136,13 +192,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.alias("App");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForDesignSystemExpressionConcept() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.App", "DesignSystemExpressionConcept", 0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c2d8f03L);
-    b.class_(false, false, false);
-    b.origin("r:cd4652a9-2141-42ee-bf85-a59a1c128e61(DesignSystem.App.structure)/473053312781750019");
-    b.version(3);
-    return b.create();
-  }
   private static ConceptDescriptor createDescriptorForDesignSystemPrimitiveTokenConcept() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.App", "DesignSystemPrimitiveTokenConcept", 0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c0adb91L);
     b.class_(false, false, false);
@@ -150,7 +199,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c087386L);
     b.origin("r:cd4652a9-2141-42ee-bf85-a59a1c128e61(DesignSystem.App.structure)/473053312779475857");
     b.version(3);
-    b.property("value", 0x6909f7b4c0adb92L).type(PrimitiveTypeId.STRING).origin("473053312779475858").done();
+    b.aggregate("value", 0x34d76d96b871bc1eL).target(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c2d8f03L).optional(false).ordered(true).multiple(false).origin("3807632504072027166").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDesignSystemPrimitiveTokensConcept() {
@@ -195,11 +244,62 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.alias("Primitive Tokens Resolver");
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForIDesignSystemExpressionConcept() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.App", "IDesignSystemExpressionConcept", 0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c2d8f03L);
+    b.interface_();
+    b.origin("r:cd4652a9-2141-42ee-bf85-a59a1c128e61(DesignSystem.App.structure)/3807632504071986163");
+    b.version(3);
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForIValueExpresssionConstraints() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.App", "IValueExpresssionConstraints", 0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c2bf718L);
     b.interface_();
     b.origin("r:cd4652a9-2141-42ee-bf85-a59a1c128e61(DesignSystem.App.structure)/473053312781645592");
     b.version(3);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForIfExpression() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.App", "IfExpression", 0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x34d76d96b8711bf9L);
+    b.class_(false, false, false);
+    b.origin("r:cd4652a9-2141-42ee-bf85-a59a1c128e61(DesignSystem.App.structure)/3807632504071986169");
+    b.version(3);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForIntegerLiteral() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.App", "IntegerLiteral", 0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x34d76d96b87f2ce8L);
+    b.class_(false, false, false);
+    b.parent(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c2d8f03L);
+    b.origin("r:cd4652a9-2141-42ee-bf85-a59a1c128e61(DesignSystem.App.structure)/3807632504072908008");
+    b.version(3);
+    b.property("value", 0x34d76d96b87f2ceaL).type(PrimitiveTypeId.INTEGER).origin("3807632504072908010").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForSetLiteral() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.App", "SetLiteral", 0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x34d76d96b87f2dffL);
+    b.class_(false, false, false);
+    b.parent(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c2d8f03L);
+    b.origin("r:cd4652a9-2141-42ee-bf85-a59a1c128e61(DesignSystem.App.structure)/3807632504072908287");
+    b.version(3);
+    b.aggregate("type", 0x34d76d96b87f2e04L).target(0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b95b7b1L).optional(false).ordered(true).multiple(false).origin("3807632504072908292").done();
+    b.aggregate("content", 0x34d76d96b87f2e06L).target(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c2d8f03L).optional(true).ordered(true).multiple(true).origin("3807632504072908294").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForStringLiteral() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.App", "StringLiteral", 0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x34d76d96b87f2d71L);
+    b.class_(false, false, false);
+    b.parent(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c2d8f03L);
+    b.origin("r:cd4652a9-2141-42ee-bf85-a59a1c128e61(DesignSystem.App.structure)/3807632504072908145");
+    b.version(3);
+    b.property("value", 0x34d76d96b87f2d73L).type(PrimitiveTypeId.STRING).origin("3807632504072908147").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForUsedTokensDefinition() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.App", "UsedTokensDefinition", 0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x34d76d96b871bc17L);
+    b.class_(false, false, false);
+    b.origin("r:cd4652a9-2141-42ee-bf85-a59a1c128e61(DesignSystem.App.structure)/3807632504072027159");
+    b.version(3);
+    b.property("name", 0x34d76d96b871bc1aL).type(PrimitiveTypeId.STRING).origin("3807632504072027162").done();
+    b.associate("type", 0x34d76d96b871bc1cL).target(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c064ef7L).optional(false).origin("3807632504072027164").done();
     return b.create();
   }
 }

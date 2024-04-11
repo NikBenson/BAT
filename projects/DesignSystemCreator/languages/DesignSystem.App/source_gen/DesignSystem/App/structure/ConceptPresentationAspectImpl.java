@@ -12,15 +12,23 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_AbstractDesignSystemPrimitiveTokenConcept;
   private ConceptPresentation props_AbstractDesignSystemPrimitiveTokensConcept;
   private ConceptPresentation props_AbstractDesignSystemPrimitiveTokensConceptReference;
+  private ConceptPresentation props_AndExpression;
+  private ConceptPresentation props_ColorLiteral;
+  private ConceptPresentation props_DecimalLiteral;
   private ConceptPresentation props_DesignSystemAppConcept;
   private ConceptPresentation props_DesignSystemAppFileConcept;
-  private ConceptPresentation props_DesignSystemExpressionConcept;
   private ConceptPresentation props_DesignSystemPrimitiveTokenConcept;
   private ConceptPresentation props_DesignSystemPrimitiveTokensConcept;
   private ConceptPresentation props_DesignSystemPrimitiveTokensFileConcept;
   private ConceptPresentation props_DesignSystemPrimitiveTokensSetConcept;
   private ConceptPresentation props_DesignSystemPrimitiveTokensSetFileConcept;
+  private ConceptPresentation props_IDesignSystemExpressionConcept;
   private ConceptPresentation props_IValueExpresssionConstraints;
+  private ConceptPresentation props_IfExpression;
+  private ConceptPresentation props_IntegerLiteral;
+  private ConceptPresentation props_SetLiteral;
+  private ConceptPresentation props_StringLiteral;
+  private ConceptPresentation props_UsedTokensDefinition;
 
   @Override
   @Nullable
@@ -44,10 +52,31 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.AbstractDesignSystemPrimitiveTokensConceptReference:
         if (props_AbstractDesignSystemPrimitiveTokensConceptReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByReference(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x6909f7b4c0af97bL, 0x6909f7b4c0af97cL, "abstractDesignSystemPrimitiveTokensConcept", "", "");
+          cpb.presentationByName();
           props_AbstractDesignSystemPrimitiveTokensConceptReference = cpb.create();
         }
         return props_AbstractDesignSystemPrimitiveTokensConceptReference;
+      case LanguageConceptSwitch.AndExpression:
+        if (props_AndExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("AndExpression");
+          props_AndExpression = cpb.create();
+        }
+        return props_AndExpression;
+      case LanguageConceptSwitch.ColorLiteral:
+        if (props_ColorLiteral == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ColorLiteral");
+          props_ColorLiteral = cpb.create();
+        }
+        return props_ColorLiteral;
+      case LanguageConceptSwitch.DecimalLiteral:
+        if (props_DecimalLiteral == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DecimalLiteral");
+          props_DecimalLiteral = cpb.create();
+        }
+        return props_DecimalLiteral;
       case LanguageConceptSwitch.DesignSystemAppConcept:
         if (props_DesignSystemAppConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -62,13 +91,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_DesignSystemAppFileConcept = cpb.create();
         }
         return props_DesignSystemAppFileConcept;
-      case LanguageConceptSwitch.DesignSystemExpressionConcept:
-        if (props_DesignSystemExpressionConcept == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("DesignSystemExpressionConcept");
-          props_DesignSystemExpressionConcept = cpb.create();
-        }
-        return props_DesignSystemExpressionConcept;
       case LanguageConceptSwitch.DesignSystemPrimitiveTokenConcept:
         if (props_DesignSystemPrimitiveTokenConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -104,12 +126,53 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_DesignSystemPrimitiveTokensSetFileConcept = cpb.create();
         }
         return props_DesignSystemPrimitiveTokensSetFileConcept;
+      case LanguageConceptSwitch.IDesignSystemExpressionConcept:
+        if (props_IDesignSystemExpressionConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IDesignSystemExpressionConcept = cpb.create();
+        }
+        return props_IDesignSystemExpressionConcept;
       case LanguageConceptSwitch.IValueExpresssionConstraints:
         if (props_IValueExpresssionConstraints == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           props_IValueExpresssionConstraints = cpb.create();
         }
         return props_IValueExpresssionConstraints;
+      case LanguageConceptSwitch.IfExpression:
+        if (props_IfExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("IfExpression");
+          props_IfExpression = cpb.create();
+        }
+        return props_IfExpression;
+      case LanguageConceptSwitch.IntegerLiteral:
+        if (props_IntegerLiteral == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("IntegerLiteral");
+          props_IntegerLiteral = cpb.create();
+        }
+        return props_IntegerLiteral;
+      case LanguageConceptSwitch.SetLiteral:
+        if (props_SetLiteral == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SetLiteral");
+          props_SetLiteral = cpb.create();
+        }
+        return props_SetLiteral;
+      case LanguageConceptSwitch.StringLiteral:
+        if (props_StringLiteral == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("StringLiteral");
+          props_StringLiteral = cpb.create();
+        }
+        return props_StringLiteral;
+      case LanguageConceptSwitch.UsedTokensDefinition:
+        if (props_UsedTokensDefinition == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x9b844d5fd3bc48e3L, 0x8d2ed303cf551efeL, 0x34d76d96b871bc17L, 0x34d76d96b871bc1cL, "type", "", "");
+          props_UsedTokensDefinition = cpb.create();
+        }
+        return props_UsedTokensDefinition;
     }
     return null;
   }

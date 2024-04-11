@@ -21,7 +21,7 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       case 0:
         return new AbstractDesignSystemPrimitiveTokensConceptReference_Constraints();
       case 1:
-        return new DesignSystemExpressionConcept_Constraints();
+        return new IDesignSystemExpressionConcept_Constraints();
       default:
     }
     return new BaseConstraintsDescriptor(concept);

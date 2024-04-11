@@ -318,6 +318,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForDesignSystemTypeConcept() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DesignSystem.System", "DesignSystemTypeConcept", 0x43e160c7168c4805L, 0x904bc45c336610e7L, 0x6909f7b4b95b7b1L);
     b.class_(false, true, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x11f8a0774f2L);
     b.origin("r:291ddc1b-d6e7-4ca6-a0e2-a1fae46ab1b7(DesignSystem.System.structure)/473053312771798961");
     b.version(3);
     return b.create();
