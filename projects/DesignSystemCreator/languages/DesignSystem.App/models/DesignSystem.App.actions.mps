@@ -483,7 +483,7 @@
       </node>
     </node>
     <node concept="37WvkG" id="qgBRHc82wU" role="37WGs$">
-      <ref role="37XkoT" to="qit8:qgBRHc1AnJ" resolve="DesignSystemPrimitiveTokensSetFileConcept" />
+      <ref role="37XkoT" to="qit8:3jnrpqS_K7U" resolve="DesignSystemPrimitiveTokensResolverFileConcept" />
       <node concept="37Y9Zx" id="qgBRHc82wV" role="37ZfLb">
         <node concept="3clFbS" id="qgBRHc82wW" role="2VODD2">
           <node concept="3clFbF" id="qgBRHc82xB" role="3cqZAp">
@@ -491,14 +491,14 @@
               <node concept="2ShNRf" id="qgBRHc83a2" role="37vLTx">
                 <node concept="3zrR0B" id="qgBRHc83a0" role="2ShVmc">
                   <node concept="3Tqbb2" id="qgBRHc83a1" role="3zrR0E">
-                    <ref role="ehGHo" to="qit8:qgBRHc1AnI" resolve="DesignSystemPrimitiveTokensSetConcept" />
+                    <ref role="ehGHo" to="qit8:3jnrpqS_K7P" resolve="DesignSystemPrimitiveTokensResolverConcept" />
                   </node>
                 </node>
               </node>
               <node concept="2OqwBi" id="qgBRHc82HD" role="37vLTJ">
                 <node concept="1r4Lsj" id="qgBRHc82xA" role="2Oq$k0" />
                 <node concept="3TrEf2" id="qgBRHc82TU" role="2OqNvi">
-                  <ref role="3Tt5mk" to="qit8:qgBRHc1AnP" resolve="content" />
+                  <ref role="3Tt5mk" to="qit8:3jnrpqS_K7V" />
                 </node>
               </node>
             </node>

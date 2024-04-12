@@ -302,7 +302,7 @@
         <node concept="11LMrY" id="qgBRHboN5_" role="3F10Kt" />
       </node>
       <node concept="3F1sOY" id="qgBRHb_uS6" role="3EZMnx">
-        <ref role="1NtTu8" to="8usw:qgBRHb_uRT" resolve="type" />
+        <ref role="1NtTu8" to="8usw:3jnrpqS_KhJ" />
         <ref role="1k5W1q" node="qgBRHbW9ZB" resolve="type" />
       </node>
       <node concept="2iRfu4" id="qgBRHboN4V" role="2iSdaV" />
@@ -678,6 +678,13 @@
       <node concept="3F1sOY" id="qgBRHbYw$c" role="3EZMnx">
         <ref role="1NtTu8" to="8usw:qgBRHbq9Wb" resolve="parent" />
       </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="3jnrpqSwfK6">
+    <property role="3GE5qa" value="types.primitive" />
+    <ref role="1XX52x" to="8usw:3jnrpqSwfK4" resolve="DesignSystemBooleanTypeConcept" />
+    <node concept="3F0ifn" id="3jnrpqSwfKg" role="2wV5jI">
+      <property role="3F0ifm" value="Boolean" />
     </node>
   </node>
 </model>
