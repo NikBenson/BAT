@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="-67cbk5976rftbo2c6x4n9kgv5taqy6h">
-  <files names="IfStatementCondition_NonTypesystemRule.java:PrimitiveTokens_SubtypingRule.java:Set_NonTypesystemRule.java:TokenType_NonTypesystemRule.java:TypesystemDescriptor.java:typeof_AbstractDesignSystemPrimitiveTokensConcept_InferenceRule.java:typeof_ColorLiteral_InferenceRule.java:typeof_DecimalLiteral_InferenceRule.java:typeof_IntegerLiteral_InferenceRule.java:typeof_StringLiteral_InferenceRule.java" />
-</product>
-
