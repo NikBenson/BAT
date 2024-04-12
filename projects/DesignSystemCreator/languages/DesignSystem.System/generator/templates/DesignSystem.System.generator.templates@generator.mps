@@ -66,6 +66,7 @@
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
+      <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <child id="1165602531693" name="superclass" index="1zkMxy" />
@@ -401,6 +402,12 @@
       <ref role="30HIoZ" to="8usw:qgBRHbnxkS" resolve="DesignSystemPropertyParameterConcept" />
       <node concept="j$656" id="qgBRHciot3" role="1lVwrX">
         <ref role="v9R2y" node="qgBRHciot0" resolve="reduce_DesignSystemPropertyParameterConcept_as_methode_parameter" />
+      </node>
+    </node>
+    <node concept="3aamgX" id="3jnrpqSwfKl" role="3acgRq">
+      <ref role="30HIoZ" to="8usw:3jnrpqSwfK4" resolve="DesignSystemBooleanTypeConcept" />
+      <node concept="j$656" id="3jnrpqSwfKm" role="1lVwrX">
+        <ref role="v9R2y" node="3jnrpqSwfKj" resolve="reduce_DesignSystemBooleanTypeConcept" />
       </node>
     </node>
   </node>
@@ -1524,7 +1531,7 @@
               <node concept="3clFbF" id="qgBRHcip1j" role="3cqZAp">
                 <node concept="2OqwBi" id="qgBRHcip1e" role="3clFbG">
                   <node concept="3TrEf2" id="qgBRHcip1h" role="2OqNvi">
-                    <ref role="3Tt5mk" to="8usw:qgBRHb_uRT" resolve="type" />
+                    <ref role="3Tt5mk" to="8usw:3jnrpqS_KhJ" />
                   </node>
                   <node concept="30H73N" id="qgBRHcip1i" role="2Oq$k0" />
                 </node>
@@ -1921,6 +1928,14 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="13MO4I" id="3jnrpqSwfKj">
+    <property role="TrG5h" value="reduce_DesignSystemBooleanTypeConcept" />
+    <property role="3GE5qa" value="types.primitive" />
+    <ref role="3gUMe" to="8usw:3jnrpqSwfK4" resolve="DesignSystemBooleanTypeConcept" />
+    <node concept="10P_77" id="3jnrpqSwfKK" role="13RCb5">
+      <node concept="raruj" id="3jnrpqSwfKM" role="lGtFl" />
     </node>
   </node>
 </model>

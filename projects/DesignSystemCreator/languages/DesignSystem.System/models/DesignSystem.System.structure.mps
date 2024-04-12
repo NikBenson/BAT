@@ -142,15 +142,8 @@
     <property role="EcuMT" value="473053312768152888" />
     <property role="3GE5qa" value="design_system.properties" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="qgBRHboN53" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
-    <node concept="1TJgyj" id="qgBRHb_uRT" role="1TKVEi">
-      <property role="IQ2ns" value="473053312771812857" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="type" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="qgBRHb_ruL" resolve="DesignSystemTypeConcept" />
+    <node concept="PrWs8" id="3jnrpqS_KhR" role="PzmwI">
+      <ref role="PrY4T" node="3jnrpqS_KhG" resolve="IDesignSystemCreatesVarriable" />
     </node>
   </node>
   <node concept="1TIwiD" id="qgBRHbq9W5">
@@ -374,6 +367,27 @@
       <property role="20kJfa" value="content" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3jnrpqSwfK4">
+    <property role="EcuMT" value="3807632504073026564" />
+    <property role="3GE5qa" value="types.primitive" />
+    <property role="TrG5h" value="DesignSystemBooleanTypeConcept" />
+    <property role="34LRSv" value="Boolean" />
+    <ref role="1TJDcQ" node="qgBRHbAaw9" resolve="DesignSystemPrimitiveTypeConcept" />
+  </node>
+  <node concept="PlHQZ" id="3jnrpqS_KhG">
+    <property role="EcuMT" value="3807632504074470508" />
+    <property role="TrG5h" value="IDesignSystemCreatesVarriable" />
+    <node concept="1TJgyj" id="3jnrpqS_KhJ" role="1TKVEi">
+      <property role="IQ2ns" value="3807632504074470511" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="type" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="qgBRHb_ruL" resolve="DesignSystemTypeConcept" />
+    </node>
+    <node concept="PrWs8" id="3jnrpqS_KhL" role="PrDN$">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
 </model>

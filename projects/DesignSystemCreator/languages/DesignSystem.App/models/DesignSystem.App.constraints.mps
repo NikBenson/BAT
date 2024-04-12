@@ -15,6 +15,7 @@
   </languages>
   <imports>
     <import index="qit8" ref="r:cd4652a9-2141-42ee-bf85-a59a1c128e61(DesignSystem.App.structure)" implicit="true" />
+    <import index="8usw" ref="r:291ddc1b-d6e7-4ca6-a0e2-a1fae46ab1b7(DesignSystem.System.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -129,9 +130,25 @@
       </node>
     </node>
   </node>
-  <node concept="1M2fIO" id="qgBRHcboW4">
-    <property role="3GE5qa" value="expression" />
-    <ref role="1M2myG" to="qit8:3jnrpqSshJN" resolve="IDesignSystemExpressionConcept" />
+  <node concept="1M2fIO" id="3jnrpqSIcAP">
+    <property role="3GE5qa" value="resolver" />
+    <ref role="1M2myG" to="qit8:3jnrpqSHAgs" resolve="ResolvertypeReference" />
+    <node concept="1N5Pfh" id="3jnrpqSIcAQ" role="1Mr941">
+      <ref role="1N5Vy1" to="qit8:3jnrpqS_Ker" resolve="ref" />
+      <node concept="1dDu$B" id="3jnrpqSIcDk" role="1N6uqs">
+        <ref role="1dDu$A" to="qit8:qgBRHc1$VR" resolve="AbstractDesignSystemPrimitiveTokensConcept" />
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="3jnrpqSJeQt">
+    <property role="3GE5qa" value="statement.expression" />
+    <ref role="1M2myG" to="qit8:3jnrpqS_KhT" resolve="DesignSystemVarriableReference" />
+    <node concept="1N5Pfh" id="3jnrpqSJeQu" role="1Mr941">
+      <ref role="1N5Vy1" to="qit8:3jnrpqS_KhU" resolve="reference" />
+      <node concept="1dDu$B" id="3jnrpqSJeRk" role="1N6uqs">
+        <ref role="1dDu$A" to="8usw:3jnrpqS_KhG" resolve="IDesignSystemCreatesVarriable" />
+      </node>
+    </node>
   </node>
 </model>
 
