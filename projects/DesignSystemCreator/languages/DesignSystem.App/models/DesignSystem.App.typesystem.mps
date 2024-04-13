@@ -80,16 +80,13 @@
       <concept id="1185788614172" name="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" flags="ng" index="mw_s8">
         <child id="1185788644032" name="normalType" index="mwGJk" />
       </concept>
-      <concept id="1175147569072" name="jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule" flags="ig" index="2sgdUx">
-        <child id="1175147624276" name="body" index="2sgrp5" />
-      </concept>
-      <concept id="1175147670730" name="jetbrains.mps.lang.typesystem.structure.SubtypingRule" flags="ig" index="2sgARr" />
       <concept id="1175517400280" name="jetbrains.mps.lang.typesystem.structure.AssertStatement" flags="nn" index="2Mj0R9">
         <child id="1175517761460" name="condition" index="2MkoU_" />
       </concept>
       <concept id="1175517767210" name="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" flags="nn" index="2MkqsV">
         <child id="1175517851849" name="errorString" index="2MkJ7o" />
       </concept>
+      <concept id="1179832490862" name="jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement" flags="nn" index="2NvLDW" />
       <concept id="1195213580585" name="jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule" flags="ig" index="18hYwZ">
         <child id="1195213635060" name="body" index="18ibNy" />
       </concept>
@@ -215,30 +212,6 @@
     <node concept="1YaCAy" id="3jnrpqSshK6" role="1YuTPh">
       <property role="TrG5h" value="ifExpression" />
       <ref role="1YaFvo" to="qit8:3jnrpqSshJT" resolve="IfStatement" />
-    </node>
-  </node>
-  <node concept="2sgARr" id="3jnrpqSshKi">
-    <property role="TrG5h" value="subtyping_DesignSystemPrimitiveTokensConcept" />
-    <node concept="3clFbS" id="3jnrpqSshKj" role="2sgrp5">
-      <node concept="3cpWs6" id="3jnrpqSYKxW" role="3cqZAp">
-        <node concept="2OqwBi" id="3jnrpqSYLIF" role="3cqZAk">
-          <node concept="2OqwBi" id="3jnrpqSYKIg" role="2Oq$k0">
-            <node concept="1YBJjd" id="3jnrpqSYKzx" role="2Oq$k0">
-              <ref role="1YBMHb" node="3jnrpqSshLP" resolve="tokens" />
-            </node>
-            <node concept="3TrEf2" id="3jnrpqSYLiF" role="2OqNvi">
-              <ref role="3Tt5mk" to="qit8:qgBRHc2J_T" />
-            </node>
-          </node>
-          <node concept="3TrEf2" id="3jnrpqSYLUl" role="2OqNvi">
-            <ref role="3Tt5mk" to="qit8:qgBRHc2J_W" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="3jnrpqSshLP" role="1YuTPh">
-      <property role="TrG5h" value="tokens" />
-      <ref role="1YaFvo" to="qit8:qgBRHbnxjG" resolve="DesignSystemPrimitiveTokensConcept" />
     </node>
   </node>
   <node concept="1YbPZF" id="3jnrpqSsiqz">
@@ -1461,6 +1434,41 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="1YbPZF" id="3jnrpqTdRtd">
+    <property role="TrG5h" value="typeof_DesignSystemPrimitiveTokensConcept" />
+    <node concept="3clFbS" id="3jnrpqTdRte" role="18ibNy">
+      <node concept="2NvLDW" id="3jnrpqTdS8U" role="3cqZAp">
+        <node concept="mw_s8" id="3jnrpqTdS9c" role="1ZfhKB">
+          <node concept="1Z2H0r" id="3jnrpqTdS$n" role="mwGJk">
+            <node concept="2OqwBi" id="3jnrpqTdT3n" role="1Z2MuG">
+              <node concept="2OqwBi" id="3jnrpqTdS_o" role="2Oq$k0">
+                <node concept="1YBJjd" id="3jnrpqTdS$P" role="2Oq$k0">
+                  <ref role="1YBMHb" node="3jnrpqTdRtg" resolve="designSystemPrimitiveTokensConcept" />
+                </node>
+                <node concept="3TrEf2" id="3jnrpqTdSS$" role="2OqNvi">
+                  <ref role="3Tt5mk" to="qit8:qgBRHc2J_T" resolve="parent" />
+                </node>
+              </node>
+              <node concept="3TrEf2" id="3jnrpqTdTeV" role="2OqNvi">
+                <ref role="3Tt5mk" to="qit8:qgBRHc2J_W" resolve="abstractDesignSystemPrimitiveTokensConcept" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="3jnrpqTdS8X" role="1ZfhK$">
+          <node concept="1Z2H0r" id="3jnrpqTdRvJ" role="mwGJk">
+            <node concept="1YBJjd" id="3jnrpqTdRxD" role="1Z2MuG">
+              <ref role="1YBMHb" node="3jnrpqTdRtg" resolve="designSystemPrimitiveTokensConcept" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="3jnrpqTdRtg" role="1YuTPh">
+      <property role="TrG5h" value="designSystemPrimitiveTokensConcept" />
+      <ref role="1YaFvo" to="qit8:qgBRHbnxjG" resolve="DesignSystemPrimitiveTokensConcept" />
     </node>
   </node>
 </model>
