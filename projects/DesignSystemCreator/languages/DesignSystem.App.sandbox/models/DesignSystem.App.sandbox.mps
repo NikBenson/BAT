@@ -165,7 +165,7 @@
             </node>
           </node>
           <node concept="2c0nft" id="3jnrpqT9cra" role="2c0ne8">
-            <ref role="2c0nfq" to="qyyx:qgBRHbAwfW" resolve="w100" />
+            <ref role="2c0nfq" to="qyyx:qgBRHbAwg$" resolve="w700" />
           </node>
         </node>
       </node>

@@ -10,7 +10,9 @@
       <classes generated="true" path="${module}/classes_gen" />
     </facet>
   </facets>
-  <accessoryModels />
+  <accessoryModels>
+    <model modelUID="r:8475ce59-7e04-4c2c-8b87-61dcddeca6ae(DesignSystem.App)" />
+  </accessoryModels>
   <generators>
     <generator alias="main" namespace="DesignSystem.App.generator" uuid="7e7bfb5b-8c9c-4e24-8c61-6de3e9fa0d4e">
       <models>
