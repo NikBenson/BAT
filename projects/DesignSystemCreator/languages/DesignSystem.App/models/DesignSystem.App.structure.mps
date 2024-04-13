@@ -536,5 +536,80 @@
       <ref role="20lvS9" node="qgBRHc1$VR" resolve="AbstractDesignSystemPrimitiveTokensConcept" />
     </node>
   </node>
+  <node concept="1TIwiD" id="3jnrpqSLX42">
+    <property role="EcuMT" value="3807632504077668610" />
+    <property role="TrG5h" value="TypeLiteral" />
+    <property role="3GE5qa" value="type" />
+    <ref role="1TJDcQ" node="3jnrpqSF9hs" resolve="DesignSystemExpressionConcept" />
+    <node concept="1TJgyj" id="3jnrpqSLX43" role="1TKVEi">
+      <property role="IQ2ns" value="3807632504077668611" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="value" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="8usw:qgBRHb_ruL" resolve="DesignSystemTypeConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3jnrpqSPxSr">
+    <property role="EcuMT" value="3807632504078605851" />
+    <property role="3GE5qa" value="statement.expression" />
+    <property role="TrG5h" value="DotExpression" />
+    <ref role="1TJDcQ" node="3jnrpqSF9hs" resolve="DesignSystemExpressionConcept" />
+    <node concept="1TJgyj" id="3jnrpqSPxSs" role="1TKVEi">
+      <property role="IQ2ns" value="3807632504078605852" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="lhs" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="3jnrpqSF9hs" resolve="DesignSystemExpressionConcept" />
+    </node>
+    <node concept="1TJgyj" id="3jnrpqSPxSu" role="1TKVEi">
+      <property role="IQ2ns" value="3807632504078605854" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="rhs" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="3jnrpqSPxSx" resolve="DesignSystemMethod" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3jnrpqSPxSx">
+    <property role="EcuMT" value="3807632504078605857" />
+    <property role="3GE5qa" value="statement.method" />
+    <property role="TrG5h" value="DesignSystemMethod" />
+    <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="PrWs8" id="3jnrpqSPxT9" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3jnrpqSPxTb">
+    <property role="EcuMT" value="3807632504078605899" />
+    <property role="3GE5qa" value="statement.method" />
+    <property role="TrG5h" value="EnumItemMethod" />
+    <ref role="1TJDcQ" node="3jnrpqSPxSx" resolve="DesignSystemMethod" />
+    <node concept="1TJgyj" id="3jnrpqSPxTc" role="1TKVEi">
+      <property role="IQ2ns" value="3807632504078605900" />
+      <property role="20kJfa" value="item" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="8usw:qgBRHb_rz3" resolve="DesignSystemEnumItemConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3jnrpqSRmP2">
+    <property role="EcuMT" value="3807632504079084866" />
+    <property role="TrG5h" value="InstanceLiteral" />
+    <property role="3GE5qa" value="type" />
+    <ref role="1TJDcQ" node="3jnrpqSF9hs" resolve="DesignSystemExpressionConcept" />
+    <node concept="1TJgyj" id="3jnrpqSRmP3" role="1TKVEi">
+      <property role="IQ2ns" value="3807632504079084867" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="type" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="8usw:qgBRHb_ruL" resolve="DesignSystemTypeConcept" />
+    </node>
+    <node concept="1TJgyj" id="3jnrpqSRmP4" role="1TKVEi">
+      <property role="IQ2ns" value="3807632504079084868" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="parameters" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="3jnrpqSF9hs" resolve="DesignSystemExpressionConcept" />
+    </node>
+  </node>
 </model>
 

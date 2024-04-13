@@ -9,6 +9,7 @@
     <import index="qit8" ref="r:cd4652a9-2141-42ee-bf85-a59a1c128e61(DesignSystem.App.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="1ctc" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.stream(JDK/)" implicit="true" />
+    <import index="8usw" ref="r:291ddc1b-d6e7-4ca6-a0e2-a1fae46ab1b7(DesignSystem.System.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -104,6 +105,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ngI" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -499,6 +503,102 @@
                 <node concept="1r4Lsj" id="qgBRHc82xA" role="2Oq$k0" />
                 <node concept="3TrEf2" id="qgBRHc82TU" role="2OqNvi">
                   <ref role="3Tt5mk" to="qit8:3jnrpqS_K7V" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="37WguZ" id="3jnrpqSPFjv">
+    <property role="3GE5qa" value="statement.expression" />
+    <property role="TrG5h" value="DotExpressionFactories" />
+    <node concept="37WvkG" id="3jnrpqSPFjw" role="37WGs$">
+      <ref role="37XkoT" to="qit8:3jnrpqSPxSr" resolve="DotExpression" />
+      <node concept="37Y9Zx" id="3jnrpqSPFjx" role="37ZfLb">
+        <node concept="3clFbS" id="3jnrpqSPFjy" role="2VODD2">
+          <node concept="Jncv_" id="3jnrpqSPFjP" role="3cqZAp">
+            <ref role="JncvD" to="qit8:3jnrpqSF9hs" resolve="DesignSystemExpressionConcept" />
+            <node concept="1r4N5L" id="3jnrpqSPFkq" role="JncvB" />
+            <node concept="3clFbS" id="3jnrpqSPFjR" role="Jncv$">
+              <node concept="3clFbF" id="3jnrpqSPFm9" role="3cqZAp">
+                <node concept="37vLTI" id="3jnrpqSPG9n" role="3clFbG">
+                  <node concept="Jnkvi" id="3jnrpqSPGc6" role="37vLTx">
+                    <ref role="1M0zk5" node="3jnrpqSPFjS" resolve="expression" />
+                  </node>
+                  <node concept="2OqwBi" id="3jnrpqSPFwB" role="37vLTJ">
+                    <node concept="1r4Lsj" id="3jnrpqSPFm8" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="3jnrpqSPFNX" role="2OqNvi">
+                      <ref role="3Tt5mk" to="qit8:3jnrpqSPxSs" resolve="lhs" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="JncvC" id="3jnrpqSPFjS" role="JncvA">
+              <property role="TrG5h" value="expression" />
+              <node concept="2jxLKc" id="3jnrpqSPFjT" role="1tU5fm" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="37WguZ" id="3jnrpqSTIiq">
+    <property role="3GE5qa" value="resolver" />
+    <property role="TrG5h" value="DesignSystemPrimitiveTokensResolverFactories" />
+    <node concept="37WvkG" id="3jnrpqSTIir" role="37WGs$">
+      <ref role="37XkoT" to="qit8:3jnrpqS_K7P" resolve="DesignSystemPrimitiveTokensResolverConcept" />
+      <node concept="37Y9Zx" id="3jnrpqSTIis" role="37ZfLb">
+        <node concept="3clFbS" id="3jnrpqSTIit" role="2VODD2">
+          <node concept="3clFbF" id="3jnrpqSTIiL" role="3cqZAp">
+            <node concept="37vLTI" id="3jnrpqSTJam" role="3clFbG">
+              <node concept="2ShNRf" id="3jnrpqSTJhy" role="37vLTx">
+                <node concept="3zrR0B" id="3jnrpqSTJhw" role="2ShVmc">
+                  <node concept="3Tqbb2" id="3jnrpqSTJhx" role="3zrR0E">
+                    <ref role="ehGHo" to="qit8:3jnrpqSHAgs" resolve="ResolvertypeReference" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="3jnrpqSTIuU" role="37vLTJ">
+                <node concept="1r4Lsj" id="3jnrpqSTIiK" role="2Oq$k0" />
+                <node concept="3TrEf2" id="3jnrpqSTIFw" role="2OqNvi">
+                  <ref role="3Tt5mk" to="qit8:3jnrpqSHAgv" resolve="for" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="3jnrpqSTJkG" role="3cqZAp">
+            <node concept="37vLTI" id="3jnrpqSTK1k" role="3clFbG">
+              <node concept="2ShNRf" id="3jnrpqSTK3X" role="37vLTx">
+                <node concept="3zrR0B" id="3jnrpqSTK3V" role="2ShVmc">
+                  <node concept="3Tqbb2" id="3jnrpqSTK3W" role="3zrR0E">
+                    <ref role="ehGHo" to="8usw:qgBRHbnxkE" resolve="DesignSystemPropertyParametersListConcept" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="3jnrpqSTJxh" role="37vLTJ">
+                <node concept="1r4Lsj" id="3jnrpqSTJkF" role="2Oq$k0" />
+                <node concept="3TrEf2" id="3jnrpqSTJHR" role="2OqNvi">
+                  <ref role="3Tt5mk" to="qit8:3jnrpqS_Keu" resolve="by" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="3jnrpqSTKcE" role="3cqZAp">
+            <node concept="37vLTI" id="3jnrpqSTLlz" role="3clFbG">
+              <node concept="2ShNRf" id="3jnrpqSTLos" role="37vLTx">
+                <node concept="3zrR0B" id="3jnrpqSTLoq" role="2ShVmc">
+                  <node concept="3Tqbb2" id="3jnrpqSTLor" role="3zrR0E">
+                    <ref role="ehGHo" to="qit8:3jnrpqSwd$j" resolve="StatementList" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="3jnrpqSTKpL" role="37vLTJ">
+                <node concept="1r4Lsj" id="3jnrpqSTKcD" role="2Oq$k0" />
+                <node concept="3TrEf2" id="3jnrpqSTKOi" role="2OqNvi">
+                  <ref role="3Tt5mk" to="qit8:3jnrpqS_Ke$" resolve="body" />
                 </node>
               </node>
             </node>

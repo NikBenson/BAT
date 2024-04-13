@@ -896,5 +896,94 @@
       </node>
     </node>
   </node>
+  <node concept="24kQdi" id="3jnrpqSM62L">
+    <property role="3GE5qa" value="type" />
+    <ref role="1XX52x" to="qit8:3jnrpqSLX42" resolve="TypeLiteral" />
+    <node concept="3F1sOY" id="3jnrpqSM62N" role="2wV5jI">
+      <ref role="1NtTu8" to="qit8:3jnrpqSLX43" resolve="value" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="3jnrpqSPxSy">
+    <property role="3GE5qa" value="statement.expression" />
+    <ref role="1XX52x" to="qit8:3jnrpqSPxSr" resolve="DotExpression" />
+    <node concept="3EZMnI" id="3jnrpqSPxS$" role="2wV5jI">
+      <node concept="3F1sOY" id="3jnrpqSPxSF" role="3EZMnx">
+        <ref role="1NtTu8" to="qit8:3jnrpqSPxSs" resolve="lhs" />
+      </node>
+      <node concept="3F0ifn" id="3jnrpqSPxSL" role="3EZMnx">
+        <property role="3F0ifm" value="." />
+      </node>
+      <node concept="3F1sOY" id="3jnrpqSPxST" role="3EZMnx">
+        <ref role="1NtTu8" to="qit8:3jnrpqSPxSu" resolve="rhs" />
+      </node>
+      <node concept="l2Vlx" id="3jnrpqSPxSB" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="3jnrpqSPxTe">
+    <property role="3GE5qa" value="statement.method" />
+    <ref role="1XX52x" to="qit8:3jnrpqSPxTb" resolve="EnumItemMethod" />
+    <node concept="1iCGBv" id="3jnrpqSPxTg" role="2wV5jI">
+      <ref role="1NtTu8" to="qit8:3jnrpqSPxTc" resolve="item" />
+      <node concept="1sVBvm" id="3jnrpqSPxTi" role="1sWHZn">
+        <node concept="3F0A7n" id="3jnrpqSPxTp" role="2wV5jI">
+          <property role="1Intyy" value="true" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3ICUPy" id="3jnrpqSPEiN">
+    <property role="3GE5qa" value="statement.expression" />
+    <ref role="aqKnT" to="qit8:3jnrpqSF9hs" resolve="DesignSystemExpressionConcept" />
+    <node concept="22hDWj" id="3jnrpqST98N" role="22hAXT" />
+    <node concept="1Qtc8_" id="3jnrpqSPEiS" role="IW6Ez">
+      <node concept="3cWJ9i" id="3jnrpqSPEiW" role="1Qtc8$">
+        <node concept="CtIbL" id="3jnrpqSPEiY" role="CtIbM">
+          <property role="CtIbK" value="30NnNOohrQL/RIGHT" />
+        </node>
+      </node>
+      <node concept="IWgqT" id="3jnrpqSPEj2" role="1Qtc8A">
+        <node concept="1hCUdq" id="3jnrpqSPEj3" role="1hCUd6">
+          <node concept="3clFbS" id="3jnrpqSPEj4" role="2VODD2">
+            <node concept="3clFbF" id="3jnrpqSPEzC" role="3cqZAp">
+              <node concept="Xl_RD" id="3jnrpqSPEzB" role="3clFbG">
+                <property role="Xl_RC" value="." />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="IWg2L" id="3jnrpqSPEj5" role="IWgqQ">
+          <node concept="3clFbS" id="3jnrpqSPEj6" role="2VODD2">
+            <node concept="3clFbF" id="3jnrpqSPEOS" role="3cqZAp">
+              <node concept="2OqwBi" id="3jnrpqSPEY$" role="3clFbG">
+                <node concept="7Obwk" id="3jnrpqSPEOR" role="2Oq$k0" />
+                <node concept="2DeJnW" id="3jnrpqSPFiz" role="2OqNvi">
+                  <ref role="1_rbq0" to="qit8:3jnrpqSPxSr" resolve="DotExpression" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="3jnrpqSRmP7">
+    <property role="3GE5qa" value="type" />
+    <ref role="1XX52x" to="qit8:3jnrpqSRmP2" resolve="InstanceLiteral" />
+    <node concept="3EZMnI" id="3jnrpqSRmP9" role="2wV5jI">
+      <node concept="l2Vlx" id="3jnrpqSRmPc" role="2iSdaV" />
+      <node concept="3F1sOY" id="3jnrpqSRmPu" role="3EZMnx">
+        <ref role="1NtTu8" to="qit8:3jnrpqSRmP3" resolve="type" />
+      </node>
+      <node concept="3F0ifn" id="3jnrpqSRmPz" role="3EZMnx">
+        <property role="3F0ifm" value="by" />
+      </node>
+      <node concept="3F2HdR" id="3jnrpqSRmPU" role="3EZMnx">
+        <property role="2czwfO" value="and" />
+        <ref role="1NtTu8" to="qit8:3jnrpqSRmP4" resolve="parameters" />
+        <node concept="l2Vlx" id="3jnrpqSRmPW" role="2czzBx" />
+      </node>
+    </node>
+  </node>
 </model>
 

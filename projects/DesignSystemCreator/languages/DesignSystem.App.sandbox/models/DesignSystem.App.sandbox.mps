@@ -9,8 +9,18 @@
   </imports>
   <registry>
     <language id="9b844d5f-d3bc-48e3-8d2e-d303cf551efe" name="DesignSystem.App">
-      <concept id="3807632504074470443" name="DesignSystem.App.structure.VariableDefinitionStatement" flags="ng" index="2cg6AX">
-        <child id="3807632504074470446" name="value" index="2cg6AS" />
+      <concept id="3807632504078605851" name="DesignSystem.App.structure.DotExpression" flags="ng" index="2c0ned">
+        <child id="3807632504078605854" name="rhs" index="2c0ne8" />
+        <child id="3807632504078605852" name="lhs" index="2c0nea" />
+      </concept>
+      <concept id="3807632504078605899" name="DesignSystem.App.structure.EnumItemMethod" flags="ng" index="2c0nft">
+        <reference id="3807632504078605900" name="item" index="2c0nfq" />
+      </concept>
+      <concept id="3807632504079084866" name="DesignSystem.App.structure.InstanceLiteral" flags="ng" index="2c2w3k">
+        <child id="3807632504079084867" name="type" index="2c2w3l" />
+      </concept>
+      <concept id="3807632504077668610" name="DesignSystem.App.structure.TypeLiteral" flags="ng" index="2c4bMk">
+        <child id="3807632504077668611" name="value" index="2c4bMl" />
       </concept>
       <concept id="3807632504074470521" name="DesignSystem.App.structure.DesignSystemVarriableReference" flags="ng" index="2cg6BJ">
         <reference id="3807632504074470522" name="reference" index="2cg6BG" />
@@ -42,16 +52,6 @@
       <concept id="3807632504071985932" name="DesignSystem.App.structure.ColorLiteral" flags="ng" index="2cDBqq">
         <property id="3807632504071985935" name="value" index="2cDBqp" />
       </concept>
-      <concept id="3807632504072908287" name="DesignSystem.App.structure.SetLiteral" flags="ng" index="2cE41D">
-        <child id="3807632504072908294" name="content" index="2cE4eg" />
-        <child id="3807632504072908292" name="type" index="2cE4ei" />
-      </concept>
-      <concept id="3807632504072908008" name="DesignSystem.App.structure.IntegerLiteral" flags="ng" index="2cE45Y">
-        <property id="3807632504072908010" name="value" index="2cE45W" />
-      </concept>
-      <concept id="3807632504072824489" name="DesignSystem.App.structure.DecimalLiteral" flags="ng" index="2cECGZ">
-        <property id="3807632504072824493" name="value" index="2cECGV" />
-      </concept>
       <concept id="473053312779167667" name="DesignSystem.App.structure.DesignSystemPrimitiveTokensFileConcept" flags="ng" index="1a_Fz8" />
       <concept id="473053312779177719" name="DesignSystem.App.structure.AbstractDesignSystemPrimitiveTokensConcept" flags="ng" index="1a_H6c">
         <child id="473053312779318153" name="tokens" index="1aAeNM" />
@@ -59,13 +59,11 @@
       </concept>
       <concept id="473053312779318150" name="DesignSystem.App.structure.AbstractDesignSystemPrimitiveTokenConcept" flags="ng" index="1aAeNX" />
       <concept id="473053312779475857" name="DesignSystem.App.structure.DesignSystemPrimitiveTokenConcept" flags="ng" index="1aA$jE">
-        <property id="473053312779475858" name="value" index="1aA$jD" />
         <child id="3807632504072027166" name="value" index="2cDH68" />
       </concept>
       <concept id="473053312779483515" name="DesignSystem.App.structure.AbstractDesignSystemPrimitiveTokensConceptReference" flags="ng" index="1aAAo0">
         <reference id="473053312779483516" name="abstractDesignSystemPrimitiveTokensConcept" index="1aAAo7" />
       </concept>
-      <concept id="473053312781750019" name="DesignSystem.App.structure.DesignSystemExpressionConcept" flags="ng" index="1aJh1S" />
       <concept id="473053312768152812" name="DesignSystem.App.structure.DesignSystemPrimitiveTokensConcept" flags="ng" index="1dNCIn">
         <child id="473053312779483513" name="parent" index="1aAAo2" />
       </concept>
@@ -86,9 +84,6 @@
         <reference id="473053312771991559" name="reference" index="1d23tW" />
       </concept>
       <concept id="473053312772080760" name="DesignSystem.System.structure.DesignSystemColorTypeConcept" flags="ng" index="1d2DG3" />
-      <concept id="473053312773301441" name="DesignSystem.System.structure.DesignSystemSetTypeConcept" flags="ng" index="1df3IU">
-        <child id="473053312773301485" name="generic" index="1df3Im" />
-      </concept>
       <concept id="473053312768152888" name="DesignSystem.System.structure.DesignSystemPropertyParameterConcept" flags="ng" index="1dNCD3" />
       <concept id="473053312768152874" name="DesignSystem.System.structure.DesignSystemPropertyParametersListConcept" flags="ng" index="1dNCDh">
         <child id="473053312768152886" name="parameters" index="1dNCDd" />
@@ -149,7 +144,7 @@
       </node>
       <node concept="1aA$jE" id="3jnrpqSF6aA" role="1aAeNM">
         <property role="TrG5h" value="blue" />
-        <node concept="2cDBqq" id="3jnrpqSF6aJ" role="2cDH68">
+        <node concept="2cDBqq" id="3jnrpqSX7j3" role="2cDH68">
           <property role="2cDBqp" value="000000" />
         </node>
       </node>
@@ -158,12 +153,21 @@
   <node concept="1a_Fz8" id="4y2cPgZHWsO">
     <node concept="1dNCIn" id="4y2cPgZHWsP" role="1awAuv">
       <property role="TrG5h" value="FontTokens" />
-      <node concept="1aA$jE" id="4y2cPgZHWsU" role="1aAeNM">
-        <property role="TrG5h" value="bold" />
-        <property role="1aA$jD" value="bold" />
-      </node>
       <node concept="1d23tX" id="3jnrpqSF6b3" role="1dNCDL">
         <ref role="1d23tW" to="qyyx:qgBRHbAwfV" resolve="FontWeight" />
+      </node>
+      <node concept="1aA$jE" id="3jnrpqT6nFv" role="1aAeNM">
+        <property role="TrG5h" value="bold" />
+        <node concept="2c0ned" id="3jnrpqT6nFF" role="2cDH68">
+          <node concept="2c4bMk" id="3jnrpqT6nFS" role="2c0nea">
+            <node concept="1d23tX" id="3jnrpqT6nG3" role="2c4bMl">
+              <ref role="1d23tW" to="qyyx:qgBRHbAwfV" resolve="FontWeight" />
+            </node>
+          </node>
+          <node concept="2c0nft" id="3jnrpqT9cra" role="2c0ne8">
+            <ref role="2c0nfq" to="qyyx:qgBRHbAwfW" resolve="w100" />
+          </node>
+        </node>
       </node>
     </node>
   </node>
@@ -182,11 +186,10 @@
         <node concept="2cDBpJ" id="3jnrpqSDT$A" role="2clVi2">
           <node concept="2clVi5" id="3jnrpqSDT$C" role="2clAxP">
             <node concept="2cg6LT" id="3jnrpqSF692" role="2clVi2">
-              <node concept="2cvhjy" id="3jnrpqSJ1i9" role="2cg6LA">
-                <node concept="2cg6BJ" id="3jnrpqSJ1ii" role="2cvhjw">
-                  <ref role="2cg6BG" node="3jnrpqSF69k" resolve="test" />
+              <node concept="2c2w3k" id="3jnrpqSZWgB" role="2cg6LA">
+                <node concept="1d23tX" id="3jnrpqSZWgH" role="2c2w3l">
+                  <ref role="1d23tW" node="4y2cPgZHWoQ" resolve="LightColorTokens" />
                 </node>
-                <node concept="1aJh1S" id="3jnrpqSJJmC" role="2cvhjx" />
               </node>
             </node>
           </node>
@@ -194,34 +197,25 @@
             <node concept="2cg6BJ" id="3jnrpqSF68V" role="2cvhjw">
               <ref role="2cg6BG" node="3jnrpqSDT$s" resolve="brightness" />
             </node>
-            <node concept="2cg6BJ" id="3jnrpqSIbCC" role="2cvhjx">
-              <ref role="2cg6BG" node="3jnrpqSDT$s" resolve="brightness" />
+            <node concept="2c0ned" id="3jnrpqSVCQ1" role="2cvhjx">
+              <node concept="2c4bMk" id="3jnrpqSVCQi" role="2c0nea">
+                <node concept="1d23tX" id="3jnrpqSVCQt" role="2c4bMl">
+                  <ref role="1d23tW" to="qyyx:qgBRHbAeL6" resolve="Brightness" />
+                </node>
+              </node>
+              <node concept="2c0nft" id="3jnrpqT5Bpt" role="2c0ne8">
+                <ref role="2c0nfq" to="qyyx:qgBRHbAeL8" resolve="light" />
+              </node>
             </node>
           </node>
           <node concept="2clVi5" id="3jnrpqSF69h" role="2ct3yP">
-            <node concept="2cg6AX" id="3jnrpqSF69k" role="2clVi2">
-              <property role="TrG5h" value="test" />
-              <node concept="1df3IU" id="3jnrpqSF8cB" role="2cg6BT">
-                <node concept="1d23tX" id="3jnrpqSF8cE" role="1df3Im">
-                  <ref role="1d23tW" to="qyyx:qgBRHbFafY" resolve="MaterialState" />
-                </node>
-              </node>
-              <node concept="2cE41D" id="3jnrpqSF8cG" role="2cg6AS">
-                <node concept="2cE45Y" id="3jnrpqSF8cP" role="2cE4eg">
-                  <property role="2cE45W" value="1" />
-                </node>
-                <node concept="2cE45Y" id="3jnrpqSF8d0" role="2cE4eg">
-                  <property role="2cE45W" value="2" />
-                </node>
-                <node concept="2cECGZ" id="3jnrpqSF8de" role="2cE4eg">
-                  <property role="2cECGV" value="2.0" />
-                </node>
-                <node concept="1d23tX" id="3jnrpqSIbCz" role="2cE4ei">
-                  <ref role="1d23tW" to="qyyx:qgBRHbFafY" resolve="MaterialState" />
+            <node concept="2cg6LT" id="3jnrpqSJJmR" role="2clVi2">
+              <node concept="2c2w3k" id="3jnrpqSZWhk" role="2cg6LA">
+                <node concept="1d23tX" id="3jnrpqSZWhq" role="2c2w3l">
+                  <ref role="1d23tW" node="3jnrpqSCLzz" resolve="DarkColorTokens" />
                 </node>
               </node>
             </node>
-            <node concept="2cg6LT" id="3jnrpqSJJmR" role="2clVi2" />
           </node>
         </node>
       </node>
