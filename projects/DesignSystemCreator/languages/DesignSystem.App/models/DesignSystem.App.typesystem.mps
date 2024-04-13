@@ -1345,34 +1345,6 @@
       </node>
     </node>
   </node>
-  <node concept="1YbPZF" id="3jnrpqSPB$c">
-    <property role="TrG5h" value="typeof_DesignSystemExpressionConcept" />
-    <property role="3GE5qa" value="statement.expression" />
-    <node concept="3clFbS" id="3jnrpqSPB$d" role="18ibNy">
-      <node concept="1Z5TYs" id="3jnrpqSPCc0" role="3cqZAp">
-        <node concept="mw_s8" id="3jnrpqSPCck" role="1ZfhKB">
-          <node concept="2ShNRf" id="3jnrpqSPCcg" role="mwGJk">
-            <node concept="3zrR0B" id="3jnrpqSPCok" role="2ShVmc">
-              <node concept="3Tqbb2" id="3jnrpqSPCom" role="3zrR0E">
-                <ref role="ehGHo" to="qit8:3jnrpqSwd_M" resolve="VoidType" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="mw_s8" id="3jnrpqSPCc3" role="1ZfhK$">
-          <node concept="1Z2H0r" id="3jnrpqSPBAt" role="mwGJk">
-            <node concept="1YBJjd" id="3jnrpqSPBCn" role="1Z2MuG">
-              <ref role="1YBMHb" node="3jnrpqSPB$f" resolve="designSystemExpressionConcept" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="3jnrpqSPB$f" role="1YuTPh">
-      <property role="TrG5h" value="designSystemExpressionConcept" />
-      <ref role="1YaFvo" to="qit8:3jnrpqSF9hs" resolve="DesignSystemExpressionConcept" />
-    </node>
-  </node>
   <node concept="1YbPZF" id="3jnrpqSRmQ2">
     <property role="TrG5h" value="typeof_InstanceLiteral" />
     <property role="3GE5qa" value="type" />
@@ -1480,6 +1452,15 @@
     <node concept="1YaCAy" id="3jnrpqT6qEA" role="1YuTPh">
       <property role="TrG5h" value="enumItemMethod" />
       <ref role="1YaFvo" to="qit8:3jnrpqSPxTb" resolve="EnumItemMethod" />
+    </node>
+    <node concept="bXqS6" id="3jnrpqTdaPH" role="ujSXK">
+      <node concept="3clFbS" id="3jnrpqTdaPI" role="2VODD2">
+        <node concept="3cpWs6" id="3jnrpqTdb5Y" role="3cqZAp">
+          <node concept="3clFbT" id="3jnrpqTdb6C" role="3cqZAk">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

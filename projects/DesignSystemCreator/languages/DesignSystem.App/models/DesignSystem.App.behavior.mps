@@ -170,6 +170,7 @@
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
+      <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="1180031783296" name="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation" flags="nn" index="2Zo12i">
         <child id="1180031783297" name="conceptArgument" index="2Zo12j" />
       </concept>
@@ -371,8 +372,11 @@
                   <property role="373rjd" value="true" />
                   <ref role="37wK5l" to="o8zo:4k9eBec$QVW" resolve="ModelPlusImportedScope" />
                   <node concept="2OqwBi" id="3jnrpqSJcsZ" role="37wK5m">
-                    <node concept="37vLTw" id="3jnrpqSJcju" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3jnrpqSFitT" resolve="child" />
+                    <node concept="2OqwBi" id="3jnrpqTcwts" role="2Oq$k0">
+                      <node concept="37vLTw" id="3jnrpqSJcju" role="2Oq$k0">
+                        <ref role="3cqZAo" node="3jnrpqSFitT" resolve="child" />
+                      </node>
+                      <node concept="2Rxl7S" id="3jnrpqTcwFY" role="2OqNvi" />
                     </node>
                     <node concept="I4A8Y" id="3jnrpqSJcH7" role="2OqNvi" />
                   </node>
