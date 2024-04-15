@@ -15,6 +15,9 @@
       </concept>
     </language>
     <language id="43e160c7-168c-4805-904b-c45c336610e7" name="DesignSystem.System">
+      <concept id="3807632504074470508" name="DesignSystem.System.structure.IDesignSystemCreatesVarriable" flags="ngI" index="2cg6BU">
+        <child id="3807632504074470511" name="type" index="2cg6BT" />
+      </concept>
       <concept id="473053312779984171" name="DesignSystem.System.structure.AbstractDesignSystemFileConcept" flags="ng" index="1aww9g">
         <child id="473053312780007652" name="content" index="1awAuv" />
       </concept>
@@ -36,9 +39,7 @@
         <child id="473053312773301485" name="generic" index="1df3Im" />
       </concept>
       <concept id="473053312777491129" name="DesignSystem.System.structure.DesignSystemIntegerType" flags="ng" index="1dv0R2" />
-      <concept id="473053312768152888" name="DesignSystem.System.structure.DesignSystemPropertyParameterConcept" flags="ng" index="1dNCD3">
-        <child id="473053312771812857" name="type" index="1d1na2" />
-      </concept>
+      <concept id="473053312768152888" name="DesignSystem.System.structure.DesignSystemPropertyParameterConcept" flags="ng" index="1dNCD3" />
       <concept id="473053312768152874" name="DesignSystem.System.structure.DesignSystemPropertyParametersListConcept" flags="ng" index="1dNCDh">
         <child id="473053312768152886" name="parameters" index="1dNCDd" />
       </concept>
@@ -156,10 +157,10 @@
             </node>
           </node>
           <node concept="1dNCDh" id="qgBRHcgqIv" role="1d1nad">
-            <node concept="1dNCD3" id="qgBRHcgqIy" role="1dNCDd">
+            <node concept="1dNCD3" id="5$1NfDA9zha" role="1dNCDd">
               <property role="TrG5h" value="state" />
-              <node concept="1df3IU" id="qgBRHcgqIM" role="1d1na2">
-                <node concept="1d23tX" id="qgBRHcgqIP" role="1df3Im">
+              <node concept="1df3IU" id="5$1NfDA9V19" role="2cg6BT">
+                <node concept="1d23tX" id="5$1NfDA9V1f" role="1df3Im">
                   <ref role="1d23tW" node="qgBRHbFafY" resolve="MaterialState" />
                 </node>
               </node>
@@ -174,10 +175,10 @@
             </node>
           </node>
           <node concept="1dNCDh" id="qgBRHcgqJ9" role="1d1nad">
-            <node concept="1dNCD3" id="qgBRHcgqJc" role="1dNCDd">
+            <node concept="1dNCD3" id="5$1NfDA9zh1" role="1dNCDd">
               <property role="TrG5h" value="state" />
-              <node concept="1df3IU" id="qgBRHcgqJA" role="1d1na2">
-                <node concept="1d23tX" id="qgBRHcgqJD" role="1df3Im">
+              <node concept="1df3IU" id="5$1NfDA9V1k" role="2cg6BT">
+                <node concept="1d23tX" id="5$1NfDA9V1q" role="1df3Im">
                   <ref role="1d23tW" node="qgBRHbFafY" resolve="MaterialState" />
                 </node>
               </node>
