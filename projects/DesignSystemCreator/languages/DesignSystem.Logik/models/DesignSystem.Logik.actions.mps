@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:cb0356ad-dc4b-434d-b956-d5d8f02b3c2c(DesignSystem.System.actions)">
+<model ref="r:863b1cca-b7f4-4fad-819a-a1f5292ea0e3(DesignSystem.Logik.actions)">
   <persistence version="9" />
   <languages>
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="8usw" ref="r:291ddc1b-d6e7-4ca6-a0e2-a1fae46ab1b7(DesignSystem.System.structure)" implicit="true" />
+    <import index="g1bg" ref="r:4e3863ee-fb0f-47ba-9514-31568b51e8ae(DesignSystem.Logik.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -62,38 +62,42 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ngI" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
   </registry>
-  <node concept="37WguZ" id="qgBRHb_KRm">
-    <property role="TrG5h" value="DesignSystemPropertyBySyntaxFactory" />
-    <node concept="37WvkG" id="qgBRHb_KRn" role="37WGs$">
-      <ref role="37XkoT" to="8usw:qgBRHb_uRN" resolve="DSParametizedDesignSystemProperty" />
-      <node concept="37Y9Zx" id="qgBRHb_KRo" role="37ZfLb">
-        <node concept="3clFbS" id="qgBRHb_KRp" role="2VODD2">
-          <node concept="Jncv_" id="qgBRHb_KRq" role="3cqZAp">
-            <ref role="JncvD" to="8usw:qgBRHbnxk4" resolve="DSDesignSystemProperty" />
-            <node concept="1r4N5L" id="qgBRHb_KRr" role="JncvB" />
-            <node concept="3clFbS" id="qgBRHb_KRs" role="Jncv$">
-              <node concept="3clFbF" id="qgBRHb_Mef" role="3cqZAp">
-                <node concept="37vLTI" id="qgBRHb_NKV" role="3clFbG">
-                  <node concept="Jnkvi" id="qgBRHb_Oh7" role="37vLTx">
-                    <ref role="1M0zk5" node="qgBRHb_KRz" resolve="original" />
+  <node concept="37WguZ" id="66TZj9W4GgG">
+    <property role="3GE5qa" value="expression" />
+    <property role="TrG5h" value="DSDotExpression_Factories" />
+    <node concept="37WvkG" id="66TZj9W4GgH" role="37WGs$">
+      <ref role="37XkoT" to="g1bg:3jnrpqSPxSr" resolve="DSDotExpression" />
+      <node concept="37Y9Zx" id="3jnrpqSPFjx" role="37ZfLb">
+        <node concept="3clFbS" id="3jnrpqSPFjy" role="2VODD2">
+          <node concept="Jncv_" id="3jnrpqSPFjP" role="3cqZAp">
+            <ref role="JncvD" to="g1bg:3jnrpqSF9hs" resolve="DSExpression" />
+            <node concept="1r4N5L" id="3jnrpqSPFkq" role="JncvB" />
+            <node concept="3clFbS" id="3jnrpqSPFjR" role="Jncv$">
+              <node concept="3clFbF" id="3jnrpqSPFm9" role="3cqZAp">
+                <node concept="37vLTI" id="3jnrpqSPG9n" role="3clFbG">
+                  <node concept="Jnkvi" id="3jnrpqSPGc6" role="37vLTx">
+                    <ref role="1M0zk5" node="3jnrpqSPFjS" resolve="expression" />
                   </node>
-                  <node concept="2OqwBi" id="qgBRHb_MoS" role="37vLTJ">
-                    <node concept="1r4Lsj" id="qgBRHb_Mee" role="2Oq$k0" />
-                    <node concept="3TrEf2" id="qgBRHb_Uiv" role="2OqNvi">
-                      <ref role="3Tt5mk" to="8usw:qgBRHb_PxG" resolve="property" />
+                  <node concept="2OqwBi" id="3jnrpqSPFwB" role="37vLTJ">
+                    <node concept="1r4Lsj" id="3jnrpqSPFm8" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="3jnrpqSPFNX" role="2OqNvi">
+                      <ref role="3Tt5mk" to="g1bg:3jnrpqSPxSs" />
                     </node>
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="JncvC" id="qgBRHb_KRz" role="JncvA">
-              <property role="TrG5h" value="original" />
-              <node concept="2jxLKc" id="qgBRHb_KR$" role="1tU5fm" />
+            <node concept="JncvC" id="3jnrpqSPFjS" role="JncvA">
+              <property role="TrG5h" value="expression" />
+              <node concept="2jxLKc" id="3jnrpqSPFjT" role="1tU5fm" />
             </node>
           </node>
         </node>

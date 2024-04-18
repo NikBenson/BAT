@@ -130,7 +130,7 @@
     <property role="3GE5qa" value="primitive_tokens" />
     <property role="TrG5h" value="makeSpecific" />
     <property role="2ZfUl0" value="true" />
-    <ref role="2ZfgGC" to="qit8:qgBRHc1$VR" resolve="AbstractDesignSystemPrimitiveTokensConcept" />
+    <ref role="2ZfgGC" to="qit8:qgBRHc1$VR" resolve="DSAbstractPrimitiveTokens" />
     <node concept="2S6ZIM" id="qgBRHc4pGN" role="2ZfVej">
       <node concept="3clFbS" id="qgBRHc4pGO" role="2VODD2">
         <node concept="3clFbF" id="qgBRHc4pXC" role="3cqZAp">
@@ -154,12 +154,12 @@
           <node concept="3cpWsn" id="qgBRHc8uA2" role="3cpWs9">
             <property role="TrG5h" value="newNode" />
             <node concept="3Tqbb2" id="qgBRHc8uA3" role="1tU5fm">
-              <ref role="ehGHo" to="qit8:qgBRHbnxjG" resolve="DesignSystemPrimitiveTokensConcept" />
+              <ref role="ehGHo" to="qit8:qgBRHbnxjG" resolve="DSPrimitiveTokens" />
             </node>
             <node concept="2OqwBi" id="qgBRHc8uA4" role="33vP2m">
               <node concept="2Sf5sV" id="qgBRHc8uA5" role="2Oq$k0" />
               <node concept="1_qnLN" id="qgBRHc8uA6" role="2OqNvi">
-                <ref role="1_rbq0" to="qit8:qgBRHbnxjG" resolve="DesignSystemPrimitiveTokensConcept" />
+                <ref role="1_rbq0" to="qit8:qgBRHbnxjG" resolve="DSPrimitiveTokens" />
               </node>
             </node>
           </node>
@@ -241,7 +241,7 @@
                               <ref role="3cqZAo" node="qgBRHc3E1H" resolve="it" />
                             </node>
                             <node concept="2DeJnW" id="qgBRHc3E1N" role="2OqNvi">
-                              <ref role="1_rbq0" to="qit8:qgBRHc2HIh" resolve="DesignSystemPrimitiveTokenConcept" />
+                              <ref role="1_rbq0" to="qit8:qgBRHc2HIh" resolve="DSPrimitiveToken" />
                             </node>
                           </node>
                         </node>
@@ -266,7 +266,7 @@
             </node>
             <node concept="3O6GUB" id="qgBRHc9i7W" role="2OqNvi">
               <node concept="chp4Y" id="qgBRHc9i7X" role="3QVz_e">
-                <ref role="cht4Q" to="qit8:qgBRHc1$VR" resolve="AbstractDesignSystemPrimitiveTokensConcept" />
+                <ref role="cht4Q" to="qit8:qgBRHc1$VR" resolve="DSAbstractPrimitiveTokens" />
               </node>
             </node>
           </node>
@@ -278,7 +278,7 @@
     <property role="3GE5qa" value="primitive_tokens" />
     <property role="TrG5h" value="makeAbstract" />
     <property role="2ZfUl0" value="true" />
-    <ref role="2ZfgGC" to="qit8:qgBRHbnxjG" resolve="DesignSystemPrimitiveTokensConcept" />
+    <ref role="2ZfgGC" to="qit8:qgBRHbnxjG" resolve="DSPrimitiveTokens" />
     <node concept="2S6ZIM" id="qgBRHc59wS" role="2ZfVej">
       <node concept="3clFbS" id="qgBRHc59wT" role="2VODD2">
         <node concept="3clFbF" id="qgBRHc59wU" role="3cqZAp">
@@ -302,12 +302,12 @@
           <node concept="3cpWsn" id="qgBRHc8fhf" role="3cpWs9">
             <property role="TrG5h" value="newNode" />
             <node concept="3Tqbb2" id="qgBRHc8fi7" role="1tU5fm">
-              <ref role="ehGHo" to="qit8:qgBRHc1$VR" resolve="AbstractDesignSystemPrimitiveTokensConcept" />
+              <ref role="ehGHo" to="qit8:qgBRHc1$VR" resolve="DSAbstractPrimitiveTokens" />
             </node>
             <node concept="2OqwBi" id="qgBRHc59x3" role="33vP2m">
               <node concept="2Sf5sV" id="qgBRHc59x4" role="2Oq$k0" />
               <node concept="1_qnLN" id="qgBRHc59x5" role="2OqNvi">
-                <ref role="1_rbq0" to="qit8:qgBRHc1$VR" resolve="AbstractDesignSystemPrimitiveTokensConcept" />
+                <ref role="1_rbq0" to="qit8:qgBRHc1$VR" resolve="DSAbstractPrimitiveTokens" />
               </node>
             </node>
           </node>
@@ -381,7 +381,7 @@
             </node>
             <node concept="3O6GUB" id="qgBRHc9gQ2" role="2OqNvi">
               <node concept="chp4Y" id="qgBRHc9gYJ" role="3QVz_e">
-                <ref role="cht4Q" to="qit8:qgBRHbnxjG" resolve="DesignSystemPrimitiveTokensConcept" />
+                <ref role="cht4Q" to="qit8:qgBRHbnxjG" resolve="DSPrimitiveTokens" />
               </node>
             </node>
           </node>
