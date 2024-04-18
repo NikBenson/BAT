@@ -10,6 +10,7 @@
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="1ctc" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.stream(JDK/)" implicit="true" />
     <import index="8usw" ref="r:291ddc1b-d6e7-4ca6-a0e2-a1fae46ab1b7(DesignSystem.System.structure)" implicit="true" />
+    <import index="g1bg" ref="r:4e3863ee-fb0f-47ba-9514-31568b51e8ae(DesignSystem.Logik.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -130,11 +131,11 @@
   <node concept="37WguZ" id="qgBRHc2fQb">
     <property role="TrG5h" value="DesignSystemAbstractPrimitiveTokensFactory" />
     <node concept="37WvkG" id="qgBRHc2fQc" role="37WGs$">
-      <ref role="37XkoT" to="qit8:qgBRHc1$VR" resolve="AbstractDesignSystemPrimitiveTokensConcept" />
+      <ref role="37XkoT" to="qit8:qgBRHc1$VR" resolve="DSAbstractPrimitiveTokens" />
       <node concept="37Y9Zx" id="qgBRHc2fQd" role="37ZfLb">
         <node concept="3clFbS" id="qgBRHc2fQe" role="2VODD2">
           <node concept="Jncv_" id="qgBRHc2gOV" role="3cqZAp">
-            <ref role="JncvD" to="qit8:qgBRHbnxjG" resolve="DesignSystemPrimitiveTokensConcept" />
+            <ref role="JncvD" to="qit8:qgBRHbnxjG" resolve="DSPrimitiveTokens" />
             <node concept="1r4N5L" id="qgBRHc2gPw" role="JncvB" />
             <node concept="3clFbS" id="qgBRHc2gOX" role="Jncv$">
               <node concept="3clFbF" id="qgBRHc2FaZ" role="3cqZAp">
@@ -213,7 +214,7 @@
                     <node concept="2ShNRf" id="qgBRHc966S" role="25WWJ7">
                       <node concept="3zrR0B" id="qgBRHc966T" role="2ShVmc">
                         <node concept="3Tqbb2" id="qgBRHc966U" role="3zrR0E">
-                          <ref role="ehGHo" to="qit8:qgBRHc27e6" resolve="AbstractDesignSystemPrimitiveTokenConcept" />
+                          <ref role="ehGHo" to="qit8:qgBRHc27e6" resolve="DSAbstractPrimitiveToken" />
                         </node>
                       </node>
                     </node>
@@ -235,11 +236,11 @@
       </node>
     </node>
     <node concept="37WvkG" id="qgBRHc3DtN" role="37WGs$">
-      <ref role="37XkoT" to="qit8:qgBRHbnxjG" resolve="DesignSystemPrimitiveTokensConcept" />
+      <ref role="37XkoT" to="qit8:qgBRHbnxjG" resolve="DSPrimitiveTokens" />
       <node concept="37Y9Zx" id="qgBRHc3DtO" role="37ZfLb">
         <node concept="3clFbS" id="qgBRHc3DtP" role="2VODD2">
           <node concept="Jncv_" id="qgBRHc3E1b" role="3cqZAp">
-            <ref role="JncvD" to="qit8:qgBRHc1$VR" resolve="AbstractDesignSystemPrimitiveTokensConcept" />
+            <ref role="JncvD" to="qit8:qgBRHc1$VR" resolve="DSAbstractPrimitiveTokens" />
             <node concept="1r4N5L" id="qgBRHc3E1c" role="JncvB" />
             <node concept="3clFbS" id="qgBRHc3E1d" role="Jncv$">
               <node concept="3clFbF" id="qgBRHc3E1e" role="3cqZAp">
@@ -318,7 +319,7 @@
                                     <ref role="3cqZAo" node="qgBRHc3E1H" resolve="it" />
                                   </node>
                                   <node concept="2DeJnW" id="qgBRHc3E1N" role="2OqNvi">
-                                    <ref role="1_rbq0" to="qit8:qgBRHc2HIh" resolve="DesignSystemPrimitiveTokenConcept" />
+                                    <ref role="1_rbq0" to="qit8:qgBRHc2HIh" resolve="DSPrimitiveToken" />
                                   </node>
                                 </node>
                               </node>
@@ -352,7 +353,7 @@
                     <node concept="2ShNRf" id="qgBRHc95_k" role="25WWJ7">
                       <node concept="3zrR0B" id="qgBRHc95MJ" role="2ShVmc">
                         <node concept="3Tqbb2" id="qgBRHc95ML" role="3zrR0E">
-                          <ref role="ehGHo" to="qit8:qgBRHc2HIh" resolve="DesignSystemPrimitiveTokenConcept" />
+                          <ref role="ehGHo" to="qit8:qgBRHc2HIh" resolve="DSPrimitiveToken" />
                         </node>
                       </node>
                     </node>
@@ -374,11 +375,11 @@
       </node>
     </node>
     <node concept="37WvkG" id="qgBRHc3GAf" role="37WGs$">
-      <ref role="37XkoT" to="qit8:qgBRHc2HIh" resolve="DesignSystemPrimitiveTokenConcept" />
+      <ref role="37XkoT" to="qit8:qgBRHc2HIh" resolve="DSPrimitiveToken" />
       <node concept="37Y9Zx" id="qgBRHc3GAg" role="37ZfLb">
         <node concept="3clFbS" id="qgBRHc3GAh" role="2VODD2">
           <node concept="Jncv_" id="qgBRHc3H24" role="3cqZAp">
-            <ref role="JncvD" to="qit8:qgBRHc27e6" resolve="AbstractDesignSystemPrimitiveTokenConcept" />
+            <ref role="JncvD" to="qit8:qgBRHc27e6" resolve="DSAbstractPrimitiveToken" />
             <node concept="1r4N5L" id="qgBRHc3H2D" role="JncvB" />
             <node concept="3clFbS" id="qgBRHc3H26" role="Jncv$">
               <node concept="3clFbF" id="qgBRHc3Hcp" role="3cqZAp">
@@ -401,7 +402,7 @@
               </node>
               <node concept="3clFbH" id="qgBRHc3KkP" role="3cqZAp" />
               <node concept="Jncv_" id="qgBRHc3KmO" role="3cqZAp">
-                <ref role="JncvD" to="qit8:qgBRHc2HIh" resolve="DesignSystemPrimitiveTokenConcept" />
+                <ref role="JncvD" to="qit8:qgBRHc2HIh" resolve="DSPrimitiveToken" />
                 <node concept="Jnkvi" id="qgBRHc3Kob" role="JncvB">
                   <ref role="1M0zk5" node="qgBRHc3H27" resolve="original" />
                 </node>
@@ -443,7 +444,7 @@
   <node concept="37WguZ" id="qgBRHc80VG">
     <property role="TrG5h" value="DefaultFilesFactory" />
     <node concept="37WvkG" id="qgBRHc80VH" role="37WGs$">
-      <ref role="37XkoT" to="qit8:qgBRHc1$VZ" resolve="DesignSystemAppFileConcept" />
+      <ref role="37XkoT" to="qit8:qgBRHc1$VZ" resolve="DSAppFile" />
       <node concept="37Y9Zx" id="qgBRHc80VI" role="37ZfLb">
         <node concept="3clFbS" id="qgBRHc80VJ" role="2VODD2">
           <node concept="3clFbF" id="qgBRHc80W4" role="3cqZAp">
@@ -451,7 +452,7 @@
               <node concept="2ShNRf" id="qgBRHc81$s" role="37vLTx">
                 <node concept="3zrR0B" id="qgBRHc81$q" role="2ShVmc">
                   <node concept="3Tqbb2" id="qgBRHc81$r" role="3zrR0E">
-                    <ref role="ehGHo" to="qit8:qgBRHbnxj$" resolve="DesignSystemAppConcept" />
+                    <ref role="ehGHo" to="qit8:qgBRHbnxj$" resolve="DSApp" />
                   </node>
                 </node>
               </node>
@@ -467,7 +468,7 @@
       </node>
     </node>
     <node concept="37WvkG" id="qgBRHc81Dc" role="37WGs$">
-      <ref role="37XkoT" to="qit8:qgBRHc1yuN" resolve="DesignSystemPrimitiveTokensFileConcept" />
+      <ref role="37XkoT" to="qit8:qgBRHc1yuN" resolve="DSPrimitiveTokensFile" />
       <node concept="37Y9Zx" id="qgBRHc81Dd" role="37ZfLb">
         <node concept="3clFbS" id="qgBRHc81De" role="2VODD2">
           <node concept="3clFbF" id="qgBRHc81DI" role="3cqZAp">
@@ -475,7 +476,7 @@
               <node concept="2ShNRf" id="qgBRHc82wh" role="37vLTx">
                 <node concept="3zrR0B" id="qgBRHc82wf" role="2ShVmc">
                   <node concept="3Tqbb2" id="qgBRHc82wg" role="3zrR0E">
-                    <ref role="ehGHo" to="qit8:qgBRHbnxjG" resolve="DesignSystemPrimitiveTokensConcept" />
+                    <ref role="ehGHo" to="qit8:qgBRHbnxjG" resolve="DSPrimitiveTokens" />
                   </node>
                 </node>
               </node>
@@ -491,7 +492,7 @@
       </node>
     </node>
     <node concept="37WvkG" id="qgBRHc82wU" role="37WGs$">
-      <ref role="37XkoT" to="qit8:3jnrpqS_K7U" resolve="DesignSystemPrimitiveTokensResolverFileConcept" />
+      <ref role="37XkoT" to="qit8:3jnrpqS_K7U" resolve="DSPrimitiveTokensResolverFile" />
       <node concept="37Y9Zx" id="qgBRHc82wV" role="37ZfLb">
         <node concept="3clFbS" id="qgBRHc82wW" role="2VODD2">
           <node concept="3clFbF" id="3jnrpqTbZmZ" role="3cqZAp">
@@ -503,42 +504,8 @@
                 </node>
               </node>
               <node concept="2DeJnY" id="3jnrpqTc0r1" role="2OqNvi">
-                <ref role="1A9B2P" to="qit8:3jnrpqS_K7P" resolve="DesignSystemPrimitiveTokensResolverConcept" />
+                <ref role="1A9B2P" to="qit8:3jnrpqS_K7P" resolve="DSPrimitiveTokensResolver" />
               </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="37WguZ" id="3jnrpqSPFjv">
-    <property role="3GE5qa" value="statement.expression" />
-    <property role="TrG5h" value="DotExpressionFactories" />
-    <node concept="37WvkG" id="3jnrpqSPFjw" role="37WGs$">
-      <ref role="37XkoT" to="qit8:3jnrpqSPxSr" resolve="DotExpression" />
-      <node concept="37Y9Zx" id="3jnrpqSPFjx" role="37ZfLb">
-        <node concept="3clFbS" id="3jnrpqSPFjy" role="2VODD2">
-          <node concept="Jncv_" id="3jnrpqSPFjP" role="3cqZAp">
-            <ref role="JncvD" to="qit8:3jnrpqSF9hs" resolve="DesignSystemExpressionConcept" />
-            <node concept="1r4N5L" id="3jnrpqSPFkq" role="JncvB" />
-            <node concept="3clFbS" id="3jnrpqSPFjR" role="Jncv$">
-              <node concept="3clFbF" id="3jnrpqSPFm9" role="3cqZAp">
-                <node concept="37vLTI" id="3jnrpqSPG9n" role="3clFbG">
-                  <node concept="Jnkvi" id="3jnrpqSPGc6" role="37vLTx">
-                    <ref role="1M0zk5" node="3jnrpqSPFjS" resolve="expression" />
-                  </node>
-                  <node concept="2OqwBi" id="3jnrpqSPFwB" role="37vLTJ">
-                    <node concept="1r4Lsj" id="3jnrpqSPFm8" role="2Oq$k0" />
-                    <node concept="3TrEf2" id="3jnrpqSPFNX" role="2OqNvi">
-                      <ref role="3Tt5mk" to="qit8:3jnrpqSPxSs" resolve="lhs" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="JncvC" id="3jnrpqSPFjS" role="JncvA">
-              <property role="TrG5h" value="expression" />
-              <node concept="2jxLKc" id="3jnrpqSPFjT" role="1tU5fm" />
             </node>
           </node>
         </node>
@@ -546,10 +513,10 @@
     </node>
   </node>
   <node concept="37WguZ" id="3jnrpqSTIiq">
-    <property role="3GE5qa" value="resolver" />
+    <property role="3GE5qa" value="primitive_tokens_resolver" />
     <property role="TrG5h" value="DesignSystemPrimitiveTokensResolverFactories" />
     <node concept="37WvkG" id="3jnrpqSTIir" role="37WGs$">
-      <ref role="37XkoT" to="qit8:3jnrpqS_K7P" resolve="DesignSystemPrimitiveTokensResolverConcept" />
+      <ref role="37XkoT" to="qit8:3jnrpqS_K7P" resolve="DSPrimitiveTokensResolver" />
       <node concept="37Y9Zx" id="3jnrpqSTIis" role="37ZfLb">
         <node concept="3clFbS" id="3jnrpqSTIit" role="2VODD2">
           <node concept="3clFbF" id="3jnrpqTcl3S" role="3cqZAp">
@@ -561,7 +528,7 @@
                 </node>
               </node>
               <node concept="2DeJnY" id="3jnrpqTclYa" role="2OqNvi">
-                <ref role="1A9B2P" to="qit8:3jnrpqSHAgs" resolve="ResolvertypeReference" />
+                <ref role="1A9B2P" to="qit8:3jnrpqSHAgs" resolve="DSResolverTypeReference" />
               </node>
             </node>
           </node>
@@ -587,7 +554,7 @@
                 </node>
               </node>
               <node concept="2DeJnY" id="3jnrpqTcoqY" role="2OqNvi">
-                <ref role="1A9B2P" to="qit8:3jnrpqSwd$j" resolve="StatementList" />
+                <ref role="1A9B2P" to="g1bg:3jnrpqSwd$j" resolve="DSStatementList" />
               </node>
             </node>
           </node>

@@ -8,7 +8,9 @@
   </languages>
   <imports>
     <import index="8usw" ref="r:291ddc1b-d6e7-4ca6-a0e2-a1fae46ab1b7(DesignSystem.System.structure)" implicit="true" />
+    <import index="mhb9" ref="r:e7af99ba-8320-4d23-bb26-607f05421ac3(DesignSystem.Logik.editor)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="g1bg" ref="r:4e3863ee-fb0f-47ba-9514-31568b51e8ae(DesignSystem.Logik.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -44,14 +46,6 @@
       <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" stub="3162947552742194261" index="PMmxH">
         <reference id="1078939183255" name="editorComponent" index="PMmxG" />
       </concept>
-      <concept id="1186402211651" name="jetbrains.mps.lang.editor.structure.StyleSheet" flags="ng" index="V5hpn">
-        <child id="1186402402630" name="styles" index="V601i" />
-      </concept>
-      <concept id="1186403694788" name="jetbrains.mps.lang.editor.structure.ColorStyleClassItem" flags="ln" index="VaVBg">
-        <property id="1186403713874" name="color" index="Vb096" />
-      </concept>
-      <concept id="1186403751766" name="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" flags="ln" index="Vb9p2" />
-      <concept id="1186404549998" name="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" flags="ln" index="VechU" />
       <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
@@ -62,7 +56,6 @@
       </concept>
       <concept id="1233758997495" name="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" flags="ln" index="11L4FC" />
       <concept id="1233759184865" name="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" flags="ln" index="11LMrY" />
-      <concept id="3383245079137382180" name="jetbrains.mps.lang.editor.structure.StyleClass" flags="ig" index="14StLt" />
       <concept id="3360401466585705291" name="jetbrains.mps.lang.editor.structure.CellModel_ContextAssistant" flags="ng" index="18a60v" />
       <concept id="2896773699153795590" name="jetbrains.mps.lang.editor.structure.TransformationLocation_SideTransform" flags="ng" index="3cWJ9i">
         <child id="3473224453637651919" name="placeInCell" index="CtIbM" />
@@ -76,12 +69,11 @@
       </concept>
       <concept id="701160265283677816" name="jetbrains.mps.lang.editor.structure.TransparentStyleSheetItem" flags="ln" index="3noiJN" />
       <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
-      <concept id="9122903797312246523" name="jetbrains.mps.lang.editor.structure.StyleReference" flags="ng" index="1wgc9g">
-        <reference id="9122903797312247166" name="style" index="1wgcnl" />
-      </concept>
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
+        <property id="1214560368769" name="emptyNoTargetText" index="39s7Ar" />
         <property id="1139852716018" name="noTargetText" index="1$x2rV" />
         <property id="1140017977771" name="readOnly" index="1Intyy" />
+        <property id="1140114345053" name="allowEmptyText" index="1O74Pk" />
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1215085197271" name="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem" flags="ln" index="3CIbrd" />
@@ -107,9 +99,6 @@
       <concept id="7980428675268276156" name="jetbrains.mps.lang.editor.structure.TransformationMenuSection" flags="ng" index="1Qtc8_">
         <child id="7980428675268276157" name="locations" index="1Qtc8$" />
         <child id="7980428675268276159" name="parts" index="1Qtc8A" />
-      </concept>
-      <concept id="1950447826681509042" name="jetbrains.mps.lang.editor.structure.ApplyStyleClass" flags="lg" index="3Xmtl4">
-        <child id="1950447826683828796" name="target" index="3XvnJa" />
       </concept>
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
@@ -158,8 +147,8 @@
     </language>
   </registry>
   <node concept="24kQdi" id="qgBRHbnzLI">
-    <property role="3GE5qa" value="design_system" />
-    <ref role="1XX52x" to="8usw:qgBRHbnxjB" resolve="DesignSystemConcept" />
+    <property role="3GE5qa" value="" />
+    <ref role="1XX52x" to="8usw:qgBRHbnxjB" resolve="DSDesignSystem" />
     <node concept="3EZMnI" id="qgBRHbnzLL" role="2wV5jI">
       <property role="S$Qs1" value="true" />
       <node concept="PMmxH" id="qgBRHbYw$d" role="3EZMnx">
@@ -169,7 +158,7 @@
         <node concept="VPM3Z" id="qgBRHbnILX" role="3F10Kt" />
         <node concept="3F0ifn" id="qgBRHbnJnp" role="3EZMnx">
           <property role="3F0ifm" value="subsystems:" />
-          <ref role="1k5W1q" node="qgBRHbW9Zl" resolve="ndkeyword" />
+          <ref role="1k5W1q" to="mhb9:qgBRHbW9Zl" resolve="ndkeyword" />
           <node concept="ljvvj" id="qgBRHbnJnJ" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
@@ -195,7 +184,7 @@
         </node>
         <node concept="3F0ifn" id="qgBRHbnJob" role="3EZMnx">
           <property role="3F0ifm" value="properties:" />
-          <ref role="1k5W1q" node="qgBRHbW9Zl" resolve="ndkeyword" />
+          <ref role="1k5W1q" to="mhb9:qgBRHbW9Zl" resolve="ndkeyword" />
           <node concept="lj46D" id="qgBRHbnJot" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
@@ -225,23 +214,23 @@
     </node>
   </node>
   <node concept="24kQdi" id="qgBRHbnS8e">
-    <property role="3GE5qa" value="design_system.properties" />
-    <ref role="1XX52x" to="8usw:qgBRHbnxk4" resolve="DesignSystemPropertyConcept" />
+    <property role="3GE5qa" value="properties" />
+    <ref role="1XX52x" to="8usw:qgBRHbnxk4" resolve="DSDesignSystemProperty" />
     <node concept="3EZMnI" id="qgBRHbnS8h" role="2wV5jI">
       <node concept="3F0A7n" id="qgBRHbnS8o" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-        <ref role="1k5W1q" node="qgBRHbWa0l" resolve="base" />
+        <ref role="1k5W1q" to="mhb9:qgBRHbWa0l" resolve="base" />
       </node>
       <node concept="3F0ifn" id="qgBRHbnS8u" role="3EZMnx">
         <property role="3F0ifm" value=":" />
-        <ref role="1k5W1q" node="qgBRHbWa0l" resolve="base" />
+        <ref role="1k5W1q" to="mhb9:qgBRHbWa0l" resolve="base" />
         <node concept="11L4FC" id="qgBRHbnS8y" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
       <node concept="3F1sOY" id="qgBRHbAk5f" role="3EZMnx">
         <ref role="1NtTu8" to="8usw:qgBRHbnxka" resolve="type" />
-        <ref role="1k5W1q" node="qgBRHbW9ZB" resolve="type" />
+        <ref role="1k5W1q" to="mhb9:qgBRHbW9ZB" resolve="type" />
         <node concept="3CIbrd" id="qgBRHbZXov" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -256,25 +245,25 @@
     </node>
   </node>
   <node concept="24kQdi" id="qgBRHboceO">
-    <property role="3GE5qa" value="design_system.subsystems" />
-    <ref role="1XX52x" to="8usw:qgBRHbnxjL" resolve="DesignSystemSubsystemListConcept" />
+    <property role="3GE5qa" value="subsystems" />
+    <ref role="1XX52x" to="8usw:qgBRHbnxjL" resolve="DSDesignSystemSubsystemList" />
     <node concept="3F2HdR" id="qgBRHboceQ" role="2wV5jI">
       <ref role="1NtTu8" to="8usw:qgBRHbnxk1" resolve="contents" />
-      <ref role="1k5W1q" node="qgBRHbWa0l" resolve="base" />
+      <ref role="1k5W1q" to="mhb9:qgBRHbWa0l" resolve="base" />
       <node concept="2iRkQZ" id="qgBRHbooWV" role="2czzBx" />
     </node>
   </node>
   <node concept="24kQdi" id="qgBRHbovjV">
-    <property role="3GE5qa" value="design_system.properties" />
-    <ref role="1XX52x" to="8usw:qgBRHbnxjM" resolve="DesignSystemPropertiesListConcept" />
+    <property role="3GE5qa" value="properties" />
+    <ref role="1XX52x" to="8usw:qgBRHbnxjM" resolve="DSDesignSystemPropertiesList" />
     <node concept="3F2HdR" id="qgBRHbovjX" role="2wV5jI">
       <ref role="1NtTu8" to="8usw:qgBRHbny8W" resolve="contents" />
       <node concept="2iRkQZ" id="qgBRHbovk5" role="2czzBx" />
     </node>
   </node>
   <node concept="24kQdi" id="qgBRHbo_Oq">
-    <property role="3GE5qa" value="design_system.properties" />
-    <ref role="1XX52x" to="8usw:qgBRHbnxkE" resolve="DesignSystemPropertyParametersListConcept" />
+    <property role="3GE5qa" value="properties" />
+    <ref role="1XX52x" to="8usw:qgBRHbnxkE" resolve="DSDesignSystemPropertyParametersList" />
     <node concept="3F2HdR" id="qgBRHbo_Ot" role="2wV5jI">
       <property role="2czwfO" value="and" />
       <ref role="1NtTu8" to="8usw:qgBRHbnxkQ" resolve="parameters" />
@@ -286,120 +275,49 @@
     </node>
   </node>
   <node concept="24kQdi" id="qgBRHboN4Q">
-    <property role="3GE5qa" value="design_system.properties" />
-    <ref role="1XX52x" to="8usw:qgBRHbnxkS" resolve="DesignSystemPropertyParameterConcept" />
+    <property role="3GE5qa" value="properties" />
+    <ref role="1XX52x" to="8usw:qgBRHbnxkS" resolve="DSDesignSystemPropertyParameter" />
     <node concept="3EZMnI" id="qgBRHboN4S" role="2wV5jI">
       <node concept="3F0A7n" id="qgBRHbp4sw" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-        <ref role="1k5W1q" node="qgBRHbWa0l" resolve="base" />
+        <ref role="1k5W1q" to="mhb9:qgBRHbWa0l" resolve="base" />
       </node>
       <node concept="3F0ifn" id="qgBRHboN58" role="3EZMnx">
         <property role="3F0ifm" value=":" />
-        <ref role="1k5W1q" node="qgBRHbWa0l" resolve="base" />
+        <ref role="1k5W1q" to="mhb9:qgBRHbWa0l" resolve="base" />
         <node concept="11L4FC" id="qgBRHboN5w" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
         <node concept="11LMrY" id="qgBRHboN5_" role="3F10Kt" />
       </node>
       <node concept="3F1sOY" id="qgBRHb_uS6" role="3EZMnx">
-        <ref role="1NtTu8" to="8usw:3jnrpqS_KhJ" />
-        <ref role="1k5W1q" node="qgBRHbW9ZB" resolve="type" />
+        <ref role="1NtTu8" to="g1bg:3jnrpqS_KhJ" />
+        <ref role="1k5W1q" to="mhb9:qgBRHbW9ZB" resolve="type" />
       </node>
       <node concept="2iRfu4" id="qgBRHboN4V" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="qgBRHbq9W7">
-    <property role="3GE5qa" value="design_system.parent" />
-    <ref role="1XX52x" to="8usw:qgBRHbq9W5" resolve="DirectReferenceDesignSystemParentConcept" />
+    <property role="3GE5qa" value="parent" />
+    <ref role="1XX52x" to="8usw:qgBRHbq9W5" resolve="DSDesignSystemParent" />
     <node concept="1iCGBv" id="qgBRHbq9W8" role="2wV5jI">
+      <property role="39s7Ar" value="true" />
+      <property role="1$x2rV" value="DesignSystem" />
       <ref role="1NtTu8" to="8usw:qgBRHbq9W6" resolve="designSystemConcept" />
-      <ref role="1k5W1q" node="qgBRHbW9ZB" resolve="type" />
+      <ref role="1k5W1q" to="mhb9:qgBRHbW9ZB" resolve="type" />
       <node concept="1sVBvm" id="qgBRHbq9W9" role="1sWHZn">
         <node concept="3F0A7n" id="qgBRHbq9Wa" role="2wV5jI">
           <property role="1Intyy" value="true" />
+          <property role="1O74Pk" value="true" />
+          <property role="1$x2rV" value="DesignSystem" />
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         </node>
       </node>
     </node>
   </node>
-  <node concept="24kQdi" id="qgBRHbtymY">
-    <property role="3GE5qa" value="design_system.parent" />
-    <ref role="1XX52x" to="8usw:qgBRHbswk7" resolve="BaseDesignSystemParentConcept" />
-    <node concept="3F0ifn" id="qgBRHbtyn3" role="2wV5jI">
-      <property role="3F0ifm" value="DesignSystem" />
-      <ref role="1k5W1q" node="qgBRHbW9Zl" resolve="ndkeyword" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="qgBRHbw$Sa">
-    <property role="3GE5qa" value="design_system.parent" />
-    <ref role="1XX52x" to="8usw:qgBRHbwuWa" resolve="IndirectReferenceDesignSystemParentConcept" />
-    <node concept="3EZMnI" id="qgBRHbw$Sc" role="2wV5jI">
-      <node concept="3F1sOY" id="qgBRHbx$5P" role="3EZMnx">
-        <ref role="1NtTu8" to="8usw:qgBRHbx$5x" resolve="parent" />
-        <ref role="1k5W1q" node="qgBRHbW9ZB" resolve="type" />
-      </node>
-      <node concept="3F0ifn" id="qgBRHbw$Sp" role="3EZMnx">
-        <property role="3F0ifm" value="." />
-        <ref role="1k5W1q" node="qgBRHbWa0l" resolve="base" />
-        <node concept="11L4FC" id="qgBRHbw$SA" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="11LMrY" id="qgBRHbw$SF" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-      </node>
-      <node concept="3F1sOY" id="qgBRHbw$Sx" role="3EZMnx">
-        <ref role="1NtTu8" to="8usw:qgBRHbwx53" resolve="child" />
-        <ref role="1k5W1q" node="qgBRHbW9ZB" resolve="type" />
-      </node>
-      <node concept="l2Vlx" id="qgBRHbw$Sf" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="3ICUPy" id="qgBRHbzhN6">
-    <property role="3GE5qa" value="design_system.parent" />
-    <ref role="aqKnT" to="8usw:qgBRHbx$5w" resolve="ReferenceDesignSystemParentConcept" />
-    <node concept="22hDWj" id="qgBRHbzhN7" role="22hAXT" />
-    <node concept="1Qtc8_" id="qgBRHbzhN9" role="IW6Ez">
-      <node concept="3cWJ9i" id="qgBRHbzhNd" role="1Qtc8$">
-        <node concept="CtIbL" id="qgBRHbzhNf" role="CtIbM">
-          <property role="CtIbK" value="30NnNOohrQL/RIGHT" />
-        </node>
-      </node>
-      <node concept="IWgqT" id="qgBRHbzhNj" role="1Qtc8A">
-        <node concept="1hCUdq" id="qgBRHbzhNk" role="1hCUd6">
-          <node concept="3clFbS" id="qgBRHbzhNl" role="2VODD2">
-            <node concept="3clFbF" id="qgBRHbzi3T" role="3cqZAp">
-              <node concept="Xl_RD" id="qgBRHbzi3S" role="3clFbG">
-                <property role="Xl_RC" value="." />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="IWg2L" id="qgBRHbzhNm" role="IWgqQ">
-          <node concept="3clFbS" id="qgBRHbzhNn" role="2VODD2">
-            <node concept="3clFbF" id="qgBRHbzi5h" role="3cqZAp">
-              <node concept="2OqwBi" id="qgBRHbzihD" role="3clFbG">
-                <node concept="7Obwk" id="qgBRHbzi5g" role="2Oq$k0" />
-                <node concept="2DeJnW" id="qgBRHbziDh" role="2OqNvi">
-                  <ref role="1_rbq0" to="8usw:qgBRHbwuWa" resolve="IndirectReferenceDesignSystemParentConcept" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="24kQdi" id="qgBRHb$pA_">
-    <property role="3GE5qa" value="design_system" />
-    <ref role="1XX52x" to="8usw:qgBRHb$oZh" resolve="DesignSystemFileConcept" />
-    <node concept="3F1sOY" id="qgBRHb$pAB" role="2wV5jI">
-      <ref role="1NtTu8" to="8usw:qgBRHb$pAv" resolve="content" />
-    </node>
-  </node>
   <node concept="3ICUPy" id="qgBRHb_Pg9">
-    <property role="3GE5qa" value="design_system.properties" />
-    <ref role="aqKnT" to="8usw:qgBRHbnxk4" resolve="DesignSystemPropertyConcept" />
+    <property role="3GE5qa" value="properties" />
+    <ref role="aqKnT" to="8usw:qgBRHbnxk4" resolve="DSDesignSystemProperty" />
     <node concept="22hDWj" id="qgBRHb_Pga" role="22hAXT" />
     <node concept="1Qtc8_" id="qgBRHb_Pgb" role="IW6Ez">
       <node concept="3cWJ9i" id="qgBRHb_Pgc" role="1Qtc8$">
@@ -424,7 +342,7 @@
               <node concept="2OqwBi" id="qgBRHb_Pgm" role="3clFbG">
                 <node concept="7Obwk" id="qgBRHb_Pgn" role="2Oq$k0" />
                 <node concept="2DeJnW" id="qgBRHb_Pgo" role="2OqNvi">
-                  <ref role="1_rbq0" to="8usw:qgBRHb_uRN" resolve="ParametizedDesignSystemPropertyConcept" />
+                  <ref role="1_rbq0" to="8usw:qgBRHb_uRN" resolve="DSParametizedDesignSystemProperty" />
                 </node>
               </node>
             </node>
@@ -437,7 +355,7 @@
                 <node concept="2OqwBi" id="qgBRHbCW6b" role="3fr31v">
                   <node concept="7Obwk" id="qgBRHbCW6c" role="2Oq$k0" />
                   <node concept="1BlSNk" id="qgBRHbCW6d" role="2OqNvi">
-                    <ref role="1BmUXE" to="8usw:qgBRHb_uRN" resolve="ParametizedDesignSystemPropertyConcept" />
+                    <ref role="1BmUXE" to="8usw:qgBRHb_uRN" resolve="DSParametizedDesignSystemProperty" />
                     <ref role="1Bn3mz" to="8usw:qgBRHb_PxG" resolve="property" />
                   </node>
                 </node>
@@ -449,28 +367,28 @@
     </node>
   </node>
   <node concept="24kQdi" id="qgBRHb_PxJ">
-    <property role="3GE5qa" value="design_system.properties" />
-    <ref role="1XX52x" to="8usw:qgBRHb_uRN" resolve="ParametizedDesignSystemPropertyConcept" />
+    <property role="3GE5qa" value="properties" />
+    <ref role="1XX52x" to="8usw:qgBRHb_uRN" resolve="DSParametizedDesignSystemProperty" />
     <node concept="3EZMnI" id="qgBRHb_PxL" role="2wV5jI">
       <node concept="1iCGBv" id="qgBRHbEV5c" role="3EZMnx">
         <ref role="1NtTu8" to="8usw:qgBRHb_PxG" resolve="property" />
-        <ref role="1k5W1q" node="qgBRHbWa0l" resolve="base" />
+        <ref role="1k5W1q" to="mhb9:qgBRHbWa0l" resolve="base" />
         <node concept="1sVBvm" id="qgBRHbEV5e" role="1sWHZn">
           <node concept="3EZMnI" id="qgBRHbEV6a" role="2wV5jI">
             <node concept="3F0A7n" id="qgBRHbEV6g" role="3EZMnx">
               <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-              <ref role="1k5W1q" node="qgBRHbWa0l" resolve="base" />
+              <ref role="1k5W1q" to="mhb9:qgBRHbWa0l" resolve="base" />
             </node>
             <node concept="3F0ifn" id="qgBRHbEV6h" role="3EZMnx">
               <property role="3F0ifm" value=":" />
-              <ref role="1k5W1q" node="qgBRHbWa0l" resolve="base" />
+              <ref role="1k5W1q" to="mhb9:qgBRHbWa0l" resolve="base" />
               <node concept="11L4FC" id="qgBRHbEV6i" role="3F10Kt">
                 <property role="VOm3f" value="true" />
               </node>
             </node>
             <node concept="3F1sOY" id="qgBRHbEV6j" role="3EZMnx">
               <ref role="1NtTu8" to="8usw:qgBRHbnxka" resolve="type" />
-              <ref role="1k5W1q" node="qgBRHbW9ZB" resolve="type" />
+              <ref role="1k5W1q" to="mhb9:qgBRHbW9ZB" resolve="type" />
             </node>
             <node concept="l2Vlx" id="qgBRHbEV6b" role="2iSdaV" />
             <node concept="VPM3Z" id="qgBRHbEV6c" role="3F10Kt" />
@@ -479,198 +397,31 @@
       </node>
       <node concept="3F0ifn" id="qgBRHb_PxY" role="3EZMnx">
         <property role="3F0ifm" value="by" />
-        <ref role="1k5W1q" node="qgBRHbZflz" resolve="keyword" />
+        <ref role="1k5W1q" to="mhb9:qgBRHbZflz" resolve="keyword" />
       </node>
       <node concept="3F1sOY" id="qgBRHb_Py6" role="3EZMnx">
         <ref role="1NtTu8" to="8usw:qgBRHb_uRQ" resolve="parameters" />
-        <ref role="1k5W1q" node="qgBRHbWa0l" resolve="base" />
+        <ref role="1k5W1q" to="mhb9:qgBRHbWa0l" resolve="base" />
       </node>
       <node concept="2iRfu4" id="qgBRHb_PxO" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="qgBRHbAj2f">
-    <property role="3GE5qa" value="types.reference" />
-    <ref role="1XX52x" to="8usw:qgBRHbAaw6" resolve="DesignSystemReferenceTypeConcept" />
-    <node concept="1iCGBv" id="qgBRHbAj2h" role="2wV5jI">
-      <ref role="1NtTu8" to="8usw:qgBRHbAaw7" resolve="reference" />
-      <ref role="1k5W1q" node="qgBRHbW9ZB" resolve="type" />
-      <node concept="1sVBvm" id="qgBRHbAj2j" role="1sWHZn">
-        <node concept="3F0A7n" id="qgBRHbAj2q" role="2wV5jI">
-          <property role="1Intyy" value="true" />
-          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="24kQdi" id="qgBRHbAwhT">
-    <property role="3GE5qa" value="types.primitive" />
-    <ref role="1XX52x" to="8usw:qgBRHbAwhS" resolve="DesignSystemColorTypeConcept" />
-    <node concept="3F0ifn" id="qgBRHbAwhY" role="2wV5jI">
-      <property role="3F0ifm" value="Color" />
-      <ref role="1k5W1q" node="qgBRHbW9ZB" resolve="type" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="qgBRHbAOCy">
-    <property role="3GE5qa" value="types.primitive" />
-    <ref role="1XX52x" to="8usw:qgBRHbAOCx" resolve="DesignSystemStringTypeConcept" />
-    <node concept="3F0ifn" id="qgBRHbAOCB" role="2wV5jI">
-      <property role="3F0ifm" value="String" />
-      <ref role="1k5W1q" node="qgBRHbW9ZB" resolve="type" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="qgBRHbBIos">
-    <property role="3GE5qa" value="types.reference.enum" />
-    <ref role="1XX52x" to="8usw:qgBRHb_rz0" resolve="DesignSystemEnumTypeConcept" />
-    <node concept="3EZMnI" id="qgBRHbBIou" role="2wV5jI">
-      <node concept="3F0ifn" id="qgBRHbBIoJ" role="3EZMnx">
-        <property role="3F0ifm" value="enum" />
-        <ref role="1k5W1q" node="qgBRHbW9Zl" resolve="ndkeyword" />
-      </node>
-      <node concept="3F0A7n" id="qgBRHbBIoP" role="3EZMnx">
-        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-        <node concept="ljvvj" id="qgBRHbBVGE" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-      </node>
-      <node concept="3F2HdR" id="qgBRHbBIp0" role="3EZMnx">
-        <property role="2czwfO" value="," />
-        <ref role="1NtTu8" to="8usw:qgBRHb_rz6" resolve="items" />
-        <node concept="l2Vlx" id="qgBRHbBVGF" role="2czzBx" />
-        <node concept="ljvvj" id="qgBRHbBVGG" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="lj46D" id="qgBRHbBVGU" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-      </node>
-      <node concept="l2Vlx" id="qgBRHbBVGH" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="qgBRHbC8Zr">
-    <property role="3GE5qa" value="types.reference.enum" />
-    <ref role="1XX52x" to="8usw:qgBRHb_rz3" resolve="DesignSystemEnumItemConcept" />
-    <node concept="3F0A7n" id="qgBRHbC8Zt" role="2wV5jI">
-      <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-      <ref role="1k5W1q" node="qgBRHbWa01" resolve="constant" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="qgBRHbFaj2">
-    <property role="3GE5qa" value="types.primitive" />
-    <ref role="1XX52x" to="8usw:qgBRHbFaj1" resolve="DesignSystemSetTypeConcept" />
-    <node concept="3EZMnI" id="qgBRHbFajb" role="2wV5jI">
-      <ref role="1k5W1q" node="qgBRHbW9ZB" resolve="type" />
-      <node concept="3F0ifn" id="qgBRHbFajl" role="3EZMnx">
-        <property role="3F0ifm" value="Set" />
-        <ref role="1k5W1q" node="qgBRHbW9ZB" resolve="type" />
-      </node>
-      <node concept="3F0ifn" id="qgBRHbFajr" role="3EZMnx">
-        <property role="3F0ifm" value="&lt;" />
-        <ref role="1k5W1q" node="qgBRHbW9ZB" resolve="type" />
-        <node concept="11L4FC" id="qgBRHbW_Ls" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="11LMrY" id="qgBRHbW_Lx" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-      </node>
-      <node concept="3F1sOY" id="qgBRHbFajJ" role="3EZMnx">
-        <property role="1$x2rV" value="any" />
-        <ref role="1NtTu8" to="8usw:qgBRHbFajH" resolve="generic" />
-        <ref role="1k5W1q" node="qgBRHbW9ZB" resolve="type" />
-      </node>
-      <node concept="3F0ifn" id="qgBRHbFajz" role="3EZMnx">
-        <property role="3F0ifm" value="&gt;" />
-        <ref role="1k5W1q" node="qgBRHbW9ZB" resolve="type" />
-        <node concept="11L4FC" id="qgBRHbW_L_" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-      </node>
-      <node concept="l2Vlx" id="qgBRHbFaje" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="qgBRHbV9aU">
-    <property role="3GE5qa" value="types.primitive" />
-    <ref role="1XX52x" to="8usw:qgBRHbV9aT" resolve="DesignSystemIntegerType" />
-    <node concept="3F0ifn" id="qgBRHbV9aW" role="2wV5jI">
-      <property role="3F0ifm" value="Integer" />
-      <ref role="1k5W1q" node="qgBRHbW9ZB" resolve="type" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="qgBRHbV9b0">
-    <property role="3GE5qa" value="types.primitive" />
-    <ref role="1XX52x" to="8usw:qgBRHbV9aZ" resolve="DesignSystemDecimalType" />
-    <node concept="3F0ifn" id="qgBRHbV9b5" role="2wV5jI">
-      <property role="3F0ifm" value="Decimal" />
-      <ref role="1k5W1q" node="qgBRHbW9ZB" resolve="type" />
-    </node>
-  </node>
-  <node concept="V5hpn" id="qgBRHbW9Zk">
-    <property role="TrG5h" value="DesignSystem" />
-    <node concept="14StLt" id="qgBRHbWa0l" role="V601i">
-      <property role="TrG5h" value="base" />
-      <node concept="Vb9p2" id="qgBRHbWa0Y" role="3F10Kt" />
-    </node>
-    <node concept="14StLt" id="qgBRHbW9Zl" role="V601i">
-      <property role="TrG5h" value="ndkeyword" />
-      <node concept="3Xmtl4" id="qgBRHbWa0x" role="3F10Kt">
-        <node concept="1wgc9g" id="qgBRHbWa0z" role="3XvnJa">
-          <ref role="1wgcnl" node="qgBRHbWa0l" resolve="base" />
-        </node>
-      </node>
-      <node concept="VechU" id="qgBRHbW9ZH" role="3F10Kt">
-        <property role="Vb096" value="fLwANPp/orange" />
-      </node>
-    </node>
-    <node concept="14StLt" id="qgBRHbZflz" role="V601i">
-      <property role="TrG5h" value="keyword" />
-      <node concept="3Xmtl4" id="qgBRHbZflQ" role="3F10Kt">
-        <node concept="1wgc9g" id="qgBRHbZflS" role="3XvnJa">
-          <ref role="1wgcnl" node="qgBRHbWa0l" resolve="base" />
-        </node>
-      </node>
-      <node concept="VechU" id="qgBRHbZfm0" role="3F10Kt">
-        <property role="Vb096" value="fLwANPo/pink" />
-      </node>
-    </node>
-    <node concept="14StLt" id="qgBRHbW9ZB" role="V601i">
-      <property role="TrG5h" value="type" />
-      <node concept="3Xmtl4" id="qgBRHbWa0F" role="3F10Kt">
-        <node concept="1wgc9g" id="qgBRHbWa0H" role="3XvnJa">
-          <ref role="1wgcnl" node="qgBRHbWa0l" resolve="base" />
-        </node>
-      </node>
-      <node concept="VechU" id="qgBRHbW9ZO" role="3F10Kt">
-        <property role="Vb096" value="fLwANPs/magenta" />
-      </node>
-    </node>
-    <node concept="14StLt" id="qgBRHbWa01" role="V601i">
-      <property role="TrG5h" value="constant" />
-      <node concept="3Xmtl4" id="qgBRHbWa0P" role="3F10Kt">
-        <node concept="1wgc9g" id="qgBRHbWa0R" role="3XvnJa">
-          <ref role="1wgcnl" node="qgBRHbWa0l" resolve="base" />
-        </node>
-      </node>
-      <node concept="VechU" id="qgBRHbWa0a" role="3F10Kt">
-        <property role="Vb096" value="g1_qRwE/darkGreen" />
-      </node>
-    </node>
-  </node>
   <node concept="PKFIW" id="qgBRHbYw$6">
     <property role="TrG5h" value="DesignSystemConcept_parent" />
-    <property role="3GE5qa" value="design_system" />
-    <ref role="1XX52x" to="8usw:qgBRHbnxjB" resolve="DesignSystemConcept" />
+    <property role="3GE5qa" value="" />
+    <ref role="1XX52x" to="8usw:qgBRHbnxjB" resolve="DSDesignSystem" />
     <node concept="3EZMnI" id="qgBRHbYw$7" role="2wV5jI">
       <node concept="2iRfu4" id="qgBRHbYw$8" role="2iSdaV" />
       <node concept="3F0ifn" id="qgBRHc1Gfc" role="3EZMnx">
         <property role="3F0ifm" value="system" />
-        <ref role="1k5W1q" node="qgBRHbW9Zl" resolve="ndkeyword" />
+        <ref role="1k5W1q" to="mhb9:qgBRHbW9Zl" resolve="ndkeyword" />
       </node>
       <node concept="3F0A7n" id="qgBRHbYw$9" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
       <node concept="3F0ifn" id="qgBRHbYw$a" role="3EZMnx">
         <property role="3F0ifm" value=":" />
-        <ref role="1k5W1q" node="qgBRHbWa0l" resolve="base" />
+        <ref role="1k5W1q" to="mhb9:qgBRHbWa0l" resolve="base" />
         <node concept="11L4FC" id="qgBRHbYw$b" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -678,13 +429,6 @@
       <node concept="3F1sOY" id="qgBRHbYw$c" role="3EZMnx">
         <ref role="1NtTu8" to="8usw:qgBRHbq9Wb" resolve="parent" />
       </node>
-    </node>
-  </node>
-  <node concept="24kQdi" id="3jnrpqSwfK6">
-    <property role="3GE5qa" value="types.primitive" />
-    <ref role="1XX52x" to="8usw:3jnrpqSwfK4" resolve="DesignSystemBooleanTypeConcept" />
-    <node concept="3F0ifn" id="3jnrpqSwfKg" role="2wV5jI">
-      <property role="3F0ifm" value="Boolean" />
     </node>
   </node>
 </model>
