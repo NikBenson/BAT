@@ -14,8 +14,8 @@
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
     <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
     <import index="e9k0" ref="r:50605edf-c31c-47ed-994f-29ec32b3eb3e(DesignSystem.System.accessory)" />
-    <import index="g1bg" ref="r:4e3863ee-fb0f-47ba-9514-31568b51e8ae(DesignSystem.Logik.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
+    <import index="g1bg" ref="r:4e3863ee-fb0f-47ba-9514-31568b51e8ae(DesignSystem.Logik.structure)" implicit="true" />
     <import index="1ctc" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.stream(JDK/)" implicit="true" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -299,54 +299,38 @@
     <property role="TrG5h" value="main" />
     <property role="3$yP7D" value="true" />
     <node concept="3aamgX" id="qgBRHbMtZi" role="3acgRq">
-      <ref role="30HIoZ" to="8usw:qgBRHbnxjB" resolve="DesignSystemConcept" />
+      <ref role="30HIoZ" to="8usw:qgBRHbnxjB" resolve="DSDesignSystem" />
       <node concept="j$656" id="qgBRHbMtZw" role="1lVwrX">
         <ref role="v9R2y" node="qgBRHbKBsk" resolve="reduce_DesignSystemConcept" />
       </node>
     </node>
     <node concept="3aamgX" id="qgBRHbN8RB" role="3acgRq">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="8usw:qgBRHb_PxF" resolve="AbstractDesignSystemPropertyConcept" />
+      <ref role="30HIoZ" to="8usw:qgBRHb_PxF" resolve="DSAbstractDesignSystemProperty" />
       <node concept="j$656" id="qgBRHbN8RC" role="1lVwrX">
         <ref role="v9R2y" node="qgBRHbN8R_" resolve="reduce_AbstractDesignSystemPropertyConcept_as_field" />
       </node>
     </node>
-    <node concept="2rT7sh" id="qgBRHcgNN7" role="2rTMjI">
-      <property role="TrG5h" value="ReferenceTypeDeclaration" />
-      <ref role="2rTdP9" to="g1bg:qgBRHbAaw1" resolve="IDSCreatesType" />
-      <ref role="2rZz_L" to="tpee:fz12cDA" resolve="ClassConcept" />
-    </node>
     <node concept="2rT7sh" id="qgBRHchPaf" role="2rTMjI">
       <property role="TrG5h" value="ParametizedPropertyFunctionalInterfaceDeclaration" />
-      <ref role="2rTdP9" to="8usw:qgBRHb_uRN" resolve="ParametizedDesignSystemPropertyConcept" />
+      <ref role="2rTdP9" to="8usw:qgBRHb_uRN" resolve="DSParametizedDesignSystemProperty" />
       <ref role="2rZz_L" to="tpee:g7HP654" resolve="Interface" />
     </node>
     <node concept="2rT7sh" id="qgBRHcqD7D" role="2rTMjI">
       <property role="TrG5h" value="ParametizedPropertyFunctionalInterfaceMethodeDeclaration" />
-      <ref role="2rTdP9" to="8usw:qgBRHb_uRN" resolve="ParametizedDesignSystemPropertyConcept" />
+      <ref role="2rTdP9" to="8usw:qgBRHb_uRN" resolve="DSParametizedDesignSystemProperty" />
       <ref role="2rZz_L" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
-    </node>
-    <node concept="2rT7sh" id="qgBRHcqUR6" role="2rTMjI">
-      <property role="TrG5h" value="PropertyParameterDeclaration" />
-      <ref role="2rZz_L" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
-      <ref role="2rTdP9" to="8usw:qgBRHbnxkS" resolve="DesignSystemPropertyParameterConcept" />
     </node>
     <node concept="2rT7sh" id="qgBRHcp24o" role="2rTMjI">
       <property role="TrG5h" value="PropertyFieldDeclaration" />
       <property role="2om86B" value="true" />
-      <ref role="2rTdP9" to="8usw:qgBRHb_PxF" resolve="AbstractDesignSystemPropertyConcept" />
+      <ref role="2rTdP9" to="8usw:qgBRHb_PxF" resolve="DSAbstractDesignSystemProperty" />
       <ref role="2rZz_L" to="tpee:fz12cDC" resolve="FieldDeclaration" />
     </node>
     <node concept="2rT7sh" id="qgBRHcqA7o" role="2rTMjI">
       <property role="TrG5h" value="PropertyGetterDeclaration" />
       <ref role="2rZz_L" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
-      <ref role="2rTdP9" to="8usw:qgBRHb_PxF" resolve="AbstractDesignSystemPropertyConcept" />
-    </node>
-    <node concept="3aamgX" id="qgBRHciot2" role="3acgRq">
-      <ref role="30HIoZ" to="8usw:qgBRHbnxkS" resolve="DesignSystemPropertyParameterConcept" />
-      <node concept="j$656" id="qgBRHciot3" role="1lVwrX">
-        <ref role="v9R2y" node="qgBRHciot0" resolve="reduce_DesignSystemPropertyParameterConcept_as_methode_parameter" />
-      </node>
+      <ref role="2rTdP9" to="8usw:qgBRHb_PxF" resolve="DSAbstractDesignSystemProperty" />
     </node>
     <node concept="3aamgX" id="66TZj9WgIzC" role="3acgRq">
       <ref role="30HIoZ" to="8usw:qgBRHbq9W5" resolve="DSDesignSystemParent" />
@@ -358,7 +342,7 @@
   <node concept="13MO4I" id="qgBRHbKBsk">
     <property role="TrG5h" value="reduce_DesignSystemConcept" />
     <property role="3GE5qa" value="" />
-    <ref role="3gUMe" to="8usw:qgBRHbnxjB" resolve="DesignSystemConcept" />
+    <ref role="3gUMe" to="8usw:qgBRHbnxjB" resolve="DSDesignSystem" />
     <node concept="312cEu" id="qgBRHbKBsm" role="13RCb5">
       <property role="TrG5h" value="DesignSystem" />
       <node concept="Wx3nA" id="qgBRHbNru1" role="jymVt">
@@ -366,18 +350,41 @@
         <node concept="3Tm1VV" id="qgBRHbNrMr" role="1B3o_S" />
         <node concept="3uibUv" id="qgBRHbNuyc" role="1tU5fm">
           <ref role="3uigEE" node="qgBRHbKBsm" resolve="DesignSystem" />
-          <node concept="1ZhdrF" id="qgBRHbPjUh" role="lGtFl">
-            <property role="2qtEX8" value="classifier" />
-            <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
-            <node concept="3$xsQk" id="qgBRHbPjUi" role="3$ytzL">
-              <node concept="3clFbS" id="qgBRHbPjUj" role="2VODD2">
-                <node concept="3clFbF" id="qgBRHcoHse" role="3cqZAp">
-                  <node concept="2OqwBi" id="qgBRHcoHQ8" role="3clFbG">
-                    <node concept="1iwH7S" id="qgBRHcoHsd" role="2Oq$k0" />
-                    <node concept="1iwH70" id="qgBRHcoI6S" role="2OqNvi">
-                      <ref role="1iwH77" node="qgBRHcgNN7" resolve="ReferenceTypeDeclaration" />
-                      <node concept="30H73N" id="qgBRHcoIjR" role="1iwH7V" />
+          <node concept="3_AbJx" id="61Qlmi5Hzhm" role="lGtFl">
+            <node concept="3_AbJw" id="61Qlmi5Hzhn" role="3_A0Ny">
+              <node concept="3clFbS" id="61Qlmi5Hzho" role="2VODD2">
+                <node concept="3cpWs8" id="61Qlmi5H$_a" role="3cqZAp">
+                  <node concept="3cpWsn" id="61Qlmi5H$_8" role="3cpWs9">
+                    <property role="TrG5h" value="type" />
+                    <node concept="3Tqbb2" id="61Qlmi5H$C8" role="1tU5fm">
+                      <ref role="ehGHo" to="g1bg:qgBRHbAaw6" resolve="DSReferenceType" />
                     </node>
+                    <node concept="2ShNRf" id="61Qlmi5H$Rh" role="33vP2m">
+                      <node concept="3zrR0B" id="61Qlmi5H$Re" role="2ShVmc">
+                        <node concept="3Tqbb2" id="61Qlmi5H$Rf" role="3zrR0E">
+                          <ref role="ehGHo" to="g1bg:qgBRHbAaw6" resolve="DSReferenceType" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbF" id="61Qlmi5H_wP" role="3cqZAp">
+                  <node concept="37vLTI" id="61Qlmi5HAJx" role="3clFbG">
+                    <node concept="30H73N" id="61Qlmi5HARW" role="37vLTx" />
+                    <node concept="2OqwBi" id="61Qlmi5H_LX" role="37vLTJ">
+                      <node concept="37vLTw" id="61Qlmi5H_wN" role="2Oq$k0">
+                        <ref role="3cqZAo" node="61Qlmi5H$_8" resolve="type" />
+                      </node>
+                      <node concept="3TrEf2" id="61Qlmi5HAi6" role="2OqNvi">
+                        <ref role="3Tt5mk" to="g1bg:qgBRHbAaw7" resolve="reference" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbH" id="61Qlmi5H_qX" role="3cqZAp" />
+                <node concept="3cpWs6" id="61Qlmi5H$W9" role="3cqZAp">
+                  <node concept="37vLTw" id="61Qlmi5H_lt" role="3cqZAk">
+                    <ref role="3cqZAo" node="61Qlmi5H$_8" resolve="type" />
                   </node>
                 </node>
               </node>
@@ -392,7 +399,7 @@
                 <node concept="2OqwBi" id="qgBRHbQtEK" role="3clFbG">
                   <node concept="30H73N" id="qgBRHbQtfr" role="2Oq$k0" />
                   <node concept="1BlSNk" id="qgBRHbQuI5" role="2OqNvi">
-                    <ref role="1BmUXE" to="8usw:qgBRHb$oZh" resolve="DesignSystemFileConcept" />
+                    <ref role="1BmUXE" to="8usw:qgBRHb$oZh" resolve="DSDesignSystemFile" />
                     <ref role="1Bn3mz" to="8usw:qgBRHb$pAv" resolve="content" />
                   </node>
                 </node>
@@ -448,7 +455,7 @@
                               <node concept="liA8E" id="qgBRHci8qC" role="2OqNvi">
                                 <ref role="37wK5l" to="mhbf:~SNode.isInstanceOfConcept(org.jetbrains.mps.openapi.language.SAbstractConcept)" resolve="isInstanceOfConcept" />
                                 <node concept="35c_gC" id="qgBRHcia0U" role="37wK5m">
-                                  <ref role="35c_gD" to="8usw:qgBRHb_uRN" resolve="ParametizedDesignSystemPropertyConcept" />
+                                  <ref role="35c_gD" to="8usw:qgBRHb_uRN" resolve="DSParametizedDesignSystemProperty" />
                                 </node>
                               </node>
                             </node>
@@ -571,7 +578,7 @@
                       <node concept="3cpWsn" id="qgBRHbT2sB" role="3cpWs9">
                         <property role="TrG5h" value="current" />
                         <node concept="3Tqbb2" id="qgBRHbT2sC" role="1tU5fm">
-                          <ref role="ehGHo" to="8usw:qgBRHbnxjB" resolve="DesignSystemConcept" />
+                          <ref role="ehGHo" to="8usw:qgBRHbnxjB" resolve="DSDesignSystem" />
                         </node>
                         <node concept="30H73N" id="qgBRHbT2sD" role="33vP2m" />
                       </node>
@@ -581,13 +588,13 @@
                         <property role="TrG5h" value="properties" />
                         <node concept="A3Dl8" id="qgBRHbT2sG" role="1tU5fm">
                           <node concept="3Tqbb2" id="qgBRHbT2sH" role="A3Ik2">
-                            <ref role="ehGHo" to="8usw:qgBRHb_PxF" resolve="AbstractDesignSystemPropertyConcept" />
+                            <ref role="ehGHo" to="8usw:qgBRHb_PxF" resolve="DSAbstractDesignSystemProperty" />
                           </node>
                         </node>
                         <node concept="2ShNRf" id="qgBRHbT6SQ" role="33vP2m">
                           <node concept="kMnCb" id="qgBRHbT6SF" role="2ShVmc">
                             <node concept="3Tqbb2" id="qgBRHbT6SG" role="kMuH3">
-                              <ref role="ehGHo" to="8usw:qgBRHb_PxF" resolve="AbstractDesignSystemPropertyConcept" />
+                              <ref role="ehGHo" to="8usw:qgBRHb_PxF" resolve="DSAbstractDesignSystemProperty" />
                             </node>
                           </node>
                         </node>
@@ -608,7 +615,7 @@
                                 </node>
                               </node>
                               <node concept="3TrEf2" id="66TZj9WmXZX" role="2OqNvi">
-                                <ref role="3Tt5mk" to="8usw:qgBRHbq9W6" />
+                                <ref role="3Tt5mk" to="8usw:qgBRHbq9W6" resolve="designSystemConcept" />
                               </node>
                             </node>
                             <node concept="37vLTw" id="qgBRHbT2sZ" role="37vLTJ">
@@ -629,11 +636,11 @@
                                       <ref role="3cqZAo" node="qgBRHbT2sB" resolve="current" />
                                     </node>
                                     <node concept="3TrEf2" id="qgBRHbT2t9" role="2OqNvi">
-                                      <ref role="3Tt5mk" to="8usw:qgBRHbnxjR" />
+                                      <ref role="3Tt5mk" to="8usw:qgBRHbnxjR" resolve="properties" />
                                     </node>
                                   </node>
                                   <node concept="3Tsc0h" id="qgBRHbT2ta" role="2OqNvi">
-                                    <ref role="3TtcxE" to="8usw:qgBRHbny8W" />
+                                    <ref role="3TtcxE" to="8usw:qgBRHbny8W" resolve="contents" />
                                   </node>
                                 </node>
                               </node>
@@ -655,7 +662,7 @@
                             </node>
                           </node>
                           <node concept="3TrEf2" id="66TZj9WmTUZ" role="2OqNvi">
-                            <ref role="3Tt5mk" to="8usw:qgBRHbq9W6" />
+                            <ref role="3Tt5mk" to="8usw:qgBRHbq9W6" resolve="designSystemConcept" />
                           </node>
                         </node>
                         <node concept="3x8VRR" id="66TZj9WmWet" role="2OqNvi" />
@@ -734,7 +741,7 @@
                   <node concept="3cpWsn" id="qgBRHbRu58" role="3cpWs9">
                     <property role="TrG5h" value="current" />
                     <node concept="3Tqbb2" id="qgBRHbRu53" role="1tU5fm">
-                      <ref role="ehGHo" to="8usw:qgBRHbnxjB" resolve="DesignSystemConcept" />
+                      <ref role="ehGHo" to="8usw:qgBRHbnxjB" resolve="DSDesignSystem" />
                     </node>
                     <node concept="30H73N" id="qgBRHbRux7" role="33vP2m" />
                   </node>
@@ -744,7 +751,7 @@
                     <property role="TrG5h" value="properties" />
                     <node concept="A3Dl8" id="qgBRHbS3Mi" role="1tU5fm">
                       <node concept="3Tqbb2" id="qgBRHbS3U2" role="A3Ik2">
-                        <ref role="ehGHo" to="8usw:qgBRHb_PxF" resolve="AbstractDesignSystemPropertyConcept" />
+                        <ref role="ehGHo" to="8usw:qgBRHb_PxF" resolve="DSAbstractDesignSystemProperty" />
                       </node>
                     </node>
                     <node concept="2OqwBi" id="qgBRHbS4Tk" role="33vP2m">
@@ -775,7 +782,7 @@
                             </node>
                           </node>
                           <node concept="3TrEf2" id="66TZj9Whp3P" role="2OqNvi">
-                            <ref role="3Tt5mk" to="8usw:qgBRHbq9W6" />
+                            <ref role="3Tt5mk" to="8usw:qgBRHbq9W6" resolve="designSystemConcept" />
                           </node>
                         </node>
                         <node concept="37vLTw" id="qgBRHbRyAS" role="37vLTJ">
@@ -823,7 +830,7 @@
                         </node>
                       </node>
                       <node concept="3TrEf2" id="66TZj9Whpqk" role="2OqNvi">
-                        <ref role="3Tt5mk" to="8usw:qgBRHbq9W6" />
+                        <ref role="3Tt5mk" to="8usw:qgBRHbq9W6" resolve="designSystemConcept" />
                       </node>
                     </node>
                     <node concept="3x8VRR" id="66TZj9Whqq4" role="2OqNvi" />
@@ -917,9 +924,7 @@
           </node>
         </node>
       </node>
-      <node concept="raruj" id="qgBRHbKBMS" role="lGtFl">
-        <ref role="2sdACS" node="qgBRHcgNN7" resolve="ReferenceTypeDeclaration" />
-      </node>
+      <node concept="raruj" id="qgBRHbKBMS" role="lGtFl" />
       <node concept="17Uvod" id="qgBRHbKCU2" role="lGtFl">
         <property role="2qtEX9" value="name" />
         <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
@@ -941,7 +946,7 @@
   <node concept="13MO4I" id="qgBRHbN8R_">
     <property role="TrG5h" value="reduce_AbstractDesignSystemPropertyConcept_as_field" />
     <property role="3GE5qa" value="properties" />
-    <ref role="3gUMe" to="8usw:qgBRHb_PxF" resolve="AbstractDesignSystemPropertyConcept" />
+    <ref role="3gUMe" to="8usw:qgBRHb_PxF" resolve="DSAbstractDesignSystemProperty" />
     <node concept="312cEg" id="qgBRHbN8WE" role="13RCb5">
       <property role="TrG5h" value="property" />
       <property role="3TUv4t" value="true" />
@@ -976,7 +981,7 @@
   <node concept="13MO4I" id="qgBRHbNMhJ">
     <property role="TrG5h" value="reduce_AbstractDesignSystemPropertyConcept_as_methode_declaration_parameter" />
     <property role="3GE5qa" value="properties" />
-    <ref role="3gUMe" to="8usw:qgBRHb_PxF" resolve="AbstractDesignSystemPropertyConcept" />
+    <ref role="3gUMe" to="8usw:qgBRHb_PxF" resolve="DSAbstractDesignSystemProperty" />
     <node concept="37vLTG" id="qgBRHbNMhU" role="13RCb5">
       <property role="TrG5h" value="property" />
       <node concept="3uibUv" id="qgBRHbNMhV" role="1tU5fm">
@@ -1007,7 +1012,7 @@
   <node concept="13MO4I" id="qgBRHbNYaZ">
     <property role="3GE5qa" value="properties" />
     <property role="TrG5h" value="reduce_AbstractDesignSystemPropertyConcept_as_type" />
-    <ref role="3gUMe" to="8usw:qgBRHb_PxF" resolve="AbstractDesignSystemPropertyConcept" />
+    <ref role="3gUMe" to="8usw:qgBRHb_PxF" resolve="DSAbstractDesignSystemProperty" />
     <node concept="3uibUv" id="qgBRHbO0PP" role="13RCb5">
       <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
       <node concept="raruj" id="qgBRHbO0PR" role="lGtFl" />
@@ -1019,7 +1024,7 @@
   <node concept="13MO4I" id="qgBRHbO29V">
     <property role="TrG5h" value="reduce_AbstractDesignSystemPropertyConcept_as_constructor_assignment" />
     <property role="3GE5qa" value="properties" />
-    <ref role="3gUMe" to="8usw:qgBRHb_PxF" resolve="AbstractDesignSystemPropertyConcept" />
+    <ref role="3gUMe" to="8usw:qgBRHb_PxF" resolve="DSAbstractDesignSystemProperty" />
     <node concept="3clFbF" id="qgBRHbO3gl" role="13RCb5">
       <node concept="15s5l7" id="qgBRHbO5QU" role="lGtFl">
         <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;constraints (cannot be child)&quot;;FLAVOUR_MESSAGE=&quot;Node '(instance of ThisExpression)' cannot be child of node '(instance of DotExpression)'&quot;;FLAVOUR_RULE_ID=&quot;[r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)/1227128029536558554]&quot;;" />
@@ -1076,14 +1081,14 @@
     <property role="TrG5h" value="switch_AbstractDesignSystemPropertyConcept_as_type" />
     <node concept="3aamgX" id="qgBRHbPr4Y" role="3aUrZf">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="8usw:qgBRHbnxk4" resolve="DesignSystemPropertyConcept" />
+      <ref role="30HIoZ" to="8usw:qgBRHbnxk4" resolve="DSDesignSystemProperty" />
       <node concept="j$656" id="qgBRHbPsMn" role="1lVwrX">
         <ref role="v9R2y" node="qgBRHbPrTs" resolve="reduce_DesignSystemPropertyConcept_as_type" />
       </node>
     </node>
     <node concept="3aamgX" id="qgBRHbPrTm" role="3aUrZf">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="8usw:qgBRHb_uRN" resolve="ParametizedDesignSystemPropertyConcept" />
+      <ref role="30HIoZ" to="8usw:qgBRHb_uRN" resolve="DSParametizedDesignSystemProperty" />
       <node concept="j$656" id="qgBRHbPsUC" role="1lVwrX">
         <ref role="v9R2y" node="qgBRHbPsMq" resolve="reduce_ParametizedDesignSystemPropertyConcept_as_type" />
       </node>
@@ -1092,7 +1097,7 @@
   <node concept="13MO4I" id="qgBRHbPrTs">
     <property role="TrG5h" value="reduce_DesignSystemPropertyConcept_as_type" />
     <property role="3GE5qa" value="properties" />
-    <ref role="3gUMe" to="8usw:qgBRHbnxk4" resolve="DesignSystemPropertyConcept" />
+    <ref role="3gUMe" to="8usw:qgBRHbnxk4" resolve="DSDesignSystemProperty" />
     <node concept="3uibUv" id="qgBRHbPrUM" role="13RCb5">
       <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
       <node concept="raruj" id="qgBRHbPrUN" role="lGtFl" />
@@ -1115,7 +1120,7 @@
   <node concept="13MO4I" id="qgBRHbPsMq">
     <property role="TrG5h" value="reduce_ParametizedDesignSystemPropertyConcept_as_type" />
     <property role="3GE5qa" value="properties" />
-    <ref role="3gUMe" to="8usw:qgBRHb_uRN" resolve="ParametizedDesignSystemPropertyConcept" />
+    <ref role="3gUMe" to="8usw:qgBRHb_uRN" resolve="DSParametizedDesignSystemProperty" />
     <node concept="3uibUv" id="qgBRHbPsMr" role="13RCb5">
       <ref role="3uigEE" to="82uw:~Function" resolve="Function" />
       <node concept="raruj" id="qgBRHbPsMs" role="lGtFl" />
@@ -1141,7 +1146,7 @@
   <node concept="13MO4I" id="qgBRHbT8x6">
     <property role="TrG5h" value="reduce_AbstractDesignSystemPropertyConcept_as_methode_call_parameter" />
     <property role="3GE5qa" value="properties" />
-    <ref role="3gUMe" to="8usw:qgBRHb_PxF" resolve="AbstractDesignSystemPropertyConcept" />
+    <ref role="3gUMe" to="8usw:qgBRHb_PxF" resolve="DSAbstractDesignSystemProperty" />
     <node concept="3clFbS" id="5$1NfDA7Fjr" role="13RCb5">
       <node concept="3cpWs8" id="5$1NfDA7ph1" role="3cqZAp">
         <node concept="3cpWsn" id="5$1NfDA7pgX" role="3cpWs9">
@@ -1188,7 +1193,7 @@
   <node concept="13MO4I" id="qgBRHcid7C">
     <property role="TrG5h" value="reduce_ParametizedDesignSystemPropertyConcept_as_functional_interface" />
     <property role="3GE5qa" value="properties" />
-    <ref role="3gUMe" to="8usw:qgBRHb_uRN" resolve="ParametizedDesignSystemPropertyConcept" />
+    <ref role="3gUMe" to="8usw:qgBRHb_uRN" resolve="DSParametizedDesignSystemProperty" />
     <node concept="3HP615" id="qgBRHcihaF" role="13RCb5">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="Function" />
@@ -1275,54 +1280,10 @@
       </node>
     </node>
   </node>
-  <node concept="13MO4I" id="qgBRHciot0">
-    <property role="TrG5h" value="reduce_DesignSystemPropertyParameterConcept_as_methode_parameter" />
-    <property role="3GE5qa" value="properties" />
-    <ref role="3gUMe" to="8usw:qgBRHbnxkS" resolve="DesignSystemPropertyParameterConcept" />
-    <node concept="37vLTG" id="qgBRHciotM" role="13RCb5">
-      <property role="TrG5h" value="p1" />
-      <node concept="3uibUv" id="qgBRHciotN" role="1tU5fm">
-        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-        <node concept="29HgVG" id="qgBRHcip1b" role="lGtFl">
-          <node concept="3NFfHV" id="qgBRHcip1c" role="3NFExx">
-            <node concept="3clFbS" id="qgBRHcip1d" role="2VODD2">
-              <node concept="3clFbF" id="qgBRHcip1j" role="3cqZAp">
-                <node concept="2OqwBi" id="qgBRHcip1e" role="3clFbG">
-                  <node concept="3TrEf2" id="qgBRHcip1h" role="2OqNvi">
-                    <ref role="3Tt5mk" to="g1bg:3jnrpqS_KhJ" />
-                  </node>
-                  <node concept="30H73N" id="qgBRHcip1i" role="2Oq$k0" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="raruj" id="qgBRHcip72" role="lGtFl">
-        <ref role="2sdACS" node="qgBRHcqUR6" resolve="PropertyParameterDeclaration" />
-      </node>
-      <node concept="17Uvod" id="qgBRHcip73" role="lGtFl">
-        <property role="2qtEX9" value="name" />
-        <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-        <node concept="3zFVjK" id="qgBRHcip76" role="3zH0cK">
-          <node concept="3clFbS" id="qgBRHcip77" role="2VODD2">
-            <node concept="3clFbF" id="qgBRHcip7d" role="3cqZAp">
-              <node concept="2OqwBi" id="qgBRHcip78" role="3clFbG">
-                <node concept="3TrcHB" id="qgBRHcip7b" role="2OqNvi">
-                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                </node>
-                <node concept="30H73N" id="qgBRHcip7c" role="2Oq$k0" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="13MO4I" id="qgBRHcr5u6">
     <property role="TrG5h" value="reduce_AbstractDesignSystemPropertyConcept_as_getter" />
     <property role="3GE5qa" value="properties" />
-    <ref role="3gUMe" to="8usw:qgBRHb_PxF" resolve="AbstractDesignSystemPropertyConcept" />
+    <ref role="3gUMe" to="8usw:qgBRHb_PxF" resolve="DSAbstractDesignSystemProperty" />
     <node concept="3clFb_" id="qgBRHcraGi" role="13RCb5">
       <property role="TrG5h" value="getProperty" />
       <node concept="3clFbS" id="qgBRHcraGj" role="3clF47">
@@ -1345,14 +1306,14 @@
     <property role="TrG5h" value="switch_AbstractDesignSystemPropertyConcept_as_getter" />
     <node concept="3aamgX" id="qgBRHcrlF9" role="3aUrZf">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="8usw:qgBRHbnxk4" resolve="DesignSystemPropertyConcept" />
+      <ref role="30HIoZ" to="8usw:qgBRHbnxk4" resolve="DSDesignSystemProperty" />
       <node concept="j$656" id="qgBRHcr$83" role="1lVwrX">
         <ref role="v9R2y" node="qgBRHcrlFH" resolve="reduce_DesignSystemPropertyConcept_as_getter" />
       </node>
     </node>
     <node concept="3aamgX" id="qgBRHcrlFd" role="3aUrZf">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="8usw:qgBRHb_uRN" resolve="ParametizedDesignSystemPropertyConcept" />
+      <ref role="30HIoZ" to="8usw:qgBRHb_uRN" resolve="DSParametizedDesignSystemProperty" />
       <node concept="j$656" id="qgBRHcrXle" role="1lVwrX">
         <ref role="v9R2y" node="qgBRHcr$oS" resolve="reduce_ParametizedDesignSystemPropertyConcept_as_getter" />
       </node>
@@ -1361,7 +1322,7 @@
   <node concept="13MO4I" id="qgBRHcrlFH">
     <property role="TrG5h" value="reduce_DesignSystemPropertyConcept_as_getter" />
     <property role="3GE5qa" value="properties" />
-    <ref role="3gUMe" to="8usw:qgBRHbnxk4" resolve="DesignSystemPropertyConcept" />
+    <ref role="3gUMe" to="8usw:qgBRHbnxk4" resolve="DSDesignSystemProperty" />
     <node concept="3clFb_" id="qgBRHcrlFI" role="13RCb5">
       <property role="TrG5h" value="getProperty" />
       <node concept="3clFbS" id="qgBRHcrlFJ" role="3clF47">
@@ -1467,7 +1428,7 @@
   <node concept="13MO4I" id="qgBRHcr$oS">
     <property role="TrG5h" value="reduce_ParametizedDesignSystemPropertyConcept_as_getter" />
     <property role="3GE5qa" value="properties" />
-    <ref role="3gUMe" to="8usw:qgBRHb_uRN" resolve="ParametizedDesignSystemPropertyConcept" />
+    <ref role="3gUMe" to="8usw:qgBRHb_uRN" resolve="DSParametizedDesignSystemProperty" />
     <node concept="3clFb_" id="qgBRHcr$oT" role="13RCb5">
       <property role="TrG5h" value="getProperty" />
       <node concept="3clFbS" id="qgBRHcr$oU" role="3clF47">
@@ -1507,7 +1468,7 @@
                           <ref role="1iwH77" node="qgBRHcqD7D" resolve="ParametizedPropertyFunctionalInterfaceMethodeDeclaration" />
                           <node concept="1PxgMI" id="qgBRHcsbA3" role="1iwH7V">
                             <node concept="chp4Y" id="qgBRHcsbA4" role="3oSUPX">
-                              <ref role="cht4Q" to="8usw:qgBRHb_uRN" resolve="ParametizedDesignSystemPropertyConcept" />
+                              <ref role="cht4Q" to="8usw:qgBRHb_uRN" resolve="DSParametizedDesignSystemProperty" />
                             </node>
                             <node concept="30H73N" id="qgBRHcsbA5" role="1m5AlR" />
                           </node>
@@ -1519,27 +1480,69 @@
               </node>
               <node concept="37vLTw" id="qgBRHcsbA6" role="37wK5m">
                 <ref role="3cqZAo" node="qgBRHcr$qt" resolve="p1" />
-                <node concept="1WS0z7" id="qgBRHcsbA7" role="lGtFl">
-                  <node concept="3JmXsc" id="qgBRHcsbA8" role="3Jn$fo">
-                    <node concept="3clFbS" id="qgBRHcsbA9" role="2VODD2">
-                      <node concept="3clFbF" id="qgBRHctWNI" role="3cqZAp">
-                        <node concept="2OqwBi" id="qgBRHctXNR" role="3clFbG">
-                          <node concept="2OqwBi" id="qgBRHctXdn" role="2Oq$k0">
-                            <node concept="30H73N" id="qgBRHctWNH" role="2Oq$k0" />
-                            <node concept="3TrEf2" id="qgBRHctXsj" role="2OqNvi">
-                              <ref role="3Tt5mk" to="8usw:qgBRHb_uRQ" resolve="parameters" />
+                <node concept="1WS0z7" id="61Qlmi5U1jO" role="lGtFl">
+                  <node concept="3JmXsc" id="61Qlmi5U1jP" role="3Jn$fo">
+                    <node concept="3clFbS" id="61Qlmi5U1jQ" role="2VODD2">
+                      <node concept="3clFbF" id="61Qlmi5U1wV" role="3cqZAp">
+                        <node concept="2OqwBi" id="61Qlmi5U2dA" role="3clFbG">
+                          <node concept="2OqwBi" id="61Qlmi5U1J1" role="2Oq$k0">
+                            <node concept="30H73N" id="61Qlmi5U1wU" role="2Oq$k0" />
+                            <node concept="3TrEf2" id="61Qlmi5U21n" role="2OqNvi">
+                              <ref role="3Tt5mk" to="g1bg:61Qlmi5OQNm" resolve="parameters" />
                             </node>
                           </node>
-                          <node concept="3Tsc0h" id="qgBRHctYaH" role="2OqNvi">
-                            <ref role="3TtcxE" to="8usw:qgBRHbnxkQ" resolve="parameters" />
+                          <node concept="3Tsc0h" id="61Qlmi5U2o1" role="2OqNvi">
+                            <ref role="3TtcxE" to="g1bg:61Qlmi5OQNy" resolve="parameters" />
                           </node>
                         </node>
                       </node>
                     </node>
                   </node>
                 </node>
-                <node concept="5jKBG" id="4y2cPgZB4zn" role="lGtFl">
-                  <ref role="v9R2y" node="4y2cPgZAZh8" resolve="reduce_DesignSystemPropertyParameterConcept_as_methode_parameter_reference" />
+                <node concept="3_AbJx" id="61Qlmi5UdKi" role="lGtFl">
+                  <node concept="3_AbJw" id="61Qlmi5UdKj" role="3_A0Ny">
+                    <node concept="3clFbS" id="61Qlmi5UdKk" role="2VODD2">
+                      <node concept="3cpWs8" id="61Qlmi5U8B0" role="3cqZAp">
+                        <node concept="3cpWsn" id="61Qlmi5U8AW" role="3cpWs9">
+                          <property role="TrG5h" value="varriable" />
+                          <node concept="3Tqbb2" id="61Qlmi5U8FY" role="1tU5fm">
+                            <ref role="ehGHo" to="g1bg:3jnrpqS_KhT" resolve="DSVarriableReference" />
+                          </node>
+                          <node concept="2ShNRf" id="61Qlmi5U95L" role="33vP2m">
+                            <node concept="3zrR0B" id="61Qlmi5U95J" role="2ShVmc">
+                              <node concept="3Tqbb2" id="61Qlmi5U95K" role="3zrR0E">
+                                <ref role="ehGHo" to="g1bg:3jnrpqS_KhT" resolve="DSVarriableReference" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbF" id="61Qlmi5Ue7Z" role="3cqZAp">
+                        <node concept="37vLTI" id="61Qlmi5UfZU" role="3clFbG">
+                          <node concept="2OqwBi" id="61Qlmi5UKIl" role="37vLTx">
+                            <node concept="30H73N" id="61Qlmi5Ug1Y" role="2Oq$k0" />
+                            <node concept="3TrEf2" id="61Qlmi5ULKq" role="2OqNvi">
+                              <ref role="3Tt5mk" to="g1bg:61Qlmi5OQNu" resolve="value" />
+                            </node>
+                          </node>
+                          <node concept="2OqwBi" id="61Qlmi5UemL" role="37vLTJ">
+                            <node concept="37vLTw" id="61Qlmi5Ue7X" role="2Oq$k0">
+                              <ref role="3cqZAo" node="61Qlmi5U8AW" resolve="varriable" />
+                            </node>
+                            <node concept="3TrEf2" id="61Qlmi5Uf8x" role="2OqNvi">
+                              <ref role="3Tt5mk" to="g1bg:3jnrpqS_KhU" resolve="reference" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbH" id="61Qlmi5Ue6L" role="3cqZAp" />
+                      <node concept="3cpWs6" id="61Qlmi5Ue4R" role="3cqZAp">
+                        <node concept="37vLTw" id="61Qlmi5Ue6H" role="3cqZAk">
+                          <ref role="3cqZAo" node="61Qlmi5U8AW" resolve="varriable" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -1645,11 +1648,11 @@
                   <node concept="2OqwBi" id="qgBRHcr$q$" role="2Oq$k0">
                     <node concept="30H73N" id="qgBRHcs8j$" role="2Oq$k0" />
                     <node concept="3TrEf2" id="qgBRHcs8OH" role="2OqNvi">
-                      <ref role="3Tt5mk" to="8usw:qgBRHb_uRQ" resolve="parameters" />
+                      <ref role="3Tt5mk" to="g1bg:61Qlmi5OQNm" resolve="parameters" />
                     </node>
                   </node>
                   <node concept="3Tsc0h" id="qgBRHcs9R5" role="2OqNvi">
-                    <ref role="3TtcxE" to="8usw:qgBRHbnxkQ" resolve="parameters" />
+                    <ref role="3TtcxE" to="g1bg:61Qlmi5OQNy" resolve="parameters" />
                   </node>
                 </node>
               </node>
@@ -1659,54 +1662,6 @@
       </node>
       <node concept="raruj" id="qgBRHcr$qC" role="lGtFl">
         <ref role="2sdACS" node="qgBRHcqA7o" resolve="PropertyGetterDeclaration" />
-      </node>
-    </node>
-  </node>
-  <node concept="13MO4I" id="4y2cPgZAZh8">
-    <property role="TrG5h" value="reduce_DesignSystemPropertyParameterConcept_as_methode_parameter_reference" />
-    <property role="3GE5qa" value="properties" />
-    <ref role="3gUMe" to="8usw:qgBRHbnxkS" resolve="DesignSystemPropertyParameterConcept" />
-    <node concept="3clFbS" id="5$1NfDA7FJl" role="13RCb5">
-      <node concept="3cpWs8" id="5$1NfDA7FJn" role="3cqZAp">
-        <node concept="3cpWsn" id="5$1NfDA7FJo" role="3cpWs9">
-          <property role="TrG5h" value="o" />
-          <node concept="3uibUv" id="5$1NfDA7FJp" role="1tU5fm">
-            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-          </node>
-          <node concept="10Nm6u" id="5$1NfDA7FJq" role="33vP2m" />
-        </node>
-      </node>
-      <node concept="3clFbF" id="5$1NfDA7FJr" role="3cqZAp">
-        <node concept="2OqwBi" id="5$1NfDA7FJs" role="3clFbG">
-          <node concept="10M0yZ" id="5$1NfDA7FJt" role="2Oq$k0">
-            <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
-            <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-          </node>
-          <node concept="liA8E" id="5$1NfDA7FJu" role="2OqNvi">
-            <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.Object)" resolve="println" />
-            <node concept="37vLTw" id="5$1NfDA7FJv" role="37wK5m">
-              <ref role="3cqZAo" node="5$1NfDA7FJo" resolve="o" />
-              <node concept="raruj" id="5$1NfDA7FJw" role="lGtFl" />
-              <node concept="1ZhdrF" id="5$1NfDA7FJx" role="lGtFl">
-                <property role="2qtEX8" value="variableDeclaration" />
-                <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
-                <node concept="3$xsQk" id="5$1NfDA7FJy" role="3$ytzL">
-                  <node concept="3clFbS" id="5$1NfDA7FJz" role="2VODD2">
-                    <node concept="3clFbF" id="5$1NfDA7FJC" role="3cqZAp">
-                      <node concept="2OqwBi" id="5$1NfDA7FJD" role="3clFbG">
-                        <node concept="1iwH7S" id="5$1NfDA7FJE" role="2Oq$k0" />
-                        <node concept="1iwH70" id="5$1NfDA7FJF" role="2OqNvi">
-                          <ref role="1iwH77" node="qgBRHcqUR6" resolve="PropertyParameterDeclaration" />
-                          <node concept="30H73N" id="5$1NfDA7FJG" role="1iwH7V" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
     </node>
   </node>

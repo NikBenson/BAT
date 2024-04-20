@@ -19,9 +19,7 @@
       <concept id="1597643335227097138" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_TransformationMenu_node" flags="ng" index="7Obwk" />
       <concept id="6516520003787916624" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Condition" flags="ig" index="27VH4U" />
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
-        <property id="1140524450557" name="separatorText" index="2czwfO" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
-        <child id="1233141163694" name="separatorStyle" index="sWeuL" />
       </concept>
       <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
       <concept id="1106270571710" name="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" flags="nn" index="2iRkQZ" />
@@ -29,7 +27,6 @@
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
       <concept id="1237307900041" name="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" flags="ln" index="lj46D" />
       <concept id="1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" flags="ln" index="ljvvj" />
-      <concept id="1233148810477" name="jetbrains.mps.lang.editor.structure.InlineStyleDeclaration" flags="ng" index="tppnM" />
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
@@ -55,7 +52,6 @@
         <child id="5991739802479788259" name="type" index="22hAXT" />
       </concept>
       <concept id="1233758997495" name="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" flags="ln" index="11L4FC" />
-      <concept id="1233759184865" name="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" flags="ln" index="11LMrY" />
       <concept id="3360401466585705291" name="jetbrains.mps.lang.editor.structure.CellModel_ContextAssistant" flags="ng" index="18a60v" />
       <concept id="2896773699153795590" name="jetbrains.mps.lang.editor.structure.TransformationLocation_SideTransform" flags="ng" index="3cWJ9i">
         <child id="3473224453637651919" name="placeInCell" index="CtIbM" />
@@ -261,42 +257,6 @@
       <node concept="2iRkQZ" id="qgBRHbovk5" role="2czzBx" />
     </node>
   </node>
-  <node concept="24kQdi" id="qgBRHbo_Oq">
-    <property role="3GE5qa" value="properties" />
-    <ref role="1XX52x" to="8usw:qgBRHbnxkE" resolve="DSDesignSystemPropertyParametersList" />
-    <node concept="3F2HdR" id="qgBRHbo_Ot" role="2wV5jI">
-      <property role="2czwfO" value="and" />
-      <ref role="1NtTu8" to="8usw:qgBRHbnxkQ" resolve="parameters" />
-      <node concept="tppnM" id="qgBRHboGsz" role="sWeuL">
-        <node concept="11L4FC" id="qgBRHboGs_" role="3F10Kt" />
-        <node concept="11LMrY" id="qgBRHboGsE" role="3F10Kt" />
-      </node>
-      <node concept="l2Vlx" id="qgBRHboN4O" role="2czzBx" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="qgBRHboN4Q">
-    <property role="3GE5qa" value="properties" />
-    <ref role="1XX52x" to="8usw:qgBRHbnxkS" resolve="DSDesignSystemPropertyParameter" />
-    <node concept="3EZMnI" id="qgBRHboN4S" role="2wV5jI">
-      <node concept="3F0A7n" id="qgBRHbp4sw" role="3EZMnx">
-        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-        <ref role="1k5W1q" to="mhb9:qgBRHbWa0l" resolve="base" />
-      </node>
-      <node concept="3F0ifn" id="qgBRHboN58" role="3EZMnx">
-        <property role="3F0ifm" value=":" />
-        <ref role="1k5W1q" to="mhb9:qgBRHbWa0l" resolve="base" />
-        <node concept="11L4FC" id="qgBRHboN5w" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="11LMrY" id="qgBRHboN5_" role="3F10Kt" />
-      </node>
-      <node concept="3F1sOY" id="qgBRHb_uS6" role="3EZMnx">
-        <ref role="1NtTu8" to="g1bg:3jnrpqS_KhJ" />
-        <ref role="1k5W1q" to="mhb9:qgBRHbW9ZB" resolve="type" />
-      </node>
-      <node concept="2iRfu4" id="qgBRHboN4V" role="2iSdaV" />
-    </node>
-  </node>
   <node concept="24kQdi" id="qgBRHbq9W7">
     <property role="3GE5qa" value="parent" />
     <ref role="1XX52x" to="8usw:qgBRHbq9W5" resolve="DSDesignSystemParent" />
@@ -400,7 +360,7 @@
         <ref role="1k5W1q" to="mhb9:qgBRHbZflz" resolve="keyword" />
       </node>
       <node concept="3F1sOY" id="qgBRHb_Py6" role="3EZMnx">
-        <ref role="1NtTu8" to="8usw:qgBRHb_uRQ" resolve="parameters" />
+        <ref role="1NtTu8" to="g1bg:61Qlmi5OQNm" />
         <ref role="1k5W1q" to="mhb9:qgBRHbWa0l" resolve="base" />
       </node>
       <node concept="2iRfu4" id="qgBRHb_PxO" role="2iSdaV" />

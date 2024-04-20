@@ -5,7 +5,6 @@
     <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
-    <import index="8usw" ref="r:291ddc1b-d6e7-4ca6-a0e2-a1fae46ab1b7(DesignSystem.System.structure)" />
     <import index="g1bg" ref="r:4e3863ee-fb0f-47ba-9514-31568b51e8ae(DesignSystem.Logik.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
@@ -92,7 +91,7 @@
       <property role="20kJfa" value="content" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="qgBRHc1$VR" resolve="DSAbstractPrimitiveTokens" />
-      <ref role="20ksaX" to="g1bg:qgBRHc4Jz$" />
+      <ref role="20ksaX" to="g1bg:qgBRHc4Jz$" resolve="content" />
     </node>
   </node>
   <node concept="1TIwiD" id="qgBRHc1$VR">
@@ -134,7 +133,7 @@
       <property role="20kJfa" value="content" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="qgBRHbnxj$" resolve="DSApp" />
-      <ref role="20ksaX" to="g1bg:qgBRHc4Jz$" />
+      <ref role="20ksaX" to="g1bg:qgBRHc4Jz$" resolve="content" />
     </node>
   </node>
   <node concept="1TIwiD" id="qgBRHc27e6">
@@ -175,7 +174,7 @@
     <property role="EcuMT" value="3807632504072027159" />
     <property role="3GE5qa" value="app" />
     <property role="TrG5h" value="DSUsedTokensDefinition" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="3jnrpqSsrKq" role="1TKVEl">
       <property role="IQ2nx" value="3807632504072027162" />
       <property role="TrG5h" value="name" />
@@ -199,12 +198,16 @@
     <node concept="PrWs8" id="3jnrpqSFnQJ" role="PzmwI">
       <ref role="PrY4T" to="g1bg:qgBRHbAaw1" resolve="IDSCreatesType" />
     </node>
+    <node concept="PrWs8" id="61Qlmi5Poyc" role="PzmwI">
+      <ref role="PrY4T" to="g1bg:61Qlmi5OQNe" resolve="IDSHasParameters" />
+    </node>
     <node concept="1TJgyj" id="3jnrpqS_Keu" role="1TKVEi">
       <property role="IQ2ns" value="3807632504074470302" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <property role="20kJfa" value="by" />
-      <ref role="20lvS9" to="8usw:qgBRHbnxkE" resolve="DesignSystemPropertyParametersListConcept" />
+      <ref role="20lvS9" to="g1bg:61Qlmi5OQNl" resolve="DSParameterList" />
+      <ref role="20ksaX" to="g1bg:61Qlmi5OQNm" />
     </node>
     <node concept="1TJgyj" id="3jnrpqS_Ke$" role="1TKVEi">
       <property role="IQ2ns" value="3807632504074470308" />
@@ -234,14 +237,14 @@
       <property role="20kJfa" value="content" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="3jnrpqS_K7P" resolve="DSPrimitiveTokensResolver" />
-      <ref role="20ksaX" to="g1bg:qgBRHc4Jz$" />
+      <ref role="20ksaX" to="g1bg:qgBRHc4Jz$" resolve="content" />
     </node>
   </node>
   <node concept="1TIwiD" id="3jnrpqSHAgs">
     <property role="EcuMT" value="3807632504076526620" />
     <property role="3GE5qa" value="primitive_tokens_resolver" />
     <property role="TrG5h" value="DSResolverTypeReference" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3jnrpqS_Ker" role="1TKVEi">
       <property role="IQ2ns" value="3807632504074470299" />
       <property role="20kJfa" value="ref" />

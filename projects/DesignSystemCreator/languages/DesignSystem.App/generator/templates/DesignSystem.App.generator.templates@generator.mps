@@ -14,7 +14,6 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="g1bg" ref="r:4e3863ee-fb0f-47ba-9514-31568b51e8ae(DesignSystem.Logik.structure)" implicit="true" />
-    <import index="8usw" ref="r:291ddc1b-d6e7-4ca6-a0e2-a1fae46ab1b7(DesignSystem.System.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -29,6 +28,7 @@
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
+      <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
@@ -86,6 +86,7 @@
         <child id="1168278589236" name="sourceNodesQuery" index="2P8S$" />
       </concept>
       <concept id="1095416546421" name="jetbrains.mps.lang.generator.structure.MappingConfiguration" flags="ig" index="bUwia">
+        <property id="1184950341882" name="topPriorityGroup" index="3$yP7D" />
         <child id="1200911492601" name="mappingLabel" index="2rTMjI" />
         <child id="1167328349397" name="reductionMappingRule" index="3acgRq" />
       </concept>
@@ -191,30 +192,31 @@
   </registry>
   <node concept="bUwia" id="qgBRHbnxjz">
     <property role="TrG5h" value="main" />
+    <property role="3$yP7D" value="true" />
     <node concept="2rT7sh" id="4y2cPgZGkES" role="2rTMjI">
       <property role="TrG5h" value="AbstractPrimitiveTokensDeclaration" />
-      <ref role="2rTdP9" to="qit8:qgBRHc1$VR" resolve="AbstractDesignSystemPrimitiveTokensConcept" />
+      <ref role="2rTdP9" to="qit8:qgBRHc1$VR" resolve="DSAbstractPrimitiveTokens" />
       <ref role="2rZz_L" to="tpee:fz12cDA" resolve="ClassConcept" />
     </node>
     <node concept="2rT7sh" id="3jnrpqTgrMR" role="2rTMjI">
       <property role="TrG5h" value="PrimitiveTokensResolverDeclaration" />
-      <ref role="2rTdP9" to="qit8:3jnrpqS_K7P" resolve="DesignSystemPrimitiveTokensResolverConcept" />
+      <ref role="2rTdP9" to="qit8:3jnrpqS_K7P" resolve="DSPrimitiveTokensResolver" />
       <ref role="2rZz_L" to="tpee:fz12cDA" resolve="ClassConcept" />
     </node>
     <node concept="3aamgX" id="qgBRHcas$A" role="3acgRq">
-      <ref role="30HIoZ" to="qit8:qgBRHbnxjG" resolve="DesignSystemPrimitiveTokensConcept" />
+      <ref role="30HIoZ" to="qit8:qgBRHbnxjG" resolve="DSPrimitiveTokens" />
       <node concept="j$656" id="qgBRHcas$B" role="1lVwrX">
         <ref role="v9R2y" node="qgBRHcas$$" resolve="reduce_DesignSystemPrimitiveTokensConcept" />
       </node>
     </node>
     <node concept="3aamgX" id="qgBRHcat1h" role="3acgRq">
-      <ref role="30HIoZ" to="qit8:qgBRHc1$VR" resolve="AbstractDesignSystemPrimitiveTokensConcept" />
+      <ref role="30HIoZ" to="qit8:qgBRHc1$VR" resolve="DSAbstractPrimitiveTokens" />
       <node concept="j$656" id="qgBRHcat1i" role="1lVwrX">
         <ref role="v9R2y" node="qgBRHcat1f" resolve="reduce_AbstractDesignSystemPrimitiveTokensConcept" />
       </node>
     </node>
     <node concept="3aamgX" id="3jnrpqTemnW" role="3acgRq">
-      <ref role="30HIoZ" to="qit8:3jnrpqS_K7P" resolve="DesignSystemPrimitiveTokensResolverConcept" />
+      <ref role="30HIoZ" to="qit8:3jnrpqS_K7P" resolve="DSPrimitiveTokensResolver" />
       <node concept="j$656" id="3jnrpqTemnX" role="1lVwrX">
         <ref role="v9R2y" node="3jnrpqTemnU" resolve="reduce_DesignSystemPrimitiveTokensResolverConcept" />
       </node>
@@ -223,7 +225,7 @@
   <node concept="13MO4I" id="qgBRHcas$$">
     <property role="TrG5h" value="reduce_DesignSystemPrimitiveTokensConcept" />
     <property role="3GE5qa" value="primitive_tokens" />
-    <ref role="3gUMe" to="qit8:qgBRHbnxjG" resolve="DesignSystemPrimitiveTokensConcept" />
+    <ref role="3gUMe" to="qit8:qgBRHbnxjG" resolve="DSPrimitiveTokens" />
     <node concept="312cEu" id="qgBRHcaupx" role="13RCb5">
       <property role="TrG5h" value="PrimitiveTokens" />
       <node concept="15s5l7" id="4y2cPgZKSe9" role="lGtFl">
@@ -326,7 +328,7 @@
   <node concept="13MO4I" id="qgBRHcat1f">
     <property role="TrG5h" value="reduce_AbstractDesignSystemPrimitiveTokensConcept" />
     <property role="3GE5qa" value="primitive_tokens" />
-    <ref role="3gUMe" to="qit8:qgBRHc1$VR" resolve="AbstractDesignSystemPrimitiveTokensConcept" />
+    <ref role="3gUMe" to="qit8:qgBRHc1$VR" resolve="DSAbstractPrimitiveTokens" />
     <node concept="312cEu" id="qgBRHcat1q" role="13RCb5">
       <property role="1sVAO0" value="true" />
       <property role="TrG5h" value="PrimitiveTokens" />
@@ -381,7 +383,7 @@
   <node concept="13MO4I" id="qgBRHcav33">
     <property role="TrG5h" value="reduce_DesignSystemPrimitiveTokenConcept" />
     <property role="3GE5qa" value="primitive_tokens.properties" />
-    <ref role="3gUMe" to="qit8:qgBRHc2HIh" resolve="DesignSystemPrimitiveTokenConcept" />
+    <ref role="3gUMe" to="qit8:qgBRHc2HIh" resolve="DSPrimitiveToken" />
     <node concept="3clFb_" id="qgBRHcav3$" role="13RCb5">
       <property role="TrG5h" value="getToken" />
       <node concept="3clFbS" id="qgBRHcav3B" role="3clF47">
@@ -424,7 +426,7 @@
               <node concept="3clFbF" id="4ST5ZIJBz37" role="3cqZAp">
                 <node concept="1PxgMI" id="4ST5ZIJAY5T" role="3clFbG">
                   <node concept="chp4Y" id="4ST5ZIJAY5U" role="3oSUPX">
-                    <ref role="cht4Q" to="qit8:qgBRHc1$VR" resolve="AbstractDesignSystemPrimitiveTokensConcept" />
+                    <ref role="cht4Q" to="qit8:qgBRHc1$VR" resolve="DSAbstractPrimitiveTokens" />
                   </node>
                   <node concept="2OqwBi" id="4ST5ZIJAY5V" role="1m5AlR">
                     <node concept="30H73N" id="4ST5ZIJAY5W" role="2Oq$k0" />
@@ -496,7 +498,7 @@
   <node concept="13MO4I" id="qgBRHcavKj">
     <property role="TrG5h" value="reduce_AbstractDesignSystemPrimitiveTokenConcept" />
     <property role="3GE5qa" value="primitive_tokens.properties" />
-    <ref role="3gUMe" to="qit8:qgBRHc27e6" resolve="AbstractDesignSystemPrimitiveTokenConcept" />
+    <ref role="3gUMe" to="qit8:qgBRHc27e6" resolve="DSAbstractPrimitiveToken" />
     <node concept="3clFb_" id="qgBRHcax9Q" role="13RCb5">
       <property role="TrG5h" value="token" />
       <property role="1EzhhJ" value="true" />
@@ -511,7 +513,7 @@
                 <node concept="2OqwBi" id="4ST5ZIJAWRU" role="3clFbG">
                   <node concept="1PxgMI" id="4ST5ZIJAWC0" role="2Oq$k0">
                     <node concept="chp4Y" id="4ST5ZIJAWDm" role="3oSUPX">
-                      <ref role="cht4Q" to="qit8:qgBRHc1$VR" resolve="AbstractDesignSystemPrimitiveTokensConcept" />
+                      <ref role="cht4Q" to="qit8:qgBRHc1$VR" resolve="DSAbstractPrimitiveTokens" />
                     </node>
                     <node concept="2OqwBi" id="4ST5ZIJAQzt" role="1m5AlR">
                       <node concept="30H73N" id="4ST5ZIJAQo1" role="2Oq$k0" />
@@ -588,14 +590,14 @@
     <property role="TrG5h" value="switch_AbstractDesignSystemPrimitiveTokenConcept" />
     <node concept="3aamgX" id="4y2cPgZKAXt" role="3aUrZf">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="qit8:qgBRHc27e6" resolve="AbstractDesignSystemPrimitiveTokenConcept" />
+      <ref role="30HIoZ" to="qit8:qgBRHc27e6" resolve="DSAbstractPrimitiveToken" />
       <node concept="j$656" id="4y2cPgZKAZR" role="1lVwrX">
         <ref role="v9R2y" node="qgBRHcavKj" resolve="reduce_AbstractDesignSystemPrimitiveTokenConcept" />
       </node>
     </node>
     <node concept="3aamgX" id="4y2cPgZKB00" role="3aUrZf">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="qit8:qgBRHc2HIh" resolve="DesignSystemPrimitiveTokenConcept" />
+      <ref role="30HIoZ" to="qit8:qgBRHc2HIh" resolve="DSPrimitiveToken" />
       <node concept="j$656" id="4y2cPgZKB07" role="1lVwrX">
         <ref role="v9R2y" node="qgBRHcav33" resolve="reduce_DesignSystemPrimitiveTokenConcept" />
       </node>
@@ -604,12 +606,11 @@
   <node concept="13MO4I" id="3jnrpqTemnU">
     <property role="TrG5h" value="reduce_DesignSystemPrimitiveTokensResolverConcept" />
     <property role="3GE5qa" value="resolver" />
-    <ref role="3gUMe" to="qit8:3jnrpqS_K7P" resolve="DesignSystemPrimitiveTokensResolverConcept" />
+    <ref role="3gUMe" to="qit8:3jnrpqS_K7P" resolve="DSPrimitiveTokensResolver" />
     <node concept="312cEu" id="3jnrpqTemo7" role="13RCb5">
       <property role="TrG5h" value="PrimitiveTokensResolver" />
-      <node concept="3clFb_" id="3jnrpqTelgP" role="jymVt">
+      <node concept="2YIFZL" id="61Qlmi5WEOg" role="jymVt">
         <property role="TrG5h" value="resolve" />
-        <node concept="3Tm1VV" id="3jnrpqTelgS" role="1B3o_S" />
         <node concept="3clFbS" id="3jnrpqTelgT" role="3clF47">
           <node concept="3cpWs6" id="3jnrpqTeqDc" role="3cqZAp">
             <node concept="10Nm6u" id="3jnrpqTeri0" role="3cqZAk" />
@@ -625,7 +626,7 @@
                         </node>
                       </node>
                       <node concept="3Tsc0h" id="3jnrpqTeuWC" role="2OqNvi">
-                        <ref role="3TtcxE" to="g1bg:3jnrpqSwd$k" />
+                        <ref role="3TtcxE" to="g1bg:3jnrpqSwd$k" resolve="statements" />
                       </node>
                     </node>
                   </node>
@@ -651,7 +652,7 @@
                       </node>
                     </node>
                     <node concept="3Tsc0h" id="3jnrpqTeo0u" role="2OqNvi">
-                      <ref role="3TtcxE" to="8usw:qgBRHbnxkQ" />
+                      <ref role="3TtcxE" to="g1bg:61Qlmi5OQNy" resolve="parameters" />
                     </node>
                   </node>
                 </node>
@@ -689,6 +690,7 @@
             </node>
           </node>
         </node>
+        <node concept="3Tm1VV" id="3jnrpqTelgS" role="1B3o_S" />
       </node>
       <node concept="3Tm1VV" id="3jnrpqTemo8" role="1B3o_S" />
       <node concept="raruj" id="3jnrpqTeogf" role="lGtFl">

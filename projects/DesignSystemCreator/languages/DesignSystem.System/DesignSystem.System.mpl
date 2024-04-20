@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="DesignSystem.System" uuid="43e160c7-168c-4805-904b-c45c336610e7" languageVersion="0" moduleVersion="0">
   <models>
-    <modelRoot type="default" contentPath="${module}">
+    <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
     </modelRoot>
   </models>
@@ -47,6 +47,7 @@
       </languageVersions>
       <dependencyVersions>
         <module reference="3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)" version="0" />
+        <module reference="a8428b12-5ea3-4307-9244-826b21bb5006(DesignSystem.Logik)" version="0" />
         <module reference="43e160c7-168c-4805-904b-c45c336610e7(DesignSystem.System)" version="0" />
         <module reference="8bccbf6d-ba20-4425-aeb8-7feb5bb80fec(DesignSystem.System.generator)" version="0" />
         <module reference="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" version="0" />
@@ -70,6 +71,7 @@
     <dependency reexport="false">a8428b12-5ea3-4307-9244-826b21bb5006(DesignSystem.Logik)</dependency>
   </dependencies>
   <languageVersions>
+    <language slang="l:a8428b12-5ea3-4307-9244-826b21bb5006:DesignSystem.Logik" version="0" />
     <language slang="l:43e160c7-168c-4805-904b-c45c336610e7:DesignSystem.System" version="0" />
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="12" />
     <language slang="l:443f4c36-fcf5-4eb6-9500-8d06ed259e3e:jetbrains.mps.baseLanguage.classifiers" version="0" />
