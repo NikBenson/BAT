@@ -11,10 +11,6 @@
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
       </concept>
-      <concept id="1109279763828" name="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" flags="ng" index="16euLQ" />
-      <concept id="1109279851642" name="jetbrains.mps.baseLanguage.structure.GenericDeclaration" flags="ng" index="16eOlS">
-        <child id="1109279881614" name="typeVariableDeclaration" index="16eVyc" />
-      </concept>
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ngI" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
@@ -30,14 +26,6 @@
     <property role="1sVAO0" value="true" />
     <property role="TrG5h" value="PrimitiveTokens" />
     <node concept="3Tm1VV" id="3jnrpqTel2M" role="1B3o_S" />
-  </node>
-  <node concept="312cEu" id="3jnrpqTelej">
-    <property role="TrG5h" value="PrimitiveTokensResolver" />
-    <property role="1sVAO0" value="true" />
-    <node concept="3Tm1VV" id="3jnrpqTelek" role="1B3o_S" />
-    <node concept="16euLQ" id="3jnrpqTeqBF" role="16eVyc">
-      <property role="TrG5h" value="R" />
-    </node>
   </node>
 </model>
 

@@ -16,9 +16,9 @@
   </dependencies>
   <languageVersions>
     <language slang="l:9b844d5f-d3bc-48e3-8d2e-d303cf551efe:DesignSystem.App" version="0" />
+    <language slang="l:a8428b12-5ea3-4307-9244-826b21bb5006:DesignSystem.Logik" version="0" />
     <language slang="l:43e160c7-168c-4805-904b-c45c336610e7:DesignSystem.System" version="0" />
     <language slang="l:ceab5195-25ea-4f22-9b92-103b95ca8c0c:jetbrains.mps.lang.core" version="2" />
-    <language slang="l:7ab1a6fa-0a11-4b95-9e48-75f363d6cb00:jetbrains.mps.lang.generator.plan" version="2" />
   </languageVersions>
   <dependencyVersions>
     <module reference="c07e4ac1-6428-405c-b5a0-aa09f048cad9(DesignSystem.App.sandbox)" version="0" />

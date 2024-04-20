@@ -9,7 +9,6 @@
     <import index="qit8" ref="r:cd4652a9-2141-42ee-bf85-a59a1c128e61(DesignSystem.App.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="1ctc" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.stream(JDK/)" implicit="true" />
-    <import index="8usw" ref="r:291ddc1b-d6e7-4ca6-a0e2-a1fae46ab1b7(DesignSystem.System.structure)" implicit="true" />
     <import index="g1bg" ref="r:4e3863ee-fb0f-47ba-9514-31568b51e8ae(DesignSystem.Logik.structure)" implicit="true" />
   </imports>
   <registry>
@@ -541,7 +540,7 @@
                 </node>
               </node>
               <node concept="2DeJnY" id="3jnrpqTcn0Q" role="2OqNvi">
-                <ref role="1A9B2P" to="8usw:qgBRHbnxkE" resolve="DesignSystemPropertyParametersListConcept" />
+                <ref role="1A9B2P" to="g1bg:61Qlmi5OQNl" resolve="DSParameterList" />
               </node>
             </node>
           </node>

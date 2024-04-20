@@ -6,7 +6,6 @@
     <devkit ref="00000000-0000-4000-0000-1de82b3a4936(jetbrains.mps.devkit.aspect.typesystem)" />
   </languages>
   <imports>
-    <import index="867d" ref="r:f01a8cbe-1edf-4676-bde2-c56c65883ccd(DesignSystem.System.typesystem)" />
     <import index="qit8" ref="r:cd4652a9-2141-42ee-bf85-a59a1c128e61(DesignSystem.App.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
@@ -124,7 +123,7 @@
                     <ref role="1YBMHb" node="3jnrpqSssaC" resolve="token" />
                   </node>
                   <node concept="3TrEf2" id="3jnrpqSv7xR" role="2OqNvi">
-                    <ref role="3Tt5mk" to="qit8:3jnrpqSsrKu" />
+                    <ref role="3Tt5mk" to="qit8:3jnrpqSsrKu" resolve="value" />
                   </node>
                 </node>
                 <node concept="3JvlWi" id="3jnrpqSCMaX" role="2OqNvi" />
@@ -178,7 +177,7 @@
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3jnrpqSWnxZ" role="2OqNvi">
-                            <ref role="3Tt5mk" to="qit8:qgBRHbnxka" />
+                            <ref role="3Tt5mk" to="qit8:qgBRHbnxka" resolve="type" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3jnrpqSWny0" role="2OqNvi">
@@ -197,7 +196,7 @@
                           <ref role="1YBMHb" node="3jnrpqSssaC" resolve="token" />
                         </node>
                         <node concept="3TrEf2" id="3jnrpqSWmp_" role="2OqNvi">
-                          <ref role="3Tt5mk" to="qit8:3jnrpqSsrKu" />
+                          <ref role="3Tt5mk" to="qit8:3jnrpqSsrKu" resolve="value" />
                         </node>
                       </node>
                       <node concept="3JvlWi" id="3jnrpqSWmYN" role="2OqNvi" />
@@ -225,7 +224,7 @@
                     </node>
                   </node>
                   <node concept="3TrEf2" id="3jnrpqSVMuy" role="2OqNvi">
-                    <ref role="3Tt5mk" to="qit8:qgBRHbnxka" />
+                    <ref role="3Tt5mk" to="qit8:qgBRHbnxka" resolve="type" />
                   </node>
                 </node>
                 <node concept="2qgKlT" id="3jnrpqSVSjD" role="2OqNvi">
@@ -238,7 +237,7 @@
                 <ref role="1YBMHb" node="3jnrpqSssaC" resolve="token" />
               </node>
               <node concept="3TrEf2" id="3jnrpqSvmvh" role="2OqNvi">
-                <ref role="3Tt5mk" to="qit8:3jnrpqSsrKu" />
+                <ref role="3Tt5mk" to="qit8:3jnrpqSsrKu" resolve="value" />
               </node>
             </node>
           </node>
@@ -249,7 +248,7 @@
           </node>
           <node concept="1BlSNk" id="3jnrpqSsvXl" role="2OqNvi">
             <ref role="1BmUXE" to="qit8:qgBRHc1$VR" resolve="DSAbstractPrimitiveTokens" />
-            <ref role="1Bn3mz" to="qit8:qgBRHc27e9" />
+            <ref role="1Bn3mz" to="qit8:qgBRHc27e9" resolve="tokens" />
           </node>
         </node>
       </node>
@@ -305,7 +304,7 @@
                     <ref role="2Gs0qQ" node="3jnrpqSGu9m" resolve="r" />
                   </node>
                   <node concept="3TrEf2" id="3jnrpqT2Ia$" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpee:fzcqZ_G" />
+                    <ref role="3Tt5mk" to="tpee:fzcqZ_G" resolve="expression" />
                   </node>
                 </node>
                 <node concept="3JvlWi" id="3jnrpqT2J2w" role="2OqNvi" />
@@ -316,7 +315,7 @@
                 <ref role="2Gs0qQ" node="3jnrpqSGu9m" resolve="r" />
               </node>
               <node concept="3TrEf2" id="3jnrpqT2XSI" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpee:fzcqZ_G" />
+                <ref role="3Tt5mk" to="tpee:fzcqZ_G" resolve="expression" />
               </node>
             </node>
             <node concept="3cpWs3" id="3jnrpqSWTi7" role="2MkJ7o">
@@ -367,7 +366,7 @@
                           <ref role="2Gs0qQ" node="3jnrpqSGu9m" resolve="r" />
                         </node>
                         <node concept="3TrEf2" id="3jnrpqSWLKm" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpee:fzcqZ_G" />
+                          <ref role="3Tt5mk" to="tpee:fzcqZ_G" resolve="expression" />
                         </node>
                       </node>
                       <node concept="3JvlWi" id="3jnrpqSWMQ7" role="2OqNvi" />
@@ -388,11 +387,11 @@
                       <ref role="1YBMHb" node="3jnrpqSFq7_" resolve="designSystemPrimitiveTokensResolverConcept" />
                     </node>
                     <node concept="3TrEf2" id="3jnrpqSWTBx" role="2OqNvi">
-                      <ref role="3Tt5mk" to="qit8:3jnrpqSHAgv" />
+                      <ref role="3Tt5mk" to="qit8:3jnrpqSHAgv" resolve="for" />
                     </node>
                   </node>
                   <node concept="3TrEf2" id="3jnrpqSWTBy" role="2OqNvi">
-                    <ref role="3Tt5mk" to="qit8:3jnrpqS_Ker" />
+                    <ref role="3Tt5mk" to="qit8:3jnrpqS_Ker" resolve="ref" />
                   </node>
                 </node>
                 <node concept="2qgKlT" id="3jnrpqSWTBz" role="2OqNvi">

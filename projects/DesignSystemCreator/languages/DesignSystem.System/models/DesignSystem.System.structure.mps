@@ -87,7 +87,7 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="contents" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" node="qgBRHbnxjB" resolve="DSDesignSystem" />
+      <ref role="20lvS9" node="61Qlmi5I99H" resolve="DSDesignSystemSubsystemWrapper" />
     </node>
   </node>
   <node concept="1TIwiD" id="qgBRHbnxjM">
@@ -121,28 +121,6 @@
       <ref role="20lvS9" to="g1bg:qgBRHb_ruL" resolve="DSType" />
     </node>
   </node>
-  <node concept="1TIwiD" id="qgBRHbnxkE">
-    <property role="TrG5h" value="DSDesignSystemPropertyParametersList" />
-    <property role="EcuMT" value="473053312768152874" />
-    <property role="3GE5qa" value="properties" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="qgBRHbnxkQ" role="1TKVEi">
-      <property role="IQ2ns" value="473053312768152886" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="parameters" />
-      <property role="20lbJX" value="fLJekj6/_1__n" />
-      <ref role="20lvS9" node="qgBRHbnxkS" resolve="DSDesignSystemPropertyParameter" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="qgBRHbnxkS">
-    <property role="TrG5h" value="DSDesignSystemPropertyParameter" />
-    <property role="EcuMT" value="473053312768152888" />
-    <property role="3GE5qa" value="properties" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="3jnrpqS_KhR" role="PzmwI">
-      <ref role="PrY4T" to="g1bg:3jnrpqS_KhG" resolve="IDSCreatesVarriable" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="qgBRHbq9W5">
     <property role="EcuMT" value="473053312768843525" />
     <property role="TrG5h" value="DSDesignSystemParent" />
@@ -154,7 +132,7 @@
       <ref role="20lvS9" node="qgBRHbnxjB" resolve="DSDesignSystem" />
     </node>
     <node concept="RPilO" id="66TZj9WoDEJ" role="lGtFl">
-      <ref role="RPilL" node="qgBRHbq9W6" />
+      <ref role="RPilL" node="qgBRHbq9W6" resolve="designSystemConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="qgBRHb$oZh">
@@ -170,7 +148,7 @@
       <property role="20kJfa" value="content" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="qgBRHbnxjB" resolve="DSDesignSystem" />
-      <ref role="20ksaX" to="g1bg:qgBRHc4Jz$" />
+      <ref role="20ksaX" to="g1bg:qgBRHc4Jz$" resolve="content" />
     </node>
     <node concept="PrWs8" id="66TZj9WsFEo" role="PzmwI">
       <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
@@ -188,12 +166,8 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="qgBRHbnxk4" resolve="DSDesignSystemProperty" />
     </node>
-    <node concept="1TJgyj" id="qgBRHb_uRQ" role="1TKVEi">
-      <property role="IQ2ns" value="473053312771812854" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="parameters" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="qgBRHbnxkE" resolve="DSDesignSystemPropertyParametersList" />
+    <node concept="PrWs8" id="61Qlmi5OR4B" role="PzmwI">
+      <ref role="PrY4T" to="g1bg:61Qlmi5OQNe" resolve="IDSHasParameters" />
     </node>
   </node>
   <node concept="1TIwiD" id="qgBRHb_PxF">
@@ -202,6 +176,23 @@
     <property role="R5$K7" value="true" />
     <property role="3GE5qa" value="properties" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="61Qlmi5I99H">
+    <property role="EcuMT" value="6950836965121495661" />
+    <property role="3GE5qa" value="subsystems" />
+    <property role="TrG5h" value="DSDesignSystemSubsystemWrapper" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="61Qlmi5I99J" role="PzmwI">
+      <ref role="PrY4T" to="g1bg:61Qlmi5I8_I" resolve="IDSReferenceTypeWrapper" />
+    </node>
+    <node concept="1TJgyj" id="61Qlmi5I99L" role="1TKVEi">
+      <property role="IQ2ns" value="6950836965121495665" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="value" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="qgBRHbnxjB" resolve="DSDesignSystem" />
+      <ref role="20ksaX" to="g1bg:61Qlmi5I8_J" resolve="value" />
+    </node>
   </node>
 </model>
 
