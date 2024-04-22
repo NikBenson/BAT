@@ -6,15 +6,16 @@
   </languages>
   <imports>
     <import index="g1bg" ref="r:4e3863ee-fb0f-47ba-9514-31568b51e8ae(DesignSystem.Logik.structure)" />
+    <import index="8usw" ref="r:291ddc1b-d6e7-4ca6-a0e2-a1fae46ab1b7(DesignSystem.System.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
-        <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
@@ -23,10 +24,6 @@
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
         <child id="1169129564478" name="implements" index="PzmwI" />
-      </concept>
-      <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
-        <property id="241647608299431129" name="propertyId" index="IQ2nx" />
-        <reference id="1082985295845" name="dataType" index="AX2Wp" />
       </concept>
       <concept id="1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" flags="ig" index="1TJgyj">
         <property id="1071599776563" name="role" index="20kJfa" />
@@ -53,6 +50,26 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="qgBRHbnxj_" role="PzmwI">
       <ref role="PrY4T" to="g1bg:qgBRHbAaw1" resolve="IDSCreatesType" />
+    </node>
+    <node concept="1TJgyj" id="6eEcLMAsyRT" role="1TKVEi">
+      <property role="IQ2ns" value="7181608753940278777" />
+      <property role="20kJfa" value="system" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="8usw:qgBRHbnxjB" resolve="DSDesignSystem" />
+    </node>
+    <node concept="1TJgyj" id="6eEcLMAsyTg" role="1TKVEi">
+      <property role="IQ2ns" value="7181608753940278864" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="parameters" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="g1bg:61Qlmi5OQNl" resolve="DSParameterList" />
+    </node>
+    <node concept="1TJgyj" id="6eEcLMAsyUS" role="1TKVEi">
+      <property role="IQ2ns" value="7181608753940278968" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="tokens" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="6eEcLMAsyUY" resolve="DSUsedTokensDefinitions" />
     </node>
   </node>
   <node concept="1TIwiD" id="qgBRHbnxjG">
@@ -173,18 +190,17 @@
   <node concept="1TIwiD" id="3jnrpqSsrKn">
     <property role="EcuMT" value="3807632504072027159" />
     <property role="3GE5qa" value="app" />
-    <property role="TrG5h" value="DSUsedTokensDefinition" />
+    <property role="TrG5h" value="DSUsedTokenDefinition" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="3jnrpqSsrKq" role="1TKVEl">
-      <property role="IQ2nx" value="3807632504072027162" />
-      <property role="TrG5h" value="name" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    <node concept="PrWs8" id="6eEcLMAsVLE" role="PzmwI">
+      <ref role="PrY4T" to="g1bg:3jnrpqS_KhG" resolve="IDSCreatesVarriable" />
     </node>
-    <node concept="1TJgyj" id="3jnrpqSsrKs" role="1TKVEi">
-      <property role="IQ2ns" value="3807632504072027164" />
-      <property role="20kJfa" value="type" />
+    <node concept="1TJgyj" id="6eEcLMAtkBK" role="1TKVEi">
+      <property role="IQ2ns" value="7181608753940482544" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="value" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="qgBRHc1$VR" resolve="DSAbstractPrimitiveTokens" />
+      <ref role="20lvS9" node="6eEcLMAtkBI" resolve="DSUsedTokenValue" />
     </node>
   </node>
   <node concept="1TIwiD" id="3jnrpqS_K7P">
@@ -250,6 +266,43 @@
       <property role="20kJfa" value="ref" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="qgBRHc1$VR" resolve="DSAbstractPrimitiveTokens" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6eEcLMAsyUY">
+    <property role="EcuMT" value="7181608753940278974" />
+    <property role="3GE5qa" value="app" />
+    <property role="TrG5h" value="DSUsedTokensDefinitions" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="6eEcLMAsyUZ" role="1TKVEi">
+      <property role="IQ2ns" value="7181608753940278975" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="tokens" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="6eEcLMAtkBM" resolve="DSUsedTokenDefinitionWrapper" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6eEcLMAtkBI">
+    <property role="EcuMT" value="7181608753940482542" />
+    <property role="TrG5h" value="DSUsedTokenValue" />
+    <property role="3GE5qa" value="app" />
+    <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+  </node>
+  <node concept="1TIwiD" id="6eEcLMAtkBM">
+    <property role="EcuMT" value="7181608753940482546" />
+    <property role="TrG5h" value="DSUsedTokenDefinitionWrapper" />
+    <property role="3GE5qa" value="app" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="PrWs8" id="6eEcLMAtkBN" role="PzmwI">
+      <ref role="PrY4T" to="g1bg:61Qlmi5OQNf" resolve="IDSVarriableWrapper" />
+    </node>
+    <node concept="1TJgyj" id="6eEcLMAtkBP" role="1TKVEi">
+      <property role="IQ2ns" value="7181608753940482549" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="value" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="3jnrpqSsrKn" resolve="DSUsedTokenDefinition" />
+      <ref role="20ksaX" to="g1bg:61Qlmi5OQNi" />
     </node>
   </node>
 </model>
