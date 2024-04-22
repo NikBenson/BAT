@@ -11,6 +11,7 @@
     <import index="mhb9" ref="r:e7af99ba-8320-4d23-bb26-607f05421ac3(DesignSystem.Logik.editor)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="g1bg" ref="r:4e3863ee-fb0f-47ba-9514-31568b51e8ae(DesignSystem.Logik.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -614,6 +615,104 @@
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="6eEcLMAsyRo">
+    <property role="3GE5qa" value="app" />
+    <ref role="1XX52x" to="qit8:qgBRHbnxj$" resolve="DSApp" />
+    <node concept="3EZMnI" id="6eEcLMAsyRq" role="2wV5jI">
+      <node concept="3F0ifn" id="6eEcLMAsyR_" role="3EZMnx">
+        <property role="3F0ifm" value="app" />
+        <ref role="1k5W1q" to="mhb9:qgBRHbW9Zl" resolve="ndkeyword" />
+      </node>
+      <node concept="3F0A7n" id="6eEcLMAsyRK" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+      </node>
+      <node concept="3F0ifn" id="6eEcLMAsyS2" role="3EZMnx">
+        <property role="3F0ifm" value=":" />
+        <node concept="11L4FC" id="6eEcLMAsySc" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="1iCGBv" id="6eEcLMAsySg" role="3EZMnx">
+        <ref role="1NtTu8" to="qit8:6eEcLMAsyRT" resolve="system" />
+        <node concept="1sVBvm" id="6eEcLMAsySi" role="1sWHZn">
+          <node concept="3F0A7n" id="6eEcLMAsySt" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="6eEcLMAsySU" role="3EZMnx">
+        <property role="3F0ifm" value="by" />
+        <ref role="1k5W1q" to="mhb9:qgBRHbZflz" resolve="keyword" />
+      </node>
+      <node concept="3F1sOY" id="6eEcLMAsyTj" role="3EZMnx">
+        <ref role="1NtTu8" to="qit8:6eEcLMAsyTg" resolve="parameters" />
+        <node concept="ljvvj" id="6eEcLMAsyTT" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F1sOY" id="6eEcLMAsyV2" role="3EZMnx">
+        <ref role="1NtTu8" to="qit8:6eEcLMAsyUS" resolve="tokens" />
+        <node concept="lj46D" id="6eEcLMAsyVl" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="6eEcLMAsyRt" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="6eEcLMAsyWa">
+    <property role="3GE5qa" value="app" />
+    <ref role="1XX52x" to="qit8:6eEcLMAsyUY" resolve="DSUsedTokensDefinitions" />
+    <node concept="3EZMnI" id="6eEcLMAsyWc" role="2wV5jI">
+      <node concept="3F0ifn" id="6eEcLMAsyTF" role="3EZMnx">
+        <property role="3F0ifm" value="tokens" />
+        <ref role="1k5W1q" to="mhb9:qgBRHbW9Zl" resolve="ndkeyword" />
+      </node>
+      <node concept="3F0ifn" id="6eEcLMAsyUf" role="3EZMnx">
+        <property role="3F0ifm" value=":" />
+        <node concept="11L4FC" id="6eEcLMAsyUu" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="6eEcLMAsyUx" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F2HdR" id="6eEcLMAt4wl" role="3EZMnx">
+        <ref role="1NtTu8" to="qit8:6eEcLMAsyUZ" resolve="tokens" />
+        <node concept="l2Vlx" id="6eEcLMAt4wn" role="2czzBx" />
+        <node concept="lj46D" id="6eEcLMAt4wu" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="pj6Ft" id="6eEcLMAtSOw" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="6eEcLMAsyWf" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="6eEcLMAtkBE">
+    <property role="3GE5qa" value="app" />
+    <ref role="1XX52x" to="qit8:3jnrpqSsrKn" resolve="DSUsedTokenDefinition" />
+    <node concept="3EZMnI" id="6eEcLMAtv76" role="2wV5jI">
+      <node concept="3F0A7n" id="6eEcLMAtv7d" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+      </node>
+      <node concept="3F0ifn" id="6eEcLMAtv7k" role="3EZMnx">
+        <property role="3F0ifm" value="=" />
+      </node>
+      <node concept="3F1sOY" id="6eEcLMAtv7t" role="3EZMnx">
+        <ref role="1NtTu8" to="g1bg:3jnrpqS_KhJ" resolve="type" />
+      </node>
+      <node concept="3F0ifn" id="6eEcLMAtv7C" role="3EZMnx">
+        <property role="3F0ifm" value="by" />
+        <ref role="1k5W1q" to="mhb9:qgBRHbZflz" resolve="keyword" />
+      </node>
+      <node concept="3F1sOY" id="6eEcLMAtv7P" role="3EZMnx">
+        <ref role="1NtTu8" to="qit8:6eEcLMAtkBK" resolve="value" />
+      </node>
+      <node concept="l2Vlx" id="6eEcLMAtv79" role="2iSdaV" />
     </node>
   </node>
 </model>
