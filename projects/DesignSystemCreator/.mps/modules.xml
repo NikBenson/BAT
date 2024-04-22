@@ -4,8 +4,8 @@
     <projectModules>
       <modulePath path="$PROJECT_DIR$/languages/DesignSystem.App/DesignSystem.App.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/DesignSystem.Logik/DesignSystem.Logik.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/DesignSystem.System.sandbox/DesignSystem.System.sandbox.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/DesignSystem.System/DesignSystem.System.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/DesignSystem.sandbox/DesignSystem.sandbox.msd" folder="" />
     </projectModules>
   </component>
 </project>
