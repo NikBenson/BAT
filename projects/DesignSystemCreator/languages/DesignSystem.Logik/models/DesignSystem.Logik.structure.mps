@@ -685,5 +685,20 @@
     <property role="EcuMT" value="6950836965125535053" />
     <property role="TrG5h" value="IDSHasConstructor" />
   </node>
+  <node concept="1TIwiD" id="6eEcLMApNf3">
+    <property role="EcuMT" value="7181608753939559363" />
+    <property role="3GE5qa" value="type.reference" />
+    <property role="TrG5h" value="DSReferenceTypeConstructorWrapper" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="PrWs8" id="6eEcLMApNf4" role="PzmwI">
+      <ref role="PrY4T" to="tpck:hLJPP0O" resolve="IWrapper" />
+    </node>
+    <node concept="1TJgyj" id="6eEcLMApNls" role="1TKVEi">
+      <property role="IQ2ns" value="7181608753939559772" />
+      <property role="20kJfa" value="for" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="qgBRHbAaw1" resolve="IDSCreatesType" />
+    </node>
+  </node>
 </model>
 

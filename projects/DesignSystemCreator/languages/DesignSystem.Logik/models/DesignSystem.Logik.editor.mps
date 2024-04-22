@@ -9,6 +9,7 @@
   <imports>
     <import index="g1bg" ref="r:4e3863ee-fb0f-47ba-9514-31568b51e8ae(DesignSystem.Logik.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="tpen" ref="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -18,6 +19,7 @@
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
         <property id="1140524450557" name="separatorText" index="2czwfO" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
+        <child id="1140524464359" name="emptyCellModel" index="2czzBI" />
       </concept>
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
       <concept id="1237307900041" name="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" flags="ln" index="lj46D" />
@@ -459,6 +461,10 @@
         <property role="2czwfO" value="and" />
         <ref role="1NtTu8" to="g1bg:3jnrpqSRmP4" resolve="parameters" />
         <node concept="l2Vlx" id="3jnrpqSRmPW" role="2czzBx" />
+        <node concept="3F0ifn" id="6eEcLMAoMo_" role="2czzBI">
+          <property role="3F0ifm" value="no parameters" />
+          <ref role="1k5W1q" to="tpen:hshO_Yc" resolve="Comment" />
+        </node>
       </node>
     </node>
   </node>
