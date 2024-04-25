@@ -690,6 +690,12 @@
     <property role="3GE5qa" value="type.reference" />
     <property role="TrG5h" value="DSReferenceTypeConstructorWrapper" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="7nqFo6xDvJx" role="1TKVEi">
+      <property role="IQ2ns" value="8492290819634887649" />
+      <property role="20kJfa" value="producesConstructor" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    </node>
     <node concept="PrWs8" id="6eEcLMApNf4" role="PzmwI">
       <ref role="PrY4T" to="tpck:hLJPP0O" resolve="IWrapper" />
     </node>

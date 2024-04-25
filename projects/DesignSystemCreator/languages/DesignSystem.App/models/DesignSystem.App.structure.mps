@@ -71,6 +71,13 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="6eEcLMAsyUY" resolve="DSUsedTokensDefinitions" />
     </node>
+    <node concept="1TJgyj" id="7nqFo6xCkfi" role="1TKVEi">
+      <property role="IQ2ns" value="8492290819634578386" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="properties" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="7nqFo6xCkfh" resolve="DSAppProperties" />
+    </node>
   </node>
   <node concept="1TIwiD" id="qgBRHbnxjG">
     <property role="EcuMT" value="473053312768152812" />
@@ -304,6 +311,12 @@
       <ref role="20lvS9" node="3jnrpqSsrKn" resolve="DSUsedTokenDefinition" />
       <ref role="20ksaX" to="g1bg:61Qlmi5OQNi" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="7nqFo6xCkfh">
+    <property role="EcuMT" value="8492290819634578385" />
+    <property role="TrG5h" value="DSAppProperties" />
+    <property role="3GE5qa" value="app" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
   </node>
 </model>
 

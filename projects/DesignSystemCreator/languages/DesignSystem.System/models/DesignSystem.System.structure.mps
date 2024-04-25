@@ -194,5 +194,16 @@
       <ref role="20ksaX" to="g1bg:61Qlmi5I8_J" resolve="value" />
     </node>
   </node>
+  <node concept="1TIwiD" id="7nqFo6xDBA3">
+    <property role="EcuMT" value="8492290819634919811" />
+    <property role="TrG5h" value="DSDesignSystemConstructor" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="7nqFo6xDBA4" role="1TKVEi">
+      <property role="IQ2ns" value="8492290819634919812" />
+      <property role="20kJfa" value="system" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="qgBRHbnxjB" resolve="DSDesignSystem" />
+    </node>
+  </node>
 </model>
 

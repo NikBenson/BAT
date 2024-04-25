@@ -658,6 +658,15 @@
         <node concept="lj46D" id="6eEcLMAsyVl" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
+        <node concept="ljvvj" id="7nqFo6xD3iM" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F1sOY" id="7nqFo6xD3iz" role="3EZMnx">
+        <ref role="1NtTu8" to="qit8:7nqFo6xCkfi" resolve="properties" />
+        <node concept="lj46D" id="7nqFo6xD3iP" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
       </node>
       <node concept="l2Vlx" id="6eEcLMAsyRt" role="2iSdaV" />
     </node>
@@ -713,6 +722,32 @@
         <ref role="1NtTu8" to="qit8:6eEcLMAtkBK" resolve="value" />
       </node>
       <node concept="l2Vlx" id="6eEcLMAtv79" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="7nqFo6xCkfn">
+    <property role="3GE5qa" value="app" />
+    <ref role="1XX52x" to="qit8:7nqFo6xCkfh" resolve="DSAppProperties" />
+    <node concept="3EZMnI" id="7nqFo6xCkfp" role="2wV5jI">
+      <node concept="3F0ifn" id="7nqFo6xCkg0" role="3EZMnx">
+        <property role="3F0ifm" value="properties" />
+        <ref role="1k5W1q" to="mhb9:qgBRHbW9Zl" resolve="ndkeyword" />
+      </node>
+      <node concept="3F0ifn" id="7nqFo6xCkfr" role="3EZMnx">
+        <property role="3F0ifm" value=":" />
+        <node concept="11L4FC" id="7nqFo6xCkfs" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="7nqFo6xCkft" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="7nqFo6xCkfR" role="3EZMnx">
+        <property role="3F0ifm" value="contents" />
+        <node concept="lj46D" id="7nqFo6xCkfY" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="7nqFo6xCkfy" role="2iSdaV" />
     </node>
   </node>
 </model>

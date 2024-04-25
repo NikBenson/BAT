@@ -45,7 +45,9 @@
         <reference id="7181608753940278777" name="system" index="35Q1V_" />
         <child id="7181608753940278864" name="parameters" index="35Q1Pc" />
         <child id="7181608753940278968" name="tokens" index="35Q1Q$" />
+        <child id="8492290819634578386" name="properties" index="3kuYTj" />
       </concept>
+      <concept id="8492290819634578385" name="DesignSystem.App.structure.DSAppProperties" flags="ng" index="3kuYTg" />
     </language>
     <language id="a8428b12-5ea3-4307-9244-826b21bb5006" name="DesignSystem.Logik">
       <concept id="3807632504078605851" name="DesignSystem.Logik.structure.DSDotExpression" flags="ng" index="2c0ned">
@@ -74,7 +76,6 @@
       <concept id="3807632504073017619" name="DesignSystem.Logik.structure.DSStatementList" flags="ng" index="2clVi5">
         <child id="3807632504073017620" name="statements" index="2clVi2" />
       </concept>
-      <concept id="3807632504075883612" name="DesignSystem.Logik.structure.DSExpression" flags="ng" index="2cuZBa" />
       <concept id="3807632504075745652" name="DesignSystem.Logik.structure.DSEqualsExpression" flags="ng" index="2cvhjy">
         <child id="3807632504075745654" name="lhs" index="2cvhjw" />
         <child id="3807632504075745655" name="rhs" index="2cvhjx" />
@@ -87,11 +88,13 @@
       <concept id="3807632504071985932" name="DesignSystem.Logik.structure.DSColorLiteral" flags="ng" index="2cDBqq">
         <property id="3807632504071985935" name="value" index="2cDBqp" />
       </concept>
+      <concept id="3807632504072908145" name="DesignSystem.Logik.structure.DSStringLiteral" flags="ng" index="2cE43B">
+        <property id="3807632504072908147" name="value" index="2cE43_" />
+      </concept>
       <concept id="473053312771799235" name="DesignSystem.Logik.structure.DSEnumItem" flags="ng" index="1d1iuS" />
       <concept id="473053312771799232" name="DesignSystem.Logik.structure.DSEnumType" flags="ng" index="1d1iuV">
         <child id="473053312771799238" name="items" index="1d1iuX" />
       </concept>
-      <concept id="473053312771798961" name="DesignSystem.Logik.structure.DSType" flags="ng" index="1d1iza" />
       <concept id="473053312771991558" name="DesignSystem.Logik.structure.DSReferenceType" flags="ng" index="1d23tX">
         <reference id="473053312771991559" name="reference" index="1d23tW" />
       </concept>
@@ -493,39 +496,6 @@
       </node>
     </node>
   </node>
-  <node concept="1a_H64" id="6eEcLMAsyRj">
-    <property role="3GE5qa" value="de.whs.ni37900.bat.designsystem.app.sandbox" />
-    <node concept="1dNCIv" id="6eEcLMAsyRk" role="3_NHKb">
-      <property role="TrG5h" value="ConterApp" />
-      <ref role="35Q1V_" node="61Qlmi5Lzzt" resolve="Material" />
-      <node concept="35Q1Qy" id="6eEcLMAsVLz" role="35Q1Q$">
-        <node concept="2cDH61" id="6eEcLMAt4w7" role="35Q1Qz">
-          <property role="TrG5h" value="colors" />
-          <node concept="1d23tX" id="6eEcLMAtSO9" role="2cg6BT">
-            <ref role="1d23tW" node="61Qlmi5TfpQ" resolve="AllColorTokens" />
-          </node>
-          <node concept="35RRFM" id="6eEcLMAtSNJ" role="35RRFG" />
-        </node>
-        <node concept="35RRFI" id="6eEcLMAu9PN" role="35Q1Qz">
-          <node concept="2cDH61" id="6eEcLMAu9PU" role="3_DjAQ">
-            <property role="TrG5h" value="fonts" />
-            <node concept="35RRFM" id="6eEcLMAu9PW" role="35RRFG" />
-            <node concept="1d1iza" id="6eEcLMAu9PY" role="2cg6BT" />
-          </node>
-        </node>
-      </node>
-      <node concept="3_DjAL" id="6eEcLMAt4vC" role="35Q1Pc">
-        <node concept="3_DjAZ" id="6eEcLMAt4vH" role="3_DjA6">
-          <node concept="3_DjAW" id="6eEcLMAt4vL" role="3_DjAQ">
-            <property role="TrG5h" value="brightness" />
-            <node concept="1d23tX" id="6eEcLMAt4vR" role="2cg6BT">
-              <ref role="1d23tW" node="61Qlmi5Lzyd" resolve="Brightness" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="1a_Fz8" id="6eEcLMAu9Q3">
     <property role="3GE5qa" value="de.whs.ni37900.bat.designsystem.app.sandbox" />
     <node concept="1dNCIn" id="6eEcLMAu9Q4" role="3_NHKb">
@@ -539,9 +509,59 @@
           <node concept="1d23tX" id="6eEcLMAu9Qp" role="2c2w3l">
             <ref role="1d23tW" node="61Qlmi5TGT2" resolve="TextStyle" />
           </node>
-          <node concept="2cuZBa" id="6eEcLMAu9QY" role="2c2w3i" />
+          <node concept="2cE43B" id="7nqFo6xDkrY" role="2c2w3i">
+            <property role="2cE43_" value="robotto" />
+          </node>
+          <node concept="2c0ned" id="7nqFo6xDkre" role="2c2w3i">
+            <node concept="2c4bMk" id="7nqFo6xDkrs" role="2c0nea">
+              <node concept="1d23tX" id="7nqFo6xDkrC" role="2c4bMl">
+                <ref role="1d23tW" node="61Qlmi5LzzX" resolve="FontWeight" />
+              </node>
+            </node>
+            <node concept="2c0nft" id="7nqFo6xDkrH" role="2c0ne8">
+              <ref role="2c0nfq" node="61Qlmi5LzBi" resolve="w900" />
+            </node>
+          </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="1a_H64" id="6eEcLMAsyRj">
+    <property role="3GE5qa" value="de.whs.ni37900.bat.designsystem.app.sandbox" />
+    <node concept="1dNCIv" id="6eEcLMAsyRk" role="3_NHKb">
+      <property role="TrG5h" value="CounterApp" />
+      <ref role="35Q1V_" node="61Qlmi5Lzzt" resolve="Material" />
+      <node concept="35Q1Qy" id="6eEcLMAsVLz" role="35Q1Q$">
+        <node concept="35RRFI" id="7nqFo6xCkeK" role="35Q1Qz">
+          <node concept="2cDH61" id="7nqFo6xCkeO" role="3_DjAQ">
+            <property role="TrG5h" value="colors" />
+            <node concept="35RRFM" id="7nqFo6xCkeQ" role="35RRFG" />
+            <node concept="1d23tX" id="7nqFo6xCkeX" role="2cg6BT">
+              <ref role="1d23tW" node="61Qlmi5TfnG" resolve="ColorTokens" />
+            </node>
+          </node>
+        </node>
+        <node concept="35RRFI" id="7nqFo6xCkf0" role="35Q1Qz">
+          <node concept="2cDH61" id="7nqFo6xCkf8" role="3_DjAQ">
+            <property role="TrG5h" value="fonts" />
+            <node concept="35RRFM" id="7nqFo6xCkfa" role="35RRFG" />
+            <node concept="1d23tX" id="7nqFo6xDkld" role="2cg6BT">
+              <ref role="1d23tW" node="6eEcLMAu9Q4" resolve="FontTokens" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3_DjAL" id="6eEcLMAt4vC" role="35Q1Pc">
+        <node concept="3_DjAZ" id="6eEcLMAt4vH" role="3_DjA6">
+          <node concept="3_DjAW" id="6eEcLMAt4vL" role="3_DjAQ">
+            <property role="TrG5h" value="brightness" />
+            <node concept="1d23tX" id="6eEcLMAt4vR" role="2cg6BT">
+              <ref role="1d23tW" node="61Qlmi5Lzyd" resolve="Brightness" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3kuYTg" id="7nqFo6xDkl8" role="3kuYTj" />
     </node>
   </node>
 </model>
