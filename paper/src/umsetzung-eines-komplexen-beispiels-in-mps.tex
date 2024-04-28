@@ -3,6 +3,7 @@ Dazu soll eine \ac{DSL} entstehen, die nicht für Entwickler ausgelegt ist.
 
 \subsection{Anforderungen}\label{subsec:anforderungen}
 Die \ac{DSL}, beziehungsweise die beiden \acp{DSL}, sollen für Designer ausgelegt sein.
+Das Ziel dieses Beispiels soll es sein, den Kommunikations--Overhead beim Erstellen von Themes zu eliminieren.
 \begin{figure}[ht]
     \begin{subfigure}[c]{0.5\textwidth}
         \begin{center}
@@ -21,7 +22,6 @@ Die \ac{DSL}, beziehungsweise die beiden \acp{DSL}, sollen für Designer ausgele
     \caption{Ablauf Designanpassungen}
     \label{fig:ablauf-designanpassungen}
 \end{figure}
-Das Ziel dieses Beispiels soll es sein, den Kommunikations--Overhead beim Erstellen von Themes zu eliminieren.
 
 Dazu wird zunächst der aktuelle Ablauf aus dem Team App des \ac{SWR} aus \autoref{subfig:ablauf-designanpassungen-alt} betrachtet.
 Hier gibt es viele Indirektionen, die zum einen Zeitaufwändig sind, aber auch Fehler verursachen können.
@@ -100,8 +100,76 @@ Dabei lassen sich beliebige Kontrollflussanweisungen einbauen.
 Die Kontrollflussanweisungen beziehen sich dabei immer auf die Parameter des Themes.
 
 \subsection{Umsetzung}\label{subsec:umsetzung}
-Beide Sprachen benötigen nicht alle Aspekte von \ac{MPS}.
-Neben der Struktur werden noch Editor, Actions, Constraints, Behaviour, Typesystem und Intentions verwendet.
+\begin{figure}
+    \includegraphics[width=\textwidth]{../assets/img/diagrams/logic_structure.mmd}
+    \caption{Struktur des Kontrollflusses der Designsystem--Sprachen}
+    \label{fig:designsystem-logic-structure}
+\end{figure}
+In der Praxis werden sogar drei Sprachen genutzt, um das Projekt umzusetzen.
+Die gemeinsamen Kontrollflussanweisungen wurden zusammen mit dem Typsystem ausgelagert.
+Dies war notwendig, da die Mapping--Labels nicht über mehrere Generatoren hinweg verwendet werden können.
+Die Referenzen, im Klassendiagramm aus \autoref{fig:designsystem-logic-structure} als Aggregationen zu erkennen, konnten also anders nicht in Java übersetzt werden.
+Damit dieses Lable gesetzt werden konnte, waren an den entsprechenden Stellen Wrapper--Konzepte notwendig, welche im Diagram nicht abgebildet sind.
+
+Für die erste Umsetzung dieses Projektes waren lange nicht alle Aspekte von \ac{MPS} von nöten.
+Neben der Struktur wurden noch Editor, Actions, Constraints, Behaviour, Typesystem und Intentions verwendet.
+
+Das Vorgehen war dabei meistens einheitlich:
+\begin{enumerate}
+    \item Basierend auf der Planung aus \autoref{subsec:anforderungen} wird ein Strukturknoten erstellt, gegebenenfalls auch ein abstrakter Knoten und mehrere Kinder.
+    \item Anschließend wird der Editor erstellt, um einen Vergleich in der Darstellung zu bekommen.
+    Außerdem kann sich der Entwickler die Sprache so leichter visualisieren.
+    \item Typesystem Regeln und Actions definieren, da diese in den folgenden Schritten besonders hilfreich sind.
+    \item Definieren von Scopes, um im Generator keine falschen Werte zu erhalten.
+    \item Erstellen des Generators.
+    Es ist wichtig, dass das Backend des Compilers steht, damit bewiesen ist, dass die Sprache technisch funktional ist.
+    \item Transformatoren erstellen, um das Bearbeiten auch laien zu ermöglichen.
+    \item Constraints erstellen, um invalide Eingaben zu verhindern.
+    \item Intentions und weitere Nice--To--Have Features einbauen.
+\end{enumerate}
+
+Aus Zeitgründen konnte in diesem Prototypen lediglich die ersten fünf Phasen für DesignSystem, PrimitiveTokens sowie PrimitiveTokensResolver umgesetzt werden.
+Zur Demonstration wurden die weiteren Phasen an einzelnen Konzepten demonstriert.
+
+Als Beispiel soll im Folgenden auf dieses Vorgehen bei der Logik eingegangen werden.
+Die Struktur ist in \autoref{fig:designsystem-logic-structure} dargestellt.
+
+Begonnen wurde mit den Types.
+Alle primitiven Typen sind lediglich Platzhalter.
+Der {\ttfamily DSReferenceType} hingegen hat zur aufspaltung in drei Sprachen geführt.
+Die Knoten ließen sich hier recht schnell anlegen und auch die Editoren waren trivial.
+Allerdings bilden sie noch nicht alleine auf eine Java--Klasse ab.
+Deshalb wurde hier zunächst das DesignSystem--Konzept in seiner eigenen Sprache umgesetzt, um die Typen testen zu können.
+
+Der Rest des Kontrollflusses kann nur im PrimitiveTokensResolver getestet werden.
+Entsprechend wurde darauf hingearbeitet.
+Dazu muss als Erstes das Konzept der {\ttfamily DSStatementList} existieren, da diese hier verwendet wird.
+Anschließend kann der Resolver mit seinem Editor spezifiziert werden.
+
+Um nun die Statements mit Inhalt zu befüllen wurde ein Top--Down ansatz gewählt.
+Es wurden also zunächst die Statements erstellt, und anschließend die Expressions.
+Dabei wurde sich zunächst auf die Literals konzentriert, da diese einfachst umzusetzen sind.
+Von jedem abstrakten Konzept muss dabei zunächst nur eine Implementierung existieren, bevor der Generator begonnen werden kann.
+
+Bei den Literals wurde allerdings zunächst noch das Typsystem umgesetzt.
+Dieses ist auch im Diagram als gestrichelte linien zu erkennen.
+Alle anderen Expressions wurden nicht statisch, sondern über ihren Inhalt definiert.
+So kann sich an allen anderen Stellen auf die Typsicherheit verlassen werden.
+
+Als der Generator funktioniert hat, wurden nun alle fehlenden, konkreten Konzepte sowie die Variablen und Methoden nachgezogen.
+
+So lässt sich die Umsetzung einer komplexen (Teil--) Sprache leicht in emergente Subsysteme zerlegen.
 
 \subsection{Herausforderungen und Probleme}\label{subsec:herausforderungen-und-probleme}
-\lipsum[5]
+Nicht desto trotz gab und gibt es viele schwierigkeiten bei der Umsetzung.
+Besonders bei der Umsetzung der Generatoren kam es immer wieder zu Problemen.
+
+Zunächst war das Aufspalten von zwei in drei Packages sehr aufwändig, da es sich nicht um Textdateien handelt.
+Copy--Paste war also nur begrenzt einsetzbar, was dazu geführt hat, dass effektiv alles, was in~\autoref{fig:designsystem-logic-structure} abgebildet ist, manuel abgetippt werden musste.
+
+Außerdem ist es im Allgemeinen sehr unangenehm, dass Workarounds genutzt werden müssen, um die Mapping--Labels über mehrere Sprachen hinweg zu erhalten.
+
+Ein weiteres Problem sind die Referenzierungen von anderen Solutions und deren verarbeitung im Generator.
+Im Rahmen dieses Prototypes konnte dies nicht funktional gemacht werden, auch wenn bei dem Versuch viel Zeit verloren gegangen ist.
+Sobald aus einer Solution ein Konzept einer anderen Solution als Referenz verwendet wird, kann die entsprechende Referenz in Java nicht aufgelöst werden.
+Dies ist eie erhebliche einschränkung der strukturierten Zusammenarbeit von Entwicklern und Designern, da zugriff auf verschiedene Dateien nicht effektiv verwaltet werden kann.
