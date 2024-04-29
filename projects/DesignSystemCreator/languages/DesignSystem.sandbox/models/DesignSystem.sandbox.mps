@@ -17,16 +17,7 @@
       <concept id="3807632504076526620" name="DesignSystem.App.structure.DSResolverTypeReference" flags="ng" index="2cogAa">
         <reference id="3807632504074470299" name="ref" index="2cg6Sd" />
       </concept>
-      <concept id="3807632504072027159" name="DesignSystem.App.structure.DSUsedTokenDefinition" flags="ng" index="2cDH61">
-        <child id="7181608753940482544" name="value" index="35RRFG" />
-      </concept>
-      <concept id="7181608753940278974" name="DesignSystem.App.structure.DSUsedTokensDefinitions" flags="ng" index="35Q1Qy">
-        <child id="7181608753940278975" name="tokens" index="35Q1Qz" />
-      </concept>
-      <concept id="7181608753940482546" name="DesignSystem.App.structure.DSUsedTokenDefinitionWrapper" flags="ng" index="35RRFI" />
-      <concept id="7181608753940482542" name="DesignSystem.App.structure.DSUsedTokenValue" flags="ng" index="35RRFM" />
       <concept id="473053312779167667" name="DesignSystem.App.structure.DSPrimitiveTokensFile" flags="ng" index="1a_Fz8" />
-      <concept id="473053312779177727" name="DesignSystem.App.structure.DSAppFile" flags="ng" index="1a_H64" />
       <concept id="473053312779177719" name="DesignSystem.App.structure.DSAbstractPrimitiveTokens" flags="ng" index="1a_H6c">
         <child id="473053312779318153" name="tokens" index="1aAeNM" />
         <child id="473053312768152842" name="type" index="1dNCDL" />
@@ -40,11 +31,6 @@
       </concept>
       <concept id="473053312768152812" name="DesignSystem.App.structure.DSPrimitiveTokens" flags="ng" index="1dNCIn">
         <child id="473053312779483513" name="parent" index="1aAAo2" />
-      </concept>
-      <concept id="473053312768152804" name="DesignSystem.App.structure.DSApp" flags="ng" index="1dNCIv">
-        <reference id="7181608753940278777" name="system" index="35Q1V_" />
-        <child id="7181608753940278864" name="parameters" index="35Q1Pc" />
-        <child id="7181608753940278968" name="tokens" index="35Q1Q$" />
       </concept>
     </language>
     <language id="a8428b12-5ea3-4307-9244-826b21bb5006" name="DesignSystem.Logik">
@@ -91,7 +77,6 @@
       <concept id="473053312771799232" name="DesignSystem.Logik.structure.DSEnumType" flags="ng" index="1d1iuV">
         <child id="473053312771799238" name="items" index="1d1iuX" />
       </concept>
-      <concept id="473053312771798961" name="DesignSystem.Logik.structure.DSType" flags="ng" index="1d1iza" />
       <concept id="473053312771991558" name="DesignSystem.Logik.structure.DSReferenceType" flags="ng" index="1d23tX">
         <reference id="473053312771991559" name="reference" index="1d23tW" />
       </concept>
@@ -487,39 +472,6 @@
                   <ref role="1d23tW" node="61Qlmi5Tfoj" resolve="LightColorTokens" />
                 </node>
               </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="1a_H64" id="6eEcLMAsyRj">
-    <property role="3GE5qa" value="de.whs.ni37900.bat.designsystem.app.sandbox" />
-    <node concept="1dNCIv" id="6eEcLMAsyRk" role="3_NHKb">
-      <property role="TrG5h" value="ConterApp" />
-      <ref role="35Q1V_" node="61Qlmi5Lzzt" resolve="Material" />
-      <node concept="35Q1Qy" id="6eEcLMAsVLz" role="35Q1Q$">
-        <node concept="2cDH61" id="6eEcLMAt4w7" role="35Q1Qz">
-          <property role="TrG5h" value="colors" />
-          <node concept="1d23tX" id="6eEcLMAtSO9" role="2cg6BT">
-            <ref role="1d23tW" node="61Qlmi5TfpQ" resolve="AllColorTokens" />
-          </node>
-          <node concept="35RRFM" id="6eEcLMAtSNJ" role="35RRFG" />
-        </node>
-        <node concept="35RRFI" id="6eEcLMAu9PN" role="35Q1Qz">
-          <node concept="2cDH61" id="6eEcLMAu9PU" role="3_DjAQ">
-            <property role="TrG5h" value="fonts" />
-            <node concept="35RRFM" id="6eEcLMAu9PW" role="35RRFG" />
-            <node concept="1d1iza" id="6eEcLMAu9PY" role="2cg6BT" />
-          </node>
-        </node>
-      </node>
-      <node concept="3_DjAL" id="6eEcLMAt4vC" role="35Q1Pc">
-        <node concept="3_DjAZ" id="6eEcLMAt4vH" role="3_DjA6">
-          <node concept="3_DjAW" id="6eEcLMAt4vL" role="3_DjAQ">
-            <property role="TrG5h" value="brightness" />
-            <node concept="1d23tX" id="6eEcLMAt4vR" role="2cg6BT">
-              <ref role="1d23tW" node="61Qlmi5Lzyd" resolve="Brightness" />
             </node>
           </node>
         </node>

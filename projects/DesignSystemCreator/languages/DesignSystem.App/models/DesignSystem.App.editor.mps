@@ -18,6 +18,7 @@
       <concept id="5991739802479784073" name="jetbrains.mps.lang.editor.structure.MenuTypeDefault" flags="ng" index="22hDWj" />
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
       <concept id="1597643335227097138" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_TransformationMenu_node" flags="ng" index="7Obwk" />
+      <concept id="6516520003787916624" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Condition" flags="ig" index="27VH4U" />
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
       </concept>
@@ -37,6 +38,7 @@
       </concept>
       <concept id="1638911550608610798" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Execute" flags="ig" index="IWg2L" />
       <concept id="1638911550608610278" name="jetbrains.mps.lang.editor.structure.TransformationMenuPart_Action" flags="ng" index="IWgqT">
+        <child id="6202297022026447496" name="canExecuteFunction" index="2jiSrf" />
         <child id="1638911550608610281" name="executeFunction" index="IWgqQ" />
         <child id="5692353713941573325" name="textFunction" index="1hCUd6" />
       </concept>
@@ -458,6 +460,20 @@
             </node>
           </node>
         </node>
+        <node concept="27VH4U" id="5Y7DOyFS4hV" role="2jiSrf">
+          <node concept="3clFbS" id="5Y7DOyFS4hW" role="2VODD2">
+            <node concept="3clFbF" id="5Y7DOyFS4vW" role="3cqZAp">
+              <node concept="2OqwBi" id="5Y7DOyFS4Tj" role="3clFbG">
+                <node concept="7Obwk" id="5Y7DOyFS4vV" role="2Oq$k0" />
+                <node concept="1mIQ4w" id="5Y7DOyFS5hN" role="2OqNvi">
+                  <node concept="chp4Y" id="5Y7DOyFS5iH" role="cj9EA">
+                    <ref role="cht4Q" to="qit8:qgBRHc27e6" resolve="DSAbstractPrimitiveToken" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node concept="1Qtc8_" id="qgBRHc6WYx" role="IW6Ez">
@@ -480,8 +496,8 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbF" id="qgBRHc6X25" role="3cqZAp">
-              <node concept="ub8z3" id="qgBRHc6X24" role="3clFbG" />
+            <node concept="3cpWs6" id="5Y7DOyFS5zR" role="3cqZAp">
+              <node concept="ub8z3" id="qgBRHc6X24" role="3cqZAk" />
             </node>
           </node>
         </node>

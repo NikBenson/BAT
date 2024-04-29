@@ -105,16 +105,16 @@ Die Kontrollflussanweisungen beziehen sich dabei immer auf die Parameter des The
     \caption{Struktur des Kontrollflusses der Designsystem--Sprachen}
     \label{fig:designsystem-logic-structure}
 \end{figure}
-In der Praxis werden sogar drei Sprachen genutzt, um das Projekt umzusetzen.
-Die gemeinsamen Kontrollflussanweisungen wurden zusammen mit dem Typsystem ausgelagert.
+In der Praxis wurden drei Sprachen für die Umsetzung des Projekts verwendet.
+Die gemeinsamen Kontrollflussanweisungen und das Typsystem wurden ausgelagert.
 Dies war notwendig, da die Mapping--Labels nicht über mehrere Generatoren hinweg verwendet werden können.
 Die Referenzen, im Klassendiagramm aus \autoref{fig:designsystem-logic-structure} als Aggregationen zu erkennen, konnten also anders nicht in Java übersetzt werden.
-Damit dieses Lable gesetzt werden konnte, waren an den entsprechenden Stellen Wrapper--Konzepte notwendig, welche im Diagram nicht abgebildet sind.
+Damit dieses Label gesetzt werden konnte, waren an den entsprechenden Stellen Wrapper--Konzepte notwendig, welche im Diagram nicht abgebildet sind.
 
-Für die erste Umsetzung dieses Projektes waren lange nicht alle Aspekte von \ac{MPS} von nöten.
+Für die erste Umsetzung dieses Projektes waren nicht alle Aspekte von \ac{MPS} erforderlich.
 Neben der Struktur wurden noch Editor, Actions, Constraints, Behaviour, Typesystem und Intentions verwendet.
 
-Das Vorgehen war dabei meistens einheitlich:
+Das Vorgehen war dabei in der Regel einheitlich:
 \begin{enumerate}
     \item Basierend auf der Planung aus \autoref{subsec:anforderungen} wird ein Strukturknoten erstellt, gegebenenfalls auch ein abstrakter Knoten und mehrere Kinder.
     \item Anschließend wird der Editor erstellt, um einen Vergleich in der Darstellung zu bekommen.
@@ -128,10 +128,11 @@ Das Vorgehen war dabei meistens einheitlich:
     \item Intentions und weitere Nice--To--Have Features einbauen.
 \end{enumerate}
 
-Aus Zeitgründen konnte in diesem Prototypen lediglich die ersten fünf Phasen für DesignSystem, PrimitiveTokens sowie PrimitiveTokensResolver umgesetzt werden.
-Zur Demonstration wurden die weiteren Phasen an einzelnen Konzepten demonstriert.
+Aus Zeitgründen konnten in diesem Prototypen nur die ersten fünf Phasen für DesignSystem, PrimitiveTokens und PrimitiveTokensResolver umgesetzt werden.
+Zur Veranschaulichung für die Designer aus \autoref{subsec:befragungen} wurden die weiteren Phasen anhand einzelner Konzepte demonstriert.
+Mehr dazu in \autoref{subsec:befragungen}
 
-Als Beispiel soll im Folgenden auf dieses Vorgehen bei der Logik eingegangen werden.
+Im Folgenden soll dieses Vorgehen anhand der Logik beispielhaft erläutert werden.
 Die Struktur ist in \autoref{fig:designsystem-logic-structure} dargestellt.
 
 Begonnen wurde mit den Types.
@@ -141,24 +142,24 @@ Die Knoten ließen sich hier recht schnell anlegen und auch die Editoren waren t
 Allerdings bilden sie noch nicht alleine auf eine Java--Klasse ab.
 Deshalb wurde hier zunächst das DesignSystem--Konzept in seiner eigenen Sprache umgesetzt, um die Typen testen zu können.
 
-Der Rest des Kontrollflusses kann nur im PrimitiveTokensResolver getestet werden.
+Der restliche Kontrollfluss kann nur im PrimitiveTokensResolver getestet werden.
 Entsprechend wurde darauf hingearbeitet.
 Dazu muss als Erstes das Konzept der {\ttfamily DSStatementList} existieren, da diese hier verwendet wird.
 Anschließend kann der Resolver mit seinem Editor spezifiziert werden.
 
-Um nun die Statements mit Inhalt zu befüllen wurde ein Top--Down ansatz gewählt.
+Um die Statements nun mit Inhalt zu füllen, wurde ein Top--Down--Ansatz gewählt.
 Es wurden also zunächst die Statements erstellt, und anschließend die Expressions.
-Dabei wurde sich zunächst auf die Literals konzentriert, da diese einfachst umzusetzen sind.
-Von jedem abstrakten Konzept muss dabei zunächst nur eine Implementierung existieren, bevor der Generator begonnen werden kann.
+Dabei wurde zunächst auf Literale fokussiert, da diese am einfachsten zu implementieren sind.
+Von jedem abstrakten Konzept muss zunächst mindestens eine Implementierung vorhanden sein, bevor der Generator gestartet werden kann.
 
-Bei den Literals wurde allerdings zunächst noch das Typsystem umgesetzt.
-Dieses ist auch im Diagram als gestrichelte linien zu erkennen.
-Alle anderen Expressions wurden nicht statisch, sondern über ihren Inhalt definiert.
+Bei den Literalen wurde zunächst das Typsystem implementiert.
+Dies ist auch im Diagramm durch gestrichelte Linien zu erkennen.
+Alle anderen Expressions wurden nicht statisch, sondern über ihren Inhalt typisiert.
 So kann sich an allen anderen Stellen auf die Typsicherheit verlassen werden.
 
-Als der Generator funktioniert hat, wurden nun alle fehlenden, konkreten Konzepte sowie die Variablen und Methoden nachgezogen.
+Als der Generator funktioniert hat, wurden jetzt alle fehlenden, konkreten Konzepte sowie die Variablen und Methoden nachgezogen.
 
-So lässt sich die Umsetzung einer komplexen (Teil--) Sprache leicht in emergente Subsysteme zerlegen.
+So lässt sich die Umsetzung einer komplexen (Teil--) Sprache leicht in autonome Subsysteme zerlegen.
 
 \subsection{Herausforderungen und Probleme}\label{subsec:herausforderungen-und-probleme}
 Nicht desto trotz gab und gibt es viele schwierigkeiten bei der Umsetzung.
@@ -173,3 +174,5 @@ Ein weiteres Problem sind die Referenzierungen von anderen Solutions und deren v
 Im Rahmen dieses Prototypes konnte dies nicht funktional gemacht werden, auch wenn bei dem Versuch viel Zeit verloren gegangen ist.
 Sobald aus einer Solution ein Konzept einer anderen Solution als Referenz verwendet wird, kann die entsprechende Referenz in Java nicht aufgelöst werden.
 Dies ist eie erhebliche einschränkung der strukturierten Zusammenarbeit von Entwicklern und Designern, da zugriff auf verschiedene Dateien nicht effektiv verwaltet werden kann.
+
+Zusammenfassend lässt sich sagen, dass an vielen verschiedenen Stellen immer wieder die hohe komplexität von \ac{MPS} eine große herausforderung für die Entwicklung ist.
