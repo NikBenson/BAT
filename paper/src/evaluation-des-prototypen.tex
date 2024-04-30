@@ -8,7 +8,7 @@ Hierzu wurden einige, wenige Transformatoren exemplarisch umgesetzt, um den Desi
 Befragt wurden ein Designer bei \ac{netTrek} und ein Designer des \ac{SWR}.
 Diese wurden ausgewählt, da sie sich in der direkten Zielgruppe beziehungsweise in den beiden Teams mit dem größten potenzial einer ersten nutzung befinden.
 
-Bei \ac{netTrek} hat dies der Julian Hültenschmidt übernommen.
+Bei \ac{netTrek} hat dies Julian Hültenschmidt übernommen.
 Er ist der Lead--Designer und hat damit die nötige expertise.
 \begin{displayquote}[\autoref{appendix:julian-hultenschmidt}]
     In der aktuellen Entwicklungsphase kann die Bearbeitung von Tokens noch etwas komplex sein.
@@ -19,7 +19,7 @@ Des Weiteren sieht er sich in der Lage, sollte die Software in zukunft der volle
 Sein größter Kritikpunkt ist, dass es aktuell eine starke Moderation durch den Entwickler bei der Benutzung bedarf und sieht dies auch nicht vollständig schwinden, wenn die Software vollständig der Spezifikation entspricht.
 
 Beim \ac{SWR} hat Pascal Börger den Prototypen evaluiert.
-Er ist \acs{UI}-- und \acs{UX}--Designer beim \ac{SWR}.
+Er ist \acs{UI}-- und \acs{UX}--Designer.
 Hier agiert we vor allem im Team App zusammen mit \ac{netTrek}.
 \begin{displayquote}[\autoref{appendix:pascal-borger}]
     Für mich als Designer bietet MPS viele Vorteile bei der Erstellung und Wartung einer App.
@@ -28,12 +28,30 @@ Hier agiert we vor allem im Team App zusammen mit \ac{netTrek}.
     Ich kann selbst den Code schreiben, um meine Tokens zu erstellen und kann somit nicht nur in Figma, sondern auch auf Code-Basis das Designsystem warten.
     So fällt sehr viel Mehraufwand im Team weg und die Fehleranfälligkeit sinkt rapide!
     Auch trägt dies dem Verständnis in der Zusammenarbeit bei.
-    Ein Win-Win für das ganze Team!
+    [\ldots]\@ Ein Win--Win für das ganze Team!
 \end{displayquote}
 Für ihn ist die \ac{SSOT} ein besonders wichtiger Aspekt.
 Auch er ist vom Konzept des Prototypen überzeugt, kann ihn im aktuellen Zustand allerdings nicht sinnvoll nutzen.
 
-Beide \ldots
+Beide versprechen sich viel von der Anwendung von \ac{DSL} in ihrem zukünftigen Alltag.
 
 \subsection{Zukunftsperspektiven}\label{subsec:zukunftsperspektive}
-\lipsum[5]
+Aus den Befragungen lassen sich klare Konsequenzen für die Weiterentwicklung ziehen.
+Zunächst ist die baldige umsetzung der Transformatoren von zentraler bedeutung des Projekts.
+Sie ermöglichen es den Designern, moderiert den Code zu bearbeiten.
+
+Dieser Wunsch nach Moderation ist ein zentraler Punkt für die Weiterentwicklung.
+So wird es nicht reichen, die Modelle mittels der Constraints zu validieren.
+Die Felder der Implementierungen von \enquote{abstrakten Klassen}\footnote{Gemeint sind Primitive Tokens als serialisierung von Abstract Primitive Tokens sowie das App Theme als Serialisierung von einem Design System.} sollten sofort angezeigt werden, sodass lediglich werte zugewiesen werden müssen.
+
+Auch das Verständnis der Logik-- und Kontrollflussanweisungen hält sich zunächst in grenzen und wird zumindest ausgiebiger Dokumentation beziehungsweise Tutorials bedürfen.
+Im Allgemeinen wird Dokumentation über diese Arbeit hinaus ein wichtiger Aspekt werden.
+
+Die Integration in Figma ist auch eine der ersten Fragen der Designer gewesen.
+Diese ist in \autoref{subsec:anforderungen} auch beschrieben, allerdings würden sich die Designer wünschen, dass bearbeitungen in Figma auch zur folge haben, dass sich der Code der \ac{DSL} updated.
+Dies wäre mit einem Figma Plugin vermutlich möglich.
+Allerdings hat dies nicht viel mit \ac{MPS} zu tun und würde separater Expertise bedürfen.
+Als eine letzte Ausbaustufe wäre dieses Feature allerdings sicherlich interessant.
+
+Es zeigt sich also, dass auch nach dem \ac{MVP} viele Ausbaustufen möglich sind.
+Solange sich das Produkt an die anforderungen der Zielgruppe richtet, kann ein sinnvolles Folgeprodukt entstehen.

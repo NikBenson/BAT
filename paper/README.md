@@ -6,7 +6,7 @@
     - [x] Kapitel 2
     - [x] Kapitel 3
     - [x] Kapitel 4
-    - [ ] Kapitel 5
+    - [x] Kapitel 5
     - [ ] Kapitel 6
     - [ ] Kapitel 7
 - [ ] Korrekturlesen
