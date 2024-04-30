@@ -10,8 +10,9 @@
     - [ ] Kapitel 6
     - [ ] Kapitel 7
 - [ ] Korrekturlesen
-- [ ] Statements von Julian und Pascal sind im Anhang
-- [ ] Eidesstattliche versicherung ist im Anhang
+- [x] Statements von Julian und Pascal sind im Anhang
+- [x] Eidesstattliche versicherung ist im Anhang
+- [ ] Eidesstattliche versicherung unterschrieben
 - [ ] GitHub Repository ist öffentlich einsichtig
 - [ ] Print-Fassungen sind gedruckt
 - [ ] Code ist auf CDs
