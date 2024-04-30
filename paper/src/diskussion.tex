@@ -1,4 +1,8 @@
-\lipsum[5]
+Nach der Betrachtung aus Entwickler-- sowie Designer--sicht soll nun die Sinnhaftigkeit aus finanzieller Sicht betrachtet werden.
+Es soll die Frage beantwortet werden, inwiefern \acp{DSL} mithilfe von \ac{MPS} wirtschaftlich seien können.
+
+Dazu wird das komplexe Beispiel des Design--System--Creators genutzt, um eine begründete Vermutung anzustellen.
+Die möglichen Ergebnisse sind, dass es sinnvoll seien kann, oder falls es in diesem Beispiel nicht sinnvoll ist, dass diese Arbeit keine Aussage dazu treffen kann.
 
 \subsection{Zeitaufwand}\label{subsec:zeitaufwand}
 \begin{table}[ht]
@@ -8,23 +12,59 @@
         Aufgabe                                & Zeit [Stunden] \\
         \hline
         \hline
-        Lernen \& \ac{JSON}--Beispiel \ac{MPS}   & 40             \\
+        Lernen \& \ac{JSON}--Beispiel \ac{MPS} & 40             \\
         \hline
         Arbeit am komplexen Beispiel           & 112            \\
         \hline
-        \ac{JSON}--Beispiel \ac{POSIX}          & 16             \\
+        \ac{JSON}--Beispiel \ac{POSIX}         & 16             \\
         \hline
         \hline
         Gesamt                                 & 168            \\
         \hline
     \end{tabular}
-    \caption{Zeitbuchungen Zusammenfassung}
+    \caption{Zeitbuchungen Zusammenfassung (Siehe \autoref{appendix:zeitbuchungen})}
     \label{tab:zeitbuchungen-short}
 \end{table}
+Zunächst ist der Kosten--Nutzen--Faktor zu betrachten.
+Dazu sind in \autoref{tab:zeitbuchungen-short} die Zeiten aufgeführt, welche ich mit den verschiedenen Projekten verbracht habe.
+
+Eine minimale Version, welche die gröbsten Mängel der aktuellen Version glattbügelt, sollte in weiteren zwei Wochen umgesetzt werden können.
+Entsprechend hat das Projekt Design--System--Creator einen ungefähren Aufwand von 24 Tagen\footnote{Es wird von einem Arbeitstag mit 8 Stunden ausgegangen.}.
+
+Zusätzlich dazu haben die anderen Projekte 7 Tage in anspruch genommen.
+Da lediglich das Projekt Design--System--Creator betrachtet wird, werden diese zunächst nicht mit berechnet.
+Sie werden allerdings später wieder aufgegriffen, da sie eine Aussage über die lernkurve treffen können.
+
+Bei einem angenommenen Tagessatz von 1200~\euro, basierend auf~\cite{metrics-germany-gmbh-2021}, entspricht dies einer Summe von rund 28,800~\euro.
+Dies ist eine Summe, die in den meisten Unternehmen gut gerechtfertigt werden muss.
+
+\subsection{Komplexität}\label{subsec:komplexitat}
+Da \ac{MPS} noch nicht weit verbreitet ist und eine sehr steile Lernkurve hat, sind auch potenzielle Wartungsarbeiten zu beachten.
+Die Komplexität war auch bei dem momentanen Entwicklungsstand des Prototypen immer wieder ein wichtiger Punkt.
+
+Unter dieser betrachtung alleine sollte immer mit vorsicht darauf geachtet werden, ob \ac{MPS} die richtige Lösung für ein Problem ist.
 \lipsum[5]
 
 \subsection{Wirtschaftlichkeit}\label{subsec:wirtschaftlichkeit}
-\lipsum[5]
+In \autoref{subsec:befragungen} konnte festgestellt werden, dass die Domainexperten, also die Designer, das Projekt gut finden.
+Um dies in Zeit beziehungsweise Geld aufrechnen zu können sind die einsparungen zu betrachten.
 
-\subsection{Komplexität}\label{subsec:komplexitat}
-\lipsum[5]
+Zunächst wäre dabei eine Steigerung der Präzision, wie es immer der Fall ist, wenn Kommunikationswege gekürzt werden.
+Der Wert davon hängt allerdings stark am Unternehmen.
+Aus persönlicher Erfahrung kann ich berichten, dass Designfeinheiten manchmal auch rechtliche Konsequenzen haben können.
+Hier wäre die NEWSZONE App vom Format DASDING des \ac{SWR} zu nennen.
+Entsprechend ist diese Präzision im Zielumfeld manchmal sehr wichtig.
+Allerdings lässt sich dies schwer in Geld umrechnen.
+
+Konkreter wird es bei der eingesparten Arbeitszeit.
+Hier wären zum einen die Meetings zwischen Designern und Entwicklern, aber auch, dass einige Aufgaben von Designern übernommen werden können, die zuvor Entwickler machen mussten.
+Hier könnten auch gewisse Unterschiede im Gehalt vorhanden sein.
+
+Selbst bei einer Einsparung von einer halben Stunde pro Woche und Person (Designer und Entwickler) im Team kommt so schnell eine große Summe zustande.
+Bei einem Team von 10 Leuten, die durchschnittlich einen Tagessatz von 800~\euro kosten, sind es in einem Jahr eine Ersparnis von 26,000~\euro.
+
+Da das Produkt allerdings auch ohne Mehrkosten in weiteren teams verwendet werden kann oder weiterverkauft werden kann, kann es sich potenziell auch schon im ersten Jahr rechnen.
+
+Dies bestätigt auch Bayram Ünlü, \ac{CEO} bei \ac{netTrek}, in seinem Statement in \autoref{appendix:bayram-unlu}.
+
+Alles in allem lässt sich also vermuten, dass die fertige Software in diesem fall wirtschaftlich seien wird.
