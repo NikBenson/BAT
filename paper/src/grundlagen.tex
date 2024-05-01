@@ -19,11 +19,11 @@ Diese sind im Wörterbuch definiert als:
 \end{displayquote}
 Also eine Kodierung, welche Anweisungen an einen Computer gibt.
 
-Zusammenfassend lässt sich sagen, dass \acp{DSL} Kodierungen sind, die fachspezifisch von einer Menge von Schlüsselwörtern und strukturierten, dynamischen Inhalt auf eine von (mindestens) einem Computer--(Programm) verstandene Eingabe--(Datei) abbildet.
+Zusammenfassend lässt sich sagen, dass \acp{DSL} Kodierungen sind, die fachspezifisch von einer Menge von Schlüsselwörtern und strukturiertem, dynamischen Inhalt auf eine von (mindestens) einem Computer--(Programm) verstandene Eingabe--(Datei) abbilden.
 Dabei stehen fachspezifische Paradigmen vor den klassischen Programmierparadigmen~\autocite{wikipedia-contributors-2024D} im Zentrum des Sprachdesigns.
 
 Das wohl bekannteste Beispiel ist \ac{SQL}.~\autocite{unknown-author-2023}
-\ac{SQL} ist eine durch die \ac{ISO} genormte \ac{DSL}; spezifischer eine sogenannte \textit{query language}.
+\ac{SQL} ist eine durch die \ac{ISO} genormte \ac{DSL}; spezifischer eine sogenannte \textit{Query Language}.
 Auf Deutsch Abfragesprachen genannt, dienen diese \acp{DSL}, der Interaktionen mit \acp{DBMS}.
 Die Domäne ist in diesem Fall also die Datenhaltung \textit{strukturierter} Daten.
 
@@ -61,20 +61,20 @@ Diese werden im folgenden Kapitel behandelt.
     \caption{Phasen der Compiler--Pipeline~\autocite{aho-2006}}
     \label{fig:compiler-phases}
 \end{wrapfigure}
-Was von Entwicklern umgangssprachlich \enquote{Compiler} genannt wird, bezeichnet eigentlich die Compiler--Pipeline.
-Der eigentliche Compiler, oder auch Code Generator, (siehe \autoref{fig:compiler-phases}) ist ein Tool, welches aus einer abstrakten Repräsentation die Zielsprache, im folgenden Programm genannt, generiert.
+Was von Entwicklern umgangssprachlich \enquote{Compiler} genannt wird, bezeichnet eigentlich die Compiler--Pipeline.~(Siehe \autoref{fig:compiler-phases}.)
+Der eigentliche Compiler oder auch \textbf{Code Generator} ist ein Tool, welches aus einer abstrakten Repräsentation die Zielsprache, im folgenden Programm genannt, generiert.
 
 Ein Programm ist dabei definiert als eine \enquote{Black--Box}, welche eine Eingabe in eine Ausgabe transformiert.
-Damit kann zwischen zwei verschiedenen Aufbauten unterscheiden: Compiler erstellen aus Code ein Programm, welches eine Eingabe in eine Ausgabe transformiert (siehe \autoref{subfig:compiler-and-interpreter-compiler}) und Interpreter transformieren unter der Verwendung von Code eine Eingabe in eine Ausgabe.~(Siehe \autoref{subfig:compiler-and-interpreter-interpreter})
+Damit kann zwischen zwei verschiedenen Aufbauten unterscheiden werden: Compiler erstellen aus Code ein Programm, welches eine Eingabe in eine Ausgabe transformiert (siehe \autoref{subfig:compiler-and-interpreter-compiler}) und Interpreter transformieren unter der Verwendung von Code eine Eingabe in eine Ausgabe.~(Siehe \autoref{subfig:compiler-and-interpreter-interpreter})
 
 Effektiv benötigen beide Klassen von Tools dieselben Phasen.
-Es muss auf irgendeinem Weg, durch das konsekutive ausführen von Transformationen aus dem Code das Programm werden.
+Es muss auf irgendeinem Weg durch das konsekutive ausführen von Transformationen aus dem Code das Programm werden.
 
 Diese Phasen sind klassischer Weise jene aus \autoref{fig:compiler-phases}.
 Diese Phasen wurden auch im \ac{POSIX}, einem Standard für Betriebssysteme, festgehalten.~\autocite{ieee-sa-1993}
 
-\paragraph{Lexical Analyzer,} oder auch \textbf{Tokenizer}, gruppieren den Code in \textbf{Tokens}.
-Ein Token ist dabei ein Zweitupel aus seinem Typen und seinem Wert, einem optionalen Eintrag in der SymbolTable.
+\paragraph{Lexical Analyzer} oder auch \textbf{Tokenizer} gruppieren den Code in \textbf{Tokens}.
+Ein Token ist dabei ein Zweitupel aus seinem Typen und seinem Wert, einem optionalen Eintrag in der \textbf{Symbol Table}.
 
 Die zugrundeliegende Datenstruktur bleibt dabei ein Stream.
 Es handelt sich also immer noch um eine lineare Datenstruktur.
@@ -82,11 +82,11 @@ Es handelt sich also immer noch um eine lineare Datenstruktur.
 Der wohl bekannteste Tokenizer ist dabei Lex.~\autocite{wikipedia-contributors-2024G}
 Lex folgt dem \ac{POSIX} Standard und ist in \autoref{subsubsec:lex} beschriebene.
 
-\paragraph{Syntax Analyzer,} oder auch \textbf{Parser}, analysieren die Reihenfolge, in der die einzelnen Tokens evaluiert werden.
-Dazu wird mittels einer \ac{CFG}~\autocite{wikipedia-contributors-2024H} ein \textbf{syntax tree}, oder auch \textbf{\ac{AST}}, erstellt.
+\paragraph{Syntax Analyzer} oder auch \textbf{Parser} analysieren die Reihenfolge, in der die einzelnen Tokens evaluiert werden.
+Dazu wird mittels einer \ac{CFG}~\autocite{wikipedia-contributors-2024H} ein \textbf{Syntax--Tree} oder auch \textbf{\ac{AST}} erstellt.
 
-Der \ac{AST} beinhaltet im Regelfall die Tokens, die vom Tokenizer erstellt wurden, als Leafs.
-Die Semantische Bedeutung des \ac{AST} ist entsprechend die konsekutive Gruppierung von Tokens und anderen Gruppen.
+Der \ac{AST} beinhaltet im Regelfall die Tokens, die vom Tokenizer erstellt wurden, als Blätter.
+Die semantische Bedeutung des \ac{AST} ist entsprechend die konsekutive Gruppierung von Tokens und anderen Gruppen.
 
 Es werden verschiedene Arten von Parsern eingesetzt, die sich in ihrer Herangehensweise an die Analyse der Eingabesequenz unterscheiden.
 Zwei wichtige Kategorien sind Top--Down-- und Bottom--Up--Parser.
@@ -123,7 +123,7 @@ Dadurch kann es schwierig sein, den nächsten Token auszuwählen.
 
 \paragraph{Semantic Analyzer} analysiert die Knoten des \ac{AST} auf semantische Korrektheit.
 Hier werden zum Beispiel Variable auf Scopes geprüft und das Type--Checking durchgeführt.
-Auch werden Konstante werte errechnet.
+Auch werden konstante Werte errechnet.
 
 Kurzum ist diese Phase dafür verantwortlich, Feedback zum Code zu geben.
 Dabei werden in der Regel Warnungen und Fehler ausgegeben.
@@ -160,7 +160,7 @@ Dies liegt an der möglichen Abhängigkeit von Prozessorarchitekturen.
 Tools wie \ac{LLVM}~\autocite{llvm-project-2024} nehmen sich der Verallgemeinerung der meisten Prozessorarchitekturen an.
 Damit sind sie allerdings relevanter beim Entwickeln von \ac{GPL} als \ac{DSL}.
 
-Tools speziell für \ac{DSL} konnten wir nicht finden.
+Tools speziell für \ac{DSL} konnten bei einer Internetrecherche nicht gefunden werden.
 Allerdings ist diese letzte Transformation, wie die Umsetzung aus \autoref{lst:compiler} zeigt, nach entsprechender Aufbereitung der Daten durch die restliche Pipeline, nicht explizit kompliziert.
 
 \paragraph{Machine--Dependent Code Optimizer} optimieren den Code analog zu Machine--Independent Code Optimizer, nur spezifisch für die Zielplattform.
@@ -426,7 +426,7 @@ Sie sind einfache Kinder im Sinne der Baum Datenstruktur und gehören damit auss
 In den meisten Fällen ersetzen die {\ttfamily references} die Symbol Table.
 Dies tun sie, indem sie einen direkten Verweis auf einen beliebigen Knoten herstellen.
 
-{\ttfamily references} sind also eigentlich eine Mischung aus Terminalen und Nicht--Terminalen, da würden wir sie nur als Nicht--Terminale betrachten, der \ac{AST} kein Baum, sondern ein Graph, wäre.
+{\ttfamily references} sind also eigentlich eine Mischung aus Terminalen und Nicht--Terminalen, da würden sie nur als Nicht--Terminale betrachtet, der \ac{AST} kein Baum, sondern ein Graph, wäre.
 Sie können als Terminale betrachtet werden, die einen Eintrag in einer nicht--existenten Symbol Table repräsentieren.
 
 Diese spezifische Art von Einträgen bezieht sich auf verschiedene \enquote{Stacks}.
