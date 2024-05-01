@@ -53,15 +53,15 @@ So können dann Themes für verschiedene Apps oder Libraries erstellt werden.
 
 \subsubsection{Designsystem --- Material}
 Das Designsystem beschreibt lediglich ein Datenmodell.
-\lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily DesignSystem} Konzepts anhand von Material},label={lst:sprachdesign-designsystem}]{../assets/code/design_system/creator/example/material/Material.designsystem}
+\lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily DesignSystem}--Konzepts anhand von Material},label={lst:sprachdesign-designsystem}]{../assets/code/design_system/creator/example/material/Material.designsystem}
 Jedes {\ttfamily DesignSystem} erbt dabei in Java von derselben Klasse.
 Wichtig ist, dass jedes {\ttfamily DesignSystem} dadurch seinen eigenen Typen spezifiziert.
 
-\text{\ttfamily subsystems} sind dabei lediglich andere {\ttfamily DesignSystem} und könnten auch in einer separaten Datei definiert werden.
+{\ttfamily subsystems} sind dabei lediglich andere {\ttfamily DesignSystem} und könnten auch in einer separaten Datei definiert werden.
 Allerdings werden sie so in Java im Scope der Klasse angelegt.
 
-\text{\ttfamily properties} hingegen sind die Werte des Datenmodells.
-\lstinputlisting[language=DesignSystemEnum,caption={Sprachdesign des {\ttfamily enum} Konzepts anhand von Brightness},label={lst:sprachdesign-enum}]{../assets/code/design_system/creator/example/material/brightness.enum}
+{\ttfamily properties} hingegen sind die Werte des Datenmodells.
+\lstinputlisting[language=DesignSystemEnum,caption={Sprachdesign des {\ttfamily enum}--Konzepts anhand von Brightness},label={lst:sprachdesign-enum}]{../assets/code/design_system/creator/example/material/brightness.enum}
 Sie haben einen Typen, also ein anderes {\ttfamily DesignSystem}, einen {\ttfamily enum} oder einen \enquote{primitiven} Typen.
 Letztere sind direkt in der Sprache als Konzept definiert.
 Es sind die grundlegenden Designelemente, wie Farben, Abstände oder Strings.
@@ -75,25 +75,25 @@ Das App--Theme konsumiert nun ein (oder mehrere) Designsysteme.
 
 Im Regelfall verwenden Designer in Themes nicht direkt statische Werte.
 Analog zu Figma~\autocite{figma-inc-no-date} implementiert die App Theme Sprache sogenannte primitive Tokens.
-\lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily Primitive Tokens} Konzepts anhand von hellen Farben},label={lst:sprachdesign-light-color-tokens}]{../assets/code/design_system/app/example/counter/LightColorTokens.primitivetokens}
-\lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily Primitive Tokens} Konzepts anhand von dunklen Farben},label={lst:sprachdesign-dark-color-tokenn}]{../assets/code/design_system/app/example/counter/DarkColorTokens.primitivetokens}
+\lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily Primitive Tokens}--Konzepts anhand von hellen Farben},label={lst:sprachdesign-light-color-tokens}]{../assets/code/design_system/app/example/counter/LightColorTokens.primitivetokens}
+\lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily Primitive Tokens}--Konzepts anhand von dunklen Farben},label={lst:sprachdesign-dark-color-tokenn}]{../assets/code/design_system/app/example/counter/DarkColorTokens.primitivetokens}
 Diese sind konstante Werte, welche anschließend in Themes ihrer Funktion zugeordnet werden.
 Dies stellt sicher, dass es eine \ac{SSOT} gibt und Werte in der App einheitlich sind.
 
 In dieser Sprache können Themes in Abhängigkeit von Parametern definiert werden.
 Das klassischste Beispiel hierzu wäre ein Light-- und ein Dark--Theme in Abhängigkeit zu der in \autoref{lst:sprachdesign-enum} spezifizierten Aufzählung.
-\lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily abstract Primitive Tokens} Konzepts anhand von Farben},label={lst:sprachdesign-color-tokens}]{../assets/code/design_system/app/example/counter/ColorTokens.primitivetokens}
+\lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily abstract Primitive Tokens}--Konzepts anhand von Farben},label={lst:sprachdesign-color-tokens}]{../assets/code/design_system/app/example/counter/ColorTokens.primitivetokens}
 In Anbetracht darauf können bereits die primitiven Tokens eine Vererbungshierarchie erzeugen.
 Dabei werden in der abstrakten Klasse alle Tokens deklariert, aber nur die Themeunabhängigen definiert.
 Die konkreten Klassen definieren anschließend die fehlenden Werte.
-\lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily Primitive Tokens Resolver} Konzepts anhand von Farben},label={lst:sprachdesign-all-color-tokens}]{../assets/code/design_system/app/example/counter/AllColorTokens.primitivetokens}
+\lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily Primitive Tokens Resolver}--Konzepts anhand von Farben},label={lst:sprachdesign-all-color-tokens}]{../assets/code/design_system/app/example/counter/AllColorTokens.primitivetokens}
 Anschließend kann spezifiziert werden, wann welche Implementierung verwendet wird.
-\lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily Primitive Tokens} Konzepts anhand von Textstyles},label={lst:sprachdesign-font-tokens}]{../assets/code/design_system/app/example/counter/FontTokens.primitivetokens}
+\lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily Primitive Tokens}--Konzepts anhand von Textstyles},label={lst:sprachdesign-font-tokens}]{../assets/code/design_system/app/example/counter/FontTokens.primitivetokens}
 Die primitiven Tokens sind gruppiert nach ihren Typen.
 Die Typen können erneut primitiver Natur sein, oder auf einer Referenz basieren.
 
 Zuletzt werden die primitiven Tokens in Apps verwendet.
-\lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily App} Konzepts anhand des Themes einer Conter App},label={lst:sprachdesign-counter-theme}]{../assets/code/design_system/app/example/counter/CounterTheme.theme}
+\lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily App Theme}--Konzepts anhand des Themes einer Conter App},label={lst:sprachdesign-counter-theme}]{../assets/code/design_system/app/example/counter/CounterTheme.theme}
 Zunächst werden die verwendeten primitiven Tokens spezifiziert.
 Anschließend werden konstante Werte sowie Werte der primitiven Tokens den Feldern im Designsystem zugeordnet.
 Dabei lassen sich beliebige Kontrollflussanweisungen einbauen.
@@ -159,7 +159,7 @@ So kann sich an allen anderen Stellen auf die Typsicherheit verlassen werden.
 
 Als der Generator funktioniert hat, wurden jetzt alle fehlenden, konkreten Konzepte sowie die Variablen und Methoden nachgezogen.
 
-So lässt sich die Umsetzung einer komplexen (Teil--) Sprache leicht in autonome Subsysteme zerlegen.
+So lässt sich die Umsetzung einer komplexen (Teil--)Sprache leicht in autonome Subsysteme zerlegen.
 
 \subsection{Herausforderungen und Probleme}\label{subsec:herausforderungen-und-probleme}
 Nicht desto trotz gab und gibt es viele schwierigkeiten bei der Umsetzung.
