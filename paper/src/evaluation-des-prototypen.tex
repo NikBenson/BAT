@@ -1,4 +1,4 @@
-Es ist nicht zu bestreiten, dass der Prototyp in seinem momentanen zustand noch nicht bereit zur nutzung durch Domainexperten ist.
+Es ist nicht zu bestreiten, dass der Prototyp in seinem momentanen Zustand noch nicht bereit zur Nutzung durch Domainexperten ist.
 Als Entwickler, der in seiner \ac{IDE} zuhause ist, spezifisch IntelliJ, lässt sich die Sprache allerdings bereits gut navigieren.
 
 Um zu schauen, ob der Prototyp zukünftig theoretisch und praktisch anwendbar ist, wurden zwei Designer befragt.
@@ -6,21 +6,21 @@ Hierzu wurden einige, wenige Transformatoren exemplarisch umgesetzt, um den Desi
 
 \subsection{Befragungen}\label{subsec:befragungen}
 Befragt wurden ein Designer bei \ac{netTrek} und ein Designer des \ac{SWR}.
-Diese wurden ausgewählt, da sie sich in der direkten Zielgruppe beziehungsweise in den beiden Teams mit dem größten potenzial einer ersten nutzung befinden.
+Diese wurden ausgewählt, da sie sich in der direkten Zielgruppe beziehungsweise in den beiden Teams mit dem größten Potenzial einer ersten Nutzung beziehungsweise des ersten Rollouts befinden.
 
 Bei \ac{netTrek} hat dies Julian Hültenschmidt übernommen.
-Er ist der Lead--Designer und hat damit die nötige expertise.
+Er ist der Lead--Designer und hat damit die nötige Expertise.
 \begin{displayquote}[\autoref{appendix:julian-hultenschmidt}]
     In der aktuellen Entwicklungsphase kann die Bearbeitung von Tokens noch etwas komplex sein.
     Die Vorteile sind jedoch bereits jetzt offensichtlich: Designer können dynamische Elemente mit benutzerdefinierten Variablen und Werten erstellen, was ihre kreative Freiheit und Kontrolle über das Endprodukt erhöht.
 \end{displayquote}
-Er sieht klare Vorteile im Kommunikationsfluss, auch wenn er die Software, so wie sie ist noch nicht benutzen kann.
-Des Weiteren sieht er sich in der Lage, sollte die Software in zukunft der vollen Spezifikation entsprechen, diese mit seinem Domänenwissen nutzen zu können.
-Sein größter Kritikpunkt ist, dass es aktuell eine starke Moderation durch den Entwickler bei der Benutzung bedarf und sieht dies auch nicht vollständig schwinden, wenn die Software vollständig der Spezifikation entspricht.
+Er sieht klare Vorteile im Kommunikationsfluss, auch wenn er die Software so wie sie ist noch nicht benutzen kann.
+Des Weiteren sieht er sich in der Lage, sollte die Software in Zukunft der vollen Spezifikation entsprechen, diese mit seinem Domänenwissen nutzen zu können.
+Sein größter Kritikpunkt ist, dass es aktuell einer starken Moderation durch den Entwickler bei der Benutzung bedarf, und er sieht dies auch nicht vollständig schwinden, wenn die Software vollständig der Spezifikation entspricht.
 
 Beim \ac{SWR} hat Pascal Börger den Prototypen evaluiert.
 Er ist \acs{UI}-- und \acs{UX}--Designer.
-Hier agiert we vor allem im Team App zusammen mit \ac{netTrek}.
+Hier agiert er vor allem im Team--App zusammen mit \ac{netTrek}.
 \begin{displayquote}[\autoref{appendix:pascal-borger}]
     Für mich als Designer bietet MPS viele Vorteile bei der Erstellung und Wartung einer App.
     Für mich eines der Knackpunkte bei der Zusammenarbeit mit Entwicklern ist eine gemeinsame Sprache und eine Single Source of truth zu finden.
@@ -37,21 +37,22 @@ Beide versprechen sich viel von der Anwendung von \ac{DSL} in ihrem zukünftigen
 
 \subsection{Zukunftsperspektiven}\label{subsec:zukunftsperspektive}
 Aus den Befragungen lassen sich klare Konsequenzen für die Weiterentwicklung ziehen.
-Zunächst ist die baldige umsetzung der Transformatoren von zentraler bedeutung des Projekts.
+Zunächst ist die baldige Umsetzung der Transformatoren von zentraler Bedeutung für das Projekt.
 Sie ermöglichen es den Designern, moderiert den Code zu bearbeiten.
 
 Dieser Wunsch nach Moderation ist ein zentraler Punkt für die Weiterentwicklung.
 So wird es nicht reichen, die Modelle mittels der Constraints zu validieren.
-Die Felder der Implementierungen von \enquote{abstrakten Klassen}\footnote{Gemeint sind Primitive Tokens als serialisierung von Abstract Primitive Tokens sowie das App Theme als Serialisierung von einem Design System.} sollten sofort angezeigt werden, sodass lediglich werte zugewiesen werden müssen.
+Die Felder der Implementierungen von \enquote{abstrakten Klassen}\footnote{Gemeint sind Primitive Tokens als serialisierung von Abstract Primitive Tokens sowie das App--Theme als Serialisierung von einem Design System.} sollten sofort angezeigt werden, sodass lediglich werte zugewiesen werden müssen.
 
-Auch das Verständnis der Logik-- und Kontrollflussanweisungen hält sich zunächst in grenzen und wird zumindest ausgiebiger Dokumentation beziehungsweise Tutorials bedürfen.
+Auch das Verständnis der Logik-- und Kontrollflussanweisungen hält sich zunächst in Grenzen und wird zumindest ausgiebiger Dokumentation beziehungsweise Tutorials bedürfen.
 Im Allgemeinen wird Dokumentation über diese Arbeit hinaus ein wichtiger Aspekt werden.
 
 Die Integration in Figma ist auch eine der ersten Fragen der Designer gewesen.
-Diese ist in \autoref{subsec:anforderungen} auch beschrieben, allerdings würden sich die Designer wünschen, dass bearbeitungen in Figma auch zur folge haben, dass sich der Code der \ac{DSL} updated.
-Dies wäre mit einem Figma Plugin vermutlich möglich.
+Diese ist in \autoref{subsec:anforderungen} auch beschrieben.
+Allerdings würden sich die Designer wünschen, dass Bearbeitungen in Figma auch zur Folge haben, dass der Code der \ac{DSL} automatisch angepasst wird.
+Dies wäre mit einem Figma--Plugin vermutlich möglich.
 Allerdings hat dies nicht viel mit \ac{MPS} zu tun und würde separater Expertise bedürfen.
 Als eine letzte Ausbaustufe wäre dieses Feature allerdings sicherlich interessant.
 
 Es zeigt sich also, dass auch nach dem \ac{MVP} viele Ausbaustufen möglich sind.
-Solange sich das Produkt an die anforderungen der Zielgruppe richtet, kann ein sinnvolles Folgeprodukt entstehen.
+Solange sich das Produkt an die Anforderungen der Zielgruppe richtet, kann ein sinnvolles Folgeprodukt entstehen.

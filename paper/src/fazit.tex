@@ -2,8 +2,8 @@ Trotz des unvollständigen Prototyps kann diese Arbeit alle Forschungsfragen aus
 
 \subsection{Zusammenfassung}\label{subsec:zusammenfassung}
 Im \acs{POSIX}--Standard sind Tools wie Lex oder \ac{YACC} beschrieben, um \ac{DSL} sowie \ac{GPL} zu entwickeln.
-Dies geschieht auf der Basis von Kontextlosen Grammatiken.
-Es wird eine Compiler--Pipeline entwickelt, welche von einem Textdokument auf ein maschinen--verständliches Format abbildet.
+Dies geschieht auf der Basis von \ac{CFG}.
+Es wird eine Compiler--Pipeline entwickelt, welche ein Textdokument auf ein maschinen--verständliches Format abbildet.
 Zu diesen Sprachen können dann später \acp{IDE} und weitere Entwicklungstools separat geschrieben werden.
 
 \ac{MPS} handhabt dies etwas anders.
@@ -11,39 +11,39 @@ Hier wird nicht nur ein Compiler, sondern direkt eine ganze \ac{IDE}, basierend 
 Die Sprache beschreibt einen \ac{AST}, welcher eine Beschreibung zur Darstellung und verschiedene Beschreibungen, wie der \ac{AST} modifiziert werden kann, hat.
 Als Compiler--Pipeline fungieren zumeist konkatenierte Transpiler verschiedener Sprachen, bis jeder Knoten so weit heruntergebrochen wurde, dass er in Text übersetzt werden kann, welcher für einen Computer oder ein Computerprogramm verständlich ist.
 
-\ac{MPS} hat eine höhere Komplexität, als die \ac{POSIX} alternativen.
+\ac{MPS} hat eine höhere Komplexität als die \acs{POSIX}--Alternativen.
 Dafür ist diese Komplexität aufgebaut, wie die klassischen Paradigmen von high--level \ac{GPL}, wie zum Beispiel Java.
 Dies macht das Erlernen für Softwareentwickler einfacher.
 
-Im direkten vergleich konnte auf basis der erhobenen Informationen nicht \ac{MPS} oder \ac{POSIX} als überlegenes Tool ausgemacht werden.
-Dies liegt daran, dass, auch wenn vor \ac{MPS} \ac{DSL} meistens mit Lex und \ac{YACC} entwickelt wurden, diese Technologien, vor allem auf kompatibilitätsebene, noch viel mehr abdecken als \ac{MPS}.
+Im direkten Vergleich konnten auf Basis der erhobenen Informationen nicht \ac{MPS} oder \ac{POSIX} als überlegenes Tool ausgemacht werden.
+Dies liegt daran, dass, auch wenn vor \ac{MPS} \acp{DSL} meistens mit Lex und \ac{YACC} entwickelt wurden, diese Technologien, vor allem auf kompatibilitätsebene, noch viel mehr abdecken als \ac{MPS}.
 
-In dem Umfeld, aus dem diese Arbeit entstanden ist, ist die Entwicklung von \ac{DSL} zur optimierung von Unternehmensprozessen ohne \ac{MPS} nicht denkbar.
+In dem Umfeld, aus dem diese Arbeit entstanden ist, ist die Entwicklung von \ac{DSL} zur Optimierung von Unternehmensprozessen ohne \ac{MPS} nicht denkbar.
 Dies liegt vor allem daran, dass Text Domainexperten zu viel Freiraum gewährt, weshalb mehr Eigenleistung beim Lernen von textbasierten \ac{DSL} notwendig ist.
 
 Da der Prototyp nicht vollständig fertig geworden ist, basiert das Feedback zu diesem auf einer moderierten Demonstration.
 Allerdings konnte das Ziel des Prototyps evaluiert werden und hat voraussichtlich eine immense Erleichterung für Designer zur Folge.
-Auch ein signifikanter Abbau von Kommunikationsoverhead ist zu vermuten und wird voraussichtlich dazu führen, dass die Präzision un \acs{UI}--Fragen zunimmt und Zeit in Meetings eingespart werden kann.
-Zusammen bietet dies auch einen wirtschaftlichen Vorteil, sodass sich die Entwicklung der Software, selbst bei der Benutzung in nur einem Team, bereits nach unter 6 Quartalen lohnen kann.
+Auch ein signifikanter Abbau von Kommunikationsoverhead ist zu vermuten und wird voraussichtlich dazu führen, dass die Präzision von \acs{UI}--Fragen zunimmt und Zeit in Meetings eingespart werden kann.
+Zusammen bietet dies auch einen wirtschaftlichen Vorteil, sodass sich die Entwicklung der Software selbst bei der Benutzung in nur einem Team bereits nach unter 6 Quartalen lohnen kann.
 
-Projekten, die mit \ac{MPS} wirtschaftlich umgesetzt werden können, wurde in der Vergangenheit wenig beachtung geschenkt, weil keine effiziente Lösung bereitstand.
+Projekten, die mit \ac{MPS} wirtschaftlich umgesetzt werden können, wurde in der Vergangenheit wenig Beachtung geschenkt, weil keine effiziente Lösung bereitstand.
 Deshalb ist es eine praktische ergänzung, um weitere Prozesse zu vereinfachen.
 
 \subsection{Ausblick}\label{subsec:ausblick}
-\ac{MPS} wurde bereits in 2011 veröffentlicht und ist seit dem nicht wirklich bekannt geworden.
-Eine technologie, die so lange auf dem Markt ist, wird nicht auf ein Mal weit verbreitet eingesetzt werden.
+\ac{MPS} wurde bereits 2011 veröffentlicht und ist seitdem nicht wirklich bekannt geworden. % TODO: Citation needed
+Eine Technologie, die so lange auf dem Markt ist, wird nicht auf einmal weit verbreitet eingesetzt werden.
 
 Dafür müssten noch einige deutliche Weiterentwicklungen der Technologie gemacht werden.
-Beispielhaft wäre das Verhalten von Mapping--Labels über mehrere Sprachen hinweg sowie das Verhalten von Imports zwischen verschiedenen Models verbessert werden.
+Beispielhaft könnte das Verhalten von Mapping--Labels über mehrere Sprachen hinweg sowie das Verhalten von Imports zwischen verschiedenen Models verbessert werden.
 Außerdem müssten Dokumentation, Tutorials und Werbung ausgebaut werden.
 
 Wenn die Technologie ohne großen Aufwand von herkömmlichen Softwareentwicklern gelernt werden kann, dann hat sie auch Potenzial in der Massenanwendung.
-Letzten Endes handelt es sich um ein Thema, welches im regelfall von Entwicklern und nicht dem Management angestoßen wird.
+Letzten Endes handelt es sich um ein Thema, welches im Regelfall von Entwicklern und nicht vom Management angestoßen wird.
 
 Allerdings konnte der unfertige Prototyp im Umfeld dieser Arbeit viel Zuspruch gewinnen.
 Deshalb wird eine Weiterentwicklung mit einer Suche nach weiterem Budget angestrebt.
 
 Des Weiteren können sowohl \ac{MPS} als auch Lex und \ac{YACC} in Zukunft für weitere, kleinere Projekte verwendet werden.
 Bei kleineren Projekten ist das Risiko deutlich geringer und deshalb können diese Technologien trotz der hohen Komplexität bedenkenlos eingesetzt werden.
-Das einzige Problem wird es sein, das zurzeit nur ein Entwickler im Team diese technologien beherrscht.
+Das einzige Problem wird es sein, dass zurzeit nur ein Entwickler im Team diese Technologien beherrscht.
 Ob sich hier weiteres Training lohnen wird, wird die Zeit zeigen.

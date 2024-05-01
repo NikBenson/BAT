@@ -23,7 +23,7 @@ Das Ziel dieses Beispiels soll es sein, den Kommunikations--Overhead beim Erstel
     \label{fig:ablauf-designanpassungen}
 \end{figure}
 
-Dazu wird zunächst der aktuelle Ablauf aus dem Team App des \ac{SWR} aus \autoref{subfig:ablauf-designanpassungen-alt} betrachtet.
+Dazu wird zunächst der aktuelle Ablauf aus dem Team--App des \ac{SWR} aus \autoref{subfig:ablauf-designanpassungen-alt} betrachtet.
 Hier gibt es viele Indirektionen, die zum einen Zeitaufwändig sind, aber auch Fehler verursachen können.
 
 Bedeutend effektiver wäre der Ablauf aus \autoref{subfig:ablauf-designanpassungen-neu}.
@@ -37,51 +37,51 @@ Unter Beachtung der zur Verfügung stehenden Zeit musste allerdings auf ein paar
 Zunächst wird kein Figma Projekt generiert werden.
 Dies wäre zunächst zu komplex, da eine Generation von Figmas\footnote{Figma ist ein Tool zum Erstellen von Designs und Prototypen~\autocite{figma-inc-no-date}} eigenem Dateiformat erstellt werden müsste.
 Des Weiteren wird als Zielsprache zunächst ausschließlich Java implementiert.
-Um die Sprachen im Team App effektiv einsetzen zu können, müsste eine Generation zu Dart und optimalerweise parallel zu Kotlin sowie Swift stattfinden.
+Um die Sprachen im Team--App effektiv einsetzen zu können, müsste eine Generation zu Dart und optimalerweise parallel zu Kotlin sowie Swift stattfinden.
 Hierzu wäre es allerdings zunächst nötig, diese Sprachen mit einem TextGen Aspekt abzubilden.
 Da die BaseLanguage Java bereits abbildet, zeigt die Umsetzung in Java, was zukünftig möglich ist.
 
 \paragraph*{}
-Die erste der beiden Sprachen soll es ermöglichen, Designsysteme zu erstellen.
+Die erste der beiden Sprachen soll es ermöglichen, Design--Systeme zu erstellen.
 Diese werden dann in Java als ein Datenmodell abgelegt.
 In dieser Sprache könnten die Entwickler ein Framework für die Designer festlegen.
-Des Weiteren soll in Zukunft zum Beispiel das Material Theme von Flutter~\autocite{google-ireland-limited-no-date} bereits als Runtime Environment bestehen, sodass Systeme bestehender Frameworks genutzt werden können.
+Des Weiteren soll in Zukunft zum Beispiel das Material--Theme von Flutter~\autocite{google-ireland-limited-no-date} bereits als Runtime--Environment bestehen, sodass Systeme bestehender Frameworks genutzt werden können.
 
 \paragraph*{}
-Die zweite der beiden Sprachen soll es nun erlauben, diese Designsysteme mit Werten zu befüllen.
+Die zweite der beiden Sprachen soll es nun erlauben, diese Design--Systeme mit Werten zu befüllen.
 So können dann Themes für verschiedene Apps oder Libraries erstellt werden.
 
-\subsubsection{Designsystem --- Material}
-Das Designsystem beschreibt lediglich ein Datenmodell.
-\lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily DesignSystem}--Konzepts anhand von Material},label={lst:sprachdesign-designsystem}]{../assets/code/design_system/creator/example/material/Material.designsystem}
-Jedes {\ttfamily DesignSystem} erbt dabei in Java von derselben Klasse.
-Wichtig ist, dass jedes {\ttfamily DesignSystem} dadurch seinen eigenen Typen spezifiziert.
+\subsubsection{Design--System --- Material}
+Das Design--System beschreibt lediglich ein Datenmodell.
+\lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily Design--System}--Konzepts anhand von Material},label={lst:sprachdesign-designsystem}]{../assets/code/design_system/creator/example/material/Material.designsystem}
+Jedes {\ttfamily Design--System} erbt dabei in Java von derselben Klasse.
+Wichtig ist, dass jedes {\ttfamily Design--System} dadurch seinen eigenen Typen spezifiziert.
 
-{\ttfamily subsystems} sind dabei lediglich andere {\ttfamily DesignSystem} und könnten auch in einer separaten Datei definiert werden.
+{\ttfamily subsystems} sind dabei lediglich andere {\ttfamily Design--System} und könnten auch in einer separaten Datei definiert werden.
 Allerdings werden sie so in Java im Scope der Klasse angelegt.
 
 {\ttfamily properties} hingegen sind die Werte des Datenmodells.
-\lstinputlisting[language=DesignSystemEnum,caption={Sprachdesign des {\ttfamily enum}--Konzepts anhand von Brightness},label={lst:sprachdesign-enum}]{../assets/code/design_system/creator/example/material/brightness.enum}
-Sie haben einen Typen, also ein anderes {\ttfamily DesignSystem}, einen {\ttfamily enum} oder einen \enquote{primitiven} Typen.
+\lstinputlisting[language=DesignSystemEnum,caption={Sprachdesign des {\ttfamily Enum}--Konzepts anhand von Brightness},label={lst:sprachdesign-enum}]{../assets/code/design_system/creator/example/material/brightness.enum}
+Sie haben einen Typen, also ein anderes {\ttfamily Design--System}, einen {\ttfamily Enum} oder einen \enquote{primitiven} Typen.
 Letztere sind direkt in der Sprache als Konzept definiert.
 Es sind die grundlegenden Designelemente, wie Farben, Abstände oder Strings.
 
-Des Weiteren können {\ttfamily properties} über das {\ttfamily by} Schlüsselwort parametrisiert werden.
+Des Weiteren können {\ttfamily properties} über das {\ttfamily by}--Schlüsselwort parametrisiert werden.
 Dies ist hilfreich, wenn Dinge an Zustände geknüpft sind.
 Ein einfaches Beispiel sind Buttons.
 
 \subsubsection{App--Theme --- CounterAppTheme}
-Das App--Theme konsumiert nun ein (oder mehrere) Designsysteme.
+Das App--Theme konsumiert nun ein (oder mehrere) Design--Systeme.
 
 Im Regelfall verwenden Designer in Themes nicht direkt statische Werte.
-Analog zu Figma~\autocite{figma-inc-no-date} implementiert die App Theme Sprache sogenannte primitive Tokens.
+Analog zu Figma~\autocite{figma-inc-no-date} implementiert die App--Theme--Sprache sogenannte primitive Tokens.
 \lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily Primitive Tokens}--Konzepts anhand von hellen Farben},label={lst:sprachdesign-light-color-tokens}]{../assets/code/design_system/app/example/counter/LightColorTokens.primitivetokens}
 \lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily Primitive Tokens}--Konzepts anhand von dunklen Farben},label={lst:sprachdesign-dark-color-tokenn}]{../assets/code/design_system/app/example/counter/DarkColorTokens.primitivetokens}
 Diese sind konstante Werte, welche anschließend in Themes ihrer Funktion zugeordnet werden.
 Dies stellt sicher, dass es eine \ac{SSOT} gibt und Werte in der App einheitlich sind.
 
 In dieser Sprache können Themes in Abhängigkeit von Parametern definiert werden.
-Das klassischste Beispiel hierzu wäre ein Light-- und ein Dark--Theme in Abhängigkeit zu der in \autoref{lst:sprachdesign-enum} spezifizierten Aufzählung.
+Das klassischste Beispiel hierfür wäre ein Light-- und ein Dark--Theme in Abhängigkeit zu der in \autoref{lst:sprachdesign-enum} spezifizierten Aufzählung.
 \lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily abstract Primitive Tokens}--Konzepts anhand von Farben},label={lst:sprachdesign-color-tokens}]{../assets/code/design_system/app/example/counter/ColorTokens.primitivetokens}
 In Anbetracht darauf können bereits die primitiven Tokens eine Vererbungshierarchie erzeugen.
 Dabei werden in der abstrakten Klasse alle Tokens deklariert, aber nur die Themeunabhängigen definiert.
@@ -90,26 +90,26 @@ Die konkreten Klassen definieren anschließend die fehlenden Werte.
 Anschließend kann spezifiziert werden, wann welche Implementierung verwendet wird.
 \lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily Primitive Tokens}--Konzepts anhand von Textstyles},label={lst:sprachdesign-font-tokens}]{../assets/code/design_system/app/example/counter/FontTokens.primitivetokens}
 Die primitiven Tokens sind gruppiert nach ihren Typen.
-Die Typen können erneut primitiver Natur sein, oder auf einer Referenz basieren.
+Die Typen können erneut primitiver Natur sein oder auf einer Referenz basieren.
 
-Zuletzt werden die primitiven Tokens in Apps verwendet.
-\lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily App Theme}--Konzepts anhand des Themes einer Conter App},label={lst:sprachdesign-counter-theme}]{../assets/code/design_system/app/example/counter/CounterTheme.theme}
+Zuletzt werden die primitiven Tokens in App--Themes verwendet.
+\lstinputlisting[language=DesignSystem,caption={Sprachdesign des {\ttfamily App--Theme}--Konzepts anhand des Themes einer Conter App},label={lst:sprachdesign-counter-theme}]{../assets/code/design_system/app/example/counter/CounterTheme.theme}
 Zunächst werden die verwendeten primitiven Tokens spezifiziert.
-Anschließend werden konstante Werte sowie Werte der primitiven Tokens den Feldern im Designsystem zugeordnet.
+Anschließend werden konstante Werte sowie Werte der primitiven Tokens den Feldern im Design--System zugeordnet.
 Dabei lassen sich beliebige Kontrollflussanweisungen einbauen.
 Die Kontrollflussanweisungen beziehen sich dabei immer auf die Parameter des Themes.
 
 \subsection{Umsetzung}\label{subsec:umsetzung}
 \begin{figure}
     \includegraphics[width=\textwidth]{../assets/img/diagrams/logic_structure.mmd}
-    \caption{Struktur des Kontrollflusses der Designsystem--Sprachen}
+    \caption{Struktur des Kontrollflusses der Design--System--Sprachen}
     \label{fig:designsystem-logic-structure}
 \end{figure}
 In der Praxis wurden drei Sprachen für die Umsetzung des Projekts verwendet.
 Die gemeinsamen Kontrollflussanweisungen und das Typsystem wurden ausgelagert.
 Dies war notwendig, da die Mapping--Labels nicht über mehrere Generatoren hinweg verwendet werden können.
 Die Referenzen, im Klassendiagramm aus \autoref{fig:designsystem-logic-structure} als Aggregationen zu erkennen, konnten also anders nicht in Java übersetzt werden.
-Damit dieses Label gesetzt werden konnte, waren an den entsprechenden Stellen Wrapper--Konzepte notwendig, welche im Diagram nicht abgebildet sind.
+Damit dieses Label gesetzt werden konnte, waren an den entsprechenden Stellen Wrapper--Konzepte notwendig, welche im Diagramm nicht abgebildet sind.
 
 Für die erste Umsetzung dieses Projektes waren nicht alle Aspekte von \ac{MPS} erforderlich.
 Neben der Struktur wurden noch Editor, Actions, Constraints, Behaviour, Typesystem und Intentions verwendet.
@@ -123,12 +123,12 @@ Das Vorgehen war dabei in der Regel einheitlich:
     \item Definieren von Scopes, um im Generator keine falschen Werte zu erhalten.
     \item Erstellen des Generators.
     Es ist wichtig, dass das Backend des Compilers steht, damit bewiesen ist, dass die Sprache technisch funktional ist.
-    \item Transformatoren erstellen, um das Bearbeiten auch laien zu ermöglichen.
+    \item Transformatoren erstellen, um das Bearbeiten auch Laien zu ermöglichen.
     \item Constraints erstellen, um invalide Eingaben zu verhindern.
-    \item Intentions und weitere Nice--To--Have Features einbauen.
+    \item Intentions und weitere Nice--To--Have--Features einbauen.
 \end{enumerate}
 
-Aus Zeitgründen konnten in diesem Prototypen nur die ersten fünf Phasen für DesignSystem, PrimitiveTokens und PrimitiveTokensResolver umgesetzt werden.
+Aus Zeitgründen konnten in diesem Prototypen nur die ersten fünf Phasen für Design--System, PrimitiveTokens und PrimitiveTokensResolver umgesetzt werden.
 Zur Veranschaulichung für die Designer aus \autoref{subsec:befragungen} wurden die weiteren Phasen anhand einzelner Konzepte demonstriert.
 Mehr dazu in \autoref{subsec:befragungen}
 
@@ -137,10 +137,10 @@ Die Struktur ist in \autoref{fig:designsystem-logic-structure} dargestellt.
 
 Begonnen wurde mit den Types.
 Alle primitiven Typen sind lediglich Platzhalter.
-Der {\ttfamily DSReferenceType} hingegen hat zur aufspaltung in drei Sprachen geführt.
+Der {\ttfamily DSReferenceType} hingegen hat zur Aufspaltung in drei Sprachen geführt.
 Die Knoten ließen sich hier recht schnell anlegen und auch die Editoren waren trivial.
 Allerdings bilden sie noch nicht alleine auf eine Java--Klasse ab.
-Deshalb wurde hier zunächst das DesignSystem--Konzept in seiner eigenen Sprache umgesetzt, um die Typen testen zu können.
+Deshalb wurde hier zunächst das Design--System--Konzept in seiner eigenen Sprache umgesetzt, um die Typen testen zu können.
 
 Der restliche Kontrollfluss kann nur im PrimitiveTokensResolver getestet werden.
 Entsprechend wurde darauf hingearbeitet.
@@ -162,17 +162,17 @@ Als der Generator funktioniert hat, wurden jetzt alle fehlenden, konkreten Konze
 So lässt sich die Umsetzung einer komplexen (Teil--)Sprache leicht in autonome Subsysteme zerlegen.
 
 \subsection{Herausforderungen und Probleme}\label{subsec:herausforderungen-und-probleme}
-Nicht desto trotz gab und gibt es viele schwierigkeiten bei der Umsetzung.
+Nichtsdestotrotz gab und gibt es viele Schwierigkeiten bei der Umsetzung.
 Besonders bei der Umsetzung der Generatoren kam es immer wieder zu Problemen.
 
 Zunächst war das Aufspalten von zwei in drei Packages sehr aufwändig, da es sich nicht um Textdateien handelt.
-Copy--Paste war also nur begrenzt einsetzbar, was dazu geführt hat, dass effektiv alles, was in~\autoref{fig:designsystem-logic-structure} abgebildet ist, manuel abgetippt werden musste.
+Copy--Paste war also nur begrenzt einsetzbar, was dazu geführt hat, dass effektiv alles, was in~\autoref{fig:designsystem-logic-structure} abgebildet ist, manuell abgetippt werden musste.
 
 Außerdem ist es im Allgemeinen sehr unangenehm, dass Workarounds genutzt werden müssen, um die Mapping--Labels über mehrere Sprachen hinweg zu erhalten.
 
-Ein weiteres Problem sind die Referenzierungen von anderen Solutions und deren verarbeitung im Generator.
+Ein weiteres Problem sind die Referenzierungen von anderen Solutions und deren Verarbeitung im Generator.
 Im Rahmen dieses Prototypes konnte dies nicht funktional gemacht werden, auch wenn bei dem Versuch viel Zeit verloren gegangen ist.
 Sobald aus einer Solution ein Konzept einer anderen Solution als Referenz verwendet wird, kann die entsprechende Referenz in Java nicht aufgelöst werden.
-Dies ist eie erhebliche einschränkung der strukturierten Zusammenarbeit von Entwicklern und Designern, da zugriff auf verschiedene Dateien nicht effektiv verwaltet werden kann.
+Dies ist eine erhebliche einschränkung der strukturierten Zusammenarbeit von Entwicklern und Designern, da der Zugriff auf verschiedene Dateien nicht effektiv verwaltet werden kann.
 
-Zusammenfassend lässt sich sagen, dass an vielen verschiedenen Stellen immer wieder die hohe komplexität von \ac{MPS} eine große herausforderung für die Entwicklung ist.
+Zusammenfassend lässt sich sagen, dass an vielen verschiedenen Stellen immer wieder die hohe komplexität von \ac{MPS} eine große Herausforderung für die Entwicklung ist.
