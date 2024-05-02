@@ -1,7 +1,7 @@
-In dieser Arbeit soll evaluiert werden, ob das Entwickeln von \acp{DSL} mit modernen Tools wirtschaftlich ist.
+In dieser Arbeit soll evaluiert werden, ob das Entwickeln von \acp{DSL} mit komplexen Tools wirtschaftlich ist.
 
 \subsection{Motivation}\label{subsec:motivation}
-In den vergangenen Jahren ist das, was mittels Software möglich ist, stark angestiegen.
+In den vergangenen Jahren ist das, was mittels Software möglich ist, stark angestiegen. % TODO: Citation needed
 Damit wachsen auch immer mehr die Anforderungen an Entwickler.
 Einen Teil der Last wird dabei schon seit einiger Zeit versucht, durch Low-- bzw.\ No--Code--Solutions zu umgehen.
 Ein gutes Beispiel ist dabei die Menge an neuen Website--Baukästen, die zuletzt beworben wurden. \autocite{p-2024}
@@ -22,11 +22,17 @@ Eine detaillierte Definition ist in \autoref{subsec:domain-specific-languages} z
 \subsubsection{Aktuelle Herausforderungen}
 Die Entwicklung von \acp{DSL} ist jedoch nach wie vor mit einigen Herausforderungen verbunden.
 Dazu gehört die hohe Komplexität der \acs{DSL}--Entwicklung, die tiefgreifendes Wissen in Sprachtheorie, Compilerbau und Softwareentwicklung erfordert.
+Dies macht es schwer, \acp{DSL} ohne eine entsprechende Spezialisierung zu entwickeln.
+
+Die Komplexität der DSL-Entwicklung liegt zum Teil im Fehlen von Abstraktionsebenen.
+Entwickler müssen sich mit Low--Level--Details der Implementierung befassen, anstatt sich auf die domänenspezifischen Konzepte zu konzentrieren.
+
 Es fehlt zudem an einem einheitlichen Ansatz zur Entwicklung von \acp{DSL}, der für verschiedene Anwendungsbereiche geeignet ist.
+
 Des Weiteren sind \acp{DSL} oft nicht in bestehende Entwicklungsumgebungen integriert, was zu Inkompatibilitäten und Fragmentierung führt.
 
 \subsubsection{Bedarf an intuitiven und effizienten \aclp{DSL}}
-Eine Bedarfsanalyse kann diese Arbeit leider nicht bieten, allerdings soll sie die Möglichkeiten aufzeigen.
+Eine Bedarfsanalyse kann diese Arbeit nicht bieten, allerdings soll sie die Möglichkeiten aufzeigen.
 
 Sprachen schnell formulieren zu können, hat in jedem Fall viele Anwendungsmöglichkeiten, die aktuell weitestgehend mittels anderer Technologien gelöst werden.
 
@@ -35,7 +41,7 @@ Ein Beispiel dafür wäre SAP\@.
 Hier wurde sich dafür entschieden, eine Parallele zwischen \acp{UI} und \acp{DSL} zu nutzen, da \ac{DSL} ab einer gewissen Komplexität einfacher zu handhaben sind.
 Diese Sprache heißt ABAP~\autocite{sap-se-no-date} und hat sich im Laufe der Zeit sogar mehr zu einer \ac{GPL} entwickelt.
 
-Es wird angenommen, dass der Bedarf aktuell künstlich durch weniger optimale Technologien gedeckt wird, da \acp{DSL} zu kompliziert sind.
+Es wird angenommen, dass der Bedarf aktuell künstlich durch weniger optimale Technologien gedeckt wird, da \acp{DSL} zu komplex und damit zu teuer sind.
 Es ist davon auszugehen, dass \ac{DSL} wieder in der Breite eingesetzt werden, sobald die Technologie dafür hinreichend einfach zu lernen ist.
 
 \subsubsection{Potenzial des Prototyps}
@@ -50,7 +56,7 @@ Die Arbeit adressiert die folgenden Forschungsfragen:
 \begin{itemize}
     \item Kann die Nutzung von \ac{MPS} zur Entwicklung von \ac{DSL} wirtschaftlich sein?
     \item Welche weiteren Anforderungen können an \ac{DSL}--Entwicklungsumgebungen gestellt werden, um die Entwicklung von \ac{DSL} weiter zu vereinfachen?
-    \item Wie kann die Entwicklung von \acp{DSL} in der \acs{IT}--Branche, am Beispiel der \ac{netTrek}, gefördert werden?
+    \item Wie kann die Entwicklung von \acp{DSL} in der \acs{IT}--Branche, am Beispiel der \ac{netTrek} und deren Kunden, gefördert werden?
 \end{itemize}
 Die erwarteten Ergebnisse der Arbeit sind:
 \begin{itemize}
@@ -62,8 +68,10 @@ Die erwarteten Ergebnisse der Arbeit sind:
 
 \subsection{Aufbau der Arbeit}\label{subsec:aufbau-der-arbeit}
 Zunächst wird diese Arbeit sich in~\autoref{sec:grundlagen} mit einigen Grundlagen auseinandersetzen.
-Dazu zählen vor allem \ac{MPS} und der herkömmliche\footnote{\enquote{herkömmlich} bezieht sich dabei auf die Techniken und Tools aus dem sogenannten Dragon--Book.~\autocite{aho-2006}} Compilerbau.
+Dazu zählen vor allem \ac{MPS} und der herkömmliche\footnote{\enquote{herkömmlich} bezieht sich dabei auf die Techniken und Tools aus dem sogenannten Dragon--Book~\autocite{aho-2006} beziehungsweise dem \acs{POSIX}--Standart.} Compilerbau.
 
 Anschließend wird in~\autoref{sec:vergleich-der-tool-sets-anhand-eines-einfachen-beispiels} anhand eines einfachen Parsers, der einen Fragenkatalog zu \ac{JSON} parst, \ac{MPS} mit den herkömmlichen Tools verglichen.
 
 Zuletzt folgt in~\autoref{sec:umsetzung-eines-komplexen-beispiels-in-mps} das komplexe Beispiel in \ac{MPS}: Zwei zusammengehörige Sprachen; eine, um Design--Systeme zu beschreiben, und eine andere, um App--Themes in diesen Systemen zu beschreiben, gefolgt von deren Auswertung anhand der Ziele aus~\autoref{subsec:zielsetzung}.
+
+In den folgenden drei Abschnitten werden die gewonnenen Ergebnisse und Erfahrungen im anschluss ausgewertet und eingeordnet.

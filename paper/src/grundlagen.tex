@@ -30,7 +30,7 @@ Die Domäne ist in diesem Fall also die Datenhaltung \textit{strukturierter} Dat
 Da es etliche \acp{DBMS} gibt, welche dem \ac{SQL}--Standard folgen, gibt es für \ac{SQL} auch etliche Compiler--Pipelines beziehungsweise Interpreter.
 Diese Compiler--Pipelines sind dabei stark mit dem jeweiligen \ac{DBMS} verwoben.
 Es gibt also keine einheitliche Codebasis.
-Dies wäre mit bekannten Tools des Compilerbaus, namentlich \textbf{Lex} \& \textbf{YACC}.
+Dies wäre mit bekannten Tools des Compilerbaus, namentlich \textbf{Lex} \& \textbf{YACC}, allerdings bereits auch schon umsetzbar.
 Diese werden im folgenden Kapitel behandelt.
 
 \begin{figure}[ht]
@@ -54,9 +54,9 @@ Diese werden im folgenden Kapitel behandelt.
 \newpage
 
 \subsection{Compilerbau}\label{subsec:compilerbau}
-\begin{wrapfigure}{rH}{0.5\textwidth}
+\begin{wrapfigure}{rH}{0.35\textwidth}
     \begin{center}
-        \includegraphics[width=0.47\textwidth]{../assets/img/diagrams/compiler_phases.mmd}
+        \includegraphics[width=0.33\textwidth]{../assets/img/diagrams/compiler_phases.mmd}
     \end{center}
     \caption{Phasen der Compiler--Pipeline~\autocite{aho-2006}}
     \label{fig:compiler-phases}
@@ -70,11 +70,11 @@ Damit kann zwischen zwei verschiedenen Aufbauten unterscheiden werden: Compiler 
 Effektiv benötigen beide Klassen von Tools dieselben Phasen.
 Es muss auf irgendeinem Weg durch das konsekutive ausführen von Transformationen aus dem Code das Programm werden.
 
-Diese Phasen sind klassischer Weise jene aus \autoref{fig:compiler-phases}.
+Diese Phasen sind klassischerweise jene aus \autoref{fig:compiler-phases}.
 Diese Phasen wurden auch im \ac{POSIX}, einem Standard für Betriebssysteme, festgehalten.~\autocite{ieee-sa-1993}
 
 \paragraph{Lexical Analyzer} oder auch \textbf{Tokenizer} gruppieren den Code in \textbf{Tokens}.
-Ein Token ist dabei ein Zweitupel aus seinem Typen und seinem Wert, einem optionalen Eintrag in der \textbf{Symbol--Table}.
+Ein Token ist dabei ein Zweitupel aus seinem Typen und seinem Wert, einem optionalen Eintrag in der \textbf{Symbol--Table}.~\autocite{aho-2006}
 
 Die zugrundeliegende Datenstruktur bleibt dabei ein Stream.
 Es handelt sich also immer noch um eine lineare Datenstruktur.
@@ -83,7 +83,7 @@ Der wohl bekannteste Tokenizer ist dabei Lex.~\autocite{wikipedia-contributors-2
 Lex folgt dem \acs{POSIX}--Standard und ist in \autoref{subsubsec:lex} beschrieben.
 
 \paragraph{Syntax Analyzer} oder auch \textbf{Parser} analysieren die Reihenfolge, in der die einzelnen Tokens evaluiert werden.
-Dazu wird mittels einer \ac{CFG}~\autocite{wikipedia-contributors-2024H} ein \textbf{Syntax--Tree} oder auch \textbf{\ac{AST}} erstellt.
+Dazu wird mittels einer \acp{CFG}~\autocite{wikipedia-contributors-2024H} ein \textbf{Syntax--Tree} oder auch \textbf{\ac{AST}} erstellt.
 
 Der \ac{AST} beinhaltet im Regelfall die Tokens, die vom Tokenizer erstellt wurden, als Blätter.
 Die semantische Bedeutung des \ac{AST} ist entsprechend die konsekutive Gruppierung von Tokens und anderen Gruppen.
@@ -123,14 +123,14 @@ Dadurch kann es schwierig sein, den nächsten Token auszuwählen.
 
 \paragraph{Semantic Analyzer} analysiert die Knoten des \ac{AST} auf semantische Korrektheit.
 Hier werden zum Beispiel Variablen auf Scopes geprüft und das Type--Checking durchgeführt.
-Auch werden konstante Werte errechnet.
+Auch werden konstante Werte errechnet.~\autocite{aho-2006}
 
 Kurzum ist diese Phase dafür verantwortlich, Feedback zum Code zu geben.
 Dabei werden in der Regel Warnungen und Fehler ausgegeben.
 
 Dies stellt sicher, dass nur korrekte Programme weiter kompiliert werden.
 Ausnahmen gibt es zum Beispiel mit JavaScript.
-Hier wird jedes Statement versucht zu interpretieren, um einfache Fehler unter den Tisch zu kehren.
+Hier wird jedes Statement versucht zu interpretieren, um einfache Fehler unter den Tisch zu kehren. % TODO: Citation needed
 
 \paragraph{Intermediate--Code--Generator} erstellt Text aus dem \ac{AST} eine computer--verständliche Zwischendarstellung.
 
@@ -138,7 +138,7 @@ Ein Beispiel aus~\cite{aho-2006} wäre der three--address code.
 Dieser ist eine klassische \textbf{intermediate Representation} beim Kompilieren zu Assembly.
 
 Der Zweck dieser Zwischendarstellung ist meistens, dass sie in einer Textdatei abgelegt werden kann.
-Der Vorteil davon ist, dass das Frontend der Compiler--Pipeline\footnote{Als Frontend des Compilers werden die ersten 5 Phasen bezeichnet, als Backend die letzten beiden.} klassischerweise unabhängig von der Prozessorarchitektur ist und es so potenziell mehrere, unabhängig voneinander entwickelte, Backends für die verschiedenen Prozessorarchitekturen geben kann.
+Der Vorteil davon ist, dass das Frontend der Compiler--Pipeline\footnote{Als Frontend des Compilers werden die ersten 5 Phasen bezeichnet, da sie platformunabhängig sind; als Backend die letzten beiden, da sie platformspezifisch sind.} klassischerweise unabhängig von der Prozessorarchitektur ist und es so potenziell mehrere, unabhängig voneinander entwickelte, Backends für die verschiedenen Prozessorarchitekturen geben kann.
 
 Da \acp{DSL} im Gegensatz zu \acp{GPL} meist keine Abhängigkeit von Prozessorarchitekturen haben, fällt die Wahl der intermediate Representation häufig direkt auf den \ac{AST}.
 
@@ -147,10 +147,11 @@ Da \acp{DSL} im Gegensatz zu \acp{GPL} meist keine Abhängigkeit von Prozessorar
 Diese Optimierungen beinhalten zum Beispiel das Entfernen von unnötigem Code, Obfuskation von \acp{ID}, Aufräumen von Ressourcen etc.
 
 Der Code kann anhand von verschiedensten Metriken optimiert werden.
-Dazu zählt Geschwindigkeit, Dateigröße\footnote{Ist im Web wichtig.} etc.
+Dazu zählt Geschwindigkeit, Dateigröße\footnote{Ist im Web wichtig, um die Netzwerklast zu minimieren.} etc. % TODO: Citation needed
 
 Optimierungsphasen sind immer optional.
 Im C--Compiler der \ac{GCC} kann zum Beispiel auch eingestellt werden, wie stark der Code optimiert werden soll.~\autocite{gnu-project-no-date}
+Unter anderem dadurch unterscheiden sich in den meisten \ac{GPL} Debug-- von Release--Builds.
 
 \paragraph{Code Generator} oder auch \textbf{Compiler}, erzeugen nun aus der \textbf{intermediate Representation} den \textbf{target--machine--code}.
 
@@ -172,7 +173,7 @@ Die Tokens werden dabei durch \acp{RegEx} identifiziert und von links nach recht
 Standardmäßig sucht Lex nach dem längsten Treffer.
 Es kann allerdings auch über eine Flag des \ac{CLI} nach dem kürzesten Treffer gesucht werden.
 
-Lex--Programme sind dabei in drei Abschnitte unterteilt:
+Lex--Programme sind dabei in drei Abschnitte unterteilt:~\autocite{debray-no-date}
 \lstinputlisting[label={lst:lex-structure},caption={Aufbau eines Lex--Programms},language=lex]{../assets/code/c/lex_structure.l}
 
 \paragraph{Declarations} beinhalten vor allem die Namen der Tokens.
@@ -223,7 +224,7 @@ Meistens wird Lex zusammen mit \ac{YACC} verwendet.
 \subsubsection{\acs{YACC}}
 \ac{YACC} ist ein Tool zum Erstellen von \ac{LALR} Parsern nach dem \acs{POSIX}--Standard.
 
-\paragraph{\acs{LALR}--Parser} sind dabei eine Untergruppe der Bottom--Up--Parser.
+\paragraph{\acs{LALR}--Parser} sind dabei eine Untergruppe der Bottom--Up--Parser. % TODO: Citation needed
 Besonders beliebt sind \acs{LALR}--Parser in der Praxis, da sie besonders effizient und robust sind, obwohl sie alle \ac{CFG} parsen können.
 Außerdem ermöglicht der Lookahead es, mehrdeutige Grammatiken zu parsen.
 
@@ -236,7 +237,7 @@ Diese sind die mächtigsten Parser in der Familie der \acs{LR}--Parser.
 Allerdings benötigen sie mehr Speicherplatz und sind schwierig zu konstruieren.
 
 \paragraph*{}
-Ein \acs{YACC}--Programm ist immer in die folgenden 3 Teile gegliedert:
+Ein \acs{YACC}--Programm ist immer in die folgenden 3 Teile gegliedert:~\autocite{debray-no-date}
 \lstinputlisting[label={lst:yacc-structure},caption={Aufbau eines \acs{YACC}--Programms},language=yacc]{../assets/code/c/yacc_structure.y}
 
 \paragraph{Definitions} beinhalten unter anderem die Definition der Tokens.
@@ -337,7 +338,7 @@ Es wird nicht nur die Compiler--Pipeline beschrieben, sondern auch die zugehöri
 Dies bietet dem Sprachdesigner mehr Freiheit, um die Entwicklererfahrung zu optimieren.
 Diese Features sind aber alle nicht notwendig, um eine funktionierende Sprache zu erstellen.
 
-\subsubsection{BaseLanguage}
+\subsubsection{BaseLanguage} % TODO: Citation needed
 \acs{MPS}--Sprachen zielen meistens darauf ab, Transpiler zu existierenden \ac{GPL} oder \ac{DSL} zu sein.
 Deshalb sind \ac{XML} und Java bereits als Sprachen mit einem vorhandenen TextGen--Aspect implementiert.
 
@@ -348,7 +349,7 @@ Alle Aspekte (siehe \autoref{subsubsec:aspekte}) definieren ihre eigene Sprache,
 Das heißt, auch beim Beschreiben von Logik für TextGen, Migrationen, Generatoren etc.\ wird BaseLanguage verwendet.
 Alle Aspekte sind gute Beispiele für Emergenz beziehungsweise \ac{LOP} in \ac{MPS}.
 
-\subsubsection{Aufbau von \acs{MPS}}
+\subsubsection{Aufbau von \acs{MPS}}% TODO: Citation needed
 JetBrains IntelliJ basierte \acp{IDE}, wie \ac{MPS}, untergliedern Projekte in Module.~\autocite{jetbrains-sro-no-dateD}
 Ein Projekt hat dabei ein oder mehrere Module.
 Ein Modul ist dabei immer etwas, das kompiliert werden kann.
@@ -381,11 +382,11 @@ Durch das Untergliedern der Sprachen in Aspekte erzielt \ac{MPS} \ac{SoC}.
 Die meisten Aspekte sind optional.
 Der Overhead ist also minimal.
 
-\paragraph{Structure} (Struktur) beschreibt den \ac{AST} der Sprache.
+\paragraph{Structure} (Struktur) beschreibt den \ac{AST} der Sprache.% TODO: Citation needed
 Die Knoten des \ac{AST} werden dabei durch Konzepte beschrieben.
 Knoten sind also Serialisierungen von Konzepten, sowie in der \ac{OOP} Objekte Serialisierungen von Klassen sind.
 
-\lstinputlisting[label={lst:concept-structure},caption={Aufbau eines Concepts},language=mps-concept]{../assets/code/mps/structure.concept}
+\lstinputlisting[label={lst:concept-structure},caption={Aufbau eines Konzepts},language=mps-concept]{../assets/code/mps/structure.concept}
 Konzepte sind dabei weitestgehend analog zu \ac{CFG} aufgebaut.
 
 \subparagraph*{}
@@ -450,7 +451,7 @@ Und diese Auflösungsmöglichkeiten können sogar von anderen Sprachen erweitert
 Außerdem werden \acs{OOP}--Paradigmen eingebracht.
 Da \ac{OOP} eines der bekanntesten Paradigmen von \ac{GPL} ist, macht es die Struktur für viele Entwickler intuitiver als \acp{CFG}.
 
-\paragraph{Editor} beschreibt die Darstellung sowie grundlegende Modifikation des \ac{AST}.
+\paragraph{Editor} beschreibt die Darstellung sowie grundlegende Modifikation des \ac{AST}.% TODO: Citation needed
 Im Editor--Aspekt, beziehungsweise der zugehörigen Editor--Sprache\footnote{\ac{MPS} folgt dem Grundsatz des \ac{LOP}, deshalb definieren die meisten Aspekte ihre eigenen Sprache.}, gibt es deutlich mehr Konzepte als in der Struktur.
 
 Diese Konzepte untergliedern sich in zwei Arten, \textbf{Editoren} und \textbf{Transformatoren}.
@@ -468,7 +469,7 @@ Es gibt zwei Arten von Editoren:
     Im Weiteren wird sich nur auf diese Art von Editor bezogen.
 \end{itemize}
 
-\subparagraph{Editor} hat als seine drei wichtigsten Konzepte den {\ttfamily Concept Editor}, also den Editor für ein Konzept; die {\ttfamily Editor Component}, eine wiederverwendbare Teildarstellung eines Konzepts und Stylesheets.
+\subparagraph{Editor} hat als seine drei wichtigsten Konzepte den {\ttfamily Concept Editor}, also den Editor für ein Konzept; die {\ttfamily Editor Component}, eine wiederverwendbare Teildarstellung eines Konzepts und Stylesheets.% TODO: Citation needed
 Die \enquote{Bühne} des Editors untergliedert sich dabei in zwei Bereiche:
 \begin{itemize}
     \item Der klassische Datei--Editor verhält sich wie der Texteditor jeder anderen textbasierten Programmiersprache.
@@ -483,7 +484,7 @@ Dabei wird die Position der einzelnen {\ttfamily properties}, {\ttfamily childre
 
 Dies ermöglicht es auch, Tabellen und Diagramme als Editor einzufügen.
 
-\subparagraph{Transformator} ist in erster Linie das {\ttfamily Transformation Menu}--Konzept.
+\subparagraph{Transformator} ist in erster Linie das {\ttfamily Transformation Menu}--Konzept.% TODO: Citation needed
 In erster Linie werden textbasierte Transformationen beschrieben.
 Das heißt: Entweder links oder rechts von einem existierenden Knoten oder an einer Stelle, an der ein neuer Knoten erwartet wird, wird Text geschrieben.
 Für diesen Text wird dann bei jeder Veränderung eine Methode aufgerufen, welche evaluiert, was passieren soll.
@@ -493,7 +494,7 @@ Anderenfalls wird meist das Autocomplete--Menü um Optionen angereichert.
 Des Weiteren kann analog zum Autocomplete--Menü der sogenannte \textbf{Context--Assistant} bereichert werden.
 Dieser ist ein eigenes \acs{UI}--Panel in der \ac{IDE}.
 
-\paragraph{Actions} beschreiben, wie Knoten sich verändern.
+\paragraph{Actions} beschreiben, wie Knoten sich verändern.% TODO: Citation needed
 \lstinputlisting[label={lst:nodefactories},caption={Node--Factories Beispiel},language=mps-nodefactories]{../assets/code/mps/json.nodefactories}
 {\ttfamily Node--Factories} sind vor allem für die Transformatoren wichtig.
 In \autoref{lst:nodefactories} wird zum Beispiel gezeigt, wie immer, wenn ein {\ttfamily JSONDouble} erstellt wird, er zu {\ttfamily 0.0} initialisiert wird.
@@ -502,7 +503,7 @@ Hier werden also neue Knoten initialisiert.
 
 Des Weiteren wird das Verhalten von Copy--und--Paste in den {\ttfamily Copy/Paste Handlers} beschrieben.
 
-\paragraph{Intentions} ermöglichen es, das Context--Menü zu befüllen.
+\paragraph{Intentions} ermöglichen es, das Context--Menü zu befüllen.% TODO: Citation needed
 
 Zusammen mit dem Autocomplete--Menü ist das Context--Menü einer der ersten beiden Hotkeys, die in jedem IntelliJ--Tutorial gezeigt werden.
 Hier erscheinen Vorschläge, basierend auf der Cursorposition.
@@ -514,24 +515,24 @@ Klassisch sind dabei auch sogenannte Surround--With--Intentions.
 Diese umgeben einen Knoten mit einem neuen Knoten.
 Ein bekanntes Beispiel ist \enquote{Sourround with Try--Catch} aus der Java--Entwicklung in IntelliJ\@.
 
-\paragraph{Plugin} ermöglichen es, der \ac{IDE} beliebige Funktionalitäten hinzuzufügen.
+\paragraph{Plugin} ermöglichen es, der \ac{IDE} beliebige Funktionalitäten hinzuzufügen.% TODO: Citation needed
 Es kann jedes Menü bearbeitet werden, \ac{UI}--Panels hinzugefügt werden, Progress--Indikatoren angezeigt werden etc.
 
-\paragraph{Refactorings} spezialisieren sich auf eine bestimmte Art von \acs{IDE}--Feature.
+\paragraph{Refactorings} spezialisieren sich auf eine bestimmte Art von \acs{IDE}--Feature.% TODO: Citation needed
 Dabei müssen sie von einem Plugin aufgerufen werden.
 
 Refactorings beschreiben dabei komplexe Codeanpassungen.
 Ein Beispiel wäre das \enquote{Umbenennen} Feature bei textbasierten Sprachen.
 
-\paragraph{FindUsages} erleichtern die Navigation durch den Code.
+\paragraph{FindUsages} erleichtern die Navigation durch den Code.% TODO: Citation needed
 Sie sorgen dafür, dass {\ttfamily references} in beiden Richtungen aufgelöst werden können.
 
-\paragraph{Scripts} lassen sich über die Menüleiste aufrufen.
+\paragraph{Scripts} lassen sich über die Menüleiste aufrufen.% TODO: Citation needed
 Scripts sind dafür gedacht, Änderung an einer großen Menge an Knoten vorzunehmen.
 
 Sie sind der Vorläufer von Migrationen und führen effektiv eine, nicht an die Versionsnummer gebundene, Migration aus.
 
-\paragraph{Constraints} sind \ac{MPS} Äquivalent zu Semantic Analyzern.
+\paragraph{Constraints} sind \ac{MPS} Äquivalent zu Semantic Analyzern.% TODO: Citation needed
 Constraints prüfen nach jeder Transformation, ob der \ac{AST} noch korrekt ist.
 
 In der einfachsten Form werden die Methoden {\ttfamily can be parent}, {\ttfamily can be child} oder {\ttfamily can be ancestor} implementiert.
@@ -544,26 +545,26 @@ Dies ist zum Beispiel bei Methoden und Variablen wichtig.
 Häufig wird diese Funktion über einen sogenannten {\ttfamily ScopeProvider} an das Behaviour übertragen.
 So wird ein Aufsteigen erzielt, bei dem die Scopes definieren, was erreichbar ist, und nicht die Referenzen im umliegenden \ac{AST} suchen müssen.
 
-\paragraph{Feedback} beschreibt, wie das Verstoßen gegen Constraints angezeigt werden soll.
+\paragraph{Feedback} beschreibt, wie das Verstoßen gegen Constraints angezeigt werden soll.% TODO: Citation needed
 Es werden also Fehlermeldungen aus den umgebenen Knoten zusammengetragen.
 
-\paragraph{Typesystem} kann genutzt werden, um Sprachen ein Typsystem zu geben.
+\paragraph{Typesystem} kann genutzt werden, um Sprachen ein Typsystem zu geben.% TODO: Citation needed
 Dabei wird beschrieben, was eine Serialisierung wovon ist, und wer Sub-- beziehungsweise Supertyp von wem ist.
 Dies kann dann in den anderen Aspekten, zum Beispiel den Constraints, abgefragt werden.
 
-\paragraph{DataFlow} beschreibt den Kontrollfluss.
+\paragraph{DataFlow} beschreibt den Kontrollfluss.% TODO: Citation needed
 Das Ziel dabei ist es, unnötigen Code zu finden.
 Es ist also ein Optimizer.
 Dabei wird vom \ac{AST} zu einer semantischen Darstellung abgebildet, sodass diese Analyse weitestgehend automatisiert ablaufen kann.
 
-\paragraph{TextGen} ist \ac{MPS} Äquivalent zu einem klassischen Compiler.
+\paragraph{TextGen} ist \ac{MPS} Äquivalent zu einem klassischen Compiler.% TODO: Citation needed
 Hier werden Knoten in Text umgewandelt.
 Hierzu wird für jedes Konzept eine Funktion erstellt.
 Diese Funktion gibt geordnet Text und Knoten aus, sodass die {\ttfamily children} und {\ttfamily references} zusammen mit dem Knoten selbst dargestellt werden.
 
 Ursprungsknoten müssen zusätzlich einen Namen und Pfad, relativ zum Generationsausgabeverzeichnis, spezifizieren, damit eine Datei erstellt werden kann.
 
-\paragraph{Behavior} beschreibt eine Art Companion--Class zu einem Konzept.
+\paragraph{Behavior} beschreibt eine Art Companion--Class zu einem Konzept.% TODO: Citation needed
 Hier können beliebige Methoden und Felde angelegt werden.
 Dies dient dem Zweck, dass die anderen Aspekte diese nutzen können.
 Statische Methoden können entsprechend auf dem Konzept und nicht statische Methoden auf dem Knoten aufgerufen werden.
@@ -572,7 +573,7 @@ Das Behaviour respektiert dabei die Vererbung des Konzepts.
 Es können also abstrakte Methoden erstellt werden, welche von erbenden Konzepten implementiert werden müssen.
 Dies fördert die Möglichkeiten der Emergenz in \ac{MPS}, da es das Erweitern von \acp{AST} deutlich erleichtert.
 
-\paragraph{Test} ermöglicht das Schreiben von Unit--Tests.
+\paragraph{Test} ermöglicht das Schreiben von Unit--Tests.% TODO: Citation needed
 Dazu kann entweder der Test--Aspekt genutzt werden oder ein Test--Model erstellt werden.
 
 In beiden Fällen wird die {\ttfamily jetbrains.mps.lang.test}--Sprache genutzt.
@@ -597,12 +598,12 @@ In beiden Fällen wird die {\ttfamily jetbrains.mps.lang.test}--Sprache genutzt.
 \end{table}
 Mittels der in \autoref{tab:testcases} dargestellten Arten von Tests lassen sich dabei die meisten Konzepte testen.
 
-\paragraph{Migration} beschreiben, wie sich die Sprache zwischen zwei Versionen verändert hat.
+\paragraph{Migration} beschreiben, wie sich die Sprache zwischen zwei Versionen verändert hat.% TODO: Citation needed
 Häufig können schon kleinere Änderungen an der Struktur einer vorhandenen Sprache die Solutions unbrauchbar machen.
 Deshalb müssen Migrationen geschrieben werden.
 Dies kann allerdings auch dabei helfen, Deprecation von Sprachfeatures zu umgehen.
 
-\paragraph{\ac{VCS}} beschreibt, wie Merge--Konflikte behandelt werden sollen.
+\paragraph{\ac{VCS}} beschreibt, wie Merge--Konflikte behandelt werden sollen.% TODO: Citation needed
 Da \ac{MPS} keine Textdatei als Eingabe hat, sondern der \ac{AST} als \acs{XML}--Datei gespeichert wird, sind klassische Tools wie Git zwar nicht nutzlos, allerdings kommen sie doch schnell an ihre Grenzen.
 In diesem Aspekt wird daher beschrieben, wie verschiedene Teilbäume zusammengefügt werden können.
 Dies bietet den großen Vorteil, dass ungleich bei textbasierten Programmiersprachen der Merge mit Rücksicht auf die Syntax der Sprache stattfindet.
@@ -611,7 +612,7 @@ Dies bietet den großen Vorteil, dass ungleich bei textbasierten Programmierspra
 Neben diesen von \ac{MPS} definierten Aspekten können auch eigene Aspekte erstellt werden.
 Darauf soll hier aber nicht weiter eingegangen werden.
 
-\subsubsection{Generator}
+\subsubsection{Generator}% TODO: Citation needed
 Zuvor wurde bereits erwähnt, dass die wenigsten Sprachen in \ac{MPS} einen TextGen--Aspekt haben.
 Im Regelfall bricht der Generator den \ac{AST} so weit herunter, sodass, durch Kaskadierung mehrerer Sprachen (bzw.\ deren Generatoren,) ein \ac{AST} herauskommt, in dem jeder Knoten einen TextGen--Aspekt hat.
 
@@ -644,14 +645,14 @@ Damit können Referenzen der Zielsprache an anderen Stellen gefunden werden.
 
 Weitere Features der {\ttfamily Mapping Configuration} beinhalten pre-- und post--processing Scripts sowie das Ignorieren bestimmter (Teil--)Bäume.
 
-\paragraph{GenPlan} beschreibt die Reihenfolge, in der verschiedene Generatoren ausgeführt werden.
+\paragraph{GenPlan} beschreibt die Reihenfolge, in der verschiedene Generatoren ausgeführt werden.% TODO: Citation needed
 Für die meisten, einfachen Sprachen erstellt \ac{MPS} automatisiert einen GenPlan.
 Bei komplexen \ac{MPS}--Projekten kann ein manuell erstellter GenPlan allerdings schnell notwendig werden.
 
 Außerdem ist es mit einem GenPlan möglich, eine Sprache in mehrere Zielsprachen zu kompilieren.
 Es kann zum Beispiel ein GenPlan für \ac{JSON} und einer für \ac{XML} erstellt werden.
 
-\paragraph{Debugging} des Generators funktioniert am einfachsten über sogenannte Transient Models.
+\paragraph{Debugging} des Generators funktioniert am einfachsten über sogenannte Transient Models.% TODO: Citation needed
 Diese können auf Kosten der Geschwindigkeit beim Kompilieren aktiviert werden.
 Anschließend können nach jedem Compilieren alle Zwischenergebnisse der verschiedenen Compiler angeschaut werden.
 Damit lässt sich meistens der Reducer ausmachen, der für einen Fehler verantwortlich ist.
@@ -659,12 +660,12 @@ Damit lässt sich meistens der Reducer ausmachen, der für einen Fehler verantwo
 \subsubsection{Library--Code}
 Es gibt zwei Wege, Libraries mit einer Sprache zu verknüpfen.
 
-\paragraph{Accessory Model} ist ein Model, welches mit einer Sprache assoziiert wird.
+\paragraph{Accessory Model} ist ein Model, welches mit einer Sprache assoziiert wird.% TODO: Citation needed
 Es ist also eine Möglichkeit, Knoten, die die Konzepte serialisieren, mit der Sprache zu verbinden.
 Dies ermöglicht es dem Nutzer der Sprache, bestimmte Strukturen vorab bereitgestellt zu bekommen.
 Dies ist analog zu den sogenannten Standardbibliotheken der meisten, herkömmlichen \ac{GPL}.
 
-\paragraph{Runtime Module,} oder auch Library genannt, sind Module, die beschreiben, wie eine bestimmte Nicht--\acs{MPS}--Bibliothek aufgebaut ist.
+\paragraph{Runtime Module,} oder auch Library genannt, sind Module, die beschreiben, wie eine bestimmte Nicht--\acs{MPS}--Bibliothek aufgebaut ist.% TODO: Citation needed
 Im Sinne der BaseLanguage können so zum Beispiel vorhandene Java--Bibliotheken nutzbar gemacht werden.
 
 Im Falle von Java können diese mittels eines Scripts automatisiert erstellt werden.
