@@ -130,7 +130,7 @@ Dabei werden in der Regel Warnungen und Fehler ausgegeben.
 
 Dies stellt sicher, dass nur korrekte Programme weiter kompiliert werden.
 Ausnahmen gibt es zum Beispiel mit JavaScript.
-Hier wird jedes Statement versucht zu interpretieren, um einfache Fehler unter den Tisch zu kehren. % TODO: Citation needed
+Hier wird jedes Statement versucht zu interpretieren, um einfache Fehler unter den Tisch zu kehren.~\autocite{larsen-2016}
 
 \paragraph{Intermediate--Code--Generator} erstellt Text aus dem \ac{AST} eine computer--verständliche Zwischendarstellung.
 
@@ -147,7 +147,7 @@ Da \acp{DSL} im Gegensatz zu \acp{GPL} meist keine Abhängigkeit von Prozessorar
 Diese Optimierungen beinhalten zum Beispiel das Entfernen von unnötigem Code, Obfuskation von \acp{ID}, Aufräumen von Ressourcen etc.
 
 Der Code kann anhand von verschiedensten Metriken optimiert werden.
-Dazu zählt Geschwindigkeit, Dateigröße\footnote{Ist im Web wichtig, um die Netzwerklast zu minimieren.} etc. % TODO: Citation needed
+Dazu zählt Geschwindigkeit, Dateigröße\footnote{Ist im Web wichtig, um die Netzwerklast zu minimieren.} etc.~\autocite{aho-2006}
 
 Optimierungsphasen sind immer optional.
 Im C--Compiler der \ac{GCC} kann zum Beispiel auch eingestellt werden, wie stark der Code optimiert werden soll.~\autocite{gnu-project-no-date}
@@ -224,7 +224,7 @@ Meistens wird Lex zusammen mit \ac{YACC} verwendet.
 \subsubsection{\acs{YACC}}
 \ac{YACC} ist ein Tool zum Erstellen von \ac{LALR} Parsern nach dem \acs{POSIX}--Standard.
 
-\paragraph{\acs{LALR}--Parser} sind dabei eine Untergruppe der Bottom--Up--Parser. % TODO: Citation needed
+\paragraph{\acs{LALR}--Parser} sind dabei eine Untergruppe der Bottom--Up--Parser.~\autocite{aho-2006}
 Besonders beliebt sind \acs{LALR}--Parser in der Praxis, da sie besonders effizient und robust sind, obwohl sie alle \ac{CFG} parsen können.
 Außerdem ermöglicht der Lookahead es, mehrdeutige Grammatiken zu parsen.
 
@@ -338,18 +338,18 @@ Es wird nicht nur die Compiler--Pipeline beschrieben, sondern auch die zugehöri
 Dies bietet dem Sprachdesigner mehr Freiheit, um die Entwicklererfahrung zu optimieren.
 Diese Features sind aber alle nicht notwendig, um eine funktionierende Sprache zu erstellen.
 
-\subsubsection{BaseLanguage} % TODO: Citation needed
+\subsubsection{BaseLanguage}
 \acs{MPS}--Sprachen zielen meistens darauf ab, Transpiler zu existierenden \ac{GPL} oder \ac{DSL} zu sein.
 Deshalb sind \ac{XML} und Java bereits als Sprachen mit einem vorhandenen TextGen--Aspect implementiert.
 
 \ac{MPS} selbst basiert auf Java.
-Deshalb wird die vorhandene Java--Implementierung auch als BaseLanguage bezeichnet.
+Deshalb wird die vorhandene Java--Implementierung auch als BaseLanguage bezeichnet.~\autocite{jetbrains-sro-no-dateF}
 
 Alle Aspekte (siehe \autoref{subsubsec:aspekte}) definieren ihre eigene Sprache, basierend auf BaseLanguage.
 Das heißt, auch beim Beschreiben von Logik für TextGen, Migrationen, Generatoren etc.\ wird BaseLanguage verwendet.
 Alle Aspekte sind gute Beispiele für Emergenz beziehungsweise \ac{LOP} in \ac{MPS}.
 
-\subsubsection{Aufbau von \acs{MPS}}% TODO: Citation needed
+\subsubsection{Aufbau von \acs{MPS}}
 JetBrains IntelliJ basierte \acp{IDE}, wie \ac{MPS}, untergliedern Projekte in Module.~\autocite{jetbrains-sro-no-dateD}
 Ein Projekt hat dabei ein oder mehrere Module.
 Ein Modul ist dabei immer etwas, das kompiliert werden kann.
@@ -382,7 +382,7 @@ Durch das Untergliedern der Sprachen in Aspekte erzielt \ac{MPS} \ac{SoC}.
 Die meisten Aspekte sind optional.
 Der Overhead ist also minimal.
 
-\paragraph{Structure} (Struktur) beschreibt den \ac{AST} der Sprache.% TODO: Citation needed
+\paragraph{Structure} (Struktur) beschreibt den \ac{AST} der Sprache.~\autocite{jetbrains-sro-no-dateG}
 Die Knoten des \ac{AST} werden dabei durch Konzepte beschrieben.
 Knoten sind also Serialisierungen von Konzepten, sowie in der \ac{OOP} Objekte Serialisierungen von Klassen sind.
 
@@ -451,7 +451,7 @@ Und diese Auflösungsmöglichkeiten können sogar von anderen Sprachen erweitert
 Außerdem werden \acs{OOP}--Paradigmen eingebracht.
 Da \ac{OOP} eines der bekanntesten Paradigmen von \ac{GPL} ist, macht es die Struktur für viele Entwickler intuitiver als \acp{CFG}.
 
-\paragraph{Editor} beschreibt die Darstellung sowie grundlegende Modifikation des \ac{AST}.% TODO: Citation needed
+\paragraph{Editor} beschreibt die Darstellung sowie grundlegende Modifikation des \ac{AST}.~\autocite{jetbrains-sro-no-dateH}
 Im Editor--Aspekt, beziehungsweise der zugehörigen Editor--Sprache\footnote{\ac{MPS} folgt dem Grundsatz des \ac{LOP}, deshalb definieren die meisten Aspekte ihre eigenen Sprache.}, gibt es deutlich mehr Konzepte als in der Struktur.
 
 Diese Konzepte untergliedern sich in zwei Arten, \textbf{Editoren} und \textbf{Transformatoren}.
@@ -469,7 +469,7 @@ Es gibt zwei Arten von Editoren:
     Im Weiteren wird sich nur auf diese Art von Editor bezogen.
 \end{itemize}
 
-\subparagraph{Editor} hat als seine drei wichtigsten Konzepte den {\ttfamily Concept Editor}, also den Editor für ein Konzept; die {\ttfamily Editor Component}, eine wiederverwendbare Teildarstellung eines Konzepts und Stylesheets.% TODO: Citation needed
+\subparagraph{Editor} hat als seine drei wichtigsten Konzepte den {\ttfamily Concept Editor}, also den Editor für ein Konzept; die {\ttfamily Editor Component}, eine wiederverwendbare Teildarstellung eines Konzepts und Stylesheets.~\autocite{jetbrains-sro-no-dateH}
 Die \enquote{Bühne} des Editors untergliedert sich dabei in zwei Bereiche:
 \begin{itemize}
     \item Der klassische Datei--Editor verhält sich wie der Texteditor jeder anderen textbasierten Programmiersprache.
@@ -484,7 +484,7 @@ Dabei wird die Position der einzelnen {\ttfamily properties}, {\ttfamily childre
 
 Dies ermöglicht es auch, Tabellen und Diagramme als Editor einzufügen.
 
-\subparagraph{Transformator} ist in erster Linie das {\ttfamily Transformation Menu}--Konzept.% TODO: Citation needed
+\subparagraph{Transformator} ist in erster Linie das {\ttfamily Transformation Menu}--Konzept.~\autocite{jetbrains-sro-no-dateI}
 In erster Linie werden textbasierte Transformationen beschrieben.
 Das heißt: Entweder links oder rechts von einem existierenden Knoten oder an einer Stelle, an der ein neuer Knoten erwartet wird, wird Text geschrieben.
 Für diesen Text wird dann bei jeder Veränderung eine Methode aufgerufen, welche evaluiert, was passieren soll.
@@ -494,7 +494,7 @@ Anderenfalls wird meist das Autocomplete--Menü um Optionen angereichert.
 Des Weiteren kann analog zum Autocomplete--Menü der sogenannte \textbf{Context--Assistant} bereichert werden.
 Dieser ist ein eigenes \acs{UI}--Panel in der \ac{IDE}.
 
-\paragraph{Actions} beschreiben, wie Knoten sich verändern.% TODO: Citation needed
+\paragraph{Actions} beschreiben, wie Knoten sich verändern.~\autocite{jetbrains-sro-no-dateJ}
 \lstinputlisting[label={lst:nodefactories},caption={Node--Factories Beispiel},language=mps-nodefactories]{../assets/code/mps/json.nodefactories}
 {\ttfamily Node--Factories} sind vor allem für die Transformatoren wichtig.
 In \autoref{lst:nodefactories} wird zum Beispiel gezeigt, wie immer, wenn ein {\ttfamily JSONDouble} erstellt wird, er zu {\ttfamily 0.0} initialisiert wird.
@@ -503,7 +503,7 @@ Hier werden also neue Knoten initialisiert.
 
 Des Weiteren wird das Verhalten von Copy--und--Paste in den {\ttfamily Copy/Paste Handlers} beschrieben.
 
-\paragraph{Intentions} ermöglichen es, das Context--Menü zu befüllen.% TODO: Citation needed
+\paragraph{Intentions} ermöglichen es, das Context--Menü zu befüllen.~\autocite{jetbrains-sro-no-dateK}
 
 Zusammen mit dem Autocomplete--Menü ist das Context--Menü einer der ersten beiden Hotkeys, die in jedem IntelliJ--Tutorial gezeigt werden.
 Hier erscheinen Vorschläge, basierend auf der Cursorposition.
@@ -515,24 +515,24 @@ Klassisch sind dabei auch sogenannte Surround--With--Intentions.
 Diese umgeben einen Knoten mit einem neuen Knoten.
 Ein bekanntes Beispiel ist \enquote{Sourround with Try--Catch} aus der Java--Entwicklung in IntelliJ\@.
 
-\paragraph{Plugin} ermöglichen es, der \ac{IDE} beliebige Funktionalitäten hinzuzufügen.% TODO: Citation needed
+\paragraph{Plugin} ermöglichen es, der \ac{IDE} beliebige Funktionalitäten hinzuzufügen.~\autocite{jetbrains-sro-no-dateL}
 Es kann jedes Menü bearbeitet werden, \ac{UI}--Panels hinzugefügt werden, Progress--Indikatoren angezeigt werden etc.
 
-\paragraph{Refactorings} spezialisieren sich auf eine bestimmte Art von \acs{IDE}--Feature.% TODO: Citation needed
+\paragraph{Refactorings} spezialisieren sich auf eine bestimmte Art von \acs{IDE}--Feature.~\autocite{jetbrains-sro-no-dateM}
 Dabei müssen sie von einem Plugin aufgerufen werden.
 
 Refactorings beschreiben dabei komplexe Codeanpassungen.
 Ein Beispiel wäre das \enquote{Umbenennen} Feature bei textbasierten Sprachen.
 
-\paragraph{FindUsages} erleichtern die Navigation durch den Code.% TODO: Citation needed
+\paragraph{FindUsages} erleichtern die Navigation durch den Code.~\autocite{jetbrains-sro-no-dateN}
 Sie sorgen dafür, dass {\ttfamily references} in beiden Richtungen aufgelöst werden können.
 
-\paragraph{Scripts} lassen sich über die Menüleiste aufrufen.% TODO: Citation needed
+\paragraph{Scripts} lassen sich über die Menüleiste aufrufen.~\autocite{jetbrains-sro-no-dateO}
 Scripts sind dafür gedacht, Änderung an einer großen Menge an Knoten vorzunehmen.
 
 Sie sind der Vorläufer von Migrationen und führen effektiv eine, nicht an die Versionsnummer gebundene, Migration aus.
 
-\paragraph{Constraints} sind \ac{MPS} Äquivalent zu Semantic Analyzern.% TODO: Citation needed
+\paragraph{Constraints} sind \ac{MPS} Äquivalent zu Semantic Analyzern.~\autocite{jetbrains-sro-no-dateP}
 Constraints prüfen nach jeder Transformation, ob der \ac{AST} noch korrekt ist.
 
 In der einfachsten Form werden die Methoden {\ttfamily can be parent}, {\ttfamily can be child} oder {\ttfamily can be ancestor} implementiert.
@@ -545,10 +545,10 @@ Dies ist zum Beispiel bei Methoden und Variablen wichtig.
 Häufig wird diese Funktion über einen sogenannten {\ttfamily ScopeProvider} an das Behaviour übertragen.
 So wird ein Aufsteigen erzielt, bei dem die Scopes definieren, was erreichbar ist, und nicht die Referenzen im umliegenden \ac{AST} suchen müssen.
 
-\paragraph{Feedback} beschreibt, wie das Verstoßen gegen Constraints angezeigt werden soll.% TODO: Citation needed
+\paragraph{Feedback} beschreibt, wie das Verstoßen gegen Constraints angezeigt werden soll.~\autocite{jetbrains-sro-no-dateQ}
 Es werden also Fehlermeldungen aus den umgebenen Knoten zusammengetragen.
 
-\paragraph{Typesystem} kann genutzt werden, um Sprachen ein Typsystem zu geben.% TODO: Citation needed
+\paragraph{Typesystem} kann genutzt werden, um Sprachen ein Typsystem zu geben.~\autocite{jetbrains-sro-no-dateR}
 Dabei wird beschrieben, was eine Serialisierung wovon ist, und wer Sub-- beziehungsweise Supertyp von wem ist.
 Dies kann dann in den anderen Aspekten, zum Beispiel den Constraints, abgefragt werden.
 
@@ -573,7 +573,7 @@ Das Behaviour respektiert dabei die Vererbung des Konzepts.
 Es können also abstrakte Methoden erstellt werden, welche von erbenden Konzepten implementiert werden müssen.
 Dies fördert die Möglichkeiten der Emergenz in \ac{MPS}, da es das Erweitern von \acp{AST} deutlich erleichtert.
 
-\paragraph{Test} ermöglicht das Schreiben von Unit--Tests.% TODO: Citation needed
+\paragraph{Test} ermöglicht das Schreiben von Unit--Tests.~\autocite{jetbrains-sro-no-dateE}
 Dazu kann entweder der Test--Aspekt genutzt werden oder ein Test--Model erstellt werden.
 
 In beiden Fällen wird die {\ttfamily jetbrains.mps.lang.test}--Sprache genutzt.
@@ -645,7 +645,7 @@ Damit können Referenzen der Zielsprache an anderen Stellen gefunden werden.
 
 Weitere Features der {\ttfamily Mapping Configuration} beinhalten pre-- und post--processing Scripts sowie das Ignorieren bestimmter (Teil--)Bäume.
 
-\paragraph{GenPlan} beschreibt die Reihenfolge, in der verschiedene Generatoren ausgeführt werden.% TODO: Citation needed
+\paragraph{GenPlan} beschreibt die Reihenfolge, in der verschiedene Generatoren ausgeführt werden.~\autocite{jetbrains-sro-no-dateB}
 Für die meisten, einfachen Sprachen erstellt \ac{MPS} automatisiert einen GenPlan.
 Bei komplexen \ac{MPS}--Projekten kann ein manuell erstellter GenPlan allerdings schnell notwendig werden.
 
