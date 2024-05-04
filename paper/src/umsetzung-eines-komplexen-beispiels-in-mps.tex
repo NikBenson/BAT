@@ -149,8 +149,8 @@ Anschließend kann der Resolver mit seinem Editor spezifiziert werden.
 
 Um die Statements nun mit Inhalt zu füllen, wurde ein Top--Down--Ansatz gewählt.
 Es wurden also zunächst die Statements erstellt, und anschließend die Expressions.
-Dabei wurde zunächst auf Literale fokussiert, da diese am einfachsten zu implementieren sind.
-Von jedem abstrakten Konzept muss zunächst mindestens eine Implementierung vorhanden sein, bevor der Generator gestartet werden kann.
+Dabei wurde sich zunächst auf die Literale fokussiert, da diese am einfachsten zu implementieren sind.
+Von jedem abstrakten Konzept muss zunächst mindestens eine Implementierung vorhanden sein, bevor mit der Implementierung des zugehörigen Generators begonnen werden kann.
 
 Bei den Literalen wurde zunächst das Typsystem implementiert.
 Dies ist auch im Diagramm durch gestrichelte Linien zu erkennen.
@@ -160,6 +160,24 @@ So kann sich an allen anderen Stellen auf die Typsicherheit verlassen werden.
 Als der Generator funktioniert hat, wurden jetzt alle fehlenden, konkreten Konzepte sowie die Variablen und Methoden nachgezogen.
 
 So lässt sich die Umsetzung einer komplexen (Teil--)Sprache leicht in autonome Subsysteme zerlegen.
+
+Dabei sind bestimmte Phasen der Umsetzung leichter gefallen als andere.
+Das Erstellen der Konzepte fiel dabei für die einfachen Anwendungsfälle bereits von Beginn an leicht.
+Für die komplexeren Anwendungsfälle hat es nach einer kurzen eingewöhnungsphase auch intuitiv angefühlt.
+
+Auch das Umsetzen der Editoren fällt mit der zugehörigen Sprache leicht, sobald die Ausrichtungscharaktere bekannt sind.
+
+Das Typesystem hingegen ist eine Herausforderung für sich.
+Die Typen selbst zu definieren ist nicht schwer, allerdings Vererbungshierarchien und andere Konzepte der Typsicherheit.
+Hier ist die Menge an möglichen Regeln eine Herausforderung.
+
+Auch Scopes sind nicht immer einfach.
+Hier gibt es auch viele verschiedene Arten, um Scopes zu definieren.
+Außerdem ist das Bubbling von {\ttfamily ScopeProvider}n nicht immer sofort ersichtlich, wenn der \ac{AST} komplexer ist.
+Insgesamt sind Scopes mit einem mittleren Aufwand umsetzbar.
+
+Der Generator hingegen ist ein größerer Aufwand.
+% TODO: Weiterschreiben
 
 \subsection{Herausforderungen und Probleme}\label{subsec:herausforderungen-und-probleme}
 Nichtsdestotrotz gab und gibt es viele Schwierigkeiten bei der Umsetzung.
