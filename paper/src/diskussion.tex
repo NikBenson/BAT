@@ -1,5 +1,10 @@
-Nach der Betrachtung aus Entwickler-- sowie Designer--sicht soll nun die Sinnhaftigkeit aus finanzieller Sicht betrachtet werden.
+Nach der Betrachtung aus Entwickler-- sowie Designer--Sicht soll nun die Sinnhaftigkeit aus finanzieller Sicht betrachtet werden.
 Es soll die Frage beantwortet werden, inwiefern \acp{DSL} mithilfe von \ac{MPS} wirtschaftlich sein können.
+
+Für \ac{DSL} zur nutzung von Entwicklern konnte dies bereits in anderen Arbeiten gezeigt werden.~\autocite{mellegard-2016}
+Hier wäre das Konzept des \ac{DSM} zu nennen.
+
+Zu zeigen ist, wie sich \ac{MPS} \ac{USP}, das Erstellen eines nicht--textbasierten Editors, darauf auswirkt, ob auch Nicht--Entwickler die resultierenden \acp{DSL} sinnvoll nutzen können.
 
 Dazu wird das komplexe Beispiel des Design--System--Creators genutzt, um eine begründete Vermutung anzustellen.
 Die möglichen Ergebnisse sind, dass es sinnvoll sein kann, oder falls es in diesem Beispiel nicht sinnvoll ist, dass diese Arbeit keine Aussage dazu treffen kann.
@@ -66,7 +71,7 @@ Diese Effizienzsteigerung trägt ebenfalls zur Kostensenkung und Qualitätsverbe
 
 Konkreter wird es bei der eingesparten Arbeitszeit.
 Hier wären zum einen die Meetings zwischen Designern und Entwicklern, aber auch, dass einige Aufgaben von Designern übernommen werden können, die zuvor Entwickler machen mussten.
-Durchschnittlich verdienen Softwareentwickler signifikant mehr.~\autocite{gehaltde-2024B,gehaltde-2024A}
+Durchschnittlich verdienen Softwareentwickler signifikant mehr, weshalb auch dies zu Einsparungen führt.~\autocite{gehaltde-2024B,gehaltde-2024A}
 
 Selbst bei einer Einsparung von einer halben Stunde pro Woche und Person (Designer und Entwickler) im Team kommt so schnell eine große Summe zustande.
 Bei einem Team von 10 Leuten, die durchschnittlich einen Tagessatz von 800 Euro kosten, ist es in einem Jahr eine Ersparnis von 26.000 Euro.
@@ -76,3 +81,11 @@ Da das Produkt allerdings auch ohne Mehrkosten in weiteren Teams verwendet werde
 Dies bestätigt auch Bayram Ünlü, \ac{CEO} bei \ac{netTrek}, in seinem Statement in \autoref{appendix:bayram-unlu}.
 
 Alles in allem lässt sich also vermuten, dass die fertige Software in diesem Fall wirtschaftlich sein wird.
+
+Aufgrund der hohen Komplexität wird davon ausgegangen, dass \ac{MPS} auch für viele Projekte nicht die richtige Lösung ist.
+Am Beispiel von \ac{netTrek} lohnt es sich nur durch die Großkunden, die ihre eigenen Teams mitbringen.
+Die Entwicklung von solcher Software sollte im Regelfall groß angelegt sein.
+Außerdem bedarf es aufgrund der steilen Lernkurve viel Zeit und Geld, um entsprechendes Personal zu schulen oder zu finden.
+Deshalb kann keine Empfehlung ausgesprochen werden, solche Projekte in \enquote{kleinen}\footnote{In diesem Fall bezieht sich \enquote{klein} auf die Anzahl der Mitarbeiter bzw.\ den Managementaufwand. Klein bezieht sich auf weniger als 10 Entwickler im Team / Unternehmen. Da sich beim Prototypen zunächst auf die App--Entwicklung beschränkt wurde, fallt \ac{netTrek} unter diese Beschreibung. Zurzeit sind es vier Flutter--Entwickler, der rest sind Web--Entwickler.~\autocite{nettrek-gmbh-co-kg-no-date}} Unternehmen umzusetzen.
+In Unternehmen, die diese Schwelle überschreiten, ist allerdings anzunehmen, dass sich diese Investition langfristig lohnen wird.
+Diese Annahme basiert auf der Rechnung für den Prototyp aus \autoref{sec:umsetzung-eines-komplexen-beispiels-in-mps}.
