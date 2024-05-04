@@ -20,7 +20,7 @@ Diese sind im Wörterbuch definiert als:
 Also eine Kodierung, welche Anweisungen an einen Computer gibt.
 
 Zusammenfassend lässt sich sagen, dass \acp{DSL} Kodierungen sind, die fachspezifisch von einer Menge von Schlüsselwörtern und strukturiertem, dynamischen Inhalt auf eine von (mindestens) einem Computer--(Programm) verstandene Eingabe--(Datei) abbilden.
-Dabei stehen fachspezifische Paradigmen vor den klassischen Programmierparadigmen~\autocite{wikipedia-contributors-2024D} im Zentrum des Sprachdesigns.
+Dabei stehen fachspezifische Paradigmen vor den klassischen Programmierparadigmen~\autocite{martin-2018} im Zentrum des Sprachdesigns.
 
 Das wohl bekannteste Beispiel ist \ac{SQL}.~\autocite{unknown-author-2023}
 \ac{SQL} ist eine durch die \ac{ISO} genormte \ac{DSL}; spezifischer eine sogenannte \textit{Query Language}.
@@ -79,11 +79,11 @@ Ein Token ist dabei ein Zweitupel aus seinem Typen und seinem Wert, einem option
 Die zugrundeliegende Datenstruktur bleibt dabei ein Stream.
 Es handelt sich also immer noch um eine lineare Datenstruktur.
 
-Der wohl bekannteste Tokenizer ist dabei Lex.~\autocite{wikipedia-contributors-2024G}
+Der wohl bekannteste Tokenizer ist dabei Lex.~\autocite{debray-no-date}
 Lex folgt dem \acs{POSIX}--Standard und ist in \autoref{subsubsec:lex} beschrieben.
 
 \paragraph{Syntax Analyzer} oder auch \textbf{Parser} analysieren die Reihenfolge, in der die einzelnen Tokens evaluiert werden.
-Dazu wird mittels einer \acp{CFG}~\autocite{wikipedia-contributors-2024H} ein \textbf{Syntax--Tree} oder auch \textbf{\ac{AST}} erstellt.
+Dazu wird mittels einer \acp{CFG}~\autocite{sipser-1997} ein \textbf{Syntax--Tree} oder auch \textbf{\ac{AST}} erstellt.
 
 Der \ac{AST} beinhaltet im Regelfall die Tokens, die vom Tokenizer erstellt wurden, als Blätter.
 Die semantische Bedeutung des \ac{AST} ist entsprechend die konsekutive Gruppierung von Tokens und anderen Gruppen.
@@ -552,19 +552,19 @@ Es werden also Fehlermeldungen aus den umgebenen Knoten zusammengetragen.
 Dabei wird beschrieben, was eine Serialisierung wovon ist, und wer Sub-- beziehungsweise Supertyp von wem ist.
 Dies kann dann in den anderen Aspekten, zum Beispiel den Constraints, abgefragt werden.
 
-\paragraph{DataFlow} beschreibt den Kontrollfluss.% TODO: Citation needed
+\paragraph{DataFlow} beschreibt den Kontrollfluss.~\autocite{jetbrains-sro-no-dateS}
 Das Ziel dabei ist es, unnötigen Code zu finden.
 Es ist also ein Optimizer.
 Dabei wird vom \ac{AST} zu einer semantischen Darstellung abgebildet, sodass diese Analyse weitestgehend automatisiert ablaufen kann.
 
-\paragraph{TextGen} ist \ac{MPS} Äquivalent zu einem klassischen Compiler.% TODO: Citation needed
+\paragraph{TextGen} ist \ac{MPS} Äquivalent zu einem klassischen Compiler.~\autocite{jetbrains-sro-no-dateT}
 Hier werden Knoten in Text umgewandelt.
 Hierzu wird für jedes Konzept eine Funktion erstellt.
 Diese Funktion gibt geordnet Text und Knoten aus, sodass die {\ttfamily children} und {\ttfamily references} zusammen mit dem Knoten selbst dargestellt werden.
 
 Ursprungsknoten müssen zusätzlich einen Namen und Pfad, relativ zum Generationsausgabeverzeichnis, spezifizieren, damit eine Datei erstellt werden kann.
 
-\paragraph{Behavior} beschreibt eine Art Companion--Class zu einem Konzept.% TODO: Citation needed
+\paragraph{Behavior} beschreibt eine Art Companion--Class zu einem Konzept.~\autocite{jetbrains-sro-no-dateU}
 Hier können beliebige Methoden und Felde angelegt werden.
 Dies dient dem Zweck, dass die anderen Aspekte diese nutzen können.
 Statische Methoden können entsprechend auf dem Konzept und nicht statische Methoden auf dem Knoten aufgerufen werden.
@@ -598,12 +598,12 @@ In beiden Fällen wird die {\ttfamily jetbrains.mps.lang.test}--Sprache genutzt.
 \end{table}
 Mittels der in \autoref{tab:testcases} dargestellten Arten von Tests lassen sich dabei die meisten Konzepte testen.
 
-\paragraph{Migration} beschreiben, wie sich die Sprache zwischen zwei Versionen verändert hat.% TODO: Citation needed
+\paragraph{Migration} beschreiben, wie sich die Sprache zwischen zwei Versionen verändert hat.~\autocite{jetbrains-sro-no-dateV}
 Häufig können schon kleinere Änderungen an der Struktur einer vorhandenen Sprache die Solutions unbrauchbar machen.
 Deshalb müssen Migrationen geschrieben werden.
 Dies kann allerdings auch dabei helfen, Deprecation von Sprachfeatures zu umgehen.
 
-\paragraph{\ac{VCS}} beschreibt, wie Merge--Konflikte behandelt werden sollen.% TODO: Citation needed
+\paragraph{\ac{VCS}} beschreibt, wie Merge--Konflikte behandelt werden sollen.~\autocite{jetbrains-sro-no-dateW}
 Da \ac{MPS} keine Textdatei als Eingabe hat, sondern der \ac{AST} als \acs{XML}--Datei gespeichert wird, sind klassische Tools wie Git zwar nicht nutzlos, allerdings kommen sie doch schnell an ihre Grenzen.
 In diesem Aspekt wird daher beschrieben, wie verschiedene Teilbäume zusammengefügt werden können.
 Dies bietet den großen Vorteil, dass ungleich bei textbasierten Programmiersprachen der Merge mit Rücksicht auf die Syntax der Sprache stattfindet.
@@ -612,9 +612,9 @@ Dies bietet den großen Vorteil, dass ungleich bei textbasierten Programmierspra
 Neben diesen von \ac{MPS} definierten Aspekten können auch eigene Aspekte erstellt werden.
 Darauf soll hier aber nicht weiter eingegangen werden.
 
-\subsubsection{Generator}% TODO: Citation needed
+\subsubsection{Generator}
 Zuvor wurde bereits erwähnt, dass die wenigsten Sprachen in \ac{MPS} einen TextGen--Aspekt haben.
-Im Regelfall bricht der Generator den \ac{AST} so weit herunter, sodass, durch Kaskadierung mehrerer Sprachen (bzw.\ deren Generatoren,) ein \ac{AST} herauskommt, in dem jeder Knoten einen TextGen--Aspekt hat.
+Im Regelfall bricht der Generator den \ac{AST} so weit herunter, sodass, durch Kaskadierung mehrerer Sprachen (bzw.\ deren Generatoren,) ein \ac{AST} herauskommt, in dem jeder Knoten einen TextGen--Aspekt hat.~\autocite{jetbrains-sro-no-dateX}
 
 Technisch gesehen ist der Generator dabei kein Aspekt, sondern ein eigenes Modul.
 Er wird allerdings in der \acs{MPS}--\acs{IDE} im Regelfall als solcher dargestellt.
@@ -652,7 +652,7 @@ Bei komplexen \ac{MPS}--Projekten kann ein manuell erstellter GenPlan allerdings
 Außerdem ist es mit einem GenPlan möglich, eine Sprache in mehrere Zielsprachen zu kompilieren.
 Es kann zum Beispiel ein GenPlan für \ac{JSON} und einer für \ac{XML} erstellt werden.
 
-\paragraph{Debugging} des Generators funktioniert am einfachsten über sogenannte Transient Models.% TODO: Citation needed
+\paragraph{Debugging} des Generators funktioniert am einfachsten über sogenannte Transient Models.~\autocite{jetbrains-sro-no-dateY}
 Diese können auf Kosten der Geschwindigkeit beim Kompilieren aktiviert werden.
 Anschließend können nach jedem Compilieren alle Zwischenergebnisse der verschiedenen Compiler angeschaut werden.
 Damit lässt sich meistens der Reducer ausmachen, der für einen Fehler verantwortlich ist.
@@ -660,12 +660,12 @@ Damit lässt sich meistens der Reducer ausmachen, der für einen Fehler verantwo
 \subsubsection{Library--Code}
 Es gibt zwei Wege, Libraries mit einer Sprache zu verknüpfen.
 
-\paragraph{Accessory Model} ist ein Model, welches mit einer Sprache assoziiert wird.% TODO: Citation needed
+\paragraph{Accessory Model} ist ein Model, welches mit einer Sprache assoziiert wird.~\autocite{jetbrains-sro-no-dateZ}
 Es ist also eine Möglichkeit, Knoten, die die Konzepte serialisieren, mit der Sprache zu verbinden.
 Dies ermöglicht es dem Nutzer der Sprache, bestimmte Strukturen vorab bereitgestellt zu bekommen.
 Dies ist analog zu den sogenannten Standardbibliotheken der meisten, herkömmlichen \ac{GPL}.
 
-\paragraph{Runtime Module,} oder auch Library genannt, sind Module, die beschreiben, wie eine bestimmte Nicht--\acs{MPS}--Bibliothek aufgebaut ist.% TODO: Citation needed
+\paragraph{Runtime Module,} oder auch Library genannt, sind Module, die beschreiben, wie eine bestimmte Nicht--\acs{MPS}--Bibliothek aufgebaut ist.~\autocite{jetbrains-sro-no-dateAA}
 Im Sinne der BaseLanguage können so zum Beispiel vorhandene Java--Bibliotheken nutzbar gemacht werden.
 
 Im Falle von Java können diese mittels eines Scripts automatisiert erstellt werden.
