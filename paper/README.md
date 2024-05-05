@@ -13,7 +13,7 @@
 - [x] Statements von Julian und Pascal sind im Anhang
 - [x] Eidesstattliche Versicherung ist im Anhang
 - [ ] Eidesstattliche Versicherung ist unterschrieben
-- [ ] GitHub Repository ist öffentlich einsichtig
+- [x] GitHub Repository ist öffentlich einsichtig
 - [ ] Print-Fassungen sind gedruckt
 - [ ] Code ist auf CDs
 - [ ] Email ist versendet
