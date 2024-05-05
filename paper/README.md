@@ -9,7 +9,7 @@
     - [x] Kapitel 5
     - [x] Kapitel 6
     - [x] Kapitel 7
-- [ ] Korrekturlesen
+- [x] Korrekturlesen
 - [x] Statements von Julian und Pascal sind im Anhang
 - [x] Eidesstattliche Versicherung ist im Anhang
 - [ ] Eidesstattliche Versicherung ist unterschrieben

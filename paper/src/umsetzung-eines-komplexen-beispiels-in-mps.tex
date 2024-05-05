@@ -168,7 +168,7 @@ Für die komplexeren Anwendungsfälle hat es nach einer kurzen eingewöhnungspha
 Auch das Umsetzen der Editoren fällt mit der zugehörigen Sprache leicht, sobald die Ausrichtungscharaktere bekannt sind.
 
 Das Typesystem hingegen ist eine Herausforderung für sich.
-Die Typen selbst zu definieren ist nicht schwer, allerdings Vererbungshierarchien und andere Konzepte der Typsicherheit.
+Die Typen selbst zu definieren ist nicht schwer --- allerdings Vererbungshierarchien und andere Konzepte der Typsicherheit.
 Hier ist die Menge an möglichen Regeln eine Herausforderung.
 
 Auch Scopes sind nicht immer einfach.
@@ -182,9 +182,9 @@ Dies legt sich allerdings nach einer Eingewöhnungsphase und ist anschließend e
 Allerdings passiert im Generator viel, sodass schnell der Überblich verloren werden kann.
 
 Transformatoren können komplex werden, sind es aber im Regelfall nicht.
-Komplexer wird es nur, wenn auch das auflösen von Referenzen betrifft.
+Komplexer wird es nur, wenn es auch das Auflösen von Referenzen betrifft.
 
-Constraints sind in der Regel einfach umzusetzen, da es einfache Wahrheitswert--Funktionen sind.
+Constraints sind in der Regel einfach umzusetzen, da sie einfache Wahrheitswert--Funktionen sind.
 
 \paragraph{Beispielhaft} dargestellt am {\ttfamily DSColorLiteral} sieht das Ergebnis dann so aus:
 Zunächst muss definiert werden, wie eine Farbe aufgebaut ist.
@@ -222,7 +222,7 @@ Es kann nur über den Inspektor herausgefunden werden.
 
 \lstinputlisting[label={lst:ds-color-literal-transformation-menu},caption={{\ttfamily DSColorLiteral}--Transformationsmenü},language=mps-transformation-menu]{../assets/code/mps/DSExpression.transformations}
 Zuletzt wurde der Transformator auf dem übergeordneten abstrakten Konzept erstellt.
-Hier ist es der einfachste fall und es wird sich auf das Autocomplete--Menü bezogen.
+Hier ist es der einfachste Fall und es wird sich auf das Autocomplete--Menü bezogen.
 
 Constraints und weitere Features sind hier auch nicht nötig, da der Inhalt bereits über den {\ttfamily Constrained Data Type} eingeschränkt wird.
 
