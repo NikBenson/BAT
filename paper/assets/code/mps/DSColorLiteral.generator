@@ -1,0 +1,8 @@
+template reduce_DSColorLiteral
+input DSColorLiteral
+
+parameters
+<< ... >>
+
+content node:
+<TF new Color(0x$[ffffff]) TF>;

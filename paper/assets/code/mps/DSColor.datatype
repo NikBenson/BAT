@@ -1,0 +1,3 @@
+constrained string datatype: DSColor
+
+    matching regexp: [0-9a-f]{6}

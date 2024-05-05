@@ -1,0 +1,29 @@
+transformation menu for concept DSExpression : default
+
+section(completion) {
+  action
+    text (editorContext, node, model, pattern)->string {
+      return this.parseColorString(pattern);
+    }
+    can execute <always>
+    execute (editorContext, node, model, pattern)->void {
+      node.replace with new initialized(DSColorLiteral).value = this.parseColorString(pattern).substring(1);
+    }
+    <no additional features>
+
+additional methods
+
+private String parseColorString(String pattern) {
+  if (pattern.matches("#[0-9a-fA-F]{0,6}")) {
+    StringBuilder sb = new StringBuilder();
+    sb.append(pattern);
+
+    while (7 > sb.length()) {
+      sb.append('0');
+    }
+
+    return sb.toString();
+  } else {
+    return "#000000";
+  }
+}

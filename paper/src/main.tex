@@ -233,6 +233,86 @@
     emphstyle={\color{codepurple}},
     identifierstyle=\color{black},
 }
+\lstdefinelanguage{mps-editor}{
+    sensitive=true,
+    morecomment=[s]{<}{>},
+    morecomment=[s]{<<}{>>},
+    morestring=[b]",
+    keywords={},
+    ndkeywords={editor, for, concept, node, cell, layout, inspected, cell, layout},
+    emph={\{value\}},
+    commentstyle={\color{codegreen}\ttfamily},
+    stringstyle={\color{codepurple}\ttfamily},
+    keywordstyle={\color{magenta}\bfseries},
+    ndkeywordstyle={\color{orange}\bfseries},
+    emphstyle={\color{codepurple}},
+    identifierstyle=\color{black},
+    alsoletter={\{\}[]-},
+    literate={[-}{{{\color{magenta}[-}}}{2}
+        {-]}{{{\color{magenta}-]}}}{2}
+}
+\lstdefinelanguage{mps-inference-rule}{
+    sensitive=true,
+    morecomment=[s]{<<}{>>},
+    morestring=[b]",
+    keywords={typeof, new},
+    ndkeywords={inference, rule, applicable, for, concept, as, applicable, overrides, do, additional, methods},
+    emph={always, false},
+    commentstyle={\color{codegreen}\ttfamily},
+    stringstyle={\color{codepurple}\ttfamily},
+    keywordstyle={\color{magenta}\bfseries},
+    ndkeywordstyle={\color{orange}\bfseries},
+    emphstyle={\color{codepurple}},
+    identifierstyle=\color{black},
+}
+\lstdefinelanguage{mps-template-declaration}{
+    sensitive=true,
+    morecomment=[s]{<<}{>>},
+    morestring=[b]",
+    keywords={new},
+    ndkeywords={template, input, parameters, content, node, <TF, TF>},
+    emph={always, false},
+    commentstyle={\color{codegreen}\ttfamily},
+    stringstyle={\color{codepurple}\ttfamily},
+    keywordstyle={\color{magenta}\bfseries},
+    ndkeywordstyle={\color{orange}\bfseries},
+    emphstyle={\color{codepurple}},
+    identifierstyle=\color{black},
+    alsoletter={\$[]<>},
+    literate={\$[}{{{\color{orange}\$[}}}{2}
+        {]}{{{\color{orange}]}}}{1}
+}
+\lstdefinelanguage{mps-transformation-menu}{
+    sensitive=true,
+    morecomment=[s]{<}{>},
+    morecomment=[s]{<<}{>>},
+    morestring=[b]",
+    morestring=[b]',
+    keywords={return, this, private, if, new, while, void},
+    ndkeywords={transformation, menu, for, concept, default, section, action, text, can, execute, additional, methods},
+    emph={string, String, StringBuilder},
+    commentstyle={\color{codegreen}\ttfamily},
+    stringstyle={\color{codepurple}\ttfamily},
+    keywordstyle={\color{magenta}\bfseries},
+    ndkeywordstyle={\color{orange}\bfseries},
+    emphstyle={\color{codepurple}},
+    identifierstyle=\color{black}
+}
+\lstdefinelanguage{mps-constrained-string-datatype}{
+    sensitive=true,
+    morecomment=[s]{<}{>},
+    morecomment=[s]{<<}{>>},
+    morestring=[b]",
+    keywords={},
+    ndkeywords={constrained, string, datatype, matching, regexp},
+    emph={true, false},
+    commentstyle={\color{codegreen}\ttfamily},
+    stringstyle={\color{codepurple}\ttfamily},
+    keywordstyle={\color{magenta}\bfseries},
+    ndkeywordstyle={\color{orange}\bfseries},
+    emphstyle={\color{codepurple}},
+    identifierstyle=\color{black},
+}
 \lstdefinelanguage{mps-nodefactories}{
     sensitive=true,
     morestring=[b]",

@@ -177,10 +177,59 @@ Außerdem ist das Bubbling von {\ttfamily ScopeProvider}n nicht immer sofort ers
 Insgesamt sind Scopes mit einem mittleren Aufwand umsetzbar.
 
 Der Generator hingegen ist ein größerer Aufwand.
-% TODO: Weiterschreiben
+Zunächst ist die Template--Sprache nicht sofort intuitiv, da viele Einstellungen über den Inspektor vorgenommen werden müssen.
+Dies legt sich allerdings nach einer Eingewöhnungsphase und ist anschließend ein sehr mächtiges Werkzeug.
+Allerdings passiert im Generator viel, sodass schnell der Überblich verloren werden kann.
+
+Transformatoren können komplex werden, sind es aber im Regelfall nicht.
+Komplexer wird es nur, wenn auch das auflösen von Referenzen betrifft.
+
+Constraints sind in der Regel einfach umzusetzen, da es einfache Wahrheitswert--Funktionen sind.
+
+\paragraph{Beispielhaft} dargestellt am {\ttfamily DSColorLiteral} sieht das Ergebnis dann so aus:
+Zunächst muss definiert werden, wie eine Farbe aufgebaut ist.
+\lstinputlisting[label={lst:ds-color-datatype},caption={{\ttfamily DSColor}--Datentyp},language=mps-constrained-string-datatype]{../assets/code/mps/DSColor.datatype}
+Mit einem {\ttfamily Constrained Data Type} kann dies als \ac{RegEx} definiert werden.
+
+\lstinputlisting[label={lst:ds-color-literal-concept},caption={{\ttfamily DSColorLiteral}--Konzept},language=mps-concept]{../assets/code/mps/DSColorLiteral.concept}
+Dieser wird anschließend im Konzept als ein Property angelegt.
+Dieses Konzept erbt von {\ttfamily DSExpression}, damit das Literal auch überall eingesetzt werden kann.
+
+\lstinputlisting[label={lst:ds-color-literal-editor},caption={{\ttfamily DSColorLiteral}--Editor},language=mps-editor]{../assets/code/mps/DSColorLiteral.editor}
+Der Editor liest sich als horizontales Layout, welches automatisch umbricht, und folgende Zellen beinhaltet:
+\begin{enumerate}
+    \item den statischen Text {\ttfamily \#} und
+    \item den Inhalt des {\ttfamily value} Properties.
+\end{enumerate}
+Die einzelnen Zellen sind dabei im Inspektor noch weiter modifiziert worden.
+So wurden die Abstände festgelegt und bestimmte Bereiche eingefärbt.
+
+\lstinputlisting[label={lst:ds-color-literal-typesystem},caption={{\ttfamily DSColorLiteral}--Typesystem},language=mps-inference-rule]{../assets/code/mps/DSColorLiteral.typesystem}
+Auch die Typdefinition beschränkt sich hier auf eine direkte Zuweisung.
+In diesem Fall handelt es sich dabei um einen neuen Knoten, häufig wird dabei allerdings auch auf umliegende Knoten im \ac{AST} verwiesen.
+
+Scopes benötigt dieses Konzept nicht.
+Deshalb wird diese Phase ausgelassen.
+
+\lstinputlisting[label={lst:ds-color-literal-generator},caption={{\ttfamily DSColorLiteral}--Generator},language=mps-template-declaration]{../assets/code/mps/DSColorLiteral.generator}
+Selbst der Generator lässt sich bei den Literalen leicht definieren.
+Zu beachten ist, dass alles außerhalb des {\ttfamily Template Fragment}s (zwischen {\ttfamily <TF} und {\ttfamily TF>}) ignoriert wird.
+Das bietet die Möglichkeit, notwendige Referenzen für Werte, die später ersetzt werden, zu deklarieren.
+
+Das {\ttfamily Property Macro} ({\ttfamily \$[]}) wird im Inspektor konfiguriert und ersetzt {\ttfamily ffffff} durch den Wert des {\ttfamily value} Properties des Knotens.
+Es ist also nicht auf den ersten Blick ersichtlich, was dieser Code macht.
+Es kann nur über den Inspektor herausgefunden werden.
+
+\lstinputlisting[label={lst:ds-color-literal-transformation-menu},caption={{\ttfamily DSColorLiteral}--Transformationsmenü},language=mps-transformation-menu]{../assets/code/mps/DSExpression.transformations}
+Zuletzt wurde der Transformator auf dem übergeordneten abstrakten Konzept erstellt.
+Hier ist es der einfachste fall und es wird sich auf das Autocomplete--Menü bezogen.
+
+Constraints und weitere Features sind hier auch nicht nötig, da der Inhalt bereits über den {\ttfamily Constrained Data Type} eingeschränkt wird.
+
+Insgesamt ist die Umsetzung für ein einfaches Konzept also recht simpel.
 
 \subsection{Herausforderungen und Probleme}\label{subsec:herausforderungen-und-probleme}
-Besonders bei der Umsetzung der Generatoren kam es immer wieder zu Problemen.
+Besonders bei der Umsetzung der Generatoren kam es allerdings immer wieder zu Problemen.
 
 Zunächst war das Aufspalten von zwei in drei Packages sehr aufwändig, da es sich nicht um Textdateien handelt.
 Copy--Paste war also nur begrenzt einsetzbar, was dazu geführt hat, dass effektiv alles, was in~\autoref{fig:designsystem-logic-structure} abgebildet ist, manuell abgetippt werden musste.

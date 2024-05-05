@@ -1,0 +1,6 @@
+<default> editor for concept DSColorLiteral
+    node cell layout:
+        [- # {value} -]
+
+    inspected cell layout:
+        <choose cell layout>

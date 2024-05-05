@@ -1,0 +1,13 @@
+inference rule typeof_DSColorLiteral {
+    applicable for concept = DSColorLiteral as dsColorLiteral
+    applicable always
+    overrides false
+
+    do {
+        typeof(dsColorLiteral) :==: new node<DSColorType>();
+    }
+
+    additional methods
+
+    << ... >>
+}
