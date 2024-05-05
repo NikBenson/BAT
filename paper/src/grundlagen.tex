@@ -27,10 +27,10 @@ Das wohl bekannteste Beispiel ist \ac{SQL}.~\autocite{unknown-author-2023}
 Auf Deutsch Abfragesprachen genannt, dienen diese \acp{DSL}, der Interaktionen mit \acp{DBMS}.
 Die Domäne ist in diesem Fall also die Datenhaltung \textit{strukturierter} Daten.
 
-Da es etliche \acp{DBMS} gibt, welche dem \ac{SQL}--Standard folgen, gibt es für \ac{SQL} auch etliche Compiler--Pipelines beziehungsweise Interpreter.
+Da es verschiedene \acp{DBMS} gibt, welche dem \ac{SQL}--Standard folgen, gibt es für \ac{SQL} auch unterschiedliche Compiler--Pipelines beziehungsweise Interpreter.
 Diese Compiler--Pipelines sind dabei stark mit dem jeweiligen \ac{DBMS} verwoben.
 Es gibt also keine einheitliche Codebasis.
-Dies wäre mit bekannten Tools des Compilerbaus, namentlich \textbf{Lex} \& \textbf{YACC}, allerdings bereits auch schon umsetzbar.
+Dies wäre mit bekannten Tools des Compilerbaus, namentlich \textbf{Lex} \& \textbf{\acs{YACC}}, allerdings bereits auch schon umsetzbar.
 Diese werden im folgenden Kapitel behandelt.
 
 \begin{figure}[ht]
@@ -112,13 +112,13 @@ Zwei wichtige Kategorien sind Top--Down-- und Bottom--Up--Parser.
 \subparagraph{Top--Down--Parser} (siehe \autoref{subfig:top-down-parser}) starten, indem sie die größte Struktur der Grammatik versuchen, anzuwenden.~\autocite{geeksforgeeks-2021A}
 Diese wird dann rekursiv immer weiter zerteilt.
 
-Dabei liest er von links nach rechts.
+Dabei liest der Parser von links nach rechts.
 Dadurch kann es schwierig werden, einen sinnvollen \ac{AST} zu erzeugen, wenn es uneindeutige Abfolgen gibt.
 
 \subparagraph{Bottom--Up--Parser} (Siehe \autoref{subfig:bottom-up-parser}) starten, mit den Terminalen der Grammatik.~\autocite{geeksforgeeks-2021B}
 Diese werden dann nach und nach zu größeren Strukturen zusammengesetzt.
 
-Dabei liest er von rechts nach links.
+Dabei liest der Parser von rechts nach links.
 Dadurch kann es schwierig sein, den nächsten Token auszuwählen.
 
 \paragraph{Semantic Analyzer} analysiert die Knoten des \ac{AST} auf semantische Korrektheit.
@@ -130,9 +130,10 @@ Dabei werden in der Regel Warnungen und Fehler ausgegeben.
 
 Dies stellt sicher, dass nur korrekte Programme weiter kompiliert werden.
 Ausnahmen gibt es zum Beispiel mit JavaScript.
-Hier wird jedes Statement versucht zu interpretieren, um einfache Fehler unter den Tisch zu kehren.~\autocite{larsen-2016}
+Hier wird jedes Statement versucht zu interpretieren, um einfache Fehler zu unterdrücken.~\autocite{larsen-2016}
 
-\paragraph{Intermediate--Code--Generator} erstellt Text aus dem \ac{AST} eine computer--verständliche Zwischendarstellung.
+\paragraph{Intermediate--Code--Generator} erstellt Text aus dem \ac{AST}.
+Dieser Text ist dabei eine computer--verständliche Zwischendarstellung.
 
 Ein Beispiel aus~\cite{aho-2006} wäre der three--address code.
 Dieser ist eine klassische \textbf{intermediate Representation} beim Kompilieren zu Assembly.
@@ -330,7 +331,7 @@ Diese übersetzen mittels einer Template--Sprache von einem \ac{MPS} \ac{AST} in
     \label{fig:mps-compiler-pipeline}
 \end{wrapfigure}
 
-So werden verschiedene Sprachen kaskadiert, bis jedes verbleibende Knoten im \ac{AST} einen zugehörigen TextGen--Aspekt hat.
+So werden verschiedene Sprachen kaskadiert, bis jeder verbleibende Knoten im \ac{AST} einen zugehörigen TextGen--Aspekt hat.
 Dies hat den Vorteil, dass Compiler wiederverwendet werden können und sich durch Emergenz komplexe Systeme ergeben.
 
 Da kein Text bearbeitet wird, ist auch die Entwicklererfahrung eine andere.
@@ -369,7 +370,7 @@ Models sind organisatorische Einheiten, die Code beinhalten.
 Sie können Abhängigkeiten auf andere Models und verwendete Sprachen spezifizieren.
 
 In Models können nun Instanzen von \ac{AST} Knoten erstellt werden, die von einer verwendeten Sprache als \textit {rootable} ($S$) markiert wurden.
-Diese können dann wie sonst Dateien geöffnet und damit über den Editor Aspekt bearbeitet werden.
+Diese können dann wie Dateien geöffnet und damit über den Editor Aspekt bearbeitet werden.
 
 Außerdem können \enquote{Dateien} in \enquote{Ordner} untergliedert werden.
 Dies nennt sich dann virtuelles Paket und ist in Wirklichkeit ein Teil des \enquote{Dateinamens}.
