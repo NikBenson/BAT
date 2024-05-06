@@ -12,18 +12,9 @@
 - [x] Korrekturlesen
 - [x] Statements von Julian und Pascal sind im Anhang
 - [x] Eidesstattliche Versicherung ist im Anhang
-- [ ] Eidesstattliche Versicherung ist unterschrieben
 - [x] GitHub Repository ist öffentlich einsichtig
-- [ ] Print-Fassungen sind gedruckt
-- [ ] Code ist auf CDs
-- [ ] Email ist versendet
-- [ ] Print Kopien liegen dem Prüfungsamt vor
-
----
-
-**Seite 12: Implementierung von MPS**
-- **Verbesserungsvorschlag**: Die Diskussion über die Implementierung von MPS könnte von einer tieferen Analyse der Vor- und Nachteile profitieren, die auf Fallstudien basiert.
-
-
-**Abschnitt 4.2 "Umsetzung":** 
-- Einige technische Details und Schritte der Umsetzung bleiben vage. Eine detailliertere Beschreibung der spezifischen Herausforderungen und Lösungsansätze könnte hilfreich sein.
+- [ ] Print-Fassungen sind gedruckt (Mittwoch oder Freitag)
+- [ ] Code ist auf CDs (Donnerstag)
+- [ ] Eidesstattliche Versicherung ist unterschrieben
+- [ ] Email ist versendet (Donnerstag)
+- [ ] Print Kopien liegen dem Prüfungsamt vor (Freitag)
