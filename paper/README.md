@@ -13,8 +13,8 @@
 - [x] Statements von Julian und Pascal sind im Anhang
 - [x] Eidesstattliche Versicherung ist im Anhang
 - [x] GitHub Repository ist öffentlich einsichtig
-- [ ] Print-Fassungen sind gedruckt (Mittwoch oder Freitag)
-- [ ] Code ist auf CDs (Donnerstag)
-- [ ] Eidesstattliche Versicherung ist unterschrieben
-- [ ] Email ist versendet (Donnerstag)
-- [ ] Print Kopien liegen dem Prüfungsamt vor (Freitag)
+- [x] Print-Fassungen sind gedruckt
+- [x] Code ist auf CDs
+- [x] Eidesstattliche Versicherung ist unterschrieben
+- [x] Email ist versendet
+- [x] Print Kopien liegen dem Prüfungsamt vor
